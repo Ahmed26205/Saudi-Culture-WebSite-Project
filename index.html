@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <!-- Root element with English language tag -->
 <html lang="en">
+
 <head>
     <!-- Character encoding for UTF-8 text support -->
     <meta charset="UTF-8" />
@@ -11,13 +12,15 @@
     <title>SaudiCulture - Home</title>
 
     <!-- Import Google Fonts: Inter (English body), Outfit (headings), Almarai (Arabic) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="CSS/styles.css">
     <!-- Load external JavaScript file with defer to load after HTML -->
     <script src="/JS/script.js" defer></script>
 
-<!-- End of head section -->
+    <!-- End of head section -->
 </head>
 <!-- Script to handle header appearance on page scroll -->
 <script>
@@ -29,238 +32,235 @@
         // Check if scroll position exceeds 50 pixels
         if (window.scrollY > 50) {
             // Add 'scrolled' class for visible background styling
-            header.classList.add("scrolled");  
+            header.classList.add("scrolled");
         } else {
             // Remove 'scrolled' class for transparent header
-            header.classList.remove("scrolled"); 
+            header.classList.remove("scrolled");
         }
     });
     // End of scroll event listener
 </script>
 
 <!-- Start of page body content -->
+
 <body>
-<!-- Header navigation bar with logo -->
-<header id="mainHeader">
-    <!-- Logo container with image -->
-    <div class="logo">
-        <!-- SaudiCulture logo image -->
-        <img src="images/Logo.png" alt="SaudiCulture Logo">
-    </div>
-    <!-- Navigation links and buttons -->
-    <nav>
-        <!-- Home page link -->
-        <a href="index.html">Home</a>
-        <!-- History section link -->
-        <a href="history.html">History</a>
-        <!-- Traditions section link -->
-        <a href="traditions.html">Traditions</a>
-        <!-- Food section link -->
-        <a href="food.html">Food</a>
-        <!-- Arts section link -->
-        <a href="arts.html">Arts</a>
-        <!-- Cultural events section link -->
-        <a href="culture_events.html">Cultural events</a>
-        <!-- Quiz section link -->
-        <a href="quiz.html">Quiz</a>
-        <!-- Contact Us section link -->
-        <a href="Contact.html">Contact us</a>
-        <!-- Login button for user authentication -->
-        <button class="login-btn">Login</button>
-        <!-- Sign Up button for new users -->
-        <button class="signup-btn">Sign Up</button>
-        <!-- Language toggle button to switch to Arabic (globe shaped) -->
-        <button class="lang-btn" onclick="window.location.href='arabic.html'">AR</button>
-    </nav>
-<!-- End of header section -->
-</header>
+    <!-- Header navigation bar with logo -->
+    <header id="mainHeader">
+        <!-- Logo container with image -->
+        <div class="logo">
+            <!-- SaudiCulture logo image -->
+            <img src="images/Logo.png" alt="SaudiCulture Logo">
+        </div>
+        <!-- Navigation links and buttons -->
+        <nav>
+            <!-- Home page link -->
+            <a href="index.html">Home</a>
+            <!-- History section link -->
+            <a href="history.html">History</a>
+            <!-- Traditions section link -->
+            <a href="traditions.html">Traditions</a>
+            <!-- Food section link -->
+            <a href="food.html">Food</a>
+            <!-- Arts section link -->
+            <a href="arts.html">Arts</a>
+            <!-- Cultural events section link -->
+            <a href="culture_events.html">Cultural events</a>
+            <!-- Quiz section link -->
+            <a href="quiz.html">Quiz</a>
+            <!-- Contact Us section link -->
+            <a href="Contact.html">Contact us</a>
+            <!-- Login button for user authentication -->
+            <button class="login-btn"><a href="PHP/login.php"></a>Login</button>
+            <!-- Sign Up button for new users -->
+            <button class="signup-btn"><a href="PHP/signup.php"></a>Sign Up</button>
+            <!-- Language toggle button to switch to Arabic (globe shaped) -->
+            <button class="lang-btn" onclick="window.location.href='arabic.html'">AR</button>
+        </nav>
+        <!-- End of header section -->
+    </header>
 
-<!-- Hero section with full-screen video background -->
-<section class="hero full-video-hero">
-    <!-- Background video that plays automatically, muted, and loops -->
-    <video autoplay muted loop playsinline class="bg-video">
-        <!-- Video source in MP4 format -->
-        <source src="videos/Journey through time.mov" type="video/mp4">
-    </video>
+    <!-- Hero section with full-screen video background -->
+    <section class="hero full-video-hero">
+        <!-- Background video that plays automatically, muted, and loops -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <!-- Video source in MP4 format -->
+            <source src="videos/Journey through time.mov" type="video/mp4">
+        </video>
 
-    <!-- Main hero content overlay on video -->
-    <div class="hero-content">
-        <!-- Main website heading -->
-        <h1>Mawrooth</h1>
-        <!-- Subtitle describing the website -->
-        <p>AN INTERACTIVE WEBSITE THAT HIGHLIGHTS SAUDI CULTURE</p>
-        <!-- Call-to-action text -->
-        <p>START YOUR JOURNEY NOW....</p>
-        
-        <!-- Action buttons container -->
-        <div class="action-buttons">
-            <!-- Button to explore culture content -->
-            <input type="button" value="Explore Culture" >
-            <!-- Button to start the quiz -->
-            <input type="button" value="Start Quiz">
+        <!-- Main hero content overlay on video -->
+        <div class="hero-content">
+            <!-- Main website heading -->
+            <h1>Mawrooth</h1>
+            <!-- Subtitle describing the website -->
+            <p>AN INTERACTIVE WEBSITE THAT HIGHLIGHTS SAUDI CULTURE</p>
+            <!-- Call-to-action text -->
+            <p>START YOUR JOURNEY NOW....</p>
+
+            <!-- Action buttons container -->
+            <div class="action-buttons">
+                <!-- Button to explore culture content -->
+                <input type="button" value="Explore Culture">
+                <!-- Button to start the quiz -->
+                <input type="button" value="Start Quiz">
+            </div>
+
+            <!-- Search and filter section -->
+            <div class="search-section">
+                <!-- Search input field for user queries -->
+                <input type="search" name="q" id="mySearch" placeholder="Search for dishes, festivals, antiquities..."
+                    aria-label="Search content"> <br><br>
+
+                <!-- Category filter dropdown -->
+                <select aria-label="Filter search results">
+                    <option value="all">All Categories</option>
+                    <option value="food">Traditional Food</option>
+                    <option value="traditions">Cultural Traditions</option>
+                    <option value="religious">History and civilizations</option>
+                    <option value="nature">Traditional arts</option>
+                    <option value="history">Cultural events</option>
+                </select>
+
+                <!-- Submit button for search -->
+                <button type="submit">
+                    Search
+                </button>
+            </div>
+        </div>
+        <!-- End of hero section -->
+    </section>
+    <!-- Section title heading -->
+    <h2 class="section-title">Featured Sections</h2>
+
+    <!-- Grid of feature cards -->
+    <div class="cards">
+        <!-- Traditional Food card -->
+        <div class="card">
+            <!-- Food image -->
+            <img src="images/8-chicken-kabsa-web.jpg" alt="traditional food">
+            <!-- Card title -->
+            <h3>Traditional Food</h3>
+            <!-- Link to view more details -->
+            <a href="food.html" class="button">View More</a>
         </div>
 
-        <!-- Search and filter section -->
-        <div class="search-section">
-            <!-- Search input field for user queries -->
-            <input type="search" 
-                   name="q" 
-                   id="mySearch" 
-                   placeholder="Search for dishes, festivals, antiquities..."
-                   aria-label="Search content"> <br><br>
-            
-            <!-- Category filter dropdown -->
-            <select aria-label="Filter search results">
-                <option value="all">All Categories</option>
-                <option value="food">Traditional Food</option>
-                <option value="traditions">Cultural Traditions</option>
-                <option value="religious">History and civilizations</option>
-                <option value="nature">Traditional arts</option>
-                <option value="history">Cultural events</option>
-            </select>
-            
-            <!-- Submit button for search -->
-            <button type="submit">
-                Search
-            </button>
+        <!-- Cultural Traditions card -->
+        <div class="card">
+            <!-- Traditions image -->
+            <img src="images/tradtion.jpg" alt="Cultural Traditions">
+            <!-- Card title -->
+            <h3>Cultural Traditions</h3>
+            <!-- Link to view more details -->
+            <a href="traditions.html" class="button">View More</a>
         </div>
+
+        <!-- Traditional arts card -->
+        <div class="card">
+            <!-- Traditional arts site image -->
+            <img src="images/arda.jpg" alt="Traditional arts">
+            <!-- Card title -->
+            <h3>Traditional Arts</h3>
+            <!-- Link to view more details -->
+            <a href="arts.html" class="button">View More</a>
+        </div>
+
+        <!-- Historical Landmarks card -->
+        <div class="card">
+            <!-- Historical place image -->
+            <img src="images/madain salah.jpg" alt="History and civilizations">
+            <!-- Card title -->
+            <h3>Ancient Civilizations</h3>
+            <!-- Link to view more details -->
+            <a href="history.html" class="button">View More</a>
+        </div>
+        <!-- End of cards grid -->
     </div>
-<!-- End of hero section -->
-</section>
-<!-- Section title heading -->
-<h2 class="section-title">Featured Sections</h2>
+    <!-- Events section heading -->
+    <h2 class="section-title">Discover more about Saudi Arabia</h2>
 
-<!-- Grid of feature cards -->
-<div class="cards">
-    <!-- Traditional Food card -->
-    <div class="card">
-        <!-- Food image -->
-        <img src="images/8-chicken-kabsa-web.jpg" alt="traditional food">
-        <!-- Card title -->
-        <h3>Traditional Food</h3>
-        <!-- Link to view more details -->
-        <a href="food.html" class="button">View More</a>
+    <!-- Mini Events section with text and events -->
+    <div class="mini-events-section">
+        <!-- Text and button container -->
+        <div>
+            <!-- Description of events content -->
+            <p>Explore the most prominent cultural events across the Kingdom of Saudi Arabia.</p>
+            <!-- Button to view full interactive events -->
+            <button>View Full Map</button>
+        </div>
+
+        <!-- Events image container -->
+        <div class="mini-events">
+            <!-- Events image of Saudi Arabia -->
+            <img src="images/فعاليات.jpg" alt="Events of saudi arabia">
+        </div>
+        <!-- End of mini Events section -->
     </div>
+    <!-- Footer section with copyright and contact information -->
+    <footer>
+        <!-- Copyright notice and website name -->
+        <p>Mawrooth Website (Saudi Culture) © 2025</p>
+        <!-- Contact Us heading -->
+        <p>Contact Us:</p>
+        <!-- Phone number -->
+        <p>📞 0000 000 000</p>
+        <!-- Email address -->
+        <p>📧 saudi.culture@project.com</p>
+        <!-- Physical location -->
+        <p>📍 Riyadh, Saudi Arabia</p>
+        <!-- End of footer section -->
+    </footer>
 
-    <!-- Cultural Traditions card -->
-    <div class="card">
-        <!-- Traditions image -->
-        <img src="images/tradtion.jpg" alt="Cultural Traditions">
-        <!-- Card title -->
-        <h3>Cultural Traditions</h3>
-        <!-- Link to view more details -->
-        <a href="traditions.html" class="button">View More</a>
-    </div>
+    <!-- Scroll reveal script: adds .reveal class and toggles .in-view on intersection -->
+    <script>
+        // Check if user prefers reduced motion for accessibility
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    <!-- Traditional arts card -->
-    <div class="card">
-        <!-- Traditional arts site image -->
-        <img src="images/arda.jpg" alt="Traditional arts">
-        <!-- Card title -->
-        <h3>Traditional Arts</h3>
-        <!-- Link to view more details -->
-        <a href="arts.html" class="button">View More</a>
-    </div>
+        // Immediately invoke function to set up intersection observer
+        ; (function () {
+            // Array of CSS selectors for elements that should have scroll reveal animation
+            const selectors = ['.hero-content', '.section-title', '.card', '.mini-map', 'footer'];
 
-    <!-- Historical Landmarks card -->
-    <div class="card">
-        <!-- Historical place image -->
-        <img src="images/madain salah.jpg" alt="History and civilizations">
-        <!-- Card title -->
-        <h3>Ancient Civilizations</h3>
-        <!-- Link to view more details -->
-        <a href="history.html" class="button">View More</a>
-    </div>
-<!-- End of cards grid -->
-</div>
-<!-- Events section heading -->
-<h2 class="section-title">Discover more about Saudi Arabia</h2>
+            // Get all matching elements from the DOM
+            const elements = Array.from(document.querySelectorAll(selectors.join(',')));
+            // Exit if no elements found
+            if (!elements.length) return;
 
-<!-- Mini Events section with text and events -->
-<div class="mini-events-section">
-    <!-- Text and button container -->
-    <div>
-        <!-- Description of events content -->
-        <p>Explore the most prominent cultural events across the Kingdom of Saudi Arabia.</p>
-        <!-- Button to view full interactive events -->
-        <button>View Full Map</button>
-    </div>
+            // Add 'reveal' base class to all elements early for CSS transitions
+            elements.forEach(el => el.classList.add('reveal'));
 
-    <!-- Events image container -->
-    <div class="mini-events">
-        <!-- Events image of Saudi Arabia -->
-        <img src="images/فعاليات.jpg" alt="Events of saudi arabia">
-    </div>
-<!-- End of mini Events section -->
-</div>
-<!-- Footer section with copyright and contact information -->
-<footer>
-    <!-- Copyright notice and website name -->
-    <p>Mawrooth Website (Saudi Culture) © 2025</p>
-    <!-- Contact Us heading -->
-    <p>Contact Us:</p>
-    <!-- Phone number -->
-    <p>📞 0000 000 000</p>
-    <!-- Email address -->
-    <p>📧 saudi.culture@project.com</p>
-    <!-- Physical location -->
-    <p>📍 Riyadh, Saudi Arabia</p>
-<!-- End of footer section -->
-</footer>
+            // If user prefers reduced motion, immediately show everything for accessibility
+            if (prefersReduced) {
+                // Immediately show everything for accessibility
+                elements.forEach(el => el.classList.add('in-view'));
+                return;
+            }
 
-<!-- Scroll reveal script: adds .reveal class and toggles .in-view on intersection -->
-<script>
-    // Check if user prefers reduced motion for accessibility
-    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Immediately invoke function to set up intersection observer
-    ;(function() {
-        // Array of CSS selectors for elements that should have scroll reveal animation
-        const selectors = ['.hero-content', '.section-title', '.card', '.mini-map', 'footer'];
-
-        // Get all matching elements from the DOM
-        const elements = Array.from(document.querySelectorAll(selectors.join(',')));
-        // Exit if no elements found
-        if (!elements.length) return;
-
-        // Add 'reveal' base class to all elements early for CSS transitions
-        elements.forEach(el => el.classList.add('reveal'));
-
-        // If user prefers reduced motion, immediately show everything for accessibility
-        if (prefersReduced) {
-            // Immediately show everything for accessibility
-            elements.forEach(el => el.classList.add('in-view'));
-            return;
-        }
-
-        // Create intersection observer to detect when elements come into view
-        const io = new IntersectionObserver((entries, obs) => {
-            // Loop through each observed entry
-            entries.forEach(entry => {
-                // Check if element is currently visible in viewport
-                if (entry.isIntersecting) {
-                    // Get the element being observed
-                    const el = entry.target;
-                    // Apply a small stagger delay if the element is a card
-                    if (el.classList.contains('card')) {
-                        // Get all sibling cards
-                        const siblings = Array.from(el.parentElement.querySelectorAll('.card'));
-                        // Calculate index among siblings to stagger
-                        const idx = Math.max(0, siblings.indexOf(el));
-                        // Set CSS variable for staggered animation delay (90ms per card)
-                        el.style.setProperty('--delay', (idx * 90) + 'ms');
+            // Create intersection observer to detect when elements come into view
+            const io = new IntersectionObserver((entries, obs) => {
+                // Loop through each observed entry
+                entries.forEach(entry => {
+                    // Check if element is currently visible in viewport
+                    if (entry.isIntersecting) {
+                        // Get the element being observed
+                        const el = entry.target;
+                        // Apply a small stagger delay if the element is a card
+                        if (el.classList.contains('card')) {
+                            // Get all sibling cards
+                            const siblings = Array.from(el.parentElement.querySelectorAll('.card'));
+                            // Calculate index among siblings to stagger
+                            const idx = Math.max(0, siblings.indexOf(el));
+                            // Set CSS variable for staggered animation delay (90ms per card)
+                            el.style.setProperty('--delay', (idx * 90) + 'ms');
+                        }
+                        // Add 'in-view' class to trigger animation
+                        el.classList.add('in-view');
+                        // Stop observing this element
+                        obs.unobserve(el);
                     }
-                    // Add 'in-view' class to trigger animation
-                    el.classList.add('in-view');
-                    // Stop observing this element
-                    obs.unobserve(el);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-        // Start observing all selected elements
-        elements.forEach(el => io.observe(el));
-    })();
-<!-- End of scroll reveal script -->
-</script>
-
+            // Start observing all selected elements
+            elements.forEach(el => io.observe(el));
+        })();
+        <!-- End of scroll reveal script -->
+    </script>
