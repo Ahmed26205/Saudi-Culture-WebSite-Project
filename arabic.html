@@ -11,19 +11,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- عنوان الصفحة يظهر في لسان المتصفح -->
     <title>SaudiCulture - الصفحة الرئيسية (عربي)</title>
-
-    <!-- استيراد خطوط جوجل: Inter (للإنجليزية)، Outfit (للعناوين)، Almarai (للعربية) -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
-        rel="stylesheet">
     <!-- ربط ملف CSS الخارجي للتنسيقات -->
     <link rel="stylesheet" href="CSS/styles.css">
     <!-- تحميل ملف JavaScript الخارجي مع تأجيل التحميل إلى بعد تحميل HTML -->
-    <script src="/JS/script.js" defer></script>
+    <script src="JS/script.js" defer></script>
     <!-- نهاية قسم رأس الصفحة -->
 </head>
-<!-- بداية محتوى الصفحة الرئيسية -->
+<!-- Script to handle header appearance on page scroll -->
+<script>
+    // Event listener triggered when user scrolls the page
+    window.addEventListener("scroll", () => {
+        // Get the main header element by ID
+        const header = document.getElementById("mainHeader");
 
+        // Check if scroll position exceeds 50 pixels
+        if (window.scrollY > 50) {
+            // Add 'scrolled' class for visible background styling
+            header.classList.add("scrolled");
+        } else {
+            // Remove 'scrolled' class for transparent header
+            header.classList.remove("scrolled");
+        }
+    });
+    // End of scroll event listener
+</script>
+
+<!-- بداية محتوى الصفحة الرئيسية -->
 <body>
     <!-- شريط الرأس يحتوي على الشعار والتنقل -->
     <header id="mainHeader">
@@ -51,23 +64,23 @@
             <!-- رابط قسم اتصل بنا -->
             <a href="Contact_ar.html">اتصل بنا</a>
             <!-- زر تسجيل الدخول لمصادقة المستخدم -->
-            <button class="login-btn"><a href="PHP/login_ar.php"></a>تسجيل الدخول</button>
+             <button class="login-btn" onclick="window.location.href='PHP/login.php'">تسجيل الدخول</button>
             <!-- زر إنشاء حساب للمستخدمين الجدد -->
-            <button class="signup-btn"><a href="PHP/signup_ar.php"></a>إنشاء حساب</button>
+             <button class="signup-btn" onclick="window.location.href='PHP/signup.php'">إنشاء حساب</button>
             <!-- زر تبديل اللغة للتبديل إلى الإنجليزية (بشكل كروي) -->
             <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
         </nav>
         <!-- نهاية قسم الرأس -->
     </header>
 
-    <section class="hero full-video-hero">
+    <section class="full-video">
         <!-- فيديو الخلفية -->
         <video autoplay muted loop playsinline class="bg-video">
             <source src="videos/Journey through time.mov" type="video/mp4">
         </video>
 
-        <!-- محتوى الصورة البطلية الرئيسي -->
-        <div class="hero-content">
+        <!-- المحتوى النصي داخل جزء الفيديو -->
+        <div class="video-content">
             <h1>موروث</h1>
             <p>موقع تفاعلي يسلط الضوء على الموروث الثقافي في المملكة العربية السعودية.</p>
             <p>ابدأ رحلتك الآن....</p>
@@ -82,7 +95,7 @@
             <div class="search-section">
                 <!-- حقل البحث -->
                 <input type="search" name="q" id="mySearch" placeholder="ابحث عن أطباق، مهرجانات،اثار..."
-                    aria-label="بحث المحتوى"> <br><br>
+                    aria-label="بحث المحتوى"> 
 
                 <!-- قائمة التصفية حسب الفئة -->
                 <select aria-label="تصفية نتائج البحث">
@@ -95,9 +108,12 @@
                 </select>
 
                 <!-- زر البحث -->
+                 
+                <div class="search-button">
                 <button type="submit">
                     بحث
                 </button>
+                </div>
             </div>
         </div>
     </section>
@@ -169,80 +185,7 @@
         <p>📍 الرياض، المملكة العربية السعودية</p>
     </footer>
 
-    <!-- سكريبت الكشف عن الانقطاع (intersection observer) لتفعيل الرسوم المتحركة عند ظهور العناصر -->
-    <script>
-        // التحقق من تفضيل المستخدم للحد من الحركة لأسباب الوصول
-        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        // دالة ذاتية التنفيذ لإعداد مراقب التقاطع
-        ; (function () {
-            // مصفوفة محددات CSS للعناصر التي يجب أن تحتوي على رسم متحرك للكشف عن الانقطاع
-            const selectors = ['.hero-content', '.section-title', '.card', '.mini-map', 'footer'];
-
-            // الحصول على جميع العناصر المطابقة من DOM
-            const elements = Array.from(document.querySelectorAll(selectors.join(',')));
-            // الخروج إذا لم يتم العثور على أي عناصر
-            if (!elements.length) return;
-
-            // إضافة فئة 'reveal' الأساسية إلى جميع العناصر مبكراً لتطبيق انتقالات CSS
-            elements.forEach(el => el.classList.add('reveal'));
-
-            // إذا كان المستخدم يفضل الحد من الحركة، أظهر كل شيء على الفور
-            if (prefersReduced) {
-                // إظهار كل شيء فوراً للوصول
-                elements.forEach(el => el.classList.add('in-view'));
-                return;
-            }
-
-            // إنشاء مراقب التقاطع للكشف عن متى تدخل العناصر إلى منطقة العرض
-            const io = new IntersectionObserver((entries, obs) => {
-                // حلقة عبر كل إدخال مراقب
-                entries.forEach(entry => {
-                    // التحقق من ما إذا كانت العنصر مرئية حالياً في منطقة العرض
-                    if (entry.isIntersecting) {
-                        // الحصول على العنصر الذي يتم مراقبته
-                        const el = entry.target;
-                        // تطبيق تأخير تدريجي صغير إذا كانت العنصر بطاقة
-                        if (el.classList.contains('card')) {
-                            // الحصول على جميع البطاقات الشقيقة
-                            const siblings = Array.from(el.parentElement.querySelectorAll('.card'));
-                            // حساب الفهرس بين الإخوة لتطبيق التدرج
-                            const idx = Math.max(0, siblings.indexOf(el));
-                            // ضبط متغير CSS لتأخير الرسم المتحرك المتدرج (90ms لكل بطاقة)
-                            el.style.setProperty('--delay', (idx * 90) + 'ms');
-                        }
-                        // إضافة فئة 'in-view' لتفعيل الرسم المتحرك
-                        el.classList.add('in-view');
-                        // التوقف عن مراقبة هذه العنصر
-                        obs.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-            // بدء مراقبة جميع العناصر المحددة
-            elements.forEach(el => io.observe(el));
-        })();
-        // نهاية سكريبت الكشف عن الانقطاع
-    </script>
-
-    <!-- سكريبت سلوك التمرير للرأس -->
-    <script>
-        // مستمع الحدث الذي يتم تفعيله عندما يتمرر المستخدم على الصفحة
-        window.addEventListener("scroll", () => {
-            // الحصول على عنصر الرأس الرئيسي برقم معرّف
-            const header = document.getElementById("mainHeader");
-
-            // التحقق من ما إذا كان موضع التمرير أكثر من 50 بكسل
-            if (window.scrollY > 50) {
-                // إضافة فئة 'scrolled' للحصول على نمط الخلفية المرئي
-                header.classList.add("scrolled");
-            } else {
-                // إزالة فئة 'scrolled' للحصول على رأس شفاف
-                header.classList.remove("scrolled");
-            }
-        });
-        // نهاية سكريبت التمرير
-    </script>
+ 
 </body>
 
 </html>
