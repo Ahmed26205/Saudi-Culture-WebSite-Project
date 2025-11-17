@@ -201,11 +201,11 @@
         <!-- Contact Us heading -->
         <p>Contact Us:</p>
         <!-- Phone number -->
-        <p>📞 0000 000 000</p>
+        <p>📞 0548979</p>
         <!-- Email address -->
-        <p>📧 saudi.culture@project.com</p>
+        <p>📧 maorooth.culture@project.com</p>
         <!-- Physical location -->
-        <p>📍 Riyadh, Saudi Arabia</p>
+        <p>📍 Makkah, Saudi Arabia</p>
         <!-- End of footer section -->
     </footer>
 
@@ -227,37 +227,12 @@
             // Add 'reveal' base class to all elements early for CSS transitions
             elements.forEach(el => el.classList.add('reveal'));
 
-<<<<<<< Updated upstream
             // If user prefers reduced motion, immediately show everything for accessibility
             if (prefersReduced) {
                 // Immediately show everything for accessibility
                 elements.forEach(el => el.classList.add('in-view'));
                 return;
             }
-=======
-    <!-- Events image container -->
-    <div class="mini-events">
-        <!-- Events image of Saudi Arabia -->
-        <img src="images/فعاليات.jpg" alt="Events of saudi arabia">
-    </div>
-<!-- End of mini Events section -->
-</div>
-
-<!-- Footer section with copyright and contact information -->
-<footer>
-    <!-- Copyright notice and website name -->
-    <p>Mawrooth Website (Saudi Culture) © 2025</p>
-    <!-- Contact Us heading -->
-    <p>Contact Us:</p>
-    <!-- Phone number -->
-    <p>📞 0000 000 000</p>
-    <!-- Email address -->
-    <p>📧 saudi.culture@project.com</p>
-    <!-- Physical location -->
-    <p>📍 Riyadh, Saudi Arabia</p>
-<!-- End of footer section -->
-</footer>
->>>>>>> Stashed changes
 
             // Create intersection observer to detect when elements come into view
             const io = new IntersectionObserver((entries, obs) => {
@@ -281,27 +256,8 @@
                         // Stop observing this element
                         obs.unobserve(el);
                     }
-<<<<<<< Updated upstream
                 });
             }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-=======
-                    // Add 'in-view' class to trigger animation
-                    el.classList.add('in-view');
-                    // Stop observing this element
-                    obs.unobserve(el);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-        // Start observing all selected elements
-        elements.forEach(el => io.observe(el));
-    })();
-<!-- End of scroll reveal script -->
-</script>    
-</body>
-</html> 
-
->>>>>>> Stashed changes
 
             // Start observing all selected elements
             elements.forEach(el => io.observe(el));
