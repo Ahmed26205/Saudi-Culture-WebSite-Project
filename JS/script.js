@@ -6,7 +6,7 @@ function toggleMobileMenu() {
 
 // Initialize mobile menu button
 document.addEventListener('DOMContentLoaded', () => {
-    // Create and add mobile menu button
+
     const header = document.getElementById('mainHeader');
     const mobileMenuBtn = document.createElement('button');
     mobileMenuBtn.className = 'mobile-menu-btn';
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <span></span>
         <span></span>
     `;
-    
-    // Insert before nav
+
+    // Insert button before nav
     const nav = header.querySelector('nav');
     header.insertBefore(mobileMenuBtn, nav);
 
@@ -26,18 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        const nav = document.querySelector('#mainHeader nav');
-        const mobileBtn = document.querySelector('.mobile-menu-btn');
-        
-        if (!nav.contains(e.target) && !mobileBtn.contains(e.target) && nav.classList.contains('active')) {
+        if (!nav.contains(e.target) &&
+            !mobileMenuBtn.contains(e.target) &&
+            nav.classList.contains('active')) {
+
             nav.classList.remove('active');
         }
     });
 
-    // Close menu when window is resized above mobile breakpoint
-    window.addEventListener('resize', () => {
+    // Show/Hide the button depending on screen size
+    function handleMenuDisplay() {
         if (window.innerWidth > 768) {
-            document.querySelector('#mainHeader nav').classList.remove('active');
+            mobileMenuBtn.style.display = "none";   // إخفاء الزر
+            nav.classList.remove('active');         // إغلاق القائمة
+        } else {
+            mobileMenuBtn.style.display = "block";  // إظهار الزر
         }
-    });
+    }
+
+    // Apply at load
+    handleMenuDisplay();
+
+    // Apply when resizing window
+    window.addEventListener('resize', handleMenuDisplay);
 });
