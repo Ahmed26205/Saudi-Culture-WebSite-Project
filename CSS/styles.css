@@ -8,6 +8,41 @@
 */
 
 :root {
+<<<<<<< HEAD
+    /* Colors */
+    --color-text: #0e6b4e;
+    --color-accent: #0e6b4e;
+    --color-bg: #f5f5f5;
+    --color-bg-accent: #e0e0e0;
+    --color-bg-dark: #333;
+    --color-text-light: #fff;
+    --saudi-gold: #c9a44f;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.6s ease;
+
+    /* Sizing */
+    --border-radius: 8px;
+    --border-radius-lg: 16px;
+    --header-height: 80px;
+    --container-padding: 1rem;
+
+    /* Fonts */
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --font-heading: 'Outfit', system-ui, sans-serif;
+    --font-ar: 'Almarai', 'Cairo', 'Noto Naskh Arabic', system-ui, sans-serif;
+}
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+=======
     --accent: #0e6b4e;
     --accent-light: #d4b265;
     --bg: #f5f5f5;
@@ -30,6 +65,7 @@ html[dir="rtl"] {
 
 html[dir="ltr"] {
     font-family: "Inter", sans-serif;
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
 }
 
 
@@ -48,8 +84,42 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+<<<<<<< HEAD
+html[dir="rtl"] {
+    font-family: var(--font-ar);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: currentColor;
+    margin: 5px 0;
+    transition: var(--transition-fast);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+=======
 h1, h2, h3 {
     font-family: "Cairo", sans-serif;
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
     font-weight: 700;
     font-size:larger ;
 }
@@ -138,6 +208,10 @@ button,
     height: 42px;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
+    color: white;
+    background: rgba(0, 0, 0, 0.65);
+=======
     justify-content: center;
     border: 2px solid var(--accent);
     background: transparent;
@@ -162,6 +236,7 @@ button,
     justify-content: center;
     color: var(--white);
     text-align: center;
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
     overflow: hidden;
 }
 .bg-video {
@@ -202,6 +277,99 @@ button,
 
 }
 
+<<<<<<< HEAD
+/* Cards grid layout | تخطيط شبكة البطاقات */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 var(--container-padding);
+    justify-items: center;
+}
+
+/* Individual card styling | أنماط البطاقة الفردية */
+.card {
+    background: white;
+    width: 100%;
+    max-width: 300px;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card hover effect | تأثير البطاقة عند التمرير */
+.card:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 8px 24px rgba(14, 107, 78, 0.25);
+    z-index: 1;
+}
+
+/* Card image | صورة البطاقة */
+.card img {
+    width: 100%;
+    height: 180px;
+    background: #eee;
+    border-radius: calc(var(--border-radius) - 4px);
+    margin-bottom: 1rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Card image hover | صورة البطاقة عند التمرير */
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card heading | عنوان البطاقة */
+.card h3 {
+    font-size: 1.25rem;
+    margin: 0.75rem 0;
+    color: var(--color-accent);
+}
+
+/* Card button/link | زر/رابط البطاقة */
+.card .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    border: 2px solid currentColor;
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+/* Card button hover | زر البطاقة عند التمرير */
+.card:hover .button {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+}
+
+/* events section | قسم الفعاليات */
+.mini-events-section {
+    background-color: white;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 3rem var(--container-padding);
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 2fr);
+    gap: 1rem;
+    align-items: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Left content of events section | محتوى اليسار في قسم الفعاليات */
+.mini-events-section>div:first-child {
+=======
 /* تحسين شكل صندوق البحث */
 .search-section {
     margin-top: 1.8rem;
@@ -209,6 +377,7 @@ button,
     background: rgba(255,255,255,0.12);
     backdrop-filter: blur(12px);
     border-radius: var(--radius);
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
     display: flex;
     flex-direction: column;
     gap: 1rem; /* مسافة منظمة بين العناصر */
@@ -395,7 +564,34 @@ footer {
     .mini-events img {
         width: 100%;
         height: auto;
+<<<<<<< HEAD
+    }
+}
+
+/* Footer | التذييل */
+footer {
+    background: white;
+    padding: 3rem var(--container-padding);
+    text-align: center;
+    margin-top: 4rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, .06);
+}
+
+/* Footer paragraph styling | أنماط فقرات التذييل */
+footer p {
+    margin: 0.5rem 0;
+    color: var(--color-text);
+}
+
+/* Mobile Menu Toggle | تبديل قائمة الهاتف */
+@media (max-width: 768px) {
+
+    /* Show mobile menu button | عرض زر قائمة الهاتف */
+    .mobile-menu-btn {
+        display: block;
+=======
         border-radius: var(--radius);
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
     }
 
     /* تحسين شبكة البطاقات */
@@ -411,3 +607,73 @@ footer {
     }
    
 }
+<<<<<<< HEAD
+
+/* Print styles - hide video, adjust colors */
+@media print {
+    .full-video-hero video {
+        display: none;
+    }
+
+    body {
+        color: black;
+        background: white;
+    }
+
+    a {
+        color: var(--color-accent) !important;
+    }
+}
+
+/* Scroll reveal animations | حركات الكشف عند التمرير */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px) scale(.995);
+    transition: opacity var(--transition-fast),
+        transform var(--transition-fast);
+    will-change: transform, opacity;
+    transition-delay: var(--delay, 0ms);
+}
+
+/* Reveal visible state | حالة الظهور المرئية */
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Reveal animation variants | متغيرات حركات الكشف */
+.hero-content.reveal {
+    transform: translateY(8px);
+}
+
+.section-title.reveal {
+    transform: translateY(6px) scale(.995);
+}
+
+.card.reveal {
+    transform: translateY(12px) scale(.99);
+}
+
+/* Accessibility: respect reduced motion preferences | إمكانية الوصول: احترام تفضيلات الحركة المخفضة */
+@media (prefers-reduced-motion: reduce) {
+
+    /* Disable animations for accessibility | تعطيل الحركات لإمكانية الوصول */
+    .reveal,
+    .reveal.in-view,
+    .full-video-hero .hero-content,
+    .card,
+    .mini-map,
+    #mainHeader {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Disable all animations globally | تعطيل جميع الحركات بشكل عام */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+=======
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae

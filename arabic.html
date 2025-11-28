@@ -11,6 +11,240 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- عنوان الصفحة يظهر في لسان المتصفح -->
     <title>SaudiCulture - الصفحة الرئيسية (عربي)</title>
+<<<<<<< HEAD
+
+    <!-- استيراد خطوط جوجل: Inter (للإنجليزية)، Outfit (للعناوين)، Almarai (للعربية) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- ربط ملف CSS الخارجي للتنسيقات -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- تحميل ملف JavaScript الخارجي مع تأجيل التحميل إلى بعد تحميل HTML -->
+    <script src="/JS/script.js" defer></script>
+    <!-- نهاية قسم رأس الصفحة -->
+</head>
+<!-- بداية محتوى الصفحة الرئيسية -->
+
+<body>
+    <!-- شريط الرأس يحتوي على الشعار والتنقل -->
+    <header id="mainHeader">
+        <!-- حاوية الشعار الذي يحتوي على صورة الشعار -->
+        <div class="logo">
+            <!-- صورة شعار موقع SaudiCulture -->
+            <img src="images/Logo.png" alt=" SaudiCulture">
+        </div>
+        <!-- قائمة التنقل الرئيسية للموقع -->
+        <nav>
+            <!-- رابط الصفحة الرئيسية -->
+            <a href="arabic.html">الرئيسية</a>
+            <!-- رابط قسم التاريخ -->
+            <a href="history_ar.html">التاريخ</a>
+            <!-- رابط قسم التقاليد -->
+            <a href="traditions_ar.html">التقاليد</a>
+            <!-- رابط قسم الطعام -->
+            <a href="food_ar.html">الطعام</a>
+            <!-- رابط قسم الفنون -->
+            <a href="arts_ar.html">الفنون</a>
+            <!-- رابط قسم المهرجانات الثقافية -->
+            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
+            <!-- رابط قسم الاختبار -->
+            <a href="quiz_ar.html">الاختبار</a>
+            <!-- رابط قسم اتصل بنا -->
+            <a href="Contact_ar.html">اتصل بنا</a>
+            <!-- زر تسجيل الدخول لمصادقة المستخدم -->
+            <button class="login-btn"><a href="PHP/login_ar.php"></a>تسجيل الدخول</button>
+            <!-- زر إنشاء حساب للمستخدمين الجدد -->
+            <button class="signup-btn"><a href="PHP/signup_ar.php"></a>إنشاء حساب</button>
+            <!-- زر تبديل اللغة للتبديل إلى الإنجليزية (بشكل كروي) -->
+            <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
+        </nav>
+        <!-- نهاية قسم الرأس -->
+    </header>
+
+    <section class="hero full-video-hero">
+        <!-- فيديو الخلفية -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="videos/Journey through time.mov" type="video/mp4">
+        </video>
+
+        <!-- محتوى الصورة البطلية الرئيسي -->
+        <div class="hero-content">
+            <h1>موروث</h1>
+            <p>موقع تفاعلي يسلط الضوء على الموروث الثقافي في المملكة العربية السعودية.</p>
+            <p>ابدأ رحلتك الآن....</p>
+
+            <!-- أزرار الإجراءات الرئيسية -->
+            <div class="action-buttons">
+                <input type="button" value="استكشاف الثقافة">
+                <input type="button" value="ابدأ الاختبار">
+            </div>
+
+            <!-- قسم البحث والتصفية -->
+            <div class="search-section">
+                <!-- حقل البحث -->
+                <input type="search" name="q" id="mySearch" placeholder="ابحث عن أطباق، مهرجانات،اثار..."
+                    aria-label="بحث المحتوى"> <br><br>
+
+                <!-- قائمة التصفية حسب الفئة -->
+                <select aria-label="تصفية نتائج البحث">
+                    <option value="all">كل الفئات</option>
+                    <option value="food">الطعام التقليدي</option>
+                    <option value="traditions">التقاليد الثقافية</option>
+                    <option value="history">التاريخ والحضارات</option>
+                    <option value="arts"> الفنون التراثية</option>
+                    <option value="events">الفعاليات الثقافية</option>
+                </select>
+
+                <!-- زر البحث -->
+                <button type="submit">
+                    بحث
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title">الأقسام المميزة</h2>
+
+    <!-- شبكة البطاقات -->
+    <div class="cards">
+        <!-- بطاقة الطعام التقليدي -->
+        <div class="card">
+            <img src="images/8-chicken-kabsa-web.jpg" alt="الطعام التقليدي">
+            <h3>الطعام التقليدي</h3>
+            <a href="food_ar.html" class="button">عرض المزيد</a>
+        </div>
+
+        <!--  العادات -->
+        <div class="card">
+            <img src="images/tradtion.jpg" alt="التقاليد الثقافية">
+            <h3>العادات والتقاليد</h3>
+            <a href="traditions_ar.html" class="button">عرض المزيد</a>
+        </div>
+
+        <!-- بطاقة الفنون -->
+        <div class="card">
+            <img src="images/arda.jpg" alt="الفنون التراثية">
+            <h3>الفنون التراثية</h3>
+            <a href="arts_ar.html" class="button">عرض المزيد</a>
+        </div>
+
+        <!-- بطاقة الحضارات -->
+        <div class="card">
+            <img src="images/madain salah.jpg" alt="التاريخ والحضارات">
+            <h3>حضارات قديمة</h3>
+            <a href="history_ar.html" class="button">عرض المزيد</a>
+        </div>
+    </div>
+
+    <!-- عنوان قسم الفعاليات -->
+    <h2 class="section-title">اكتشف اكثر عن السعودية</h2>
+
+    <!-- قسم الفعاليات -->
+    <div class="mini-events-section">
+        <!-- النص والزر -->
+        <div>
+            <!-- وصف محتوى الفعاليات -->
+            <p>اكتشف ابرز الفعاليات الثقافية في أرجاء المملكة العربية السعودية.</p>
+            <!-- زر عرض الفعاليات -->
+            <button>عرض الفعاليات</button>
+        </div>
+
+        <!-- حاوية صورة الفعاليات -->
+        <div class="mini-events">
+            <!-- صورة الفعاليات في المملكة العربية السعودية -->
+            <img src="images/فعاليات.jpg" alt="Events of saudi arabia">
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة يحتوي على معلومات الاتصال -->
+    <footer>
+        <!-- حقوق النشر -->
+        <p>مشروع SaudiCulture © 2025</p>
+        <!-- عنوان معلومات التواصل -->
+        <p>تواصل معنا:</p>
+        <!-- رقم الهاتف -->
+        <p>📞 0000 000 000</p>
+        <!-- البريد الإلكتروني -->
+        <p>📧 saudi.culture@project.com</p>
+        <!-- العنوان الفعلي -->
+        <p>📍 الرياض، المملكة العربية السعودية</p>
+    </footer>
+
+    <!-- سكريبت الكشف عن الانقطاع (intersection observer) لتفعيل الرسوم المتحركة عند ظهور العناصر -->
+    <script>
+        // التحقق من تفضيل المستخدم للحد من الحركة لأسباب الوصول
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // دالة ذاتية التنفيذ لإعداد مراقب التقاطع
+        ; (function () {
+            // مصفوفة محددات CSS للعناصر التي يجب أن تحتوي على رسم متحرك للكشف عن الانقطاع
+            const selectors = ['.hero-content', '.section-title', '.card', '.mini-map', 'footer'];
+
+            // الحصول على جميع العناصر المطابقة من DOM
+            const elements = Array.from(document.querySelectorAll(selectors.join(',')));
+            // الخروج إذا لم يتم العثور على أي عناصر
+            if (!elements.length) return;
+
+            // إضافة فئة 'reveal' الأساسية إلى جميع العناصر مبكراً لتطبيق انتقالات CSS
+            elements.forEach(el => el.classList.add('reveal'));
+
+            // إذا كان المستخدم يفضل الحد من الحركة، أظهر كل شيء على الفور
+            if (prefersReduced) {
+                // إظهار كل شيء فوراً للوصول
+                elements.forEach(el => el.classList.add('in-view'));
+                return;
+            }
+
+            // إنشاء مراقب التقاطع للكشف عن متى تدخل العناصر إلى منطقة العرض
+            const io = new IntersectionObserver((entries, obs) => {
+                // حلقة عبر كل إدخال مراقب
+                entries.forEach(entry => {
+                    // التحقق من ما إذا كانت العنصر مرئية حالياً في منطقة العرض
+                    if (entry.isIntersecting) {
+                        // الحصول على العنصر الذي يتم مراقبته
+                        const el = entry.target;
+                        // تطبيق تأخير تدريجي صغير إذا كانت العنصر بطاقة
+                        if (el.classList.contains('card')) {
+                            // الحصول على جميع البطاقات الشقيقة
+                            const siblings = Array.from(el.parentElement.querySelectorAll('.card'));
+                            // حساب الفهرس بين الإخوة لتطبيق التدرج
+                            const idx = Math.max(0, siblings.indexOf(el));
+                            // ضبط متغير CSS لتأخير الرسم المتحرك المتدرج (90ms لكل بطاقة)
+                            el.style.setProperty('--delay', (idx * 90) + 'ms');
+                        }
+                        // إضافة فئة 'in-view' لتفعيل الرسم المتحرك
+                        el.classList.add('in-view');
+                        // التوقف عن مراقبة هذه العنصر
+                        obs.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+            // بدء مراقبة جميع العناصر المحددة
+            elements.forEach(el => io.observe(el));
+        })();
+        // نهاية سكريبت الكشف عن الانقطاع
+    </script>
+
+    <!-- سكريبت سلوك التمرير للرأس -->
+    <script>
+        // مستمع الحدث الذي يتم تفعيله عندما يتمرر المستخدم على الصفحة
+        window.addEventListener("scroll", () => {
+            // الحصول على عنصر الرأس الرئيسي برقم معرّف
+            const header = document.getElementById("mainHeader");
+
+            // التحقق من ما إذا كان موضع التمرير أكثر من 50 بكسل
+            if (window.scrollY > 50) {
+                // إضافة فئة 'scrolled' للحصول على نمط الخلفية المرئي
+                header.classList.add("scrolled");
+            } else {
+                // إزالة فئة 'scrolled' للحصول على رأس شفاف
+                header.classList.remove("scrolled");
+            }
+        });
+        // نهاية سكريبت التمرير
+    </script>
+=======
     <!-- ربط ملف CSS الخارجي للتنسيقات -->
     <link rel="stylesheet" href="CSS/styles.css">
     <!-- تحميل ملف JavaScript الخارجي مع تأجيل التحميل إلى بعد تحميل HTML -->
@@ -186,6 +420,7 @@
     </footer>
 
  
+>>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
 </body>
 
 </html>
