@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SaudiCulture</title>
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <div class="logo">
+            <!-- شعار الموقع -->
+            <img src="images/Logo.png" alt="SaudiCulture Logo">
+        </div>
+        <nav>
+            <!-- روابط الصفحات -->
+            <a href="index.html" class="signup-btn">Home</a>
+            <!-- زر انشاء الحساب -->
+            <button class="signup-btn" onclick="window.location='signup.html'">Sign Up</button>
+        </nav>
+    </header>
+    <!-- container لتسجيل الدخول -->
+    <div class="auth-container">
+        <h2>Welcome Back</h2>
+        <!-- فورم تسجيل الدخول -->
+        <form id="loginForm">
+            <!-- ادخال الايميل -->
+            <input type="email" id="email" placeholder="Email Address" required>
+            <!-- ادخال كلمة المرور -->
+            <input type="password" id="password" placeholder="Password" required>
+            <!-- زر تسجيل الدخول -->
+            <button type="submit" class="auth-btn">Login</button>
+            <!-- رابط الذهاب الى صفحة انشاء الحساب -->
+            <p>Don't have an account? <a href="signup.html">Create one</a></p>
+        </form>
+        <!-- رسالة نجاح/خطأ -->
+        <p id="message" class="msg"></p>
+    </div>
+    <!-- ربط ملف اعدادات Firebase -->
+    <script type="module" src="firebase-config.js"></script>
+    <script>window.pageLang = "en";</script>
+    <!-- ربط ملف الأكواد الخاص بتسجيل المستخدم -->
+    <script type="module" src="auth.js"></script>
+</body>
+
+</html>
