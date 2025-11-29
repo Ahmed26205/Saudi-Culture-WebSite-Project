@@ -1,135 +1,132 @@
-<!-- إعلان نوع المستند HTML5 -->
+<!-- ملف HTML رئيسي للواجهة العربية لموقع SaudiCulture -->
 <!DOCTYPE html>
-<!-- العنصر الجذر مع وسم اللغة العربية واتجاه النصوص من اليمين لليسار -->
+<!-- الصفحة باللغة العربية وباتجاه من اليمين لليسار -->
 <html lang="ar" dir="rtl">
-<!-- رأس الصفحة يحتوي على بيانات التعريف والمراجع -->
 
 <head>
-    <!-- تحديد ترميز الأحرف UTF-8 لدعم النصوص العربية -->
+    <!-- ترميز يدعم اللغة العربية -->
     <meta charset="UTF-8" />
-    <!-- إعدادات منفذ العرض للتصميم المتجاوب على الهواتف الذكية -->
+    <!-- ضبط العرض ليكون متجاوباً مع شاشات الجوال -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- عنوان الصفحة يظهر في لسان المتصفح -->
+    <!-- عنوان الصفحة في شريط المتصفح -->
     <title>SaudiCulture - الصفحة الرئيسية (عربي)</title>
 
-    <!-- استيراد خطوط جوجل: Inter (للإنجليزية)، Outfit (للعناوين)، Almarai (للعربية) -->
+    <!-- استيراد خطوط جوجل: Inter (إنجليزي) Outfit (عناوين) Almarai (عربي) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!-- ربط ملف CSS الخارجي للتنسيقات -->
+    <!-- ربط ملف التنسيقات الخارجية للموقع -->
     <link rel="stylesheet" href="CSS/styles.css">
-    <!-- تحميل ملف JavaScript الخارجي مع تأجيل التحميل إلى بعد تحميل HTML -->
+    <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="/JS/script.js" defer></script>
-    <!-- نهاية قسم رأس الصفحة -->
 </head>
-<!-- بداية محتوى الصفحة الرئيسية -->
 
 <body>
-    <!-- شريط الرأس يحتوي على الشعار والتنقل -->
+    <!-- شريط علوي (Header) يحتوي الشعار والقائمة الرئيسية -->
     <header id="mainHeader">
-        <!-- حاوية الشعار الذي يحتوي على صورة الشعار -->
+        <!-- شعار الموقع -->
         <div class="logo">
-            <!-- صورة شعار موقع SaudiCulture -->
-            <img src="images/Logo.png" alt=" SaudiCulture">
+            <img src="images/Logo.png" alt="SaudiCulture">
         </div>
-        <!-- قائمة التنقل الرئيسية للموقع -->
+
+        <!-- قائمة التنقل الرئيسية للصفحات العربية -->
         <nav>
-            <!-- رابط الصفحة الرئيسية -->
             <a href="arabic.html">الرئيسية</a>
-            <!-- رابط قسم التاريخ -->
             <a href="history_ar.html">التاريخ</a>
-            <!-- رابط قسم التقاليد -->
             <a href="traditions_ar.html">التقاليد</a>
-            <!-- رابط قسم الطعام -->
             <a href="food_ar.html">الطعام</a>
-            <!-- رابط قسم الفنون -->
             <a href="arts_ar.html">الفنون</a>
-            <!-- رابط قسم المهرجانات الثقافية -->
             <a href="culture_events_ar.html">الفعاليات الثقافية</a>
-            <!-- رابط قسم الاختبار -->
             <a href="quiz_ar.html">الاختبار</a>
-            <!-- رابط قسم اتصل بنا -->
             <a href="Contact_ar.html">اتصل بنا</a>
-            <!-- زر تسجيل الدخول لمصادقة المستخدم -->
-            <button class="login-btn" class="signup-btn" onclick="window.location.href='login_ar.html'">تسجيل
-                الدخول</button>
-            <!-- زر إنشاء حساب للمستخدمين الجدد -->
-            <button class="signup-btn" class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء
-                حساب</button>
-            <!-- زر تبديل اللغة للتبديل إلى الإنجليزية (بشكل كروي) -->
-            <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
+
+            <!-- مجموعة الأزرار (تسجيل الدخول – إنشاء حساب – تغيير اللغة) -->
+            <div class="nav-buttons">
+                <!-- زر تسجيل الدخول -->
+                <button class="login-btn" onclick="window.location.href='login_ar.html'">
+                    تسجيل الدخول
+                </button>
+                <!-- زر إنشاء حساب جديد -->
+                <button class="signup-btn" onclick="window.location.href='signup_ar.html'">
+                    إنشاء حساب
+                </button>
+                <!-- زر التبديل إلى النسخة الإنجليزية -->
+                <button class="lang-btn" onclick="window.location.href='index.html'">
+                    EN
+                </button>
+            </div>
         </nav>
-        <!-- نهاية قسم الرأس -->
     </header>
 
-    <section class="hero full-video-hero">
-        <!-- فيديو الخلفية -->
+    <!-- قسم العرض الرئيسي (فيديو الخلفية + العنوان + الأزرار + البحث) -->
+    <section class="main-visual-section">
+        <!-- فيديو الخلفية في أعلى الصفحة -->
         <video autoplay muted loop playsinline class="bg-video">
             <source src="videos/Journey through time.mov" type="video/mp4">
         </video>
 
-        <!-- محتوى الصورة البطلية الرئيسي -->
-        <div class="hero-content">
+        <!-- محتوى النصوص والأزرار فوق الفيديو -->
+        <div class="main-visual-content">
             <h1>موروث</h1>
             <p>موقع تفاعلي يسلط الضوء على الموروث الثقافي في المملكة العربية السعودية.</p>
             <p>ابدأ رحلتك الآن....</p>
 
-            <!-- أزرار الإجراءات الرئيسية -->
+            <!-- أزرار الإجراءات الرئيسية في الهيرو -->
             <div class="action-buttons">
                 <input type="button" value="استكشاف الثقافة">
                 <input type="button" value="ابدأ الاختبار">
             </div>
 
-            <!-- قسم البحث والتصفية -->
+            <!-- نموذج البحث عن محتوى ثقافي -->
             <div class="search-section">
-                <!-- حقل البحث -->
-                <input type="search" name="q" id="mySearch" placeholder="ابحث عن أطباق، مهرجانات،اثار..."
+                <!-- حقل إدخال نص للبحث -->
+                <input type="search" name="q" id="mySearch"
+                    placeholder="ابحث عن أطباق، مهرجانات، آثار..."
                     aria-label="بحث المحتوى"> <br><br>
 
-                <!-- قائمة التصفية حسب الفئة -->
+                <!-- قائمة لاختيار نوع المحتوى المراد البحث فيه -->
                 <select aria-label="تصفية نتائج البحث">
                     <option value="all">كل الفئات</option>
                     <option value="food">الطعام التقليدي</option>
                     <option value="traditions">التقاليد الثقافية</option>
                     <option value="history">التاريخ والحضارات</option>
-                    <option value="arts"> الفنون التراثية</option>
+                    <option value="arts">الفنون التراثية</option>
                     <option value="events">الفعاليات الثقافية</option>
                 </select>
 
-                <!-- زر البحث -->
-                <button type="submit">
-                    بحث
-                </button>
+                <!-- زر تنفيذ عملية البحث -->
+                <button type="submit">بحث</button>
             </div>
         </div>
     </section>
 
+    <!-- عنوان لقسم البطاقات المميزة -->
     <h2 class="section-title">الأقسام المميزة</h2>
 
-    <!-- شبكة البطاقات -->
+    <!-- شبكة بطاقات تعرض أهم أقسام الموقع -->
     <div class="cards">
-        <!-- بطاقة الطعام التقليدي -->
+        <!-- بطاقة: الطعام التقليدي -->
         <div class="card">
             <img src="images/8-chicken-kabsa-web.jpg" alt="الطعام التقليدي">
             <h3>الطعام التقليدي</h3>
             <a href="food_ar.html" class="button">عرض المزيد</a>
         </div>
 
-        <!--  العادات -->
+        <!-- بطاقة: العادات والتقاليد -->
         <div class="card">
             <img src="images/tradtion.jpg" alt="التقاليد الثقافية">
             <h3>العادات والتقاليد</h3>
             <a href="traditions_ar.html" class="button">عرض المزيد</a>
         </div>
 
-        <!-- بطاقة الفنون -->
+        <!-- بطاقة: الفنون التراثية -->
         <div class="card">
             <img src="images/arda.jpg" alt="الفنون التراثية">
             <h3>الفنون التراثية</h3>
             <a href="arts_ar.html" class="button">عرض المزيد</a>
         </div>
 
-        <!-- بطاقة الحضارات -->
+        <!-- بطاقة: الحضارات القديمة -->
         <div class="card">
             <img src="images/madain salah.jpg" alt="التاريخ والحضارات">
             <h3>حضارات قديمة</h3>
@@ -137,125 +134,86 @@
         </div>
     </div>
 
-    <!-- عنوان قسم الفعاليات -->
-    <h2 class="section-title">اكتشف اكثر عن السعودية</h2>
+    <!-- عنوان قسم استكشاف الفعاليات -->
+    <h2 class="section-title">اكتشف أكثر عن السعودية</h2>
 
-    <!-- قسم الفعاليات -->
+    <!-- قسم الفعاليات الثقافية (نص + زر + صورة) -->
     <div class="mini-events-section">
-        <!-- النص والزر -->
+        <!-- نص تعريفي وزر عرض الفعاليات -->
         <div>
-            <!-- وصف محتوى الفعاليات -->
-            <p>اكتشف ابرز الفعاليات الثقافية في أرجاء المملكة العربية السعودية.</p>
-            <!-- زر عرض الفعاليات -->
+            <p>اكتشف أبرز الفعاليات الثقافية في أرجاء المملكة العربية السعودية.</p>
             <button>عرض الفعاليات</button>
         </div>
 
-        <!-- حاوية صورة الفعاليات -->
+        <!-- صورة تمثل خريطة أو فعاليات في المملكة -->
         <div class="mini-events">
-            <!-- صورة الفعاليات في المملكة العربية السعودية -->
-            <img src="images/فعاليات.jpg" alt="Events of saudi arabia">
+            <img src="images/فعاليات.jpg" alt="فعاليات المملكة العربية السعودية">
         </div>
     </div>
 
-    <!-- تذييل الصفحة يحتوي على معلومات الاتصال -->
-    <footer>
-        <!-- حقوق النشر -->
-        <p>مشروع SaudiCulture © 2025</p>
-        <!-- عنوان معلومات التواصل -->
-        <p>تواصل معنا:</p>
-        <!-- رقم الهاتف -->
-        <p>📞 0000 000 000</p>
-        <!-- البريد الإلكتروني -->
-        <p>📧 saudi.culture@project.com</p>
-        <!-- العنوان الفعلي -->
-        <p>📍 مكة، المملكة العربية السعودية</p>
-    </footer>
+    <!-- تذييل الصفحة: حقوق النشر وبيانات التواصل -->
+<footer class="footer">
+    <div class="footer-container">
 
-    <!-- سكريبت الكشف عن الانقطاع (intersection observer) لتفعيل الرسوم المتحركة عند ظهور العناصر -->
+        <!-- Left: logo + brief -->
+        <div class="footer-about">
+            <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+            <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
+        </div>
+
+        <!-- Middle: quick links -->
+        <div class="footer-links">
+            <h4>روابط سريعة</h4>
+            <a href="arabic.html">الرئيسية</a>
+            <a href="history_ar.html">التاريخ</a>
+            <a href="traditions_ar.html">التقاليد</a>
+            <a href="food_ar.html">الطعام</a>
+            <a href="Contact_ar.html">اتصل بنا</a>
+        </div>
+
+        <!-- Right: contact info -->
+        <div class="footer-contact">
+            <h4>تواصل معنا</h4>
+            <p>📞 +966554731708</p>
+            <p>📧 mawrooth@gmail.com</p>
+            <p>📍 مكة، المملكة العربية السعودية</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <!-- سكربت تغيير شكل الهيدر عند التمرير (إضافة/إزالة فئة scrolled) -->
     <script>
-        // التحقق من تفضيل المستخدم للحد من الحركة لأسباب الوصول
-        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        // دالة ذاتية التنفيذ لإعداد مراقب التقاطع
-        ; (function () {
-            // مصفوفة محددات CSS للعناصر التي يجب أن تحتوي على رسم متحرك للكشف عن الانقطاع
-            const selectors = ['.hero-content', '.section-title', '.card', '.mini-map', 'footer'];
-
-            // الحصول على جميع العناصر المطابقة من DOM
-            const elements = Array.from(document.querySelectorAll(selectors.join(',')));
-            // الخروج إذا لم يتم العثور على أي عناصر
-            if (!elements.length) return;
-
-            // إضافة فئة 'reveal' الأساسية إلى جميع العناصر مبكراً لتطبيق انتقالات CSS
-            elements.forEach(el => el.classList.add('reveal'));
-
-            // إذا كان المستخدم يفضل الحد من الحركة، أظهر كل شيء على الفور
-            if (prefersReduced) {
-                // إظهار كل شيء فوراً للوصول
-                elements.forEach(el => el.classList.add('in-view'));
-                return;
-            }
-
-            // إنشاء مراقب التقاطع للكشف عن متى تدخل العناصر إلى منطقة العرض
-            const io = new IntersectionObserver((entries, obs) => {
-                // حلقة عبر كل إدخال مراقب
-                entries.forEach(entry => {
-                    // التحقق من ما إذا كانت العنصر مرئية حالياً في منطقة العرض
-                    if (entry.isIntersecting) {
-                        // الحصول على العنصر الذي يتم مراقبته
-                        const el = entry.target;
-                        // تطبيق تأخير تدريجي صغير إذا كانت العنصر بطاقة
-                        if (el.classList.contains('card')) {
-                            // الحصول على جميع البطاقات الشقيقة
-                            const siblings = Array.from(el.parentElement.querySelectorAll('.card'));
-                            // حساب الفهرس بين الإخوة لتطبيق التدرج
-                            const idx = Math.max(0, siblings.indexOf(el));
-                            // ضبط متغير CSS لتأخير الرسم المتحرك المتدرج (90ms لكل بطاقة)
-                            el.style.setProperty('--delay', (idx * 90) + 'ms');
-                        }
-                        // إضافة فئة 'in-view' لتفعيل الرسم المتحرك
-                        el.classList.add('in-view');
-                        // التوقف عن مراقبة هذه العنصر
-                        obs.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-            // بدء مراقبة جميع العناصر المحددة
-            elements.forEach(el => io.observe(el));
-        })();
-        // نهاية سكريبت الكشف عن الانقطاع
-    </script>
-
-    <!-- سكريبت سلوك التمرير للرأس -->
-    <script>
-        // مستمع الحدث الذي يتم تفعيله عندما يتمرر المستخدم على الصفحة
         window.addEventListener("scroll", () => {
-            // الحصول على عنصر الرأس الرئيسي برقم معرّف
             const header = document.getElementById("mainHeader");
-
-            // التحقق من ما إذا كان موضع التمرير أكثر من 50 بكسل
             if (window.scrollY > 50) {
-                // إضافة فئة 'scrolled' للحصول على نمط الخلفية المرئي
                 header.classList.add("scrolled");
             } else {
-                // إزالة فئة 'scrolled' للحصول على رأس شفاف
                 header.classList.remove("scrolled");
             }
         });
     </script>
+
+    <!-- سكربت مراقبة حالة تسجيل الدخول من Firebase وتحديث القائمة حسب المستخدم -->
     <script type="module">
         import { auth } from "./firebase-config.js";
         import { onAuthStateChanged }
             from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-        // نراقب حالة المستخدم إذا كان مسجل دخول
+
+        // مراقبة حالة المستخدم (مسجل دخول أو لا)
         onAuthStateChanged(auth, (user) => {
             const nav = document.querySelector("nav");
 
             if (user) {
-                // اذا المستحدم مسجل دخول
+                // إذا كان المستخدم مسجل دخول
                 const name = user.displayName || "مستخدم";
-                // نحذف ازرار تسجيل الدحول وانشاء الحساب
+
+                // استبدال روابط التنقل لعرض اسم المستخدم وزر تسجيل الخروج
                 nav.innerHTML = `
             <a href="arabic.html">الرئيسية</a>
             <a href="history_ar.html">التاريخ</a>
@@ -265,11 +223,12 @@
             <a href="culture_events_ar.html">الفعاليات الثقافية</a>
             <a href="quiz_ar.html">الاختبار</a>
             <a href="Contact_ar.html">اتصل بنا</a>
-            <span class="user-name"> ${name}</span>
+            <span class="user-name">${name}</span>
             <button id="logoutBtn" class="login-btn">تسجيل الخروج</button>
             <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
         `;
-                // اضافة زر تسجيل الخروح
+
+                // عند الضغط على زر تسجيل الخروج
                 document.getElementById("logoutBtn").addEventListener("click", () => {
                     auth.signOut().then(() => {
                         window.location.href = "login_ar.html";
@@ -278,7 +237,6 @@
             }
         });
     </script>
-
 
 </body>
 

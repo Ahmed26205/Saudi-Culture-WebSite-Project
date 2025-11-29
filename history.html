@@ -1,0 +1,291 @@
+<!-- HTML5 document type declaration -->
+<!DOCTYPE html>
+<!-- English History page for SaudiCulture -->
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Responsive viewport settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Browser tab title -->
+    <title>SaudiCulture - History</title>
+
+    <!-- Google Fonts (same as home page) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- Global site script -->
+    <script src="/JS/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Top header bar shared across pages -->
+    <header id="mainHeader">
+        <!-- Site logo -->
+        <div class="logo">
+            <img src="images/Logo.png" alt="SaudiCulture Logo" />
+        </div>
+
+        <!-- Main navigation menu -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="traditions.html">Traditions</a>
+            <a href="food.html">Food</a>
+            <a href="arts.html">Arts</a>
+            <a href="culture_events.html">Cultural events</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="Contact.html">Contact us</a>
+
+            <!-- Auth + language buttons -->
+            <div class="nav-buttons">
+                <button class="login-btn" onclick="window.location.href='login.html'">
+                    Login
+                </button>
+                <button class="signup-btn" onclick="window.location.href='signup.html'">
+                    Sign Up
+                </button>
+                <button class="lang-btn" onclick="window.location.href='history_ar.html'">
+                    AR
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content area for the History page -->
+    <main>
+ 
+       <!-- Intro section -->
+<section class="main-visual-section">
+<div class="history-intro" style="padding: 7rem 1rem 3rem; max-width: 900px; margin: 0 auto;">
+    <h1 style="text-align:center; margin-bottom:1rem;">Historical Features of Saudi Arabia</h1>
+    <p style="text-align:center; line-height:1.7;">
+        Saudi Arabia has a rich history shaped by ancient civilizations, trade routes, and the rise of Islam.
+        This page highlights key eras and landmarks that shaped the Kingdom.
+    </p>
+</div>
+      <!-- Background looping video -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="videos/history travel.mp4" type="video/mp4">
+        </video>
+</section>
+
+<!-- Timeline section -->
+<h2 class="section-title">Main Historical Eras</h2>
+
+<section class="history-timeline">
+    <!-- Step 1 -->
+    <div class="timeline-item" data-step="1">
+        <!-- image left -->
+        <div class="timeline-image">
+            <img src="images/madain salah.jpg" alt="Pre-Islamic Arabia">
+        </div>
+        <!-- text right -->
+        <div class="timeline-content">
+            <span class="era-label">Before Islam</span>
+            <h3>Pre-Islamic Arabia</h3>
+            <p>
+                The Arabian Peninsula was home to ancient civilizations, oases, and caravan routes that connected
+                Arabia with the Levant, Mesopotamia, and other regions through trade.
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="timeline-item" data-step="2">
+        <!-- text left -->
+        <div class="timeline-content">
+            <span class="era-label">7th Century CE</span>
+            <h3>Early Islamic Era</h3>
+            <p>
+                In the 7th century, Islam emerged in Makkah and Madinah, transforming the region into a spiritual and
+                cultural center for Muslims around the world.
+            </p>
+        </div>
+        <!-- image right -->
+        <div class="timeline-image">
+            <img src="images/after islam.jpg" alt="Early Islamic era">
+        </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="timeline-item" data-step="3">
+        <div class="timeline-image">
+            <img src="images/new saudi.jpeg" alt="Diriyah and the Saudi states">
+        </div>
+        <div class="timeline-content">
+            <span class="era-label">18th–19th Century</span>
+            <h3>The Saudi States</h3>
+            <p>
+                Beginning in Diriyah, the Saudi states laid the foundation for unity, stability, and governance in
+                central Arabia, shaping the political history of the region.
+            </p>
+        </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="timeline-item" data-step="4">
+        <div class="timeline-content">
+            <span class="era-label">20th Century – Today</span>
+            <h3>Modern Saudi Arabia</h3>
+            <p>
+                The Kingdom was unified under King Abdulaziz Al Saud and continues to develop through ambitious
+                national visions that balance heritage and modernity.
+            </p>
+        </div>
+        <div class="timeline-image">
+            <img src="images/saudia.jpg" alt="Modern Saudi Arabia">
+        </div>
+    </div>
+</section>
+
+
+        <!-- Section: historical regions & landmarks -->
+        <section>
+            <h2 class="section-title">Historical Regions and Landmarks</h2>
+
+            <div class="cards">
+                <!-- Central Region -->
+                <div class="card">
+                    <img src="images/historical-dir-iyahh.jpg" alt="Diriyah" />
+                    <h3>Central Region</h3>
+                    <p>
+                        Known for Diriyah and Riyadh, the central region represents the political and historical heart
+                        of the Saudi state.
+                    </p>
+                </div>
+
+                <!-- Western Region -->
+                <div class="card">
+                    <img src="images/madinaold.jpg" alt="Makkah and Madinah" />
+                    <h3>Western Region</h3>
+                    <p>
+                        Home to Makkah and Madinah, this region has been a spiritual destination for millions of
+                        pilgrims over centuries.
+                    </p>
+                </div>
+
+                <!-- Northern/North-western Region -->
+                <div class="card">
+                    <img src="images/old history.jpg" alt="AlUla and Madain Saleh" />
+                    <h3>North & Northwest</h3>
+                    <p>
+                        Featuring sites like AlUla and Madain Saleh, this area preserves traces of Nabatean and other
+                        ancient cultures.
+                    </p>
+                </div>
+
+                <!-- Eastern/Southern Region -->
+                <div class="card">
+                    <img src="images/rijal alma.jpg" alt="Eastern and Southern heritage" />
+                    <h3>East & South</h3>
+                    <p>
+                        Rich in coastal, desert, and mountain heritage, these regions reflect diverse lifestyles and
+                        traditional architecture.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optional: small “did you know?” facts section -->
+        <section style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem 4rem;">
+            <h2 class="section-title">Did You Know?</h2>
+            <ul style="line-height: 1.8;">
+                <li>Saudi Arabia hosts some of the oldest known trade routes in the Arabian Peninsula.</li>
+                <li>Diriyah is recognized as a UNESCO World Heritage Site for its historical significance.</li>
+                <li>Makkah and Madinah have welcomed pilgrims from all over the world for centuries.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Shared footer section -->
+<!-- Shared footer for English pages -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left: logo + short description -->
+        <div class="footer-about">
+            <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+            <p>
+                <strong>SaudiCulture</strong> is a digital window into the rich history,
+                heritage, and cultural diversity of Saudi Arabia.
+            </p>
+        </div>
+
+        <!-- Middle: quick navigation links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="traditions.html">Traditions</a>
+            <a href="food.html">Food</a>
+            <a href="arts.html">Arts</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+
+        <!-- Right: contact information -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>📞 +966554731708</p>
+            <p>📧 mawrooth@gmail.com</p>
+            <p>📍 Makkah, Saudi Arabia</p>
+        </div>
+
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="footer-bottom">
+        <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <!-- Scroll behavior for header background (same as home) -->
+    <script>
+        window.addEventListener("scroll", () => {
+            const header = document.getElementById("mainHeader");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <!-- Firebase auth nav handling (optional, same pattern as index) -->
+    <script type="module">
+        import { auth } from "./firebase-config.js";
+        import { onAuthStateChanged }
+            from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            const nav = document.querySelector("nav");
+            if (user) {
+                const name = user.displayName || "User";
+                nav.innerHTML = `
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="traditions.html">Traditions</a>
+            <a href="food.html">Food</a>
+            <a href="arts.html">Arts</a>
+            <a href="culture_events.html">Cultural Events</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="Contact.html">Contact Us</a>
+            <span class="user-name">${name}</span>
+            <button id="logoutBtn" class="login-btn">Logout</button>
+            <button class="lang-btn" onclick="window.location.href='history_ar.html'">AR</button>
+        `;
+                document.getElementById("logoutBtn").addEventListener("click", () => {
+                    auth.signOut().then(() => {
+                        window.location.href = "login.html";
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

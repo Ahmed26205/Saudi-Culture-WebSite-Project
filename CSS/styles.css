@@ -1,9 +1,7 @@
-/* SaudiCulture – Main Stylesheet
-   - Organized by component
-   - Uses CSS custom properties for consistency
-   - Supports RTL and reduced motion
-*/
-
+/* ===========================
+   متغيرات عامة للألوان والخطوط والأحجام
+   تتحكم في شكل الموقع بالكامل من مكان واحد
+   =========================== */
 :root {
     /* Colors */
     --color-text: #0e6b4e;
@@ -35,6 +33,16 @@
     --font-ar: 'Almarai', 'Cairo', 'Noto Naskh Arabic', system-ui, sans-serif;
 }
 
+/* ===========================
+   خط خاص عند وضع اتجاه الصفحة RTL (عربي)
+   =========================== */
+html[dir="rtl"] {
+    font-family: var(--font-ar);
+}
+
+/* ===========================
+   تهيئة أساسية لكل العناصر + إعدادات الجسم
+   =========================== */
 /* Base styles */
 * {
     box-sizing: border-box;
@@ -46,13 +54,12 @@ body {
     color: var(--color-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: var(--font-sans);
 }
 
-html[dir="rtl"] {
-    font-family: var(--font-ar);
-}
-
+/* ===========================
+   زر قائمة الجوال (أيقونة الـ 3 خطوط)
+   يظهر فقط في الشاشات الصغيرة
+   =========================== */
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -73,16 +80,19 @@ html[dir="rtl"] {
     transition: var(--transition-fast);
 }
 
+/* ===========================
+   تنسيق العناوين H1–H6
+   =========================== */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-heading);
     font-weight: 700;
 }
 
+/* عنوان الأقسام (Featured Sections, Discover more ...) */
 h2 {
     margin: 40px auto 20px;
     font-size: 28px;
@@ -92,83 +102,79 @@ h2 {
     padding-bottom: 15px;
 }
 
+/* ===========================
+   أزرار الناف (الدخول، إنشاء حساب، اللغة)
+   تنسيق موحد للأزرار داخل .nav-buttons
+   =========================== */
 /* Button base styles - consolidated */
-.lang-btn,
-.login-btn,
-.signup-btn {
+.nav-buttons button {
     font-size: 14px;
     font-weight: 600;
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: all var(--transition-fast);
     margin-left: 1rem;
-
+    display: inline-block;
 }
 
+/* ===========================
+   زر اللغة (AR) في الشريط العلوي
+   =========================== */
 /* Language switcher */
 .lang-btn {
     padding: 0;
-    background: transparent;
+    background: var(--saudi-gold);
     color: inherit;
     border: 2px solid currentColor;
     width: 45px;
     height: 45px;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.lang-btn:hover,
-#mainHeader.scrolled .lang-btn:hover {
+.lang-btn:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: white;
     transform: scale(1.1);
 }
 
-#mainHeader.scrolled .lang-btn {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-}
-
+/* ===========================
+   زر تسجيل الدخول في الشريط العلوي
+   =========================== */
 /* Login button */
 .login-btn {
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 1rem;
     background: var(--color-accent);
     color: white;
     border: none;
 }
 
-.login-btn:hover,
-#mainHeader.scrolled .login-btn {
+.login-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
 }
 
+/* ===========================
+   زر إنشاء حساب جديد في الشريط العلوي
+   =========================== */
 /* Sign Up button */
 .signup-btn {
-    padding: 0.5rem 1.5rem;
+    padding: 1rem 1rem;
     background: var(--color-accent);
     color: white;
     border: none;
 }
 
-.signup-btn:hover,
-#mainHeader.scrolled .signup-btn:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: white;
+.signup-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
 }
 
-#mainHeader.scrolled .signup-btn {
-    border-color: var(--color-accent);
-    /* color: var(--color-accent); */
-}
-
-
-
+/* ===========================
+   الهيدر الرئيسي (الشريط العلوي)
+   شفاف فوق الفيديو – ويتحول لأبيض عند التمرير
+   =========================== */
 /* Header - transparent to solid on scroll | رأس الصفحة - شفاف ثم ملون عند التمرير */
 #mainHeader {
     position: fixed;
@@ -176,7 +182,6 @@ h2 {
     width: 100%;
     padding: 10px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: transparent;
     color: white;
@@ -194,8 +199,8 @@ h2 {
 
 /* Logo image sizing | حجم صورة الشعار */
 #mainHeader .logo img {
-    height: 90px;
-    max-height: 90px;
+    height: 120px;
+    max-height: 120px;
     object-fit: contain;
     transition: height var(--transition-fast);
 }
@@ -207,7 +212,6 @@ h2 {
     gap: clamp(0.5rem, 1vw, 1rem);
     padding: 0 1rem;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
 
 /* Navigation links | روابط التنقل */
@@ -233,84 +237,10 @@ h2 {
     background: rgba(14, 107, 78, 0.1);
 }
 
-/* Dropdown menu styling | أنماط القوائم المنسدلة */
-.nav-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown toggle button | زر تبديل القائمة المنسدلة */
-.nav-dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-/* Arrow icon for dropdown | رمز السهم للقائمة المنسدلة */
-.nav-dropdown-toggle::after {
-    content: '▼';
-    font-size: 0.7rem;
-    transition: transform 0.3s ease;
-}
-
-/* Rotate arrow on hover | تدوير السهم عند التمرير */
-.nav-dropdown:hover .nav-dropdown-toggle::after {
-    transform: rotate(-180deg);
-}
-
-/* Dropdown menu panel | لوحة القائمة المنسدلة */
-.nav-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid var(--color-accent);
-    border-radius: var(--border-radius);
-    min-width: 180px;
-    margin-top: 0.5rem;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 1001;
-    box-shadow: var(--shadow-md);
-}
-
-/* Show dropdown menu on hover | إظهار القائمة المنسدلة عند التمرير */
-.nav-dropdown:hover .nav-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Dropdown menu links | روابط القائمة المنسدلة */
-.nav-dropdown-menu a {
-    display: block;
-    padding: 0.75rem 1.5rem !important;
-    color: var(--color-accent) !important;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    font-weight: 500;
-}
-
-/* Dropdown menu links hover | عند التمرير على روابط القائمة المنسدلة */
-.nav-dropdown-menu a:hover {
-    background: var(--color-accent) !important;
-    color: white !important;
-    padding-left: 2rem !important;
-}
-
-/* Dropdown menu when header scrolled | القائمة المنسدلة عند التمرير */
-#mainHeader.scrolled .nav-dropdown-menu {
-    background: rgba(255, 255, 255, 0.98);
-}
-
-/* Dropdown links when header scrolled | روابط القائمة عند التمرير */
-#mainHeader.scrolled .nav-dropdown-menu a {
-    color: var(--color-accent) !important;
-}
-
+/* ===========================
+   مظهر الهيدر وقائمة التنقل في الشاشات الصغيرة (موبايل)
+   القائمة تتحول لقائمة منسدلة تحت الشريط
+   =========================== */
 /* Mobile header styles */
 @media (max-width: 768px) {
     #mainHeader {
@@ -351,8 +281,11 @@ h2 {
     }
 }
 
-/* Full-screen hero video | فيديو البطل ملء الشاشة */
-.full-video-hero {
+/* ===========================
+   قسم العرض الرئيسي (Main Visual Section)
+   يحتوي على فيديو الخلفية + عنوان Mawrooth + أزرار + البحث
+   =========================== */
+.main-visual-section {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -365,7 +298,7 @@ h2 {
 }
 
 /* Background video element | عنصر الفيديو الخلفي */
-.full-video-hero .bg-video {
+.main-visual-section .bg-video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -374,8 +307,8 @@ h2 {
     z-index: -1;
 }
 
-/* Hero content container | حاوية محتوى البطل */
-.full-video-hero .hero-content {
+/* Hero content container | حاوية محتوى البطل (النص والأزرار فوق الفيديو) */
+.main-visual-section .main-visual-content {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -384,19 +317,23 @@ h2 {
 }
 
 /* Hero main heading | العنوان الرئيسي للبطل */
-.full-video-hero .hero-content h1 {
+.main-visual-section .main-visual-content h1 {
     font-size: clamp(32px, 6vw, 48px);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
-/* Hero description text | نص وصف البطل */
-.full-video-hero .hero-content p {
+/* Hero description text | النصوص الوصفية تحت العنوان */
+.main-visual-section .main-visual-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
 
+/* ===========================
+   قسم البحث داخل الهيرو (Search Section)
+   يحتوي حقل بحث + قائمة منسدلة للفئات + زر Search
+   =========================== */
 /* Search & Action section | قسم البحث والإجراءات */
 .search-section {
     margin-top: 2rem;
@@ -410,7 +347,7 @@ h2 {
 /* Search input and select fields | حقول البحث والاختيار */
 .search-section input[type="search"],
 .search-section select {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
     font-size: 1.1rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius);
@@ -419,7 +356,7 @@ h2 {
     margin-right: 0.5rem;
 }
 
-/* Search input placeholder text | نص العنصر النائب للبحث */
+/* Search input placeholder text | نص placeholder لحقل البحث */
 .search-section input[type="search"]::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
@@ -429,21 +366,21 @@ h2 {
     width: min(500px, 100%);
 }
 
-/* Select dropdown cursor | مؤشر التحديد */
+/* Select dropdown cursor | مؤشر الماوس على القائمة */
 .search-section select {
     cursor: pointer;
 }
 
-/* Select options styling | أنماط خيارات الاختيار */
+/* Select options styling | شكل الخيارات داخل القائمة */
 .search-section select option {
     background: var(--color-accent);
     color: white;
 }
 
-/* Search and action buttons | أزرار البحث والإجراءات */
+/* Search and action buttons | أزرار البحث وأزرار الهيرو */
 .search-section button,
-.hero-content .action-buttons input[type="button"] {
-    padding: 1rem 2rem;
+.main-visual-content .action-buttons input[type="button"] {
+    padding: 1rem 1rem;
     font-size: 1.1rem;
     font-weight: 600;
     color: white;
@@ -454,9 +391,9 @@ h2 {
     transition: all var(--transition-fast);
 }
 
-/* Button hover effects | تأثيرات الزر عند التمرير */
+/* Button hover effects | تأثير عند تمرير الماوس فوق الأزرار */
 .search-section button:hover,
-.hero-content .action-buttons input[type="button"]:hover {
+.main-visual-content .action-buttons input[type="button"]:hover {
     transform: translateY(-1px);
 }
 
@@ -466,8 +403,8 @@ h2 {
     border-color: var(--color-accent);
 }
 
-/* Action buttons layout | تخطيط أزرار الإجراءات */
-.hero-content .action-buttons {
+/* Action buttons layout | توزيع أزرار Explore / Start Quiz */
+.main-visual-content .action-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -475,39 +412,32 @@ h2 {
     margin-bottom: 2rem;
 }
 
-/* Action buttons sizing | حجم أزرار الإجراءات */
-.hero-content .action-buttons input[type="button"] {
+/* Action buttons sizing | حجم أزرار الهيرو */
+.main-visual-content .action-buttons input[type="button"] {
     padding: 12px 28px;
     font-size: 18px;
     min-width: 180px;
 }
 
-/* Quiz button styling | أنماط زر الاختبار */
-.hero-content .action-buttons input[type="button"][value="Start Quiz"],
-.hero-content .action-buttons input[type="button"][value="ابدأ الاختبار"] {
+/* Quiz button styling | شكل زر Start Quiz المميز */
+.main-visual-content .action-buttons input[type="button"][value="Start Quiz"],
+.main-visual-content .action-buttons input[type="button"][value="ابدأ الاختبار"] {
     background: var(--saudi-gold);
     border-color: var(--color-accent);
     box-shadow: 0 2px 8px rgba(201, 164, 79, 0.3);
 }
 
-/* Quiz button hover | زر الاختبار عند التمرير */
-.hero-content .action-buttons input[type="button"][value="Start Quiz"]:hover,
-.hero-content .action-buttons input[type="button"][value="ابدأ الاختبار"]:hover {
+/* Quiz button hover | تأثير التمرير على زر Start Quiz */
+.main-visual-content .action-buttons input[type="button"][value="Start Quiz"]:hover,
+.main-visual-content .action-buttons input[type="button"][value="ابدأ الاختبار"]:hover {
     background: #d4b265;
     box-shadow: 0 4px 12px rgba(201, 164, 79, 0.4);
 }
 
-
-
-/* Feature cards grid | شبكة البطاقات المميزة */
-.section-title {
-    text-align: center;
-    margin: 40px 0 20px;
-    font-weight: 700;
-    color: var(--color-accent);
-    border-bottom: 3px solid var(--saudi-gold);
-}
-
+/* ===========================
+   شبكة البطاقات (Featured Sections)
+   لعرض: الأكل – التقاليد – الفنون – الحضارات
+   =========================== */
 /* Cards grid layout | تخطيط شبكة البطاقات */
 .cards {
     display: grid;
@@ -519,7 +449,7 @@ h2 {
     justify-items: center;
 }
 
-/* Individual card styling | أنماط البطاقة الفردية */
+/* Individual card styling | شكل كل بطاقة */
 .card {
     background: white;
     width: 100%;
@@ -534,14 +464,14 @@ h2 {
     overflow: hidden;
 }
 
-/* Card hover effect | تأثير البطاقة عند التمرير */
+/* Card hover effect | تأثير عند تمرير الماوس على البطاقة */
 .card:hover {
     transform: scale(1.08) translateY(-5px);
     box-shadow: 0 8px 24px rgba(14, 107, 78, 0.25);
     z-index: 1;
 }
 
-/* Card image | صورة البطاقة */
+/* Card image | صورة داخل البطاقة */
 .card img {
     width: 100%;
     height: 180px;
@@ -552,7 +482,7 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-/* Card image hover | صورة البطاقة عند التمرير */
+/* Card image hover | تكبير بسيط للصورة عند التمرير */
 .card:hover img {
     transform: scale(1.05);
 }
@@ -564,7 +494,7 @@ h2 {
     color: var(--color-accent);
 }
 
-/* Card button/link | زر/رابط البطاقة */
+/* Card button/link | زر View More داخل البطاقة */
 .card .button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -576,13 +506,125 @@ h2 {
     transition: all 0.2s ease;
 }
 
-/* Card button hover | زر البطاقة عند التمرير */
+/* Card button hover | تلوين زر View More عند التمرير */
 .card:hover .button {
     background: var(--color-accent);
     color: white;
     border-color: var(--color-accent);
 }
 
+/* ===== History timeline – vertical line with alternating cards ===== */
+.history-timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+}
+
+/* vertical center line */
+.history-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--saudi-gold);
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+/* each timeline step (card pair) */
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    align-items: center;
+}
+
+/* number circle in the middle */
+.timeline-item::before {
+    content: attr(data-step);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--saudi-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+/* image box */
+.timeline-image img {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    object-fit: cover;
+}
+
+/* text box */
+.timeline-content {
+    background: #fff;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border-inline: 4px solid var(--saudi-gold);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    color: var(--color-accent);
+}
+
+.timeline-content p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* lighter small label above the title (optional) */
+.timeline-content .era-label {
+    font-size: .85rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: .25rem;
+}
+
+/* responsive – stack items on phones */
+@media (max-width: 768px) {
+    .history-timeline::before {
+        left: 18px;
+        transform: none;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-inline-start: 2.5rem;
+    }
+
+    .timeline-item::before {
+        left: 18px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+/* ===========================
+   قسم الفعاليات المصغّر (Discover more about Saudi Arabia)
+   يحتوي نص + زر + صورة خريطة/فعاليات
+   =========================== */
 /* events section | قسم الفعاليات */
 .mini-events-section {
     background-color: white;
@@ -597,15 +639,15 @@ h2 {
     box-shadow: var(--shadow-sm);
 }
 
-/* Left content of events section | محتوى اليسار في قسم الفعاليات */
-.mini-events-section>div:first-child {
+/* Left content of events section | النص والزر في الجهة اليسار */
+.mini-events-section > div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
 }
 
-/* events section text | نص قسم الفعاليات */
+/* events section text | نص وصف الفعاليات */
 .mini-events-section p {
     text-align: center;
     font-size: 1.8rem;
@@ -614,7 +656,7 @@ h2 {
     margin: 0;
 }
 
-/* Mini events container | حاوية الفعاليات الصغيرة */
+/* Mini events container | حاوية صورة الفعاليات */
 .mini-events {
     width: 100%;
     aspect-ratio: 16/10;
@@ -627,12 +669,7 @@ h2 {
     display: block;
 }
 
-/* Mini events hover effect | تأثير الفعاليات الصغيرة عند التمرير */
-.mini-events:hover {
-    box-shadow: var(--shadow-lg);
-}
-
-/* Mini events image | صورة الخريطة الصغيرة */
+/* Mini events image | صورة الفعاليات */
 .mini-events img {
     display: block;
     width: 100%;
@@ -640,13 +677,13 @@ h2 {
     object-fit: cover;
 }
 
-/* Mini events background image option | خيار صورة الخلفية الفعاليات */
+/* Mini events background image option | في حال استخدام background-image بدلاً من img */
 .mini-events.bg {
     background-position: center;
     background-size: cover;
 }
 
-/* events section button | زر قسم الفعاليات */
+/* events section button | زر View Full Map */
 .mini-events-section button {
     padding: 12px 24px;
     font-weight: 600;
@@ -658,11 +695,15 @@ h2 {
     transition: filter var(--transition-fast);
 }
 
-/* events section button hover | زر قسم الفعاليات عند التمرير */
+/* events section button hover | تفتيح بسيط للزر عند التمرير */
 .mini-events-section button:hover {
     filter: brightness(1.1);
 }
 
+/* ===========================
+   ميديا كويري خاصة بقسم الفعاليات على الموبايل
+   تجعل التقسيم عمودي بدلاً من عمودي+جانبي
+   =========================== */
 @media (max-width: 768px) {
     .mini-events-section {
         grid-template-columns: 1fr;
@@ -677,240 +718,80 @@ h2 {
     }
 }
 
+/* ===========================
+   الفوتر (التذييل) في أسفل الصفحة
+   يحتوي حقوق النشر وطرق التواصل
+   =========================== */
 /* Footer | التذييل */
-footer {
-    background: white;
-    padding: 3rem var(--container-padding);
-    text-align: center;
+/* Footer full design */
+.footer {
+    background: #ffffff;
+    padding: 3rem 1rem 1rem;
     margin-top: 4rem;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, .06);
 }
 
-/* Footer paragraph styling | أنماط فقرات التذييل */
-footer p {
-    margin: 0.5rem 0;
-    color: var(--color-text);
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
 }
 
-/* Mobile Menu Toggle | تبديل قائمة الهاتف */
-@media (max-width: 768px) {
+.footer-about {
+    flex: 1 1 250px;
+}
 
-    /* Show mobile menu button | عرض زر قائمة الهاتف */
-    .mobile-menu-btn {
-        display: block;
-    }
+.footer-logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
 
-    /* Animate first hamburger bar (top) | تحريك خط الهمبرجر الأول (الأعلى) */
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
+.footer-links,
+.footer-contact {
+    flex: 1 1 200px;
+}
 
-    /* Hide middle hamburger bar | إخفاء خط الهمبرجر الأوسط */
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
 
-    /* Animate third hamburger bar (bottom) | تحريك خط الهمبرجر الثالث (الأسفل) */
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
+.footer-links a {
+    display: block;
+    margin-bottom: .5rem;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: .3s;
+}
 
-    /* Mobile header padding | حشو رأس الصفحة للهاتف */
-    #mainHeader {
-        padding: 10px 20px;
-    }
+.footer-links a:hover {
+    color: var(--saudi-gold);
+}
 
-    /* Mobile navigation menu | قائمة التنقل للهاتف */
-    #mainHeader nav {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 1rem;
-        flex-direction: column;
-        gap: 0.5rem;
-        box-shadow: var(--shadow-sm);
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: .9rem;
+}
 
-    /* Show mobile navigation when active | إظهار التنقل عند التفعيل */
-    #mainHeader nav.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    /* Mobile navigation links | روابط التنقل للهاتف */
-    #mainHeader nav a {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        text-align: center;
-        color: var(--color-text);
-    }
-
-    /* Mobile navigation links hover | روابط التنقل للهاتف عند التمرير */
-    #mainHeader nav a:hover {
-        background: rgba(14, 107, 78, 0.1);
-    }
-
-    /* Logo sizing on mobile | حجم الشعار للهاتف */
-    #mainHeader .logo img {
-        height: 44px;
-        max-height: 44px;
-    }
-
-    /* Hero section height on mobile | ارتفاع قسم البطل للهاتف */
-    .full-video-hero {
-        height: 80vh;
-        min-height: 600px;
-    }
-
-    /* Hero heading on mobile | عنوان البطل للهاتف */
-    .full-video-hero .hero-content h1 {
-        font-size: 28px;
-    }
-
-    /* Search section on mobile | قسم البحث للهاتف */
-    .search-section {
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    /* Search inputs on mobile | حقول البحث على الهاتف */
-    .search-section input[type="search"],
-    .search-section select,
-    .search-section button {
-        width: 100%;
-        margin: 0;
-    }
-
-    /* Action buttons layout on mobile | تخطيط أزرار الإجراءات على الهاتف */
-    .hero-content .action-buttons {
-        flex-direction: column;
-    }
-
-    /* Action buttons on mobile | أزرار الإجراءات على الهاتف */
-    .hero-content .action-buttons input[type="button"] {
-        width: 100%;
-    }
-
-    /* Cards grid on mobile | شبكة البطاقات على الهاتف */
+/* ===========================
+   ميديا كويري للهواتف الصغيرة جداً (أقل من 640px)
+   تضبط شبكة البطاقات لتكون عمود واحد
+   =========================== */
+@media (max-width: 640px) {
     .cards {
         grid-template-columns: 1fr;
         max-width: 400px;
     }
 
-    /* Card width on mobile | عرض البطاقة على الهاتف */
     .card {
         max-width: 100%;
-    }
-
-    /* Card hover on mobile | البطاقة عند التمرير على الهاتف */
-    .card:hover {
-        transform: scale(1.03) translateY(-3px);
-    }
-
-    /* Map section on mobile | قسم الخريطة على الهاتف */
-    .mini-map-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    /* Map aspect ratio on mobile | نسبة جهات الخريطة على الهاتف */
-    .mini-map {
-        aspect-ratio: 4/3;
-    }
-
-    /* Tablet breakpoint - Cards layout | نقطة توقف الجهاز اللوحي - تخطيط البطاقات */
-    @media (max-width: 1200px) {
-        .cards {
-            grid-template-columns: repeat(2, 1fr);
-            max-width: 800px;
-        }
-    }
-
-    /* Small phone breakpoint | نقطة توقف الهاتف الصغير */
-    @media (max-width: 640px) {
-        .cards {
-            grid-template-columns: 1fr;
-            max-width: 400px;
-        }
-
-        .card {
-            max-width: 100%;
-        }
-    }
-}
-
-/* Print styles - hide video, adjust colors */
-@media print {
-    .full-video-hero video {
-        display: none;
-    }
-
-    body {
-        color: black;
-        background: white;
-    }
-
-    a {
-        color: var(--color-accent) !important;
-    }
-}
-
-/* Scroll reveal animations | حركات الكشف عند التمرير */
-.reveal {
-    opacity: 0;
-    transform: translateY(18px) scale(.995);
-    transition: opacity var(--transition-fast),
-        transform var(--transition-fast);
-    will-change: transform, opacity;
-    transition-delay: var(--delay, 0ms);
-}
-
-/* Reveal visible state | حالة الظهور المرئية */
-.reveal.in-view {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* Reveal animation variants | متغيرات حركات الكشف */
-.hero-content.reveal {
-    transform: translateY(8px);
-}
-
-.section-title.reveal {
-    transform: translateY(6px) scale(.995);
-}
-
-.card.reveal {
-    transform: translateY(12px) scale(.99);
-}
-
-/* Accessibility: respect reduced motion preferences | إمكانية الوصول: احترام تفضيلات الحركة المخفضة */
-@media (prefers-reduced-motion: reduce) {
-
-    /* Disable animations for accessibility | تعطيل الحركات لإمكانية الوصول */
-    .reveal,
-    .reveal.in-view,
-    .full-video-hero .hero-content,
-    .card,
-    .mini-map,
-    #mainHeader {
-        transition: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-    }
-
-    /* Disable all animations globally | تعطيل جميع الحركات بشكل عام */
-    * {
-        animation: none !important;
-        transition: none !important;
     }
 }

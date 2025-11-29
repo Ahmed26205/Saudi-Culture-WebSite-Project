@@ -1,0 +1,282 @@
+<!-- ملف صفحة التاريخ للنسخة العربية من الموقع -->
+<!DOCTYPE html>
+<!-- صفحة عربية باتجاه من اليمين إلى اليسار -->
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- ترميز يدعم العربية -->
+    <meta charset="UTF-8" />
+    <!-- عرض متجاوب مع شاشات الجوال -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- عنوان التبويب في المتصفح -->
+    <title>SaudiCulture - الملامح التاريخية</title>
+
+    <!-- نفس الخطوط المستخدمة في بقية الموقع -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+    <!-- ملف التنسيقات الرئيسي -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- ملف الجافاسكربت العام -->
+    <script src="/JS/script.js" defer></script>
+</head>
+
+<body>
+    <!-- شريط علوي مشترك بين الصفحات -->
+    <header id="mainHeader">
+        <!-- شعار الموقع -->
+        <div class="logo">
+            <img src="images/Logo.png" alt="شعار SaudiCulture" />
+        </div>
+
+        <!-- قائمة التنقل للنسخة العربية -->
+        <nav>
+            <a href="arabic.html">الرئيسية</a>
+            <a href="history_ar.html">التاريخ</a>
+            <a href="traditions_ar.html">التقاليد</a>
+            <a href="food_ar.html">الطعام</a>
+            <a href="arts_ar.html">الفنون</a>
+            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
+            <a href="quiz_ar.html">الاختبار</a>
+            <a href="Contact_ar.html">اتصل بنا</a>
+
+            <!-- أزرار تسجيل الدخول / إنشاء حساب / تغيير اللغة -->
+            <div class="nav-buttons">
+                <button class="login-btn" onclick="window.location.href='login_ar.html'">
+                    تسجيل الدخول
+                </button>
+                <button class="signup-btn" onclick="window.location.href='signup_ar.html'">
+                    إنشاء حساب
+                </button>
+                <button class="lang-btn" onclick="window.location.href='history.html'">
+                    EN
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- محتوى صفحة التاريخ -->
+    <main>
+   <!-- مقدمة الصفحة -->
+        <section class="main-visual-section">
+
+<div class="history-intro" style="padding: 7rem 1rem 3rem; max-width: 900px; margin: 0 auto;">
+    <h1 style="text-align:center; margin-bottom:1rem;">الملامح التاريخية للمملكة العربية السعودية</h1>
+    <p style="text-align:center; line-height:1.9;">
+        تمتلك المملكة تاريخاً عريقاً تشكل من خلال الحضارات القديمة، وطرق التجارة، وبزوغ الإسلام، ثم مراحل توحيد البلاد
+        وبناء الدولة الحديثة.
+    </p>
+</div>
+         <!-- Background looping video -->
+          <video autoplay muted loop playsinline class="bg-video">
+                <source src="videos/history travel.mp4" type="video/mp4">
+          </video>
+</section>
+
+<!-- قسم الخط الزمني للحقب التاريخية -->
+<h2 class="section-title">أهم الحِقب التاريخية</h2>
+
+<section class="history-timeline">
+    <!-- الخطوة 1 -->
+    <div class="timeline-item" data-step="1">
+        <!-- صورة يسار / نص يمين (في RTL يظهر العكس بصرياً لكن يبقى متناسق) -->
+        <div class="timeline-image">
+            <img src="images/madain salah.jpg" alt="الجزيرة العربية قبل الإسلام">
+        </div>
+        <div class="timeline-content">
+            <span class="era-label">ما قبل الإسلام</span>
+            <h3>الجزيرة العربية قبل الإسلام</h3>
+            <p>
+                شهدت شبه الجزيرة العربية قيام حضارات وطرق تجارة نشطة، وربطت بين الشرق والغرب عبر القوافل والأسواق
+                التاريخية في مختلف المناطق.
+            </p>
+        </div>
+    </div>
+
+    <!-- الخطوة 2 -->
+    <div class="timeline-item" data-step="2">
+        <div class="timeline-content">
+            <span class="era-label">القرن السابع الميلادي</span>
+            <h3>الحقبة الإسلامية المبكرة</h3>
+            <p>
+                انطلقت رسالة الإسلام من مكة المكرمة ثم المدينة المنورة، لتصبح المنطقة مركزاً دينياً وحضارياً
+                للعالم الإسلامي عبر القرون.
+            </p>
+        </div>
+        <div class="timeline-image">
+            <img src="images/after islam.jpg" alt="الحقبة الإسلامية المبكرة">
+        </div>
+    </div>
+
+    <!-- الخطوة 3 -->
+    <div class="timeline-item" data-step="3">
+        <div class="timeline-image">
+            <img src="images/new saudi.jpeg" alt="الدول السعودية والدرعية">
+        </div>
+        <div class="timeline-content">
+            <span class="era-label">القرنان 18–19</span>
+            <h3>الدول السعودية</h3>
+            <p>
+                برزت الدولة السعودية الأولى ثم الثانية انطلاقاً من الدرعية والرياض، وأسهمت في ترسيخ الأمن ووحدة
+                مناطق واسعة من الجزيرة العربية.
+            </p>
+        </div>
+    </div>
+
+    <!-- الخطوة 4 -->
+    <div class="timeline-item" data-step="4">
+        <div class="timeline-content">
+            <span class="era-label">القرن العشرون حتى اليوم</span>
+            <h3>المملكة العربية السعودية الحديثة</h3>
+            <p>
+                توحدت المملكة على يد الملك عبدالعزيز آل سعود، واستمرت في بناء دولة عصرية تجمع بين المحافظة على
+                الهوية الدينية والثقافية والانفتاح على التطور.
+            </p>
+        </div>
+        <div class="timeline-image">
+            <img src="images/saudia.jpg" alt="المملكة العربية السعودية الحديثة">
+        </div>
+    </div>
+</section>
+
+
+        <!-- قسم: المناطق والمعالم التاريخية -->
+        <section>
+            <h2 class="section-title">المناطق والمعالم التاريخية</h2>
+
+            <div class="cards">
+                <!-- المنطقة الوسطى -->
+                <div class="card">
+                    <img src="images/historical-dir-iyahh.jpg" alt="الدرعية" />
+                    <h3>المنطقة الوسطى</h3>
+                    <p>
+                        تضم الدرعية والرياض، وتمثل القلب السياسي والتاريخي لنشأة الدولة السعودية وبداية توحيد
+                        الأقاليم.
+                    </p>
+                </div>
+
+                <!-- المنطقة الغربية -->
+                <div class="card">
+                    <img src="images/madinaold.jpg" alt="مكة والمدينة" />
+                    <h3>المنطقة الغربية</h3>
+                    <p>
+                        تحتضن مكة المكرمة والمدينة المنورة، الوجهتين الأقدس لدى المسلمين ومقصداً للحجاج والمعتمرين
+                        عبر التاريخ.
+                    </p>
+                </div>
+
+                <!-- المنطقة الشمالية والشمالية الغربية -->
+                <div class="card">
+                    <img src="images/old history.jpg" alt="العلا والحِجر" />
+                    <h3>الشمال والشمال الغربي</h3>
+                    <p>
+                        تضم مواقع مثل العلا والحِجر (مدائن صالح)، وتحتفظ بآثار الأنباط وحضارات قديمة أخرى تركت
+                        بصمتها في التاريخ.
+                    </p>
+                </div>
+
+                <!-- المنطقة الشرقية والجنوبية -->
+                <div class="card">
+                    <img src="images/rijal alma.jpg" alt="التراث في الشرق والجنوب" />
+                    <h3>الشرق والجنوب</h3>
+                    <p>
+                        تتميز بتنوعها الجغرافي بين السواحل والجبال والصحارى، وبتراثها العمراني والثقافي المتنوع في
+                        القرى والمدن.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم: معلومات سريعة "هل تعلم؟" -->
+        <section style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem 4rem;">
+            <h2 class="section-title">هل تعلم؟</h2>
+            <ul style="line-height: 1.9;">
+                <li>تعد بعض مناطق المملكة من أقدم الممرات التجارية في شبه الجزيرة العربية.</li>
+                <li>الدرعية مسجلة كموقع تراث عالمي في اليونسكو بسبب أهميتها التاريخية.</li>
+                <li>مكة والمدينة استقبلتا الحجاج والزوار من مختلف أنحاء العالم عبر قرون طويلة.</li>
+            </ul>
+        </section>
+    </main>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Left: logo + brief -->
+        <div class="footer-about">
+            <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+            <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
+        </div>
+        
+
+        <!-- Middle: quick links -->
+        <div class="footer-links">
+            <h4>روابط سريعة</h4>
+            <a href="arabic.html">الرئيسية</a>
+            <a href="history_ar.html">التاريخ</a>
+            <a href="traditions_ar.html">التقاليد</a>
+            <a href="food_ar.html">الطعام</a>
+            <a href="Contact_ar.html">اتصل بنا</a>
+        </div>
+
+        <!-- Right: contact info -->
+        <div class="footer-contact">
+            <h4>تواصل معنا</h4>
+            <p>📞 +966554731708</p>
+            <p>📧 mawrooth@gmail.com</p>
+            <p>📍 مكة، المملكة العربية السعودية</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+    </div>
+</footer>
+
+    <!-- سكربت تغيير خلفية الهيدر عند التمرير -->
+    <script>
+        window.addEventListener("scroll", () => {
+            const header = document.getElementById("mainHeader");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <!-- سكربت تحديث القائمة في حال كان المستخدم مسجل دخول في Firebase -->
+    <script type="module">
+        import { auth } from "./firebase-config.js";
+        import { onAuthStateChanged }
+            from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            const nav = document.querySelector("nav");
+            if (user) {
+                const name = user.displayName || "مستخدم";
+                nav.innerHTML = `
+            <a href="arabic.html">الرئيسية</a>
+            <a href="history_ar.html">التاريخ</a>
+            <a href="traditions_ar.html">التقاليد</a>
+            <a href="food_ar.html">الطعام</a>
+            <a href="arts_ar.html">الفنون</a>
+            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
+            <a href="quiz_ar.html">الاختبار</a>
+            <a href="Contact_ar.html">اتصل بنا</a>
+            <span class="user-name">${name}</span>
+            <button id="logoutBtn" class="login-btn">تسجيل الخروج</button>
+            <button class="lang-btn" onclick="window.location.href='history.html'">EN</button>
+        `;
+                document.getElementById("logoutBtn").addEventListener("click", () => {
+                    auth.signOut().then(() => {
+                        window.location.href = "login_ar.html";
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
