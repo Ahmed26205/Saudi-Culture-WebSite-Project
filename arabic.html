@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- عنوان الصفحة يظهر في لسان المتصفح -->
     <title>SaudiCulture - الصفحة الرئيسية (عربي)</title>
-<<<<<<< HEAD
 
     <!-- استيراد خطوط جوجل: Inter (للإنجليزية)، Outfit (للعناوين)، Almarai (للعربية) -->
     <link
@@ -52,9 +51,11 @@
             <!-- رابط قسم اتصل بنا -->
             <a href="Contact_ar.html">اتصل بنا</a>
             <!-- زر تسجيل الدخول لمصادقة المستخدم -->
-            <button class="login-btn"><a href="PHP/login_ar.php"></a>تسجيل الدخول</button>
+            <button class="login-btn" class="signup-btn" onclick="window.location.href='login_ar.html'">تسجيل
+                الدخول</button>
             <!-- زر إنشاء حساب للمستخدمين الجدد -->
-            <button class="signup-btn"><a href="PHP/signup_ar.php"></a>إنشاء حساب</button>
+            <button class="signup-btn" class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء
+                حساب</button>
             <!-- زر تبديل اللغة للتبديل إلى الإنجليزية (بشكل كروي) -->
             <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
         </nav>
@@ -167,7 +168,7 @@
         <!-- البريد الإلكتروني -->
         <p>📧 saudi.culture@project.com</p>
         <!-- العنوان الفعلي -->
-        <p>📍 الرياض، المملكة العربية السعودية</p>
+        <p>📍 مكة، المملكة العربية السعودية</p>
     </footer>
 
     <!-- سكريبت الكشف عن الانقطاع (intersection observer) لتفعيل الرسوم المتحركة عند ظهور العناصر -->
@@ -242,185 +243,43 @@
                 header.classList.remove("scrolled");
             }
         });
-        // نهاية سكريبت التمرير
     </script>
-=======
-    <!-- ربط ملف CSS الخارجي للتنسيقات -->
-    <link rel="stylesheet" href="CSS/styles.css">
-    <!-- تحميل ملف JavaScript الخارجي مع تأجيل التحميل إلى بعد تحميل HTML -->
-    <script src="JS/script.js" defer></script>
-    <!-- نهاية قسم رأس الصفحة -->
-</head>
-<!-- Script to handle header appearance on page scroll -->
-<script>
-    // Event listener triggered when user scrolls the page
-    window.addEventListener("scroll", () => {
-        // Get the main header element by ID
-        const header = document.getElementById("mainHeader");
+    <script type="module">
+        import { auth } from "./firebase-config.js";
+        import { onAuthStateChanged }
+            from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+        // نراقب حالة المستخدم إذا كان مسجل دخول
+        onAuthStateChanged(auth, (user) => {
+            const nav = document.querySelector("nav");
 
-        // Check if scroll position exceeds 50 pixels
-        if (window.scrollY > 50) {
-            // Add 'scrolled' class for visible background styling
-            header.classList.add("scrolled");
-        } else {
-            // Remove 'scrolled' class for transparent header
-            header.classList.remove("scrolled");
-        }
-    });
-    // End of scroll event listener
-</script>
-
-<!-- بداية محتوى الصفحة الرئيسية -->
-<body>
-    <!-- شريط الرأس يحتوي على الشعار والتنقل -->
-    <header id="mainHeader">
-        <!-- حاوية الشعار الذي يحتوي على صورة الشعار -->
-        <div class="logo">
-            <!-- صورة شعار موقع SaudiCulture -->
-            <img src="images/Logo.png" alt=" SaudiCulture">
-        </div>
-        <!-- قائمة التنقل الرئيسية للموقع -->
-        <nav>
-            <!-- رابط الصفحة الرئيسية -->
+            if (user) {
+                // اذا المستحدم مسجل دخول
+                const name = user.displayName || "مستخدم";
+                // نحذف ازرار تسجيل الدحول وانشاء الحساب
+                nav.innerHTML = `
             <a href="arabic.html">الرئيسية</a>
-            <!-- رابط قسم التاريخ -->
             <a href="history_ar.html">التاريخ</a>
-            <!-- رابط قسم التقاليد -->
             <a href="traditions_ar.html">التقاليد</a>
-            <!-- رابط قسم الطعام -->
             <a href="food_ar.html">الطعام</a>
-            <!-- رابط قسم الفنون -->
             <a href="arts_ar.html">الفنون</a>
-            <!-- رابط قسم المهرجانات الثقافية -->
             <a href="culture_events_ar.html">الفعاليات الثقافية</a>
-            <!-- رابط قسم الاختبار -->
             <a href="quiz_ar.html">الاختبار</a>
-            <!-- رابط قسم اتصل بنا -->
             <a href="Contact_ar.html">اتصل بنا</a>
-            <!-- زر تسجيل الدخول لمصادقة المستخدم -->
-             <button class="login-btn" onclick="window.location.href='PHP/login.php'">تسجيل الدخول</button>
-            <!-- زر إنشاء حساب للمستخدمين الجدد -->
-             <button class="signup-btn" onclick="window.location.href='PHP/signup.php'">إنشاء حساب</button>
-            <!-- زر تبديل اللغة للتبديل إلى الإنجليزية (بشكل كروي) -->
+            <span class="user-name"> ${name}</span>
+            <button id="logoutBtn" class="login-btn">تسجيل الخروج</button>
             <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
-        </nav>
-        <!-- نهاية قسم الرأس -->
-    </header>
+        `;
+                // اضافة زر تسجيل الخروح
+                document.getElementById("logoutBtn").addEventListener("click", () => {
+                    auth.signOut().then(() => {
+                        window.location.href = "login_ar.html";
+                    });
+                });
+            }
+        });
+    </script>
 
-    <section class="full-video">
-        <!-- فيديو الخلفية -->
-        <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Journey through time.mov" type="video/mp4">
-        </video>
 
-        <!-- المحتوى النصي داخل جزء الفيديو -->
-        <div class="video-content">
-            <h1>موروث</h1>
-            <p>موقع تفاعلي يسلط الضوء على الموروث الثقافي في المملكة العربية السعودية.</p>
-            <p>ابدأ رحلتك الآن....</p>
-
-            <!-- أزرار الإجراءات الرئيسية -->
-            <div class="action-buttons">
-                <input type="button" value="استكشاف الثقافة">
-                <input type="button" value="ابدأ الاختبار">
-            </div>
-
-            <!-- قسم البحث والتصفية -->
-            <div class="search-section">
-                <!-- حقل البحث -->
-                <input type="search" name="q" id="mySearch" placeholder="ابحث عن أطباق، مهرجانات،اثار..."
-                    aria-label="بحث المحتوى"> 
-
-                <!-- قائمة التصفية حسب الفئة -->
-                <select aria-label="تصفية نتائج البحث">
-                    <option value="all">كل الفئات</option>
-                    <option value="food">الطعام التقليدي</option>
-                    <option value="traditions">التقاليد الثقافية</option>
-                    <option value="history">التاريخ والحضارات</option>
-                    <option value="arts"> الفنون التراثية</option>
-                    <option value="events">الفعاليات الثقافية</option>
-                </select>
-
-                <!-- زر البحث -->
-                 
-                <div class="search-button">
-                <button type="submit">
-                    بحث
-                </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <h2 class="section-title">الأقسام المميزة</h2>
-
-    <!-- شبكة البطاقات -->
-    <div class="cards">
-        <!-- بطاقة الطعام التقليدي -->
-        <div class="card">
-            <img src="images/8-chicken-kabsa-web.jpg" alt="الطعام التقليدي">
-            <h3>الطعام التقليدي</h3>
-            <a href="food_ar.html" class="button">عرض المزيد</a>
-        </div>
-
-        <!--  العادات -->
-        <div class="card">
-            <img src="images/tradtion.jpg" alt="التقاليد الثقافية">
-            <h3>العادات والتقاليد</h3>
-            <a href="traditions_ar.html" class="button">عرض المزيد</a>
-        </div>
-
-        <!-- بطاقة الفنون -->
-        <div class="card">
-            <img src="images/arda.jpg" alt="الفنون التراثية">
-            <h3>الفنون التراثية</h3>
-            <a href="arts_ar.html" class="button">عرض المزيد</a>
-        </div>
-
-        <!-- بطاقة الحضارات -->
-        <div class="card">
-            <img src="images/madain salah.jpg" alt="التاريخ والحضارات">
-            <h3>حضارات قديمة</h3>
-            <a href="history_ar.html" class="button">عرض المزيد</a>
-        </div>
-    </div>
-
-    <!-- عنوان قسم الفعاليات -->
-    <h2 class="section-title">اكتشف اكثر عن السعودية</h2>
-
-    <!-- قسم الفعاليات -->
-    <div class="mini-events-section">
-        <!-- النص والزر -->
-        <div>
-            <!-- وصف محتوى الفعاليات -->
-            <p>اكتشف ابرز الفعاليات الثقافية في أرجاء المملكة العربية السعودية.</p>
-            <!-- زر عرض الفعاليات -->
-            <button>عرض الفعاليات</button>
-        </div>
-
-        <!-- حاوية صورة الفعاليات -->
-        <div class="mini-events">
-            <!-- صورة الفعاليات في المملكة العربية السعودية -->
-            <img src="images/فعاليات.jpg" alt="Events of saudi arabia">
-        </div>
-    </div>
-
-    <!-- تذييل الصفحة يحتوي على معلومات الاتصال -->
-    <footer>
-        <!-- حقوق النشر -->
-        <p>مشروع SaudiCulture © 2025</p>
-        <!-- عنوان معلومات التواصل -->
-        <p>تواصل معنا:</p>
-        <!-- رقم الهاتف -->
-        <p>📞 0000 000 000</p>
-        <!-- البريد الإلكتروني -->
-        <p>📧 saudi.culture@project.com</p>
-        <!-- العنوان الفعلي -->
-        <p>📍 الرياض، المملكة العربية السعودية</p>
-    </footer>
-
- 
->>>>>>> fdf0e9eca86594f9b5e4977d8614a187ec099dae
 </body>
 
 </html>
