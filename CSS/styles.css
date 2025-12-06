@@ -797,3 +797,47 @@ h2 {
         max-width: 100%;
     }
 }
+
+/* =========================================
+   تنسيقات صفحة الأكلات (Food Page Sections)
+   ========================================= */
+
+/* 1. الأقسام الملونة (Full Width Backgrounds) */
+.region-section {
+    width: 100%;
+    padding: 80px 0;
+    /* جعل العنوان في الوسط */
+    text-align: center;
+}
+
+/* 2. الوعاء لضبط المحتوى في الوسط (Container) */
+.food-container {
+    max-width: 1400px; /* نفس عرض الموقع الأصلي */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 3. شبكة الأكلات الجديدة (تختلف عن cards القديمة لتستوعب 5 عناصر) */
+.food-grid {
+    display: flex;         /* نستخدم Flex لأنه أسهل في التوزيع */
+    flex-wrap: wrap;       /* يسمح بنزول البطاقات للأسفل في الشاشات الصغيرة */
+    gap: 25px;             /* مسافة بين البطاقات */
+    justify-content: center; /* توسيط البطاقات دائماً */
+    margin-top: 40px;      /* مسافة بين العنوان والبطاقات */
+}
+
+/* 4. ألوان المناطق (Background Colors) */
+.bg-central { background-color: #FAF5EF; }
+.text-central { color: #8D6E63; }
+
+.bg-western { background-color: #EFF8F9; }
+.text-western { color: #00838F; }
+
+.bg-southern { background-color: #F1F8E9; }
+.text-southern { color: #2E7D32; }
+
+.bg-eastern { background-color: #E3F2FD; }
+.text-eastern { color: #1565C0; }
+
+.bg-northern { background-color: #F3E5F5; }
+.text-northern { color: #7B1FA2; }
