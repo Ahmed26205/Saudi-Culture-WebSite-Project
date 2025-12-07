@@ -122,21 +122,22 @@ h2 {
    =========================== */
 /* Language switcher */
 .lang-btn {
-    padding: 0;
-    background: var(--saudi-gold);
-    color: inherit;
-    border: 2px solid currentColor;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
+    padding: 1rem 1rem;
+    /* نفس padding لزر login */
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    display: inline-block;
+    /* لتطابق أزرار أخرى */
 }
 
 .lang-btn:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-    color: white;
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
 }
 
 /* ===========================
@@ -642,7 +643,7 @@ h2 {
 }
 
 /* Left content of events section | النص والزر في الجهة اليسار */
-.mini-events-section > div:first-child {
+.mini-events-section>div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -812,32 +813,76 @@ h2 {
 
 /* 2. الوعاء لضبط المحتوى في الوسط (Container) */
 .food-container {
-    max-width: 1400px; /* نفس عرض الموقع الأصلي */
+    max-width: 1400px;
+    /* نفس عرض الموقع الأصلي */
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* 3. شبكة الأكلات الجديدة (تختلف عن cards القديمة لتستوعب 5 عناصر) */
 .food-grid {
-    display: flex;         /* نستخدم Flex لأنه أسهل في التوزيع */
-    flex-wrap: wrap;       /* يسمح بنزول البطاقات للأسفل في الشاشات الصغيرة */
-    gap: 25px;             /* مسافة بين البطاقات */
-    justify-content: center; /* توسيط البطاقات دائماً */
-    margin-top: 40px;      /* مسافة بين العنوان والبطاقات */
+    display: flex;
+    /* نستخدم Flex لأنه أسهل في التوزيع */
+    flex-wrap: wrap;
+    /* يسمح بنزول البطاقات للأسفل في الشاشات الصغيرة */
+    gap: 25px;
+    /* مسافة بين البطاقات */
+    justify-content: center;
+    /* توسيط البطاقات دائماً */
+    margin-top: 40px;
+    /* مسافة بين العنوان والبطاقات */
 }
 
 /* 4. ألوان المناطق (Background Colors) */
-.bg-central { background-color: #FAF5EF; }
-.text-central { color: #8D6E63; }
+.bg-central {
+    background-color: #FAF5EF;
+}
 
-.bg-western { background-color: #EFF8F9; }
-.text-western { color: #00838F; }
+.text-central {
+    color: #8D6E63;
+}
 
-.bg-southern { background-color: #F1F8E9; }
-.text-southern { color: #2E7D32; }
+.bg-western {
+    background-color: #EFF8F9;
+}
 
-.bg-eastern { background-color: #E3F2FD; }
-.text-eastern { color: #1565C0; }
+.text-western {
+    color: #00838F;
+}
 
-.bg-northern { background-color: #F3E5F5; }
-.text-northern { color: #7B1FA2; }
+.bg-southern {
+    background-color: #F1F8E9;
+}
+
+.text-southern {
+    color: #2E7D32;
+}
+
+.bg-eastern {
+    background-color: #E3F2FD;
+}
+
+.text-eastern {
+    color: #1565C0;
+}
+
+.bg-northern {
+    background-color: #F3E5F5;
+}
+
+.text-northern {
+    color: #7B1FA2;
+}
+
+/* هوامش بين contact us and username */
+#mainHeader nav a:last-of-type:dir(ltr) {
+    margin-right: 25px;
+}
+
+#mainHeader nav a:last-of-type:dir(rtl) {
+    margin-left: 25px;
+}
+
+#mainHeader nav a:last-of-type {
+    margin-right: 25px;
+}

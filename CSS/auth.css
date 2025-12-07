@@ -1,12 +1,13 @@
 .auth-container {
     width: 380px;
     max-width: 95%;
-    margin: 200px auto;
+    margin: 120px auto;
     padding: 30px;
     background: white;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
+    margin: 180px auto;
 }
 
 .auth-container h2 {
@@ -45,6 +46,65 @@
     font-weight: 600;
 }
 
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background: #0e6b4e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    padding: 10px;
+}
+
+.profile-menu:dir(ltr) .dropdown-content {
+    left: 0;
+    right: auto;
+}
+
+.profile-menu:dir(rtl) .dropdown-content {
+    left: 0;
+    right: auto;
+}
+
+
+.dropdown-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown-content button {
+    width: 100%;
+    background: #0e6b4e;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+.profile-menu.show .dropdown-content {
+    display: block;
+}
 
 @media (max-width: 500px) {
     .auth-container {
