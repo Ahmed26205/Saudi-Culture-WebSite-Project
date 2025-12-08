@@ -39,6 +39,23 @@
             <a href="quiz.html">Quiz</a>
             <a href="Contact.html">Contact us</a>
 
+
+            <!-- Search button -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="Search in the web. . ." />
+</div>
+
+
             <div class="nav-buttons">
                 <!-- User profile dropdown (hidden by default) -->
                 <div class="profile-menu" id="profileMenu" style="display: none;">
@@ -78,7 +95,7 @@
             <!-- Primary action buttons in hero -->
             <div class="action-buttons">
                 <input type="button" value="Explore Culture">
-                <input type="button" value="Start Quiz">
+                <input type="button" value="Start Quiz" onclick="window.location.href='quiz.html'">
             </div>
 
             <!-- Search and filter area inside the hero -->

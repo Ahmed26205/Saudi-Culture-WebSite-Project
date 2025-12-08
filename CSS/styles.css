@@ -1009,3 +1009,38 @@ h2 {
         font-size: 20px;
     }
 }
+
+/* زر البحث داخل الهيدر */
+.nav-search-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: inherit;
+    padding: 0.3rem 0.6rem;
+    transition: 0.3s;
+}
+
+.nav-search-btn:hover {
+    transform: scale(1.2);
+    color: var(--color-accent);
+}
+
+/* شريط البحث العلوي */
+.top-search-bar {
+    top: 80px;
+    right: 0;
+    background: var(--shadow-md);
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 999;
+}
+
+.top-search-bar input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+}
