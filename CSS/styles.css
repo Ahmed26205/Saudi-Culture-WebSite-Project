@@ -124,22 +124,23 @@ h2 {
 /* Language switcher */
 .lang-btn {
     padding: 1rem 1rem;
-    /* نفس padding لزر login */
-    background: var(--color-accent);
-    color: white;
+    background: var(--shadow-lg);
+    color: var(--color-text);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
     display: inline-block;
-    /* لتطابق أزرار أخرى */
 }
 
 .lang-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
+    background: var(--saudi-gold);
+
 }
+
 
 /* ===========================
    زر تسجيل الدخول في الشريط العلوي
