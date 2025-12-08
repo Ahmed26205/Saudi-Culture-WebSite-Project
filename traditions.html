@@ -74,88 +74,195 @@
                 <!-- Default login/signup buttons -->
                 <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
                 <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-                <button class="lang-btn" onclick="window.location.href='history_ar.html'">AR</button>
+                <button class="lang-btn" onclick="window.location.href='traditions_ar.html'">AR</button>
+
+
             </div>
         </nav>
     </header>
 
-    <main>
-    <!-- Page intro -->
+  <main>
+    <!-- Hero section with video -->
     <section class="main-visual-section">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="videos/Saudi culture.mp4" type="video/mp4">
+        </video>
+
         <div class="main-visual-content">
-            <h1>Saudi Traditions</h1>
+            <span class="traditions-tagline">Saudi Traditions</span>
+            <h1>Culture in Everyday Life</h1>
             <p>
-                Saudi traditions appear clearly in daily life: in hospitality, greetings,
-                clothing, and celebrations such as Eid and weddings. This page gives a short
-                overview of key social customs in the Kingdom.
+                Saudi culture is built on faith, family and hospitality. Although each region has
+                its own customs and accent, Saudis share values seen in greetings, clothing,
+                celebrations and social life.
             </p>
         </div>
     </section>
 
-    <!-- Hospitality -->
-    <section class="content-section traditions-section">
-        <h2>Hospitality and Saudi Coffee</h2>
-        <p>
-            Hospitality is a core value in Saudi society. Guests, including unexpected visitors,
-            are usually welcomed warmly and offered coffee and dates before a main meal.
+    <!-- Main traditions blocks (text + image) -->
+    <section class="traditions-container">
+        <h2 style="text-align:center;">Key Traditions Across the Kingdom</h2>
+        <p style="text-align:center; max-width:800px; margin:0.5rem auto;">
+            These sections highlight some of the most visible traditions in Saudi life—from welcoming
+            guests with coffee and dates to celebrating Eid and weddings with family and friends.
         </p>
-        <ul>
-            <li>Serving Arabic coffee first, often with dates or sweets.</li>
-            <li>Insisting that the guest feels at home and well taken care of.</li>
-            <li>Preparing generous meals on special visits and occasions.</li>
-        </ul>
+
+        <div class="traditions-grid">
+
+            <!-- 1 - Hospitality -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    
+                    <img src="images/saudi_hospitality.jpg" alt="Saudi coffee and dates">
+                </div>
+                <div class="traditions-text">
+                    <h2>Hospitality & Arabic Coffee</h2>
+                    <p>
+                        Hospitality is a cornerstone of Saudi culture. Guests are welcomed warmly,
+                        even without prior notice, and are offered Arabic coffee and dates as a first gesture.
+                    </p>
+                    <ul>
+                        <li>Serving coffee as a sign of honor and respect.</li>
+                        <li>Making guests feel relaxed and “at home”.</li>
+                        <li>Preparing generous meals for special visits and occasions.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- 2 - Greetings -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    <img src="images/saudi_greeting.jpg" alt="Saudi greeting traditions">
+                </div>
+                <div class="traditions-text">
+                    <h2>Greetings & Social Etiquette</h2>
+                    <p>
+                        Greetings are warm and often include asking about health and family
+                        before moving on to any other subject.
+                    </p>
+                    <ul>
+                        <li>Starting with “Assalamu Alaikum” and polite expressions.</li>
+                        <li>Showing special respect to elders in language and seating.</li>
+                        <li>Regular social visits and family majlis (sitting rooms).</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- 3 - Clothing -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    <img src="images/traditional_clothing.jpg" alt="Traditional Saudi clothing">
+                </div>
+                <div class="traditions-text">
+                    <h2>Traditional Dress</h2>
+                    <p>
+                        Clothing in Saudi Arabia is modest and reflects both climate and local customs.
+                        Traditional outfits are still common in daily life and during important events.
+                    </p>
+                    <ul>
+                        <li>Men: thobe, shemagh or ghutra, and bisht on special occasions.</li>
+                        <li>Women: abaya in public, with styles that differ by region.</li>
+                        <li>National dress is often worn on religious and national holidays.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- 4 - Celebrations -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    <img src="images/saudi_celebration.jpg" alt="Saudi family celebration">
+                </div>
+                <div class="traditions-text">
+                    <h2>Celebrations & Family Life</h2>
+                    <p>
+                        Religious holidays and weddings bring families and communities together.
+                        These occasions are full of joy, traditional dishes and sometimes folk performances.
+                    </p>
+                    <ul>
+                        <li>Eid prayers followed by visiting relatives and sharing meals.</li>
+                        <li>Giving “Eidiya” (money or gifts) to children on Eid mornings.</li>
+                        <li>Henna nights before weddings in many regions of the Kingdom.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
     </section>
 
-    <!-- Greetings and social etiquette -->
-    <section class="content-section traditions-section">
-        <h2>Greetings and Social Etiquette</h2>
-        <p>
-            Greetings may differ from one region to another, but they all reflect respect and
-            strong family and community ties.
+    <!-- Extra general info about Saudi traditions (with optional images) -->
+    <section class="traditions-container" style="margin-top: 3.5rem;">
+        <h2 style="text-align:center;">More About Saudi Traditions</h2>
+        <p style="text-align:center; max-width:850px; margin:0.5rem auto 2rem; line-height:1.8;">
+            Saudi traditions connect the past with the present. They highlight values such as generosity,
+            respect, family unity and cultural pride. Even with rapid development and modernization,
+            many customs remain an important part of daily life.
         </p>
-        <ul>
-            <li>Common greetings include “Assalamu Alaikum” and asking about family members.</li>
-            <li>Men may shake hands or lightly hug close relatives and friends.</li>
-            <li>Conversations usually start with polite small talk before any business topic.</li>
-        </ul>
-    </section>
 
-    <!-- Dress and appearance -->
-    <section class="content-section traditions-section">
-        <h2>Traditional Dress and Modesty</h2>
-        <p>
-            Dress in Saudi Arabia is generally modest and influenced by local customs and climate.
-            Traditional clothing is still worn daily and on special occasions.
-        </p>
-        <ul>
-            <li>Many men wear a white thobe, and a darker thobe in winter.</li>
-            <li>Women usually wear an abaya in public, with styles that vary by region.</li>
-            <li>Visitors are expected to dress modestly in public places.</li>
-        </ul>
-    </section>
+        <div class="traditions-grid" style="gap: 2rem;">
 
-    <!-- Celebrations and occasions -->
-    <section class="content-section traditions-section">
-        <h2>Celebrations and Special Occasions</h2>
-        <p>
-            Religious and social occasions highlight Saudi customs, family gatherings,
-            and traditional joy.
-        </p>
-        <ul>
-            <li>
-                Eid al-Fitr and Eid al-Adha: praying in congregation, visiting relatives,
-                and exchanging festive meals and sweets.
-            </li>
-            <li>
-                Eidiya: giving money or gifts to children on the morning of Eid.
-            </li>
-            <li>
-                Henna nights before weddings, where women gather to celebrate and decorate
-                the bride’s hands with henna.
-            </li>
-        </ul>
+            <!-- Info 1: Respect for elders (with optional image) -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    <!-- غيّر الصورة أو امسح هذا الجزء لو ما تبي صورة -->
+                    <img src="images/respect_elders.jpg" alt="Respect for elders in Saudi culture">
+                </div>
+                <div class="traditions-text">
+                    <h2>Respect for Elders</h2>
+                    <p>
+                        Respecting elders is one of the strongest values in Saudi society. It appears in the way
+                        people speak, in seating order and in daily decisions.
+                    </p>
+                    <ul>
+                        <li>Giving elders priority in greetings and seating.</li>
+                        <li>Listening to their advice in family matters.</li>
+                        <li>Using polite and respectful language when addressing them.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Info 2: Family gatherings (with optional image) -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    <img src="images/family_gathering.jpg" alt="Saudi family gathering">
+                </div>
+                <div class="traditions-text">
+                    <h2>Family Gatherings</h2>
+                    <p>
+                        Families meet frequently, especially on weekends and during holidays. These gatherings
+                        strengthen relationships and preserve cultural identity.
+                    </p>
+                    <ul>
+                        <li>Regular visits between close and extended family members.</li>
+                        <li>Sharing meals and traditional stories at the family table.</li>
+                        <li>Celebrating achievements and special moments together.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Info 3: Language, Proverbs & Regional Diversity -->
+            <article class="traditions-item">
+                <div class="traditions-image">
+                    <img src="images/saudi_regions.jpg" alt="Different regions of Saudi Arabia">
+                </div>
+                <div class="traditions-text">
+                    <h2>Language, Proverbs & Regional Diversity</h2>
+                    <p>
+                        Saudi Arabia has many local accents and expressions. Proverbs and traditional sayings
+                        carry wisdom, humor and social lessons that are passed between generations.
+                    </p>
+                    <ul>
+                        <li>Each region has its own accent and expressions.</li>
+                        <li>Proverbs are used to give advice or describe situations in a simple way.</li>
+                        <li>Najd, Hijaz, the South, the East and the North each add a unique flavor to culture.</li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
     </section>
 </main>
+
+
+
 
 
     <!-- Shared footer section -->
