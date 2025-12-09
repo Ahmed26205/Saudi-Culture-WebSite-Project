@@ -1220,3 +1220,86 @@ h2 {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
 }
+
+/* =========================================
+   تنسيقات صفحة الفنون (Arts Page Sections)
+   ========================================= */
+
+/* 1. الجدار الخارجي (ترتيب الصور كأعمدة متداخلة) */
+.arts-container {
+  column-count: 3;        /* تقسيم الشاشة لـ 3 أعمدة */
+  column-gap: 25px;       /* مسافة بين الأعمدة */
+  padding: 50px 20px;
+
+  overflow: hidden; /* هذا السطر يجبر الحاوية أن تتمدد لتشمل كل الصور */
+  min-height: 500px; /* ضمان وجود طول مبدئي */
+}
+
+/* 2. مسرح البطاقة */
+.flip-card {
+  perspective: 1000px;    /* تفعيل الـ 3D */
+  margin-bottom: 25px;    /* مسافة تحت كل بطاقة */
+  break-inside: avoid;    /* يمنع انقسام البطاقة بين عمودين */
+  background-color: transparent;
+  cursor: pointer;
+
+  display: inline-block; /* يجعل المتصفح يعامل البطاقة ككتلة واحدة لا تتجزأ */
+  width: 100%; /* لملء عرض العمود */
+
+}
+
+/* 3. الجسم المتحرك (يحتوي الوجه والظهر) */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+ 
+  text-align: center;
+  transition: transform 0.6s; 
+  transform-style: preserve-3d;
+}
+
+/* الحركة: الانقلاب 180 درجة عند اللمس */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 4. تنسيق الوجه والظهر */
+.flip-card-front, .flip-card-back {
+  border-radius: 15px;
+  -webkit-backface-visibility: hidden; /* إخفاء الظهر */
+  backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* --- الوجه الأمامي (الصورة هي القائد) --- */
+.flip-card-front {
+  background-color: #fff;
+  position: relative; /* ضروري لكي تحجز الصورة مكاناً في الصفحة */
+}
+
+.flip-card-front img {
+  width: 100%;        /* عرض كامل */
+  height: auto;       /* الطول أوتوماتيكي حسب الصورة الأصلية */
+  display: block;     /* إزالة الفراغات */
+  border-radius: 15px;
+}
+
+/* --- الوجه الخلفي (يتبع حجم الصورة) --- */
+.flip-card-back {
+  position: absolute; /* يطفو فوق/خلف الصورة */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;       /* يأخذ نفس طول الصورة بالضبط */
+  
+  background-color: #1e5631; /* الأخضر الغامق */
+  color: white;
+  transform: rotateY(180deg); /* مقلوب جاهز */
+  
+  /* توسيط النص */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
