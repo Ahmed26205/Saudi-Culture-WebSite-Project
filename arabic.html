@@ -42,18 +42,19 @@
             <div class="nav-buttons">
                 <!-- ملف المستخدم -->
                 <div class="profile-menu" id="profileMenu" style="display: none;">
-                    <button class="profile-btn" id="profileBtn">
-                        <span id="userName">مستخدم</span> ⬇
-                    </button>
-                    <div class="dropdown-content" id="dropdownContent">
-                        <p id="userEmail">user@example.com</p>
+                    <a href="profile_ar.html" class="profile-btn" id="profileBtn">
+                        <span id="userName">مستخدم</span>
+                        <span class="profile-icon">👤</span>
+                    </a>
+                    <div class="dropdown-content" id="dropdownContent" style="display: none;">
                         <button id="logoutBtn">تسجيل الخروج</button>
                     </div>
                 </div>
-                <!-- أزرار تسجيل الدخول / إنشاء حساب -->
-                <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
-                <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
-                <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
+            </div>
+            <!-- أزرار تسجيل الدخول / إنشاء حساب -->
+            <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
+            <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
+            <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
             </div>
         </nav>
     </header>

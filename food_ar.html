@@ -42,13 +42,10 @@
             <div class="nav-buttons">
                 <!-- ملف المستخدم -->
                 <div class="profile-menu" id="profileMenu" style="display: none;">
-                    <button class="profile-btn" id="profileBtn">
-                        <span id="userName">مستخدم</span> ⬇
-                    </button>
-                    <div class="dropdown-content" id="dropdownContent">
-                        <p id="userEmail">user@example.com</p>
-                        <button id="logoutBtn">تسجيل الخروج</button>
-                    </div>
+                    <a href="profile_ar.html" class="profile-btn" id="profileBtn">
+                        <span id="userName">مستخدم</span>
+                        <span class="profile-icon">👤</span>
+                    </a>
                 </div>
 
                 <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
@@ -352,38 +349,25 @@
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
         const profileMenu = document.getElementById("profileMenu");
-        const profileBtn = document.getElementById("profileBtn");
         const userNameSpan = document.getElementById("userName");
-        const userEmailP = document.getElementById("userEmail");
-        const logoutBtn = document.getElementById("logoutBtn");
 
         onAuthStateChanged(auth, (user) => {
             const loginBtn = document.querySelector(".login-btn");
             const signupBtn = document.querySelector(".signup-btn");
 
             if (user) {
+                // اظهار ايقونة البروفايل واخفاء ازرار التسجيل والدخول
                 profileMenu.style.display = "inline-block";
                 loginBtn.style.display = "none";
                 signupBtn.style.display = "none";
 
-                userNameSpan.textContent = user.displayName || "مستخدم";
-                userEmailP.textContent = user.email || "";
-
-                logoutBtn.addEventListener("click", () => {
-                    auth.signOut().then(() => {
-                        window.location.href = "login_ar.html";
-                    });
-                });
-
-                profileBtn.addEventListener("click", () => {
-                    profileMenu.classList.toggle("show");
-                });
-
-                window.addEventListener("click", (e) => {
-                    if (!profileMenu.contains(e.target)) {
-                        profileMenu.classList.remove("show");
-                    }
-                });
+                // تحديث اسم المستخدم
+                userNameSpan.textContent = user.displayName || "ملفي";
+            } else {
+                // التاكد من اخفاء ايقونة البروفايل في حالة عدم تسجيل الدخول
+                profileMenu.style.display = "none";
+                loginBtn.style.display = "inline-block";
+                signupBtn.style.display = "inline-block";
             }
         });
     </script>

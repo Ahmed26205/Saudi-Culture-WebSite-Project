@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile - SaudiCulture</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/auth.css">
+    <script src="JS/script.js" defer></script>
+</head>
+
+<body>
+    <header id="mainHeader" class="scrolled">
+        <div class="logo">
+            <img src="images/Logo.png" alt="SaudiCulture Logo">
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="traditions.html">Traditions</a>
+            <a href="food.html">Food</a>
+            <a href="arts.html">Arts</a>
+            <a href="culture_events.html">Cultural events</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="Contact.html">Contact us</a>
+
+            <div class="nav-buttons">
+                <div class="profile-menu" id="profileMenu" style="display: none;">
+                    <a href="profile.html" class="profile-btn active" id="profileBtn">
+                        <span id="userName">User</span>
+                        <span class="profile-icon">👤</span>
+                    </a>
+                    <div class="dropdown-content" id="dropdownContent" style="display: none;">
+                        <button id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+
+                <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+                <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+                <button class="lang-btn" onclick="window.location.href='profile_ar.html'">AR</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profile-section">
+        <h2>Your Profile Settings</h2>
+
+        <div class="profile-details">
+            <h3>Account Information</h3>
+            <p><strong>Name:</strong> <span id="profileNameDisplay">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="profileEmailDisplay">Loading...</span></p>
+            <hr style="border-top: 1px solid #ddd; margin: 15px 0;">
+            <p><strong>Account Created:</strong> <span id="creationDate">N/A</span></p>
+            <p><strong>Last Visit:</strong> <span id="lastSignInTime">N/A</span></p>
+        </div>
+
+        <div class="profile-actions">
+            <div class="action-card">
+                <h3>Update Username</h3>
+                <form id="updateNameForm">
+                    <input type="text" id="newName" placeholder="New Full Name" required>
+                    <button type="submit" class="update-btn">Update Name</button>
+                    <p id="nameMessage" class="status-msg"></p>
+                </form>
+            </div>
+
+            <div class="action-card">
+                <h3>Change Password</h3>
+                <form id="resetPasswordForm">
+                    <input type="password" id="newPassword" placeholder="New Password (min 6 chars)" required>
+                    <button type="submit" class="update-btn">Reset Password</button>
+                    <p id="passwordMessage" class="status-msg"></p>
+                </form>
+            </div>
+        </div>
+
+        <button id="logoutButtonBottom" class="auth-btn" style="background: #e74c3c; margin-top: 30px;">Logout</button>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <p>
+                    <strong>SaudiCulture</strong> is a digital window into the rich history,
+                    heritage, and cultural diversity of Saudi Arabia.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="history.html">History</a>
+                <a href="traditions.html">Traditions</a>
+                <a href="food.html">Food</a>
+                <a href="arts.html">Arts</a>
+                <a href="Contact.html">Contact Us</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📞 +966554731708</p>
+                <p>📧 mawrooth@gmail.com</p>
+                <p>📍 Makkah, Saudi Arabia</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { auth } from "./JS/firebase-config.js";
+        import {
+            onAuthStateChanged,
+            signOut,
+            updateProfile,
+            updatePassword
+        } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+        // DOM Elements
+        const profileMenu = document.getElementById("profileMenu");
+        const userNameSpan = document.getElementById("userName");
+        const logoutBtn = document.getElementById("logoutBtn"); // Header logout
+        const logoutButtonBottom = document.getElementById("logoutButtonBottom"); // Page logout
+        const profileNameDisplay = document.getElementById("profileNameDisplay");
+        const profileEmailDisplay = document.getElementById("profileEmailDisplay");
+        const creationDate = document.getElementById("creationDate");
+        const lastSignInTime = document.getElementById("lastSignInTime");
+        const mainSection = document.querySelector(".profile-section");
+
+        const updateNameForm = document.getElementById("updateNameForm");
+        const newNameInput = document.getElementById("newName");
+        const nameMessage = document.getElementById("nameMessage");
+
+        const resetPasswordForm = document.getElementById("resetPasswordForm");
+        const newPasswordInput = document.getElementById("newPassword");
+        const passwordMessage = document.getElementById("passwordMessage");
+
+        // Helper to format date
+        const formatDate = (timestamp) => {
+            if (!timestamp) return "N/A";
+            const date = new Date(timestamp);
+            return date.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        };
+
+        // Check Auth State and populate data
+        onAuthStateChanged(auth, (user) => {
+            const loginBtn = document.querySelector(".login-btn");
+            const signupBtn = document.querySelector(".signup-btn");
+
+            if (user) {
+                // Display profile details
+                profileNameDisplay.textContent = user.displayName || "User";
+                profileEmailDisplay.textContent = user.email || "N/A";
+                creationDate.textContent = formatDate(user.metadata.creationTime);
+                lastSignInTime.textContent = formatDate(user.metadata.lastSignInTime);
+
+                // Show profile link in Navbar
+                profileMenu.style.display = "inline-block";
+                loginBtn.style.display = "none";
+                signupBtn.style.display = "none";
+                userNameSpan.textContent = user.displayName || "Profile";
+                mainSection.style.display = "block"; // Show content
+
+            } else {
+                // If not logged in, redirect to login page
+                alert("You need to be logged in to view your profile.");
+                window.location.href = "login.html";
+            }
+        });
+
+        // ------------------ Action Handlers ------------------
+
+        // Logout function
+        const performLogout = () => {
+            signOut(auth).then(() => {
+                window.location.href = "login.html";
+            }).catch((error) => {
+                console.error("Logout error:", error);
+            });
+        };
+        logoutBtn.addEventListener("click", performLogout);
+        logoutButtonBottom.addEventListener("click", performLogout);
+
+
+        // Update Name Handler
+        updateNameForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const user = auth.currentUser;
+            const newName = newNameInput.value.trim();
+
+            if (user && newName) {
+                try {
+                    await updateProfile(user, { displayName: newName });
+                    profileNameDisplay.textContent = newName; // Update display immediately
+                    userNameSpan.textContent = newName; // Update navbar immediately
+
+                    nameMessage.textContent = "Username updated successfully!";
+                    nameMessage.classList.add("success");
+                    newNameInput.value = "";
+                } catch (error) {
+                    nameMessage.textContent = `Error: ${error.message}`;
+                    nameMessage.classList.remove("success");
+                }
+            }
+        });
+
+        // Reset Password Handler
+        resetPasswordForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const user = auth.currentUser;
+            const newPassword = newPasswordInput.value;
+
+            if (user && newPassword.length >= 6) {
+                try {
+                    await updatePassword(user, newPassword);
+                    passwordMessage.textContent = "Password updated successfully. Please log in again soon.";
+                    passwordMessage.classList.add("success");
+                    newPasswordInput.value = "";
+                } catch (error) {
+                    // This error often means user needs to re-authenticate
+                    passwordMessage.textContent = `Error: ${error.message}. Please log in again to change the password.`;
+                    passwordMessage.classList.remove("success");
+                }
+            } else {
+                passwordMessage.textContent = "Password must be at least 6 characters.";
+                passwordMessage.classList.remove("success");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1081,3 +1081,141 @@ h2 {
 .profile-menu.show .dropdown-content {
     display: block;
 }
+
+/* =========================================
+   تنسيقات صفحة الملف الشخصي (Profile Page)
+   ========================================= */
+
+/* إعادة ضبط الحاوية الرئيسية للبروفايل */
+.profile-section {
+    max-width: 800px;
+    margin: 150px auto 50px;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid #eee;
+}
+
+.profile-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: var(--color-accent);
+}
+
+/* تفاصيل المستخدم (الاسم، الايميل، التواريخ) */
+.profile-details {
+    padding: 1.5rem;
+    background: var(--color-bg);
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--saudi-gold);
+}
+
+.profile-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0.5rem 0;
+}
+
+.profile-details strong {
+    color: var(--color-accent);
+    min-width: 150px;
+    /* لضمان محاذاة القيم */
+    display: inline-block;
+}
+
+/* قسم الإجراءات (تغيير الاسم وكلمة المرور) */
+.profile-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+    .profile-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.action-card {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.action-card h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.action-card input[type="text"],
+.action-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* زر التحديث داخل أقسام الإجراءات */
+.update-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: var(--color-accent);
+    color: white;
+    transition: 0.3s;
+}
+
+.update-btn:hover {
+    background: var(--saudi-gold);
+}
+
+/* رسائل الحالة (النجاح/الخطأ) داخل أقسام الإجراءات */
+.status-msg {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #c0392b;
+    font-weight: 500;
+}
+
+.status-msg.success {
+    color: var(--color-accent);
+}
+
+.profile-menu .profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: var(--color-accent);
+    color: white !important;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.profile-menu .profile-btn span#userName {
+    color: white !important;
+}
+
+.profile-menu .profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
+}
