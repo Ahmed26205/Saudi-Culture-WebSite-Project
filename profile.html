@@ -29,20 +29,18 @@
             <a href="quiz.html">Quiz</a>
             <a href="Contact.html">Contact us</a>
 
-            <div class="nav-buttons">
-                <div class="profile-menu" id="profileMenu" style="display: none;">
-                    <a href="profile.html" class="profile-btn active" id="profileBtn">
-                        <span id="userName">User</span>
-                        <span class="profile-icon">👤</span>
-                    </a>
-                    <div class="dropdown-content" id="dropdownContent" style="display: none;">
-                        <button id="logoutBtn">Logout</button>
-                    </div>
-                </div>
+            <a href="profile.html" class="profile-square" title="الملف الشخصي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                </svg>
+            </a>
 
-                <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-                <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-                <button class="lang-btn" onclick="window.location.href='profile_ar.html'">AR</button>
+
+            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+            <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+            <button class="lang-btn" onclick="window.location.href='profile_ar.html'">AR</button>
             </div>
         </nav>
     </header>
@@ -124,11 +122,7 @@
             updatePassword
         } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-        // DOM Elements
-        const profileMenu = document.getElementById("profileMenu");
-        const userNameSpan = document.getElementById("userName");
-        const logoutBtn = document.getElementById("logoutBtn"); // Header logout
-        const logoutButtonBottom = document.getElementById("logoutButtonBottom"); // Page logout
+        const logoutButtonBottom = document.getElementById("logoutButtonBottom");
         const profileNameDisplay = document.getElementById("profileNameDisplay");
         const profileEmailDisplay = document.getElementById("profileEmailDisplay");
         const creationDate = document.getElementById("creationDate");
@@ -143,54 +137,47 @@
         const newPasswordInput = document.getElementById("newPassword");
         const passwordMessage = document.getElementById("passwordMessage");
 
-        // Helper to format date
         const formatDate = (timestamp) => {
             if (!timestamp) return "N/A";
             const date = new Date(timestamp);
-            return date.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            return date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
         };
 
-        // Check Auth State and populate data
         onAuthStateChanged(auth, (user) => {
             const loginBtn = document.querySelector(".login-btn");
             const signupBtn = document.querySelector(".signup-btn");
 
             if (user) {
-                // Display profile details
                 profileNameDisplay.textContent = user.displayName || "User";
                 profileEmailDisplay.textContent = user.email || "N/A";
                 creationDate.textContent = formatDate(user.metadata.creationTime);
                 lastSignInTime.textContent = formatDate(user.metadata.lastSignInTime);
 
-                // Show profile link in Navbar
-                profileMenu.style.display = "inline-block";
                 loginBtn.style.display = "none";
                 signupBtn.style.display = "none";
-                userNameSpan.textContent = user.displayName || "Profile";
-                mainSection.style.display = "block"; // Show content
-
+                mainSection.style.display = "block";
             } else {
-                // If not logged in, redirect to login page
                 alert("You need to be logged in to view your profile.");
                 window.location.href = "login.html";
             }
         });
 
-        // ------------------ Action Handlers ------------------
-
-        // Logout function
+        // ✅ تسجيل الخروج (زر أسفل الصفحة)
         const performLogout = () => {
             signOut(auth).then(() => {
                 window.location.href = "login.html";
-            }).catch((error) => {
-                console.error("Logout error:", error);
             });
         };
-        logoutBtn.addEventListener("click", performLogout);
+
         logoutButtonBottom.addEventListener("click", performLogout);
 
-
-        // Update Name Handler
+        // ✅ تحديث الاسم
         updateNameForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             const user = auth.currentUser;
@@ -199,8 +186,7 @@
             if (user && newName) {
                 try {
                     await updateProfile(user, { displayName: newName });
-                    profileNameDisplay.textContent = newName; // Update display immediately
-                    userNameSpan.textContent = newName; // Update navbar immediately
+                    profileNameDisplay.textContent = newName;
 
                     nameMessage.textContent = "Username updated successfully!";
                     nameMessage.classList.add("success");
@@ -212,7 +198,7 @@
             }
         });
 
-        // Reset Password Handler
+        // ✅ تغيير كلمة المرور
         resetPasswordForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             const user = auth.currentUser;
@@ -221,12 +207,11 @@
             if (user && newPassword.length >= 6) {
                 try {
                     await updatePassword(user, newPassword);
-                    passwordMessage.textContent = "Password updated successfully. Please log in again soon.";
+                    passwordMessage.textContent = "Password updated successfully.";
                     passwordMessage.classList.add("success");
                     newPasswordInput.value = "";
                 } catch (error) {
-                    // This error often means user needs to re-authenticate
-                    passwordMessage.textContent = `Error: ${error.message}. Please log in again to change the password.`;
+                    passwordMessage.textContent = `Error: ${error.message}`;
                     passwordMessage.classList.remove("success");
                 }
             } else {
@@ -234,8 +219,8 @@
                 passwordMessage.classList.remove("success");
             }
         });
-
     </script>
+
 </body>
 
 </html>

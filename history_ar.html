@@ -41,13 +41,13 @@
 
             <div class="nav-buttons">
                 <!-- ملف المستخدم -->
-                <div class="profile-menu" id="profileMenu" style="display: none;">
-                    <a href="profile_ar.html" class="profile-btn" id="profileBtn">
-                        <span id="userName">مستخدم</span>
-                        <span class="profile-icon">👤</span>
-                    </a>
-                </div>
-
+                <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg>
+                </a>
                 <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
                 <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
                 <button class="lang-btn" onclick="window.location.href='history.html'">EN</button>
@@ -249,28 +249,26 @@
 
     <script type="module">
         import { auth } from "./JS/firebase-config.js";
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-
-        const profileMenu = document.getElementById("profileMenu");
-        const userNameSpan = document.getElementById("userName");
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
         onAuthStateChanged(auth, (user) => {
             const loginBtn = document.querySelector(".login-btn");
             const signupBtn = document.querySelector(".signup-btn");
+            const profileIcon = document.querySelector(".profile-square");
 
             if (user) {
-                // اظهار ايقونة البروفايل واخفاء ازرار التسجيل ,الدخول
-                profileMenu.style.display = "inline-block";
+                // إخفاء أزرار الدخول
                 loginBtn.style.display = "none";
                 signupBtn.style.display = "none";
 
-                // تحديث اسم المستخدم 
-                userNameSpan.textContent = user.displayName || "ملفي";
+                // إظهار أيقونة البروفايل
+                profileIcon.style.display = "inline-flex";
+
             } else {
-                // التأكد من اخفاء ايقونة البروفايل في حال عدم تسجيل الدخول
-                profileMenu.style.display = "none";
+                // العكس عند تسجيل الخروج
                 loginBtn.style.display = "inline-block";
                 signupBtn.style.display = "inline-block";
+                profileIcon.style.display = "none";
             }
         });
     </script>

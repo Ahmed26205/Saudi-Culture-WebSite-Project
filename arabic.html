@@ -39,18 +39,14 @@
             <a href="quiz_ar.html">الاختبار</a>
             <a href="Contact_ar.html">اتصل بنا</a>
 
-            <div class="nav-buttons">
-                <!-- ملف المستخدم -->
-                <div class="profile-menu" id="profileMenu" style="display: none;">
-                    <a href="profile_ar.html" class="profile-btn" id="profileBtn">
-                        <span id="userName">مستخدم</span>
-                        <span class="profile-icon">👤</span>
-                    </a>
-                    <div class="dropdown-content" id="dropdownContent" style="display: none;">
-                        <button id="logoutBtn">تسجيل الخروج</button>
-                    </div>
-                </div>
-            </div>
+            <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                </svg>
+            </a>
+
             <!-- أزرار تسجيل الدخول / إنشاء حساب -->
             <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
             <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
@@ -201,44 +197,30 @@
 
     <script type="module">
         import { auth } from "./JS/firebase-config.js";
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-
-        const profileMenu = document.getElementById("profileMenu");
-        const profileBtn = document.getElementById("profileBtn");
-        const userNameSpan = document.getElementById("userName");
-        const userEmailP = document.getElementById("userEmail");
-        const logoutBtn = document.getElementById("logoutBtn");
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
         onAuthStateChanged(auth, (user) => {
             const loginBtn = document.querySelector(".login-btn");
             const signupBtn = document.querySelector(".signup-btn");
+            const profileIcon = document.querySelector(".profile-square");
 
             if (user) {
-                profileMenu.style.display = "inline-block";
+                // إخفاء أزرار الدخول
                 loginBtn.style.display = "none";
                 signupBtn.style.display = "none";
 
-                userNameSpan.textContent = user.displayName || "مستخدم";
-                userEmailP.textContent = user.email || "";
+                // إظهار أيقونة البروفايل
+                profileIcon.style.display = "inline-flex";
 
-                logoutBtn.addEventListener("click", () => {
-                    auth.signOut().then(() => {
-                        window.location.href = "login_ar.html";
-                    });
-                });
-
-                profileBtn.addEventListener("click", () => {
-                    profileMenu.classList.toggle("show");
-                });
-
-                window.addEventListener("click", (e) => {
-                    if (!profileMenu.contains(e.target)) {
-                        profileMenu.classList.remove("show");
-                    }
-                });
+            } else {
+                // العكس عند تسجيل الخروج
+                loginBtn.style.display = "inline-block";
+                signupBtn.style.display = "inline-block";
+                profileIcon.style.display = "none";
             }
         });
     </script>
+
 
 </body>
 
