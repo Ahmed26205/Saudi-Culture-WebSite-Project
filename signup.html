@@ -13,41 +13,31 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="auth-page">
 
     <header id="mainHeader">
         <div class="logo">
-            <!-- الشعار الخاص بالموقع  -->
             <img src="images/Logo.png" alt="SaudiCulture Logo">
         </div>
         <nav>
-            <!-- روابط الصفحة الرئيسية وتسجيل الدخول -->
-            <a href="index.html" class="signup-btn">Home</a>
+            <a href="index.html">Home</a>
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup_ar.html" class="lang-btn">AR</a>
         </nav>
     </header>
-    <!-- container التسجيل -->
     <div class="auth-container">
         <h2>Create Account</h2>
-        <!-- form انشاء الحساب -->
         <form id="signupForm">
-            <!-- ادخال الاسم -->
             <input type="text" id="name" placeholder="Full Name" required>
-            <!-- ادخال الايميل -->
             <input type="email" id="email" placeholder="Email Address" required>
-            <!-- ادخال كلمة المرور -->
             <input type="password" id="password" placeholder="Password" required>
-            <!-- زر ارسال النموذج -->
             <button type="submit" class="auth-btn">Sign Up</button>
-            <!-- رابط للذهاب لصفحة تسجيل الدخول -->
             <p>Already have an account? <a href="login.html">Login</a></p>
         </form>
-        <!-- رسالة نجاح/خطأ -->
         <p id="message" class="msg"></p>
     </div>
-    <!-- ربط ملف اعدادات Firebase -->
     <script type="module" src="JS/firebase-config.js"></script>
     <script>window.pageLang = "en";</script>
-    <!-- ربط ملف الأكواد الخاص بتسجيل المستخدم -->
     <script type="module" src="JS/auth.js"></script>
 
 </body>
