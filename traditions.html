@@ -267,6 +267,17 @@
     </div>
 </section>
 
+<!-- ========================= HEADER SCROLL FIX ========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.getElementById("mainHeader");
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) header.classList.add("scrolled");
+        else header.classList.remove("scrolled");
+    });
+});
+</script>
+
 
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
@@ -301,18 +312,5 @@
         <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
     </div>
 </footer>
-
-
-<!-- ========================= CLEAN HEADER FIX ========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const header = document.getElementById("mainHeader");
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) header.classList.add("scrolled");
-        else header.classList.remove("scrolled");
-    });
-});
-</script>
-
 </body>
 </html>
