@@ -38,6 +38,21 @@
             <a href="culture_events.html">Cultural events</a>
             <a href="quiz.html">Quiz</a>
             <a href="Contact.html">Contact us</a>
+            
+                        <!-- Search button -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="Search in the web. . ." />
+</div>
 
             <a href="profile.html" class="profile-square" title="الملف الشخصي">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
@@ -76,29 +91,81 @@
                 <input type="button" value="Explore Culture">
                 <input type="button" value="Start Quiz">
             </div>
-
-            <!-- Search and filter area inside the hero -->
-            <div class="search-section">
-                <!-- Search input field -->
-                <input type="search" name="q" id="mySearch" placeholder="Search for dishes, festivals, antiquities..."
-                    aria-label="Search content">
-                <br><br>
-
-                <!-- Category filter dropdown -->
-                <select aria-label="Filter search results">
-                    <option value="all">All Categories</option>
-                    <option value="food">Traditional Food</option>
-                    <option value="traditions">Cultural Traditions</option>
-                    <option value="religious">History and civilizations</option>
-                    <option value="nature">Traditional arts</option>
-                    <option value="history">Cultural events</option>
-                </select>
-
-                <!-- Search submit button -->
-                <button type="submit">Search</button>
-            </div>
         </div>
     </section>
+
+
+    <h2 class="section-title">About Mawrooth</h2>
+
+<section class="about-section">
+    <p>
+        “Mawrooth” is a digital cultural platform designed to highlight the richness of Saudi heritage—
+        from history and traditions to food, arts, and cultural events. Our goal is to present authentic,
+        accessible, and enjoyable content that helps visitors understand the essence of Saudi identity
+        through a modern, engaging experience.
+    </p>
+</section>
+
+
+<h2 class="section-title">Poetic Echoes of Saudi Heritage</h2>
+
+<section class="poetry-section">
+    <div class="poetry-list">
+
+        <!-- Khaled Al-Faisal -->
+        <article class="poetry-card">
+            <div class="poetry-photo">
+                <img src="images/خالد الفيصل.jpeg" alt="Prince Khaled Al-Faisal">
+            </div>
+            <div class="poetry-content">
+                <h3 class="poet-name">Prince Khaled Al-Faisal</h3>
+                <p class="poet-origin">Poet & Governor of Makkah Region</p>
+                <blockquote class="poet-quote">
+                    <p>
+                        أنا من هالأرض… أرض الخير<br>
+                        أرض أجدادي… وتراثي… لي فيها جذور ما تموت
+                    </p>
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- Ghazi Al-Gosaibi -->
+        <article class="poetry-card">
+            <div class="poetry-photo">
+                <img src="images/غازي القصيبي.jpeg" alt="Ghazi Al-Gosaibi">
+            </div>
+            <div class="poetry-content">
+                <h3 class="poet-name">Ghazi Al-Gosaibi</h3>
+                <p class="poet-origin">Renowned Saudi Poet, Minister & Diplomat</p>
+                <blockquote class="poet-quote">
+                    <p>
+                        يا وطناً شامخاً تسمو المآثرُ فيه<br>
+                        ما زلتَ في مهجتي عشقاً أُرتِّلهُ
+                    </p>
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- Talal Al-Rasheed -->
+        <article class="poetry-card">
+            <div class="poetry-photo">
+                <img src="images/طلال الرشيد.jpeg" alt="Talal Al-Rasheed">
+            </div>
+            <div class="poetry-content">
+                <h3 class="poet-name">Talal Al-Rasheed</h3>
+                <p class="poet-origin">Saudi Poet & Writer</p>
+                <blockquote class="poet-quote">
+                    <p>
+                        السعودية… يا دارٍ لنا<br>
+                        فيك المحبة… والأمان… والعز والسلاطين
+                    </p>
+                </blockquote>
+            </div>
+        </article>
+
+    </div>
+</section>
+
 
     <!-- Section title for the featured cards -->
     <h2 class="section-title">Featured Sections</h2>
@@ -135,6 +202,69 @@
     </div>
 
 
+    <section class="regions-journey">
+    <h2 class="section-title">Journey Through Saudi Regions</h2>
+    <p class="regions-subtitle">
+        Explore the five main regions of Saudi Arabia and discover the cultural landmarks and unique heritage of each area.
+    </p>
+
+    <div class="regions-grid">
+
+        <!-- Western Region -->
+        <article class="region-card">
+            <img src="images/west.jpg" alt="Western Region">
+            <h3>Western Region</h3>
+            <p>
+                Home to the Two Holy Mosques, known for its historic souks, Hijazi folklore,
+                and the unique architecture of Old Jeddah.
+            </p>
+        </article>
+
+        <!-- Central Region -->
+        <article class="region-card">
+            <img src="images/middle.webp" alt="Central Region">
+            <h3>Central Region</h3>
+            <p>
+                The heart of the Kingdom, featuring Diriyah and Al-Masmak Fort, traditional Najdi attire,
+                and the famous Saudi Ardah folk dance.
+            </p>
+        </article>
+
+        <!-- Eastern Region -->
+        <article class="region-card">
+            <img src="images/east.webp" alt="Eastern Region">
+            <h3>Eastern Region</h3>
+            <p>
+                A coastal region rich in traditional markets, seafood cuisine,
+                and heritage related to ancient maritime crafts.
+            </p>
+        </article>
+
+        <!-- Southern Region -->
+        <article class="region-card">
+            <img src="images/south.jpg" alt="Southern Region">
+            <h3>Southern Region</h3>
+            <p>
+                Known for its mountains, traditional villages like Rijal Almaa,
+                colorful cultural attire, and the famous southern “Khutwah” dance.
+            </p>
+        </article>
+
+        <!-- Northern Region -->
+        <article class="region-card">
+            <img src="images/north.jpg" alt="Northern Region">
+            <h3>Northern Region</h3>
+            <p>
+                Famous for the traditional “Dahha” dance, Bedouin heritage,
+                vast desert landscapes, and ancient rock inscriptions.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+
+
 
     <!-- Section title for events area -->
     <h2 class="section-title">Discover more about Saudi Arabia</h2>
@@ -144,7 +274,7 @@
         <!-- Text content and CTA button -->
         <div>
             <p>Explore the most prominent cultural events across the Kingdom of Saudi Arabia.</p>
-            <button>View Full Map</button>
+            <button>View All Events</button>
         </div>
 
         <!-- Image showing events or map of Saudi Arabia -->
