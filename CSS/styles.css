@@ -124,22 +124,23 @@ h2 {
 /* Language switcher */
 .lang-btn {
     padding: 1rem 1rem;
-    /* نفس padding لزر login */
-    background: var(--color-accent);
-    color: white;
+    background: var(--shadow-lg);
+    color: var(--color-text);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
     display: inline-block;
-    /* لتطابق أزرار أخرى */
 }
 
 .lang-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
+    background: var(--saudi-gold);
+
 }
+
 
 /* ===========================
    زر تسجيل الدخول في الشريط العلوي
@@ -1370,3 +1371,137 @@ h2 {
     filter: brightness(1.15);
     transform: translateY(-2px);
 }
+/* زر البحث داخل الهيدر */
+.nav-search-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: inherit;
+    padding: 0.3rem 0.6rem;
+    transition: 0.3s;
+}
+
+.nav-search-btn:hover {
+    transform: scale(1.2);
+    color: var(--color-accent);
+}
+
+/* شريط البحث العلوي */
+.top-search-bar {
+    top: 80px;
+    right: 0;
+    background: var(--shadow-md);
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 999;
+}
+
+.top-search-bar input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+}
+
+/* ===========================
+   Traditions page layout
+   =========================== */
+
+.traditions-container {
+    max-width: 1100px;
+    margin: 3rem auto 4rem;
+    padding: 0 var(--container-padding);
+}
+
+.traditions-tagline {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--saudi-gold);
+    margin-bottom: 0.5rem;
+}
+
+.traditions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.traditions-item {
+    display: flex;
+    gap: 1.75rem;
+    align-items: stretch;
+}
+
+.traditions-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.traditions-image {
+    flex: 1;
+}
+
+.traditions-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.traditions-text {
+    flex: 1.2;
+    background: #ffffff;
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    border-inline-start: 4px solid var(--saudi-gold);
+}
+
+.traditions-text h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--color-accent);
+}
+
+.traditions-text p {
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+}
+
+.traditions-text ul {
+    margin: 0.25rem 0 0;
+    padding-left: 1.1rem;
+    line-height: 1.7;
+    font-size: 0.98rem;
+}
+
+/* RTL Fix */
+html[dir="rtl"] .traditions-text ul {
+    padding-left: 0;
+    padding-right: 1.1rem;
+}
+
+html[dir="rtl"] .traditions-item {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .traditions-item:nth-child(even) {
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .traditions-item,
+    .traditions-item:nth-child(even),
+    html[dir="rtl"] .traditions-item,
+    html[dir="rtl"] .traditions-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+}
+

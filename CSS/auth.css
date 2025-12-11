@@ -1,4 +1,4 @@
-/* .auth-container {
+ .auth-container {
     width: 380px;
     max-width: 95%;
     margin: 120px auto;
@@ -52,7 +52,7 @@
 }
 
 .profile-btn {
-    background: #0e6b4e;
+    background: 0px 4px 8px rgba(0, 0, 0, 0.2);
     color: white;
     border: none;
     padding: 5px 10px;
@@ -256,3 +256,4 @@
 .auth-page #mainHeader.scrolled .lang-btn:hover {
     color: white !important;
 }
+ 
