@@ -1141,11 +1141,6 @@ html[dir="rtl"] .traditions-item:nth-child(even) {
     html[dir="rtl"] .traditions-item:nth-child(even) {
         flex-direction: column;
     }
-    
-html[dir="rtl"] body {
-    font-family: 'Tajawal', sans-serif !important;
-    letter-spacing: 0.3px;
-}
 
 }
 
