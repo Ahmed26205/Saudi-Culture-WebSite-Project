@@ -23,10 +23,11 @@
 </head>
 
 <body>
+
     <!-- شريط علوي (Header) يحتوي الشعار والقائمة الرئيسية -->
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="شعار SaudiCulture" />
+            <img src="images/Logo.png" alt="SaudiCulture">
         </div>
 
         <nav>
@@ -39,22 +40,41 @@
             <a href="quiz_ar.html">الاختبار</a>
             <a href="Contact_ar.html">اتصل بنا</a>
 
+            <!-- أيقونة البحث في الشريط العلوي -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="ابحث في الموقع..." />
+</div>
+
             <div class="nav-buttons">
                 <!-- ملف المستخدم -->
-                <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="8" r="4"></circle>
-                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-                    </svg>
-                </a>
-
+                <div class="profile-menu" id="profileMenu" style="display: none;">
+                    <button class="profile-btn" id="profileBtn">
+                        <span id="userName">مستخدم</span> ⬇
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <p id="userEmail">user@example.com</p>
+                        <button id="logoutBtn">تسجيل الخروج</button>
+                    </div>
+                </div>
+                <!-- أزرار تسجيل الدخول / إنشاء حساب -->
                 <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
                 <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
-                <button class="lang-btn" onclick="window.location.href='arts.html'">EN</button>
+                <button class="lang-btn" onclick="window.location.href='index.html'">EN</button>
             </div>
         </nav>
     </header>
+
+
 
 
     <section class="main-visual-section">

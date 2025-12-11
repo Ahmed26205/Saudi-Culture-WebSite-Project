@@ -23,16 +23,15 @@
 </head>
 
 <body>
-    <!-- Top header bar: logo + navigation menu -->
+    <!-- Top header bar shared across pages -->
     <header id="mainHeader">
         <!-- Site logo -->
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="images/Logo.png" alt="SaudiCulture Logo" />
         </div>
 
-        <!-- Main navigation links + action buttons -->
+        <!-- Main navigation menu -->
         <nav>
-            <!-- Navigation links for main sections -->
             <a href="index.html">Home</a>
             <a href="history.html">History</a>
             <a href="traditions.html">Traditions</a>
@@ -42,19 +41,41 @@
             <a href="quiz.html">Quiz</a>
             <a href="Contact.html">Contact us</a>
 
-            <!-- Right-side buttons group: login / signup / language -->
-            <a href="profile.html" class="profile-square" title="الملف الشخصي">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"></circle>
-                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-                </svg>
-            </a>
+            <!-- Search button -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
 
-            <!-- Default login/signup buttons -->
-            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-            <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-            <button class="lang-btn" onclick="window.location.href='arts_ar.html'">AR</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="Search in the web. . ." />
+</div>
+
+            <!-- Auth + language buttons -->
+            <div class="nav-buttons">
+                <!-- Profile menu for logged-in user -->
+                <div class="profile-menu" id="profileMenu" style="display: none;">
+                    <button class="profile-btn" id="profileBtn">
+                        <span id="userName">User</span> ⬇
+                    </button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <p id="userEmail">user@example.com</p>
+                        <button id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+
+                <!-- Default login/signup buttons -->
+                <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+                <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+                <button class="lang-btn" onclick="window.location.href='traditions_ar.html'">AR</button>
+
+
             </div>
         </nav>
     </header>
