@@ -50,9 +50,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply when resizing window
     window.addEventListener('resize', handleMenuDisplay);
 });
-
-// Toggle top search bar visibility
-function toggleTopSearch() {
-    const bar = document.getElementById("topSearchBar");
-    bar.style.display = bar.style.display === "block" ? "none" : "block";
-}

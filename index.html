@@ -39,38 +39,17 @@
             <a href="quiz.html">Quiz</a>
             <a href="Contact.html">Contact us</a>
 
+            <a href="profile.html" class="profile-square" title="الملف الشخصي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                </svg>
+            </a>
 
-            <!-- Search button -->
-    <button class="nav-search-btn" onclick="toggleTopSearch()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22"
-              stroke="#0e6b4e" stroke-width="2"
-              stroke-linecap="round"/>
-    </svg>
-</button>
-
-<div class="top-search-bar" id="topSearchBar">
-    <input type="text" placeholder="Search in the web. . ." />
-</div>
-
-
-            <div class="nav-buttons">
-                <!-- User profile dropdown (hidden by default) -->
-                <div class="profile-menu" id="profileMenu" style="display: none;">
-                    <button class="profile-btn" id="profileBtn">
-                        <span id="userName">User</span> ⬇
-                    </button>
-                    <div class="dropdown-content" id="dropdownContent">
-                        <p id="userEmail">user@example.com</p>
-                        <button id="logoutBtn">Logout</button>
-                    </div>
-                </div>
-
-             <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-             <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-             <button class="lang-btn" onclick="window.location.href='arabic.html'">AR</button>
+            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+            <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+            <button class="lang-btn" onclick="window.location.href='arabic.html'">AR</button>
             </div>
         </nav>
     </header>
@@ -95,10 +74,28 @@
             <!-- Primary action buttons in hero -->
             <div class="action-buttons">
                 <input type="button" value="Explore Culture">
-                <input type="button" value="Start Quiz" onclick="window.location.href='quiz.html'">
+                <input type="button" value="Start Quiz">
             </div>
 
-       
+            <!-- Search and filter area inside the hero -->
+            <div class="search-section">
+                <!-- Search input field -->
+                <input type="search" name="q" id="mySearch" placeholder="Search for dishes, festivals, antiquities..."
+                    aria-label="Search content">
+                <br><br>
+
+                <!-- Category filter dropdown -->
+                <select aria-label="Filter search results">
+                    <option value="all">All Categories</option>
+                    <option value="food">Traditional Food</option>
+                    <option value="traditions">Cultural Traditions</option>
+                    <option value="religious">History and civilizations</option>
+                    <option value="nature">Traditional arts</option>
+                    <option value="history">Cultural events</option>
+                </select>
+
+                <!-- Search submit button -->
+                <button type="submit">Search</button>
             </div>
         </div>
     </section>
@@ -147,7 +144,7 @@
         <!-- Text content and CTA button -->
         <div>
             <p>Explore the most prominent cultural events across the Kingdom of Saudi Arabia.</p>
-            <button>View All events</button>
+            <button>View Full Map</button>
         </div>
 
         <!-- Image showing events or map of Saudi Arabia -->
