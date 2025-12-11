@@ -122,4 +122,138 @@
     .auth-container h2 {
         font-size: 20px;
     }
-} 
+} */
+.profile-square {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-decoration: none;
+
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+/* عند المرور */
+.profile-square:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* عند الضغط */
+.profile-square:active {
+    transform: scale(0.92);
+}
+
+/*  توحيد حجم مربع اللغة والبروفايل */
+.lang-btn,
+.profile-square {
+    width: 44px;
+    height: 44px;
+    padding: 0 !important;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+
+    background: var(--color-accent);
+    color: white !important;
+
+    border: none;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.lang-btn:hover,
+.profile-square:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(14, 107, 78, 0.25);
+}
+
+.profile-square svg {
+    width: 22px;
+    height: 22px;
+}
+
+#mainHeader.scrolled .profile-square {
+    background: var(--color-accent) !important;
+    color: white !important;
+}
+
+#mainHeader.scrolled .profile-square svg {
+    stroke: white !important;
+}
+
+#mainHeader.scrolled .profile-square:hover {
+    background: var(--color-accent) !important;
+    color: white !important;
+}
+
+.auth-page #mainHeader nav a,
+.auth-page .login-btn,
+.auth-page .signup-btn,
+.auth-page .lang-btn {
+    padding: 0.75rem 1.1rem;
+    background: var(--color-accent);
+    color: white !important;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.auth-page #mainHeader nav a:first-child {
+    background: var(--color-accent);
+    color: white !important;
+}
+
+.auth-page #mainHeader nav a:hover,
+.auth-page .login-btn:hover,
+.auth-page .signup-btn:hover,
+.auth-page .lang-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(14, 107, 78, 0.25);
+    color: white !important;
+}
+
+/* عند التمرير */
+.auth-page #mainHeader.scrolled nav a,
+.auth-page #mainHeader.scrolled .login-btn,
+.auth-page #mainHeader.scrolled .signup-btn,
+.auth-page #mainHeader.scrolled .lang-btn {
+    color: white !important;
+}
+
+/* Hover بعد التمرير */
+.auth-page #mainHeader.scrolled nav a:hover,
+.auth-page #mainHeader.scrolled .login-btn:hover,
+.auth-page #mainHeader.scrolled .signup-btn:hover,
+.auth-page #mainHeader.scrolled .lang-btn:hover {
+    color: white !important;
+}
+ 

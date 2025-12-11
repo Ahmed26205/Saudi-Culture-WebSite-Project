@@ -2,8 +2,14 @@ import { auth } from "./firebase-config.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile }
     from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-// تحديد الصفحة التي يوجه اليها بعد تسجيل الدخول
-let redirectPage = window.pageLang === "ar" ? "arabic.html" : "index.html";
+// تحديد الصفحة التي يوجه اليها بعد تسجيل الدخول (الصفحة الرئيسية الصحيحة)
+let redirectPage;
+// نحدد الصفحة بناءً على لغة الصفحة التي يتم فيها التسجيل/الدخول
+if (document.querySelector('html').getAttribute('lang') === 'ar') {
+    redirectPage = "arabic.html";
+} else {
+    redirectPage = "index.html";
+}
 
 // انشاء حساب
 const signupForm = document.getElementById("signupForm");
@@ -17,9 +23,13 @@ if (signupForm) {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
             await updateProfile(userCredential.user, { displayName: name });
-            document.getElementById("message").innerText = window.pageLang === "ar"
+
+            // استخدام اللغة بناءً على الـ redirectPage
+            const messageText = redirectPage === "arabic.html"
                 ? "تم إنشاء الحساب! جارٍ التحويل..."
                 : "Account created! Redirecting...";
+
+            document.getElementById("message").innerText = messageText;
             setTimeout(() => window.location.href = redirectPage, 1500);
         } catch (err) {
             document.getElementById("message").innerText = err.message;
@@ -37,9 +47,13 @@ if (loginForm) {
 
         try {
             await signInWithEmailAndPassword(auth, email, pass);
-            document.getElementById("message").innerText = window.pageLang === "ar"
+
+            // استخدام اللغة بناءً على الـ redirectPage
+            const messageText = redirectPage === "arabic.html"
                 ? "مرحباً! جارٍ التحويل..."
                 : "Welcome! Redirecting...";
+
+            document.getElementById("message").innerText = messageText;
             setTimeout(() => window.location.href = redirectPage, 1500);
         } catch (err) {
             document.getElementById("message").innerText = err.message;
