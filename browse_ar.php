@@ -8,7 +8,9 @@ include 'db_connect.php';
 $category = isset($_GET['cat']) ? $_GET['cat'] : 'words';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
-$limit = 20; // عدد العناصر في الصفحة
+
+// --- التعديل هنا: تغيير العدد إلى 21 ---
+$limit = 21; 
 $offset = ($page - 1) * $limit;
 
 // استلام كلمة البحث (إن وجدت)
@@ -299,7 +301,6 @@ $result = $conn->query($sql);
     <?php if ($total_pages > 1): ?>
     <div class="pagination">
         <?php 
-            // بناء رابط الصفحة مع الحفاظ على التصنيف وكلمة البحث
             $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "&page=";
         ?>
 
