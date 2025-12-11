@@ -38,6 +38,21 @@
             <a href="culture_events_ar.html">الفعاليات الثقافية</a>
             <a href="quiz_ar.html">الاختبار</a>
             <a href="Contact_ar.html">اتصل بنا</a>
+                 
+            <!-- أيقونة البحث في الشريط العلوي -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="ابحث في الموقع..." />
+</div>
 
             <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
@@ -73,28 +88,81 @@
                 <input type="button" value="استكشاف الثقافة">
                 <input type="button" value="ابدأ الاختبار">
             </div>
-
-            <!-- نموذج البحث عن محتوى ثقافي -->
-            <div class="search-section">
-                <!-- حقل إدخال نص للبحث -->
-                <input type="search" name="q" id="mySearch" placeholder="ابحث عن أطباق، مهرجانات، آثار..."
-                    aria-label="بحث المحتوى"> <br><br>
-
-                <!-- قائمة لاختيار نوع المحتوى المراد البحث فيه -->
-                <select aria-label="تصفية نتائج البحث">
-                    <option value="all">كل الفئات</option>
-                    <option value="food">الطعام التقليدي</option>
-                    <option value="traditions">التقاليد الثقافية</option>
-                    <option value="history">التاريخ والحضارات</option>
-                    <option value="arts">الفنون التراثية</option>
-                    <option value="events">الفعاليات الثقافية</option>
-                </select>
-
-                <!-- زر تنفيذ عملية البحث -->
-                <button type="submit">بحث</button>
-            </div>
         </div>
     </section>
+        <!-- قسم نبذة عن موروث -->
+    <h2 class="section-title">نبذة عن موروث</h2>
+
+    <section class="about-section">
+        <p>
+            "موروث" هو منصة رقمية تفاعلية تهدف إلى إبراز جمال التراث السعودي
+            من تاريخ وعادات وطعام وفنون وفعاليات ثقافية. نسعى إلى تقديم محتوى
+            موثوق ومبسّط يساعد الزائر على التعرف على ملامح الهوية السعودية
+            بطريقة حديثة تجمع بين المتعة والمعرفة.
+        </p>
+    </section>
+
+    
+
+   <h2 class="section-title">أبيات من موروث الوطن</h2>
+
+<section class="poetry-section">
+    <div class="poetry-list">
+
+        <!-- خالد الفيصل -->
+        <article class="poetry-card">
+            <div class="poetry-photo">
+                <img src="images/خالد الفيصل.jpeg" alt="الأمير خالد الفيصل">
+            </div>
+            <div class="poetry-content">
+                <h3 class="poet-name">الأمير الشاعر خالد الفيصل</h3>
+                <p class="poet-origin">أمير منطقة مكة المكرمة</p>
+                <blockquote class="poet-quote">
+                    <p>
+                        أنا من هالأرض… أرض الخير<br>
+                        أرض أجدادي… وتراثي… لي فيها جذور ما تموت
+                    </p>
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- غازي القصيبي -->
+        <article class="poetry-card">
+            <div class="poetry-photo">
+                <img src="images/غازي القصيبي.jpeg" alt="غازي القصيبي">
+            </div>
+            <div class="poetry-content">
+                <h3 class="poet-name">غازي القصيبي</h3>
+                <p class="poet-origin">من أشهر الشعراء السعوديين – وزير وسفير سابق</p>
+                <blockquote class="poet-quote">
+                     <p>
+            يا وطناً شامخاً تسمو المآثرُ فيه<br>
+            ما زلتَ في مهجتي عشقاً أُرتِّلهُ
+        </p>
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- طلال الرشيد -->
+        <article class="poetry-card">
+            <div class="poetry-photo">
+                <img src="images/طلال الرشيد.jpeg" alt="طلال الرشيد">
+            </div>
+            <div class="poetry-content">
+                <h3 class="poet-name">طلال الرشيد</h3>
+                <p class="poet-origin">شاعر وكاتب سعودي</p>
+                <blockquote class="poet-quote">
+                    <p>
+                        السعودية… يا دارٍ لنا<br>
+                        فيك المحبة… والأمان… والعز والسلاطين
+                    </p>
+                </blockquote>
+            </div>
+        </article>
+
+    </div>
+</section>
+
 
     <!-- عنوان لقسم البطاقات المميزة -->
     <h2 class="section-title">الأقسام المميزة</h2>
@@ -129,6 +197,69 @@
             <a href="history_ar.html" class="button">عرض المزيد</a>
         </div>
     </div>
+
+
+   <section class="regions-journey">
+    <h2 class="section-title">رحلة في مناطق المملكة</h2>
+    <p class="regions-subtitle">
+        تجوّل بين مناطق المملكة الخمس واكتشف أبرز ملامحها الثقافية والمعالم التي تميّز كل منطقة.
+    </p>
+
+    <div class="regions-grid">
+
+        <!-- الغربية -->
+        <article class="region-card">
+            <img src="images/west.jpg" alt="المنطقة الغربية">
+            <h3>المنطقة الغربية</h3>
+            <p>
+                موطن الحرمين الشريفين، وتشتهر بالأسواق التاريخية، والمزمار الحجازي،
+                والمعمار القديم في جدة التاريخية.
+            </p>
+        </article>
+
+        <!-- الوسطى -->
+        <article class="region-card">
+            <img src="images/middle.webp" alt="المنطقة الوسطى">
+            <h3>المنطقة الوسطى</h3>
+            <p>
+                قلب المملكة ومركز تاريخها، حيث الدرعية والمصمك، وفنون العرضة السعودية،
+                والزي النجدي التراثي.
+            </p>
+        </article>
+
+        <!-- الشرقية -->
+        <article class="region-card">
+            <img src="images/east.webp" alt="المنطقة الشرقية">
+            <h3>المنطقة الشرقية</h3>
+            <p>
+                منطقة ساحلية غنية بالأسواق التقليدية والمأكولات البحرية،
+                وتشتهر بالصناعات والحرف البحرية القديمة.
+            </p>
+        </article>
+
+        <!-- الجنوبية -->
+        <article class="region-card">
+            <img src="images/south.jpg" alt="المنطقة الجنوبية">
+            <h3>المنطقة الجنوبية</h3>
+            <p>
+                طبيعة خلابة وقرى تراثية مثل رجال ألمع، وفنون الخطوة،
+                والأزياء الملونة التي تعكس هوية المنطقة.
+            </p>
+        </article>
+
+        <!-- الشمالية -->
+        <article class="region-card">
+            <img src="images/north.jpg" alt="المنطقة الشمالية">
+            <h3>المنطقة الشمالية</h3>
+            <p>
+                موطن الدحة الشمالية والتراث البدوي الأصيل،
+                وتتميز بصحاري واسعة وحياة تقليدية عريقة.
+            </p>
+        </article>
+
+    </div>
+</section>
+
 
     <!-- عنوان قسم استكشاف الفعاليات -->
     <h2 class="section-title">اكتشف أكثر عن السعودية</h2>

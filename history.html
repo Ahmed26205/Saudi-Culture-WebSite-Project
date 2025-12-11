@@ -41,6 +41,22 @@
             <a href="quiz.html">Quiz</a>
             <a href="Contact.html">Contact us</a>
 
+                        
+                        <!-- Search button -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="Search in the web. . ." />
+</div>
+
             <!-- Auth + language buttons -->
             <a href="profile.html" class="profile-square" title="الملف الشخصي">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
@@ -150,52 +166,186 @@
         </section>
 
 
-        <!-- Section: historical regions & landmarks -->
-        <section>
-            <h2 class="section-title">Historical Regions and Landmarks</h2>
+       <!-- Historical Landmarks -->
+        <h2 class="section-title">Landmarks classified by the Heritage Authority</h2>
 
-            <div class="cards">
-                <!-- Central Region -->
-                <div class="card">
-                    <img src="images/historical-dir-iyahh.jpg" alt="Diriyah" />
-                    <h3>Central Region</h3>
-                    <p>
-                        Known for Diriyah and Riyadh, the central region represents the political and historical heart
-                        of the Saudi state.
-                    </p>
-                </div>
+        <section class="heritage-list">
 
-                <!-- Western Region -->
-                <div class="card">
-                    <img src="images/madinaold.jpg" alt="Makkah and Madinah" />
-                    <h3>Western Region</h3>
-                    <p>
-                        Home to Makkah and Madinah, this region has been a spiritual destination for millions of
-                        pilgrims over centuries.
-                    </p>
-                </div>
-
-                <!-- Northern/North-western Region -->
-                <div class="card">
-                    <img src="images/old history.jpg" alt="AlUla and Madain Saleh" />
-                    <h3>North & Northwest</h3>
-                    <p>
-                        Featuring sites like AlUla and Madain Saleh, this area preserves traces of Nabatean and other
-                        ancient cultures.
-                    </p>
-                </div>
-
-                <!-- Eastern/Southern Region -->
-                <div class="card">
-                    <img src="images/rijal alma.jpg" alt="Eastern and Southern heritage" />
-                    <h3>East & South</h3>
-                    <p>
-                        Rich in coastal, desert, and mountain heritage, these regions reflect diverse lifestyles and
-                        traditional architecture.
-                    </p>
-                </div>
+       
+        <!-- Al-Hijr (Mada'in Salih) -->
+        <article class="heritage-card">
+            <div class="heritage-card-image">
+                <img src="images/hegra-place.jpg" alt="Mada'in Salih">
             </div>
-        </section>
+            <div class="heritage-card-text">
+                <h3>Al-Hijr (Mada'in Salih) – First Saudi UNESCO Site</h3>
+                <p>
+                    Al-Hijr, also known as Mada'in Salih, is the first Saudi site to be
+                    inscribed on the UNESCO World Heritage List. It is a major archaeological
+                    treasure with historical significance spanning thousands of years.
+                </p>
+                <p>
+                    The site contains over 110 carved Nabataean tombs, created for elite
+                    individuals such as rulers, military leaders, and notable community
+                    figures.
+                </p>
+                <p>
+                    Inscriptions engraved on tomb façades reveal valuable information
+                    about ancient Nabataean society, including names, professions, and
+                    burial regulations.
+                </p>
+            </div>
+        </article>
+
+        <!--  Al-Suwailm Palace -->
+<article class="heritage-card">
+    <div class="heritage-card-image">
+        <img src="images/souq.jpg" alt="Al-Suwailm Palace">
+    </div>
+    <div class="heritage-card-text">
+        <h3>Al-Suwailm Palace</h3>
+        <p>
+            Al-Suwailm Palace is part of a large historic complex dating back to the early
+            13th century AH. It played a significant role in the region’s social and cultural
+            life, serving as a venue for hosting guests, holding gatherings, and supporting
+            the surrounding traditional markets.
+        </p>
+        <p>
+            The palace consists of two main floors: the ground floor was designated for
+            storage, food preparation, and the traditional “Al-Suwailm Coffee Room” used
+            for welcoming guests. The upper floor contains residential rooms and service
+            areas. The palace has undergone several restoration phases to preserve its
+            distinctive Najdi architectural style, making it one of the most notable heritage
+            landmarks in the region.
+        </p>
+    </div>
+</article>
+
+<!--  Shubra Palace -->
+<article class="heritage-card">
+    <div class="heritage-card-image">
+        <img src="images/ksr-shbra-2.jpg" alt="Shubra Palace">
+    </div>
+    <div class="heritage-card-text">
+        <h3>Shubra Palace</h3>
+        <p>
+            Shubra Palace, located in the city of Taif, was constructed in 1323 AH and is
+            considered one of the most iconic historical palaces in Saudi Arabia. The palace
+            is distinguished by its unique architectural style, which blends traditional
+            Hijazi design with Ottoman influences.
+        </p>
+        <p>
+            The palace contains numerous decorated rooms and halls and has witnessed several
+            significant historical events. It has been restored and transformed into a museum
+            showcasing the rich history and cultural heritage of Taif and the surrounding region.
+        </p>
+    </div>
+</article>
+
+
+        
+        <!-- Jeddah Historical Area -->
+        <article class="heritage-card">
+            <div class="heritage-card-image">
+                <img src="images/Jeddah.jpg" alt="Historic Jeddah">
+            </div>
+            <div class="heritage-card-text">
+                <h3>Historic Jeddah</h3>
+                <p>
+                    Historic Jeddah preserves its traditional architectural identity,
+                    displaying a unique blend of local climate adaptation and cultural
+                    heritage. The old Jeddah wall, removed in 1947, once included several
+                    entrances such as Bab Makkah and Bab Medina.
+                </p>
+                <p>
+                    Buildings were constructed using coral limestone and stones brought
+                    from nearby mountains. Houses typically had multiple floors, with
+                    the ground level used for receiving guests and the upper floors
+                    dedicated to family living.
+                </p>
+                <p>
+                    The wooden “Rawasheen” (latticed balconies) are a defining feature
+                    of Jeddah’s traditional houses, varying in size depending on the
+                    household’s economic status.
+                </p>
+            </div>
+        </article>
+
+        <!-- Al-Atawlah Heritage Village -->
+        <article class="heritage-card">
+            <div class="heritage-card-image">
+                <img src="images/atawala.jpg" alt="Al-Atawlah Village">
+            </div>
+            <div class="heritage-card-text">
+                <h3>Al-Atawlah Heritage Village</h3>
+                <p>
+                    Located north of Al-Baha, Al-Atawlah Village is one of the region’s
+                    prominent heritage sites. It features ancient stone houses and unique
+                    architectural forms.
+                </p>
+                <p>
+                    The village includes several defensive towers such as Dammash Fortress,
+                    which reaches over 15 meters in height. Most houses consist of one or
+                    two floors built from carefully shaped stones.
+                </p>
+                <p>
+                    The village also contains an old marketplace that once served as a
+                    key commercial hub for residents and surrounding communities.
+                </p>
+            </div>
+        </article>
+
+        <!-- Masmak Palace -->
+        <article class="heritage-card">
+            <div class="heritage-card-image">
+                <img src="images/mosamq.jpg" alt="Al-Masmak Palace">
+            </div>
+            <div class="heritage-card-text">
+                <h3>Al-Masmak Palace</h3>
+                <p>
+                    Located in central Riyadh, Al-Masmak Palace is one of the most iconic
+                    landmarks in Saudi history. Its name originates from the Arabic word
+                    “Musmak,” meaning thick or strong, in reference to its solid walls.
+                </p>
+                <p>
+                    The palace played a major role in the Battle of Riyadh, where King
+                    Abdulaziz successfully reclaimed the city. The main door still bears
+                    the mark of spear damage from that event.
+                </p>
+                <p>
+                    Today, Al-Masmak functions as a museum showcasing the unification
+                    story of Saudi Arabia through interactive exhibits and historical rooms.
+                </p>
+            </div>
+        </article>
+
+        <!-- A'arif Fort -->
+        <article class="heritage-card">
+            <div class="heritage-card-image">
+                <img src="images/aref qasle.jpg" alt="A'arif Fort">
+            </div>
+            <div class="heritage-card-text">
+                <h3>A'arif Fort</h3>
+                <p>
+                    A'arif Fort is located atop a mountain in the center of Hail,
+                    offering a strategic viewpoint over the entire area. It is one of
+                    the region’s most well-preserved heritage sites.
+                </p>
+                <p>
+                    Historically, the fort served as a monitoring and defense post.
+                    Its elevated location allowed residents to oversee surrounding
+                    landscapes and detect incoming threats.
+                </p>
+                <p>
+                    Today, the fort stands as a symbol of Hail’s architectural identity
+                    and is a popular destination for visitors and cultural events.
+                </p>
+            </div>
+        </article>
+
+
+    </section>
+        
 
         <!--small “did you know?” facts section -->
         <section style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem 4rem;">
@@ -204,9 +354,32 @@
                 <li>Saudi Arabia hosts some of the oldest known trade routes in the Arabian Peninsula.</li>
                 <li>Diriyah is recognized as a UNESCO World Heritage Site for its historical significance.</li>
                 <li>Makkah and Madinah have welcomed pilgrims from all over the world for centuries.</li>
+                  <li>Al-Hijr (Mada'in Salih) was the first UNESCO World Heritage site in Saudi Arabia.</li>
+            <li>Diriyah’s At-Turaif District is one of the most important heritage sites in the Kingdom.</li>
+            <li>The incense trade route once stretched from southern Arabia to the Mediterranean.</li>
+            <li>The city of AlUla is one of the oldest inhabited areas in the Arabian Peninsula.</li>
+            <li>Al-Balad in Jeddah features traditional houses decorated with wooden “Rawasheen.”</li>
+        </ul>
             </ul>
         </section>
     </main>
+
+         <!--copy form history.html and index.html test (quiz) button-->
+     <section style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem 4rem;">
+            <h2 class="section-title">Test your knowledge here</h2>
+
+             <div class="main-visual-content">
+
+             <div class="action-buttons">
+                <input type="button" value="Start Quiz" onclick="window.location.href='quiz.html'">
+             </div>
+        
+    
+    
+            </div>
+          
+
+     </section>
 
     <!-- Shared footer section -->
     <!-- Shared footer for English pages -->
