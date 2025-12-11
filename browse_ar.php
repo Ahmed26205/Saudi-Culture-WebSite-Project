@@ -8,7 +8,9 @@ include 'db_connect.php';
 $category = isset($_GET['cat']) ? $_GET['cat'] : 'words';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
-$limit = 20; // عدد العناصر في الصفحة
+
+// --- التعديل هنا: تغيير العدد إلى 21 ---
+$limit = 21; 
 $offset = ($page - 1) * $limit;
 
 // استلام كلمة البحث (إن وجدت)
@@ -299,7 +301,6 @@ $result = $conn->query($sql);
     <?php if ($total_pages > 1): ?>
     <div class="pagination">
         <?php 
-            // بناء رابط الصفحة مع الحفاظ على التصنيف وكلمة البحث
             $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "&page=";
         ?>
 
@@ -318,7 +319,40 @@ $result = $conn->query($sql);
         <?php endif; ?>
     </div>
     <?php endif; ?>
+  <footer class="footer">
+        <div class="footer-container">
 
+            <!-- Left: logo + brief -->
+            <div class="footer-about">
+                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
+            </div>
+
+            <!-- Middle: quick links -->
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <a href="arabic.html">الرئيسية</a>
+                <a href="history_ar.html">التاريخ</a>
+                <a href="traditions_ar.html">التقاليد</a>
+                <a href="food_ar.html">الطعام</a>
+                <a href="Contact_ar.html">اتصل بنا</a>
+            </div>
+
+            <!-- Right: contact info -->
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <p>📞 +966554731708</p>
+                <p>📧 mawrooth@gmail.com</p>
+                <p>📍 مكة، المملكة العربية السعودية</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+        </div>
+    </footer>
+    
 </div>
 
 </body>
