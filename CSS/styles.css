@@ -335,52 +335,6 @@ h2 {
     opacity: 0.9;
 }
 
-/* ===========================
-   قسم البحث داخل الهيرو (Search Section)
-   يحتوي حقل بحث + قائمة منسدلة للفئات + زر Search
-   =========================== */
-/* Search & Action section | قسم البحث والإجراءات */
-.search-section {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: var(--border-radius);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Search input and select fields | حقول البحث والاختيار */
-.search-section input[type="search"],
-.search-section select {
-    padding: 1rem 1rem;
-    font-size: 1.1rem;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--border-radius);
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    margin-right: 0.5rem;
-}
-
-/* Search input placeholder text | نص placeholder لحقل البحث */
-.search-section input[type="search"]::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Search input width | عرض حقل البحث */
-.search-section input[type="search"] {
-    width: min(500px, 100%);
-}
-
-/* Select dropdown cursor | مؤشر الماوس على القائمة */
-.search-section select {
-    cursor: pointer;
-}
-
-/* Select options styling | شكل الخيارات داخل القائمة */
-.search-section select option {
-    background: var(--color-accent);
-    color: white;
-}
 
 /* Search and action buttons | أزرار البحث وأزرار الهيرو */
 .search-section button,
