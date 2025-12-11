@@ -413,6 +413,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     <?php endif; ?>
 
 </div>
+  <!-- تذييل الصفحة: حقوق النشر وبيانات التواصل -->
+    <footer class="footer">
+        <div class="footer-container">
 
+            <!-- Left: logo + brief -->
+            <div class="footer-about">
+                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
+            </div>
+
+            <!-- Middle: quick links -->
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <a href="arabic.html">الرئيسية</a>
+                <a href="history_ar.html">التاريخ</a>
+                <a href="traditions_ar.html">التقاليد</a>
+                <a href="food_ar.html">الطعام</a>
+                <a href="Contact_ar.html">اتصل بنا</a>
+            </div>
+
+            <!-- Right: contact info -->
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <p>📞 +966554731708</p>
+                <p>📧 mawrooth@gmail.com</p>
+                <p>📍 مكة، المملكة العربية السعودية</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+        </div>
+    </footer>
+    
 </body>
 </html>
