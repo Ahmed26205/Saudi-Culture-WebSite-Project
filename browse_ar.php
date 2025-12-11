@@ -2,17 +2,20 @@
 include 'db_connect.php'; 
 
 // =========================================================
-// 1. إعدادات الصفحة
+// 1. إعدادات الصفحة والمتغيرات
 // =========================================================
 
 $category = isset($_GET['cat']) ? $_GET['cat'] : 'words';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
-$limit = 20;
+$limit = 20; // عدد العناصر في الصفحة
 $offset = ($page - 1) * $limit;
 
+// استلام كلمة البحث (إن وجدت)
+$search_keyword = isset($_GET['search']) ? trim($_GET['search']) : '';
+
 // =========================================================
-// 2. اختيار الجدول المناسب
+// 2. اختيار الجدول والعناوين
 // =========================================================
 
 $table_name = "";
@@ -35,31 +38,37 @@ switch ($category) {
 }
 
 // =========================================================
-// 3. استعلامات قاعدة البيانات (التعديل هنا)
+// 3. بناء شرط البحث (SQL)
 // =========================================================
 
-// التعديل 1: حساب العدد الكلي (بدون استخدام id)
-// نستثني الصف الذي تكون فيه الكلمة هي 'Term' (عنوان العمود)
-$count_sql = "SELECT COUNT(*) as total FROM `$table_name` WHERE `COL 1` != 'Term'";
+$search_sql = "";
+if (!empty($search_keyword)) {
+    // تأمين النص المدخل
+    $safe_search = $conn->real_escape_string($search_keyword);
+    // البحث في العمود 1 (الكلمة) أو العمود 2 (المعنى)
+    $search_sql = " AND (`COL 1` LIKE '%$safe_search%' OR `COL 2` LIKE '%$safe_search%')";
+}
+
+// =========================================================
+// 4. تنفيذ الاستعلامات
+// =========================================================
+
+// أ) حساب العدد الكلي (مع مراعاة البحث)
+$count_sql = "SELECT COUNT(*) as total FROM `$table_name` WHERE `COL 1` != 'Term' $search_sql";
 $count_result = $conn->query($count_sql);
 
-// حماية إضافية في حال فشل الاستعلام
+$total_rows = 0;
 if ($count_result) {
     $total_rows = $count_result->fetch_assoc()['total'];
-} else {
-    $total_rows = 0;
-    // عرض رسالة خطأ للمطور فقط
-    // echo $conn->error; 
 }
 
 $total_pages = ceil($total_rows / $limit);
 if ($total_pages == 0) $total_pages = 1;
 
-// التعديل 2: جلب البيانات (بدون استخدام id)
-// نستخدم LIMIT و OFFSET للتنقل بين الصفحات
+// ب) جلب البيانات (مع مراعاة البحث والصفحات)
 $sql = "SELECT `COL 1` as term, `COL 2` as meaning 
         FROM `$table_name` 
-        WHERE `COL 1` != 'Term' 
+        WHERE `COL 1` != 'Term' $search_sql
         LIMIT $limit OFFSET $offset";
 
 $result = $conn->query($sql);
@@ -70,7 +79,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصفح الموروث السعودي</title>
+    <title>المعجم السعودي - <?php echo $title; ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
 
@@ -108,6 +117,45 @@ $result = $conn->query($sql);
             margin: 40px auto; 
             padding: 20px;
         }
+        
+        /* --- تنسيق شريط البحث --- */
+        .search-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .search-form {
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        .search-input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            outline: none;
+            font-family: 'Tajawal';
+            font-size: 1.1em;
+        }
+        .search-btn {
+            background: var(--brand-green);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Tajawal';
+            font-size: 1.1em;
+            transition: 0.3s;
+        }
+        .search-btn:hover {
+            background: #143a2f;
+        }
+
+        /* --- التصنيفات والبطاقات --- */
         .category-tabs {
             display: flex;
             justify-content: center;
@@ -116,7 +164,7 @@ $result = $conn->query($sql);
             flex-wrap: wrap;
         }
         .cat-btn {
-            padding: 12px 30px;
+            padding: 10px 25px;
             background: white;
             border: 2px solid #e1e4e8;
             border-radius: 50px;
@@ -124,78 +172,66 @@ $result = $conn->query($sql);
             color: #555;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .cat-btn:hover {
+        .cat-btn:hover, .cat-btn.active {
             border-color: var(--brand-green);
-            color: var(--brand-green);
-            transform: translateY(-2px);
-        }
-        .cat-btn.active {
             background: var(--brand-green);
             color: white;
-            border-color: var(--brand-green);
-            box-shadow: 0 5px 15px rgba(27, 77, 62, 0.3);
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
         .card {
             background: white;
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border-top: 5px solid var(--brand-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--brand-gold);
             transition: transform 0.2s;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
         .card h3 {
             margin: 0 0 10px 0;
             color: var(--brand-green);
-            font-size: 1.5em;
+            font-size: 1.4em;
         }
         .card p {
             color: #666;
-            line-height: 1.6;
             margin: 0;
-            font-size: 1.1em;
+            font-size: 1.05em;
+            line-height: 1.5;
         }
+        
+        /* --- الصفحات --- */
         .pagination {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 50px;
             align-items: center;
-            flex-wrap: wrap;
         }
         .page-btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: white;
             border: 1px solid #ddd;
             text-decoration: none;
             color: var(--brand-green);
             border-radius: 8px;
             font-weight: bold;
-            transition: 0.2s;
         }
         .page-btn:hover {
             background: var(--brand-green);
             color: white;
         }
         .page-btn.disabled {
-            background: #eee;
-            color: #aaa;
-            cursor: not-allowed;
+            background: #f1f1f1;
+            color: #ccc;
             pointer-events: none;
-        }
-        .page-info {
-            color: #777;
-            font-weight: bold;
+            border-color: #eee;
         }
     </style>
 </head>
@@ -220,25 +256,26 @@ $result = $conn->query($sql);
 
 <div class="container">
 
-    <h1 style="text-align: center; color: var(--brand-green); margin-bottom: 30px;"><?php echo $title; ?></h1>
+    <h1 style="text-align: center; color: var(--brand-green); margin-bottom: 20px;"><?php echo $title; ?></h1>
+
+    <div class="search-container">
+        <form method="GET" action="browse_ar.php" class="search-form">
+            <input type="hidden" name="cat" value="<?php echo htmlspecialchars($category); ?>">
+            <input type="text" name="search" class="search-input" placeholder="ابحث عن كلمة، معنى..." value="<?php echo htmlspecialchars($search_keyword); ?>">
+            <button type="submit" class="search-btn">بحث</button>
+        </form>
+    </div>
 
     <div class="category-tabs">
-        <a href="?cat=words&page=1" class="cat-btn <?php echo ($category == 'words') ? 'active' : ''; ?>">
-            📝 كلمات ومصطلحات
-        </a>
-        <a href="?cat=phrases&page=1" class="cat-btn <?php echo ($category == 'phrases') ? 'active' : ''; ?>">
-            🗣️ جمل وعبارات
-        </a>
-        <a href="?cat=proverbs&page=1" class="cat-btn <?php echo ($category == 'proverbs') ? 'active' : ''; ?>">
-            📜 أمثال شعبية
-        </a>
+        <a href="?cat=words" class="cat-btn <?php echo ($category == 'words') ? 'active' : ''; ?>">📝 كلمات</a>
+        <a href="?cat=phrases" class="cat-btn <?php echo ($category == 'phrases') ? 'active' : ''; ?>">🗣️ عبارات</a>
+        <a href="?cat=proverbs" class="cat-btn <?php echo ($category == 'proverbs') ? 'active' : ''; ?>">📜 أمثال</a>
     </div>
 
     <div class="grid-container">
         <?php
         if ($result && $result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                // فلترة إضافية للتأكد من عدم عرض صف العناوين
                 if ($row['term'] == 'Term') continue;
                 ?>
                 <div class="card">
@@ -248,26 +285,39 @@ $result = $conn->query($sql);
                 <?php
             }
         } else {
-            echo "<p style='text-align:center; width:100%;'>لا توجد بيانات لعرضها.</p>";
+            echo "<div style='text-align:center; width:100%; grid-column: 1/-1; padding: 40px; color:#777;'>";
+            if (!empty($search_keyword)) {
+                echo "عذراً، لم نجد نتائج تطابق بحثك: <b>" . htmlspecialchars($search_keyword) . "</b>";
+            } else {
+                echo "لا توجد بيانات متاحة حالياً.";
+            }
+            echo "</div>";
         }
         ?>
     </div>
 
+    <?php if ($total_pages > 1): ?>
     <div class="pagination">
+        <?php 
+            // بناء رابط الصفحة مع الحفاظ على التصنيف وكلمة البحث
+            $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "&page=";
+        ?>
+
         <?php if($page > 1): ?>
-            <a href="?cat=<?php echo $category; ?>&page=<?php echo $page - 1; ?>" class="page-btn">← السابق</a>
+            <a href="<?php echo $link_prefix . ($page - 1); ?>" class="page-btn">← السابق</a>
         <?php else: ?>
             <span class="page-btn disabled">← السابق</span>
         <?php endif; ?>
 
-        <span class="page-info">صفحة <?php echo $page; ?> من <?php echo $total_pages; ?></span>
+        <span class="page-info" style="color:#777;">صفحة <?php echo $page; ?> من <?php echo $total_pages; ?></span>
 
         <?php if($page < $total_pages): ?>
-            <a href="?cat=<?php echo $category; ?>&page=<?php echo $page + 1; ?>" class="page-btn">التالي →</a>
+            <a href="<?php echo $link_prefix . ($page + 1); ?>" class="page-btn">التالي →</a>
         <?php else: ?>
             <span class="page-btn disabled">التالي →</span>
         <?php endif; ?>
     </div>
+    <?php endif; ?>
 
 </div>
 
