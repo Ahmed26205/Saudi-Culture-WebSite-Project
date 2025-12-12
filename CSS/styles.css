@@ -1933,4 +1933,120 @@ html[dir="rtl"] .traditions-expression-card ul {
     .heritage-card {
         grid-template-columns: 1fr;
     }
+
+}
+/* ======================================================
+   تنسيق الهيدر الثابت للصفحات الداخلية
+   (خلفية بيضاء + نص أخضر)
+   ====================================================== */
+
+#mainHeader.solid-header {
+    background-color: #ffffff !important; /* الخلفية بيضاء */
+    position: fixed !important;           /* تثبيت الهيدر */
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid #c5a059;     /* خط ذهبي أنيق تحت الهيدر */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* ظل خفيف جداً */
+    z-index: 9999;
+}
+
+/* 1. تلوين الروابط (الكلام) بالأخضر الغامق */
+#mainHeader.solid-header nav a {
+    color: #1b4d3e !important; /* لون الهوية الأخضر */
+    font-weight: 700;          /* تغليظ الخط قليلاً ليصبح أوضح */
+}
+
+/* تأثير عند تمرير الماوس على الكلام */
+#mainHeader.solid-header nav a:hover {
+    color: #c5a059 !important; /* يتحول للذهبي عند التأشير */
+}
+
+/* 2. تلوين أيقونة البحث والبروفايل بالأخضر */
+#mainHeader.solid-header .nav-search-btn svg circle,
+#mainHeader.solid-header .nav-search-btn svg line,
+#mainHeader.solid-header .profile-square svg {
+    stroke: #1b4d3e !important;
+}
+
+/* 3. تنسيق زر "تسجيل الدخول" (حدود خضراء وكلام أخضر) */
+#mainHeader.solid-header .login-btn {
+    border: 1px solid #1b4d3e;
+    color: #1b4d3e;
+    background: transparent;
+}
+
+#mainHeader.solid-header .login-btn:hover {
+    background-color: #1b4d3e;
+    color: #ffffff;
+}
+
+/* 4. زر "إنشاء حساب" يبقى خلفية خضراء وكلام أبيض (لأنه زر مميز) */
+#mainHeader.solid-header .signup-btn {
+    background-color: #1b4d3e;
+    color: #ffffff;
+}
+/* تنسيق الحاوية الأساسية للأسئلة */
+.quiz-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+    color: white;
+    font-family: 'Tajawal', sans-serif; /* خط مقترح يشبه الصورة */
+}
+
+/* 1. تنسيق حاوية الاختيارات لتكون 4 في صف واحد */
+.options-grid {
+    display: grid;
+    /* هذا السطر يجعلها 4 أعمدة متساوية */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* المسافة بين كل زر والآخر */
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+/* لجعلها متجاوبة: في الجوال تصبح زرين أو زر واحد عشان المساحة */
+@media (max-width: 768px) {
+    .options-grid {
+        grid-template-columns: repeat(1, 1fr); /* في الجوال زر واحد في السطر */
+    }
+}
+
+/* 2. تصميم الزر الأخضر (للاختيارات) - يشبه زر "استكشاف الثقافة" */
+.btn-choice {
+    background-color: #116A4B; /* الأخضر الغامق */
+    color: white;
+    border: 2px solid #C4A456; /* حدود ذهبية خفيفة */
+    padding: 15px 10px;
+    border-radius: 8px; /* حواف ناعمة */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%; /* يأخذ عرض العمود بالكامل */
+}
+
+.btn-choice:hover {
+    background-color: #0d523a; /* تغميق اللون عند المرور */
+    transform: translateY(-3px); /* حركة بسيطة للأعلى */
+}
+
+/* 3. تصميم الزر الذهبي/الأصفر (للإرسال والتحكم) - يشبه زر "ابدأ الاختبار" */
+.btn-action {
+    background-color: #CCA450; /* الذهبي/الأصفر */
+    color: white;
+    border: 2px solid #116A4B; /* حدود خضراء */
+    padding: 15px 40px; /* عريض أكثر */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-action:hover {
+    background-color: #b08d43;
+    box-shadow: 0 0 15px rgba(204, 164, 80, 0.4); /* توهج بسيط */
 }

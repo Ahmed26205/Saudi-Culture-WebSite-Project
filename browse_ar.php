@@ -18,7 +18,7 @@ $search_keyword = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 // =========================================================
 // 2. اختيار الجدول والعناوين
-// =========================================================
+// ==============================س==========================
 
 $table_name = "";
 $title = "";
@@ -239,21 +239,50 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-    <header id="mainHeader">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+   <header id="mainHeader" class="solid-header">
             <div class="logo">
-                <img src="images/Logo.png" alt="SaudiCulture" style="height: 50px;">
-            </div>
-            <nav>
-                <a href="arabic.html">الرئيسية</a>
-                <a href="browse_ar.php" style="border-bottom: 2px solid #c5a059;">المعجم</a>
-                <a href="quiz_ar.php">الاختبار</a>
-                <a href="Contact_ar.html">اتصل بنا</a>
-            </nav>
-            <div class="nav-buttons">
-                 <button onclick="window.location.href='login_ar.html'" style="padding: 8px 15px; border-radius: 5px; border: 1px solid white; background: transparent; color: white; cursor: pointer;">تسجيل الدخول</button>
-            </div>
+            <img src="images/Logo.png" alt="SaudiCulture">
         </div>
+
+        <nav>
+            <a href="arabic.html">الرئيسية</a>
+            <a href="history_ar.html">التاريخ</a>
+            <a href="traditions_ar.html">التقاليد</a>
+            <a href="food_ar.html">الطعام</a>
+            <a href="arts_ar.html">الفنون</a>
+            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
+            <a href="quiz_ar.php">الاختبار</a>
+            <a href="Contact_ar.html">اتصل بنا</a>
+                 
+            <!-- أيقونة البحث في الشريط العلوي -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="ابحث في الموقع..." />
+</div>
+
+            <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                </svg>
+            </a>
+
+            <!-- أزرار تسجيل الدخول / إنشاء حساب -->
+            <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
+            <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
+            <button class="lang-btn" onclick="window.location.href='quiz.php'">EN</button>
+            </div>
+        </nav>
     </header>
 
 <div class="container">

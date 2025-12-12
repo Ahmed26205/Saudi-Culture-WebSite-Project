@@ -1,14 +1,17 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "quiz_db_en"; 
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "quiz_db_en"; // الفرق الوحيد هنا (اسم القاعدة الإنجليزية)
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
-    // ضبط وضع الخطأ لإظهار المشاكل إن وجدت
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("فشل الاتصال بقاعدة البيانات: " . $e->getMessage());
+// إنشاء الاتصال
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+// ضبط الترميز
+$conn->set_charset("utf8mb4");
+
+// التحقق من الاتصال
+if ($conn->connect_error) {
+    die("فشل الاتصال: " . $conn->connect_error);
 }
 ?>

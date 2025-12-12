@@ -7,10 +7,12 @@ include 'db_connect.php';
 // =========================================================
 
 function parseQuizData($text) {
+    // فصل النص الأساسي عن حرف الإجابة الصحيحة
     $parts = explode('الإجابة الصحيحة:', $text);
     $main_text = $parts[0];
     $correct_char = isset($parts[1]) ? trim($parts[1]) : '';
 
+    // إصلاح الفواصل والأسطر
     $main_text = str_replace(['السؤال:', 'الخيارات:', 'المهمة:'], ["\nالسؤال:", "\nالخيارات:", "\nالمهمة:"], $main_text);
     $lines = explode("\n", $main_text);
     
@@ -21,18 +23,29 @@ function parseQuizData($text) {
         $line = trim($line);
         if (empty($line) || mb_strpos($line, 'المهمة:') !== false) continue;
 
+        // التقاط نص السؤال
         if (mb_strpos($line, 'السؤال:') !== false) {
             $mode = 'q';
             $data['q'] .= trim(str_replace('السؤال:', '', $line));
             continue;
         }
+        
+        // بداية الخيارات
         if (mb_strpos($line, 'الخيارات') !== false) { $mode = 'opt'; continue; }
 
-        if ($mode == 'q') $data['q'] .= ' ' . $line;
-        elseif ($mode == 'opt') {
-            $split = preg_split('/(?=[أ-يA-D]\))/u', $line, -1, PREG_SPLIT_NO_EMPTY);
+        if ($mode == 'q') {
+            $data['q'] .= ' ' . $line;
+        } elseif ($mode == 'opt') {
+            // هذا السطر هو الحل السحري: يفصل النص بناءً على ( أ) أو A) )
+            $split = preg_split('/(?=[أ-يA-Da-d]\))/u', $line, -1, PREG_SPLIT_NO_EMPTY);
+            
             foreach($split as $o) {
-                if(!empty(trim($o))) $data['opts'][] = trim($o);
+                // تنظيف إضافي: يحذف الحرف (مثل "A)") من بداية الجملة
+                $clean_opt = preg_replace('/^[أ-يA-Da-d]\)\s*/u', '', $o);
+                
+                if(!empty(trim($clean_opt))) {
+                    $data['opts'][] = trim($clean_opt);
+                }
             }
         }
     }
@@ -159,6 +172,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- ربط ملف التنسيقات الخارجية للموقع -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/auth.css">
+    <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
+    <script src="JS/script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحدي اللهجات السعودية</title>
@@ -219,20 +240,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
 </head>
 <body>
 
-<header id="mainHeader">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
-        <div class="logo"><img src="images/Logo.png" alt="SaudiCulture" style="height: 50px;"></div>
+<header id="mainHeader" class="solid-header">
+            <div class="logo">
+            <img src="images/Logo.png" alt="SaudiCulture">
+        </div>
+
         <nav>
             <a href="arabic.html">الرئيسية</a>
-            <a href="browse_ar.php">المعجم</a>
-            <a href="quiz_ar.php" style="border-bottom: 2px solid #c5a059;">الاختبار</a>
+            <a href="history_ar.html">التاريخ</a>
+            <a href="traditions_ar.html">التقاليد</a>
+            <a href="food_ar.html">الطعام</a>
+            <a href="arts_ar.html">الفنون</a>
+            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
+            <a href="quiz_ar.php">الاختبار</a>
             <a href="Contact_ar.html">اتصل بنا</a>
+                 
+            <!-- أيقونة البحث في الشريط العلوي -->
+    <button class="nav-search-btn" onclick="toggleTopSearch()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22"
+              stroke="#0e6b4e" stroke-width="2"
+              stroke-linecap="round"/>
+    </svg>
+</button>
+
+<div class="top-search-bar" id="topSearchBar">
+    <input type="text" placeholder="ابحث في الموقع..." />
+</div>
+
+            <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                </svg>
+            </a>
+
+            <!-- أزرار تسجيل الدخول / إنشاء حساب -->
+            <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
+            <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
+            <button class="lang-btn" onclick="window.location.href='quiz.php'">EN</button>
+            </div>
         </nav>
-        <div class="nav-buttons">
-                <button onclick="window.location.href='login_ar.html'" style="padding: 8px 15px; border-radius: 5px; border: 1px solid white; background: transparent; color: white; cursor: pointer;">تسجيل الدخول</button>
-        </div>
-    </div>
-</header>
+    </header>
+
 
 <div class="container">
 
@@ -380,8 +433,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             <div class="score-big"><?php echo $score; ?> / <?php echo $total; ?></div>
             <p>
                 <?php 
-                if($score == $total) echo "ما شاء الله! علامة كاملة 🌟";
-                elseif($score > $total/2) echo "كفو! أداء ممتاز 💪";
+                if($score == $total) echo "ابدعت الله يبيض وجهك🫡";
+                elseif($score > $total*0.6) echo "تحتاج تتعرف على اصحاب المناطق الثانية🫠";
                 else echo "يبيلك كبسة وتراجع المعلومات 😉";
                 ?>
             </p>
@@ -448,5 +501,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         </div>
     </footer>
     
+  <script type="module">
+        import { auth } from "./JS/firebase-config.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            const loginBtn = document.querySelector(".login-btn");
+            const signupBtn = document.querySelector(".signup-btn");
+            const profileIcon = document.querySelector(".profile-square");
+
+            if (user) {
+                // إخفاء أزرار الدخول
+                loginBtn.style.display = "none";
+                signupBtn.style.display = "none";
+
+                // إظهار أيقونة البروفايل
+                profileIcon.style.display = "inline-flex";
+
+            } else {
+                // العكس عند تسجيل الخروج
+                loginBtn.style.display = "inline-block";
+                signupBtn.style.display = "inline-block";
+                profileIcon.style.display = "none";
+            }
+        });
+    </script>
+
 </body>
 </html>
