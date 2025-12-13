@@ -1,5 +1,8 @@
 <!-- ملف صفحة التاريخ للنسخة العربية من الموقع -->
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <!-- صفحة عربية باتجاه من اليمين إلى اليسار -->
 <html lang="ar" dir="rtl">
 
@@ -25,50 +28,54 @@
 <body>
     <!-- شريط علوي مشترك بين الصفحات -->
     <header id="mainHeader">
-        <div class="logo">
-            <img src="images/Logo.png" alt="شعار SaudiCulture" />
+    <div class="logo">
+        <img src="images/Logo.png" alt="شعار SaudiCulture">
+    </div>
+
+    <nav>
+        <a href="arabic.php">الرئيسية</a>
+        <a href="history_ar.php">التاريخ</a>
+        <a href="traditions_ar.php">التقاليد</a>
+        <a href="food_ar.php">الطعام</a>
+        <a href="arts_ar.php">الفنون</a>
+        <a href="culture_events_ar.php">الفعاليات الثقافية</a>
+        <a href="quiz_ar.php">الاختبار</a>
+        <a href="browse_ar.php">المعجم</a>
+        <a href="Contact_ar.php">اتصل بنا</a>
+                
+        <button class="nav-search-btn" onclick="toggleTopSearch()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+                <line x1="16.5" y1="16.5" x2="22" y2="22"
+                      stroke="#0e6b4e" stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <div class="top-search-bar" id="topSearchBar">
+            <input type="text" placeholder="ابحث في الموقع..." />
         </div>
 
-        <nav>
-            <a href="arabic.html">الرئيسية</a>
-            <a href="history_ar.html">التاريخ</a>
-            <a href="traditions_ar.html">التقاليد</a>
-            <a href="food_ar.html">الطعام</a>
-            <a href="arts_ar.html">الفنون</a>
-            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
-            <a href="quiz_ar.php">الاختبار</a>
-            <a href="Contact_ar.html">اتصل بنا</a>
-
-                   <!-- أيقونة البحث في الشريط العلوي -->
-    <button class="nav-search-btn" onclick="toggleTopSearch()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22"
-              stroke="#0e6b4e" stroke-width="2"
-              stroke-linecap="round"/>
-    </svg>
-</button>
-
-<div class="top-search-bar" id="topSearchBar">
-    <input type="text" placeholder="ابحث في الموقع..." />
-</div>
-
-            <div class="nav-buttons">
-                <!-- ملف المستخدم -->
-                <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
+        <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
+            
+            <?php if(isset($_SESSION['user_id'])): ?>
+                <a href="profile_ar.php" class="profile-square" title="الملف الشخصي" style="display: inline-flex;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="8" r="4"></circle>
                         <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
                     </svg>
                 </a>
-                <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
-                <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
-                <button class="lang-btn" onclick="window.location.href='history.html'">EN</button>
-            </div>
-        </nav>
-    </header>
+            <?php else: ?>
+                <button class="login-btn" onclick="window.location.href='login_ar.php'">تسجيل الدخول</button>
+                <button class="signup-btn" onclick="window.location.href='signup_ar.php'">إنشاء حساب</button>
+            <?php endif; ?>
+
+            <button class="lang-btn" onclick="window.location.href='history.php'">EN</button>
+        </div>
+    </nav>
+</header>
 
     <!-- محتوى صفحة التاريخ -->
     <main>
@@ -416,15 +423,14 @@
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 
-
             <!-- Middle: quick links -->
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
-                <a href="arabic.html">الرئيسية</a>
-                <a href="history_ar.html">التاريخ</a>
-                <a href="traditions_ar.html">التقاليد</a>
-                <a href="food_ar.html">الطعام</a>
-                <a href="Contact_ar.html">اتصل بنا</a>
+                <a href="arabic.php">الرئيسية</a>
+                <a href="history_ar.php">التاريخ</a>
+                <a href="traditions_ar.php">التقاليد</a>
+                <a href="food_ar.php">الطعام</a>
+                <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 
             <!-- Right: contact info -->
@@ -454,31 +460,7 @@
         });
     </script>
 
-    <script type="module">
-        import { auth } from "./JS/firebase-config.js";
-        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-        onAuthStateChanged(auth, (user) => {
-            const loginBtn = document.querySelector(".login-btn");
-            const signupBtn = document.querySelector(".signup-btn");
-            const profileIcon = document.querySelector(".profile-square");
-
-            if (user) {
-                // إخفاء أزرار الدخول
-                loginBtn.style.display = "none";
-                signupBtn.style.display = "none";
-
-                // إظهار أيقونة البروفايل
-                profileIcon.style.display = "inline-flex";
-
-            } else {
-                // العكس عند تسجيل الخروج
-                loginBtn.style.display = "inline-block";
-                signupBtn.style.display = "inline-block";
-                profileIcon.style.display = "none";
-            }
-        });
-    </script>
 </body>
 
 </html>

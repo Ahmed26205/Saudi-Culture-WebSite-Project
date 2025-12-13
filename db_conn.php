@@ -1,14 +1,17 @@
 <?php
-$sname = "localhost";
-$uname = "root";
-$password = "";
-$db_name = "quiz_db";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "quiz_db";
 
-// محاولة الاتصال
-$conn = mysqli_connect($sname, $uname, $password, $db_name);
+// إنشاء الاتصال باستخدام أسلوب mysqli (الكائن) لزيادة الثبات
+$conn = new mysqli($host, $user, $pass, $dbname);
 
-// فحص الاتصال
-if (!$conn) {
-    die("فشل الاتصال: " . mysqli_connect_error());
+// ضبط الترميز
+$conn->set_charset("utf8mb4");
+
+// التحقق من الاتصال
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>

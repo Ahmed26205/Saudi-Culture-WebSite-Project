@@ -1,5 +1,8 @@
 <!-- HTML5 document type declaration -->
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <!-- English History page for SaudiCulture -->
 <html lang="en">
 
@@ -25,53 +28,54 @@
 <body>
     <!-- Top header bar shared across pages -->
     <header id="mainHeader">
-        <!-- Site logo -->
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo" />
+            <img src="images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
-        <!-- Main navigation menu -->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="history.html">History</a>
-            <a href="traditions.html">Traditions</a>
-            <a href="food.html">Food</a>
-            <a href="arts.html">Arts</a>
-            <a href="culture_events.html">Cultural events</a>
-            <a href="quiz.php">Quiz</a>
-            <a href="Contact.html">Contact us</a>
+       <nav>
+    <a href="index.php">Home</a>  
+        <a href="history.php">History</a>
+    <a href="traditions.php">Traditions</a>
+    <a href="food.php">Food</a>       
+    <a href="arts.php">Arts</a>
+    <a href="culture_events.php">Cultural events</a>
+    <a href="quiz.php">Quiz</a>
+    <a href="browse_ar.php">dictionary</a>
+    <a href="Contact.php">Contact us</a>
 
-                        
-                        <!-- Search button -->
     <button class="nav-search-btn" onclick="toggleTopSearch()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22"
-              stroke="#0e6b4e" stroke-width="2"
-              stroke-linecap="round"/>
-    </svg>
-</button>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"
+                  stroke="#0e6b4e" stroke-width="2"
+                  stroke-linecap="round"/>
+        </svg>
+    </button>
 
-<div class="top-search-bar" id="topSearchBar">
-    <input type="text" placeholder="Search in the web. . ." />
-</div>
+    <div class="top-search-bar" id="topSearchBar">
+        <input type="text" placeholder="Search in the web. . ." />
+    </div>
 
-            <!-- Auth + language buttons -->
-            <a href="profile.html" class="profile-square" title="الملف الشخصي">
+    <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
+        
+        <?php if(isset($_SESSION['user_id'])): ?>
+            <a href="profile.php" class="profile-square" title="الملف الشخصي" style="display: inline-flex;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="8" r="4"></circle>
                     <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
                 </svg>
             </a>
+        <?php else: ?>
+            <button class="login-btn" onclick="window.location.href='login.php'">Login</button>
+            <button class="signup-btn" onclick="window.location.href='signup.php'">Sign Up</button>
+        <?php endif; ?>
 
-            <!-- Default login/signup buttons -->
-            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-            <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-            <button class="lang-btn" onclick="window.location.href='history_ar.html'">AR</button>
-            </div>
-        </nav>
+        <button class="lang-btn" onclick="window.location.href='histroy_ar.php'">AR</button>
+    </div>
+</nav>
+
     </header>
 
     <!-- Main content area for the History page -->
@@ -385,8 +389,6 @@
     <!-- Shared footer for English pages -->
     <footer class="footer">
         <div class="footer-container">
-
-            <!-- Left: logo + short description -->
             <div class="footer-about">
                 <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
@@ -395,33 +397,28 @@
                 </p>
             </div>
 
-            <!-- Middle: quick navigation links -->
             <div class="footer-links">
                 <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="history.html">History</a>
-                <a href="traditions.html">Traditions</a>
-                <a href="food.html">Food</a>
-                <a href="arts.html">Arts</a>
-                <a href="Contact.html">Contact Us</a>
+                <a href="index.php">Home</a>
+                <a href="history.php">History</a>
+                <a href="traditions.php">Traditions</a>
+                <a href="food.php">Food</a>
+                <a href="arts.php">Arts</a>
+                <a href="contact.php">Contact Us</a>
             </div>
 
-            <!-- Right: contact information -->
             <div class="footer-contact">
                 <h4>Contact</h4>
                 <p>📞 +966554731708</p>
                 <p>📧 mawrooth@gmail.com</p>
                 <p>📍 Makkah, Saudi Arabia</p>
             </div>
-
         </div>
 
-        <!-- Bottom strip -->
         <div class="footer-bottom">
             <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
         </div>
     </footer>
-
 
     <!-- Scroll behavior for header background (same as home) -->
     <script>

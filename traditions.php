@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+session_start();
+?>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,55 +25,55 @@
 
 <body>
     <!-- Header -->
-    <header id="mainHeader">
-        <!-- Site logo -->
+       <header id="mainHeader">
         <div class="logo">
             <img src="images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
-        <!-- Main navigation links + action buttons -->
-        <nav>
-            <!-- Navigation links for main sections -->
-            <a href="index.html">Home</a>
-            <a href="history.html">History</a>
-            <a href="traditions.html">Traditions</a>
-            <a href="food.html">Food</a>
-            <a href="arts.html">Arts</a>
-            <a href="culture_events.html">Cultural events</a>
-            <a href="quiz.php">Quiz</a>
-            <a href="Contact.html">Contact us</a>
+       <nav>
+    <a href="index.php">Home</a>  
+        <a href="history.php">History</a>
+    <a href="traditions.php">Traditions</a>
+    <a href="food.php">Food</a>       
+    <a href="arts.php">Arts</a>
+    <a href="culture_events.php">Cultural events</a>
+    <a href="quiz.php">Quiz</a>
+    <a href="browse_ar.php">dictionary</a>
+    <a href="Contact.php">Contact us</a>
 
-                        
-                        <!-- Search button -->
     <button class="nav-search-btn" onclick="toggleTopSearch()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22"
-              stroke="#0e6b4e" stroke-width="2"
-              stroke-linecap="round"/>
-    </svg>
-</button>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"
+                  stroke="#0e6b4e" stroke-width="2"
+                  stroke-linecap="round"/>
+        </svg>
+    </button>
 
-<div class="top-search-bar" id="topSearchBar">
-    <input type="text" placeholder="Search in the web. . ." />
-</div>
+    <div class="top-search-bar" id="topSearchBar">
+        <input type="text" placeholder="Search in the web. . ." />
+    </div>
 
-            <!-- Right-side buttons group: login / signup / language -->
-            <a href="profile.html" class="profile-square" title="الملف الشخصي">
+    <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
+        
+        <?php if(isset($_SESSION['user_id'])): ?>
+            <a href="profile.php" class="profile-square" title="الملف الشخصي" style="display: inline-flex;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="8" r="4"></circle>
                     <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
                 </svg>
             </a>
+        <?php else: ?>
+            <button class="login-btn" onclick="window.location.href='login.php'">Login</button>
+            <button class="signup-btn" onclick="window.location.href='signup.php'">Sign Up</button>
+        <?php endif; ?>
 
-            <!-- Default login/signup buttons -->
-            <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-            <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-            <button class="lang-btn" onclick="window.location.href='traditions_ar.html'">AR</button>
-            </div>
-        </nav>
+        <button class="lang-btn" onclick="window.location.href='traditions_ar.php'">AR</button>
+    </div>
+</nav>
+
     </header>
 
     <main>
@@ -295,10 +299,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+   <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo" />
+                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.
@@ -307,12 +311,12 @@
 
             <div class="footer-links">
                 <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="history.html">History</a>
-                <a href="traditions.html">Traditions</a>
-                <a href="food.html">Food</a>
-                <a href="arts.html">Arts</a>
-                <a href="Contact.html">Contact Us</a>
+                <a href="index.php">Home</a>
+                <a href="history.php">History</a>
+                <a href="traditions.php">Traditions</a>
+                <a href="food.php">Food</a>
+                <a href="arts.php">Arts</a>
+                <a href="contact.php">Contact Us</a>
             </div>
 
             <div class="footer-contact">
@@ -341,33 +345,6 @@
         });
     </script>
 
-
-    <script type="module">
-        import { auth } from "./JS/firebase-config.js";
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-
-        onAuthStateChanged(auth, (user) => {
-            const loginBtn = document.querySelector(".login-btn");
-            const signupBtn = document.querySelector(".signup-btn");
-            const profileIcon = document.querySelector(".profile-square");
-
-            if (user) {
-                // Hide login & signup
-                loginBtn.style.display = "none";
-                signupBtn.style.display = "none";
-
-                // Show profile icon
-                profileIcon.style.display = "inline-flex";
-            } else {
-                // Show login & signup
-                loginBtn.style.display = "inline-block";
-                signupBtn.style.display = "inline-block";
-
-                // Hide profile icon
-                profileIcon.style.display = "none";
-            }
-        });
-    </script>
 </body>
 
 </html>

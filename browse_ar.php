@@ -1,4 +1,6 @@
 <?php
+// تفعيل جلسة المستخدم للتحقق من حالة تسجيل الدخول لاحقًا إذا لزم الأمر
+session_start();
 include 'db_connect.php'; 
 
 // =========================================================
@@ -9,7 +11,7 @@ $category = isset($_GET['cat']) ? $_GET['cat'] : 'words';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
 
-// --- التعديل هنا: تغيير العدد إلى 21 ---
+// --- تغيير العدد إلى 21 ---
 $limit = 21; 
 $offset = ($page - 1) * $limit;
 
@@ -18,7 +20,7 @@ $search_keyword = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 // =========================================================
 // 2. اختيار الجدول والعناوين
-// ==============================س==========================
+// =========================================================
 
 $table_name = "";
 $title = "";
@@ -67,6 +69,9 @@ if ($count_result) {
 $total_pages = ceil($total_rows / $limit);
 if ($total_pages == 0) $total_pages = 1;
 
+// التأكد من أن رقم الصفحة لا يتجاوز الحد الأقصى
+if ($page > $total_pages) $page = $total_pages;
+
 // ب) جلب البيانات (مع مراعاة البحث والصفحات)
 $sql = "SELECT `COL 1` as term, `COL 2` as meaning 
         FROM `$table_name` 
@@ -74,6 +79,9 @@ $sql = "SELECT `COL 1` as term, `COL 2` as meaning
         LIMIT $limit OFFSET $offset";
 
 $result = $conn->query($sql);
+
+// بناء رابط الصفحة الأساسي
+$link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "&page=";
 ?>
 
 <!DOCTYPE html>
@@ -87,33 +95,19 @@ $result = $conn->query($sql);
 
     <style>
         :root {
-            --brand-green: #1b4d3e;
-            --brand-gold: #c5a059;
+            --brand-green: #116A4B; 
+            --brand-gold: #CCA450;
             --bg-color: #f8f9fa;
         }
         body { 
             font-family: 'Tajawal', sans-serif;
             background: var(--bg-color); 
             margin: 0; 
-            padding-top: 100px;
+            padding-top: 120px; 
             color: #333;
         }
-        header {
-            background-color: var(--brand-green);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 10px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        nav a {
-            color: #fff !important;
-            font-weight: bold;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+        /* تم إزالة أنماط الـ Header المتعارضة هنا للسماح لـ styles.css بتطبيق تصميم الكويز */
+        
         .container { 
             max-width: 1000px; 
             margin: 40px auto; 
@@ -141,6 +135,7 @@ $result = $conn->query($sql);
             outline: none;
             font-family: 'Tajawal';
             font-size: 1.1em;
+            text-align: right;
         }
         .search-btn {
             background: var(--brand-green);
@@ -154,7 +149,7 @@ $result = $conn->query($sql);
             transition: 0.3s;
         }
         .search-btn:hover {
-            background: #143a2f;
+            background: #0d523a;
         }
 
         /* --- التصنيفات والبطاقات --- */
@@ -208,13 +203,14 @@ $result = $conn->query($sql);
             line-height: 1.5;
         }
         
-        /* --- الصفحات --- */
+        /* --- تنسيق الصفحات الجديدة --- */
         .pagination {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 50px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .page-btn {
             padding: 8px 16px;
@@ -224,6 +220,7 @@ $result = $conn->query($sql);
             color: var(--brand-green);
             border-radius: 8px;
             font-weight: bold;
+            transition: 0.2s;
         }
         .page-btn:hover {
             background: var(--brand-green);
@@ -235,55 +232,79 @@ $result = $conn->query($sql);
             pointer-events: none;
             border-color: #eee;
         }
+        .page-input-form {
+            display: flex;
+            gap: 5px;
+        }
+        .page-input {
+            width: 50px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Tajawal';
+        }
+        .page-submit {
+            padding: 8px 12px;
+            background: var(--brand-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .page-submit:hover {
+             background: #0d523a;
+        }
     </style>
 </head>
 <body>
 
-   <header id="mainHeader" class="solid-header">
-            <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture">
+<header id="mainHeader" class="scrolled">
+    <div class="logo">
+        <img src="images/Logo.png" alt="شعار SaudiCulture">
+    </div>
+
+    <nav>
+        <a href="arabic.php">الرئيسية</a>
+        <a href="history_ar.php">التاريخ</a>
+        <a href="traditions_ar.php">التقاليد</a>
+        <a href="food_ar.php">الطعام</a>
+        <a href="arts_ar.php">الفنون</a>
+        <a href="culture_events_ar.php">الفعاليات الثقافية</a>
+        <a href="quiz_ar.php">الاختبار</a>
+        <a href="browse_ar.php" style="color: #116A4B; font-weight: 700;">المعجم</a> 
+        <a href="Contact_ar.php">اتصل بنا</a>
+
+        <button class="nav-search-btn" onclick="toggleTopSearch()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+                <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="#0e6b4e" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <div class="top-search-bar" id="topSearchBar">
+            <input type="text" placeholder="ابحث في الموقع..." />
         </div>
 
-        <nav>
-            <a href="arabic.html">الرئيسية</a>
-            <a href="history_ar.html">التاريخ</a>
-            <a href="traditions_ar.html">التقاليد</a>
-            <a href="food_ar.html">الطعام</a>
-            <a href="arts_ar.html">الفنون</a>
-            <a href="culture_events_ar.html">الفعاليات الثقافية</a>
-            <a href="quiz_ar.php">الاختبار</a>
-            <a href="Contact_ar.html">اتصل بنا</a>
-                 
-            <!-- أيقونة البحث في الشريط العلوي -->
-    <button class="nav-search-btn" onclick="toggleTopSearch()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22"
-              stroke="#0e6b4e" stroke-width="2"
-              stroke-linecap="round"/>
-    </svg>
-</button>
+        <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
+            
+            <?php if(isset($_SESSION['user_id'])): ?>
+                <a href="profile_ar.php" class="profile-square" title="الملف الشخصي" style="display: inline-flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg>
+                </a>
+            <?php else: ?>
+                <button class="login-btn" onclick="window.location.href='login_ar.php'">تسجيل الدخول</button>
+                <button class="signup-btn" onclick="window.location.href='signup_ar.php'">إنشاء حساب</button>
+            <?php endif; ?>
 
-<div class="top-search-bar" id="topSearchBar">
-    <input type="text" placeholder="ابحث في الموقع..." />
-</div>
-
-            <a href="profile_ar.html" class="profile-square" title="الملف الشخصي">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"></circle>
-                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-                </svg>
-            </a>
-
-            <!-- أزرار تسجيل الدخول / إنشاء حساب -->
-            <button class="login-btn" onclick="window.location.href='login_ar.html'">تسجيل الدخول</button>
-            <button class="signup-btn" onclick="window.location.href='signup_ar.html'">إنشاء حساب</button>
-            <button class="lang-btn" onclick="window.location.href='quiz.php'">EN</button>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
 <div class="container">
 
@@ -329,9 +350,15 @@ $result = $conn->query($sql);
 
     <?php if ($total_pages > 1): ?>
     <div class="pagination">
+        
         <?php 
+            // هذا الكود يحدد رابط الصفحة الأساسي المستخدم في الأزرار
             $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "&page=";
         ?>
+        
+        <?php if($page > 1): ?>
+            <a href="<?php echo $link_prefix . 1; ?>" class="page-btn">« أول صفحة</a>
+        <?php endif; ?>
 
         <?php if($page > 1): ?>
             <a href="<?php echo $link_prefix . ($page - 1); ?>" class="page-btn">← السابق</a>
@@ -339,35 +366,48 @@ $result = $conn->query($sql);
             <span class="page-btn disabled">← السابق</span>
         <?php endif; ?>
 
-        <span class="page-info" style="color:#777;">صفحة <?php echo $page; ?> من <?php echo $total_pages; ?></span>
-
+        <form method="GET" action="browse_ar.php" class="page-input-form" style="display:flex; align-items:center; gap:5px;">
+            <input type="hidden" name="cat" value="<?php echo htmlspecialchars($category); ?>">
+            <input type="hidden" name="search" value="<?php echo htmlspecialchars($search_keyword); ?>">
+            
+            <span class="page-info" style="color:#777; white-space: nowrap;">صفحة</span>
+            
+            <input type="number" name="page" min="1" max="<?php echo $total_pages; ?>" value="<?php echo $page; ?>" class="page-input" style="width: 70px;">
+            
+            <button type="submit" class="page-submit" style="height: 38px;">انتقال</button>
+        </form>
+        
         <?php if($page < $total_pages): ?>
             <a href="<?php echo $link_prefix . ($page + 1); ?>" class="page-btn">التالي →</a>
         <?php else: ?>
             <span class="page-btn disabled">التالي →</span>
         <?php endif; ?>
+        
+        <?php if($page < $total_pages): ?>
+            <a href="<?php echo $link_prefix . $total_pages; ?>" class="page-btn">آخر صفحة »</a>
+        <?php endif; ?>
+        
     </div>
     <?php endif; ?>
-  <footer class="footer">
+  
+  
+    <footer class="footer">
         <div class="footer-container">
 
-            <!-- Left: logo + brief -->
             <div class="footer-about">
                 <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 
-            <!-- Middle: quick links -->
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
-                <a href="arabic.html">الرئيسية</a>
-                <a href="history_ar.html">التاريخ</a>
-                <a href="traditions_ar.html">التقاليد</a>
-                <a href="food_ar.html">الطعام</a>
-                <a href="Contact_ar.html">اتصل بنا</a>
+                <a href="arabic.php">الرئيسية</a>
+                <a href="history_ar.php">التاريخ</a>
+                <a href="traditions_ar.php">التقاليد</a>
+                <a href="food_ar.php">الطعام</a>
+                <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 
-            <!-- Right: contact info -->
             <div class="footer-contact">
                 <h4>تواصل معنا</h4>
                 <p>📞 +966554731708</p>
@@ -384,5 +424,12 @@ $result = $conn->query($sql);
     
 </div>
 
+<script>
+    // دالة فتح/إغلاق شريط البحث العلوي (مطلوبة لتشغيل الهيدر)
+    function toggleTopSearch() {
+        const searchBar = document.getElementById("topSearchBar");
+        searchBar.style.display = (searchBar.style.display === "block") ? "none" : "block";
+    }
+</script>
 </body>
 </html>
