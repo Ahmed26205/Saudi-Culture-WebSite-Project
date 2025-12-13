@@ -8,36 +8,34 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // البحث عن المستخدم (نفس منطق الملف الإنجليزي)
-    // ملاحظة: يُفضل استخدام طرق أكثر أمانًا مثل الدوال المُجهزة والـ password_verify
-    $sql = "SELECT * FROM users WHERE email='$email'";
+    // البحث عن المستخدم باستخدام البريد الإلكتروني
+    $sql = "SELECT id, username, email, password FROM users WHERE email='$email'";
     $result = mysqli_query($conn, $sql);
 
+    // التحقق مما إذا كان هناك مستخدم واحد بهذا البريد الإلكتروني
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         
-        // التحقق من كلمة المرور (نفرض أنها مخزنة كـ Plain Text كما في login.php، أو تحقق من التشفير)
-        // إذا كان الباسورد مشفراً (Hashing): استخدم if (password_verify($password, $row['password'])) 
-        // إذا كان الباسورد غير مشفر (Plain Text - كما في login.php): 
-        if ($password === $row['password']) {
+        // ** التحقق من كلمة المرور المشفرة باستخدام password_verify **
+        if (password_verify($password, $row['password'])) {
             
             // تخزين بيانات المستخدم في الجلسة
             $_SESSION['user_id'] = $row['id'];
-            $_SESSION['user_name'] = $row['username']; // استخدام user_name لتوحيدها
+            $_SESSION['user_name'] = $row['username']; 
             $_SESSION['email'] = $row['email'];
 
-            // التوجيه للصفحة الرئيسية العربية (افترضنا أنك قمت بتغييرها إلى arabic.php)
             header("Location: arabic.php"); 
             exit();
         } else {
+            // فشل التحقق من كلمة المرور
             $error = "البريد الإلكتروني أو كلمة المرور غير صحيحة!";
         }
     } else {
+        // لم يتم العثور على مستخدم
         $error = "البريد الإلكتروني أو كلمة المرور غير صحيحة!";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -47,6 +45,7 @@ if (isset($_POST['submit'])) {
     <title>تسجيل الدخول - SaudiCulture</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/auth.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body class="auth-page">

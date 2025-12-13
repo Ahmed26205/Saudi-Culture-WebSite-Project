@@ -108,107 +108,218 @@ h2 {
    تنسيق موحد للأزرار داخل .nav-buttons
    =========================== */
 /* Button base styles - consolidated */
-.nav-buttons button {
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    margin-left: 1rem;
-    display: inline-block;
-}
 
-/* ===========================
-   زر اللغة (AR) في الشريط العلوي
-   =========================== */
-/* Language switcher */
-.lang-btn {
-    padding: 1rem 1rem;
-    /* نفس padding لزر login */
-    background: var(--color-accent);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-    display: inline-block;
-    /* لتطابق أزرار أخرى */
-}
-
-.lang-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
-}
-
-/* ===========================
-   زر تسجيل الدخول في الشريط العلوي
-   =========================== */
-/* Login button */
+/* =========================================*/
 .login-btn {
-    padding: 1rem 1rem;
+    padding: 0.75rem 1rem;
     background: var(--color-accent);
     border-radius: var(--border-radius);
-    color: white;
+    color: var(--color-text-light);
     border: none;
+    font-size: 0.95rem;
+  font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
 }
+
 
 .login-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
 }
 
-/* ===========================
-   زر إنشاء حساب جديد في الشريط العلوي
-   =========================== */
-/* Sign Up button */
 .signup-btn {
-    padding: 1rem 1rem;
+    padding: 0.75rem 1rem;
     background: var(--color-accent);
     border-radius: var(--border-radius);
     color: white;
     border: none;
+    font-size: 0.95rem;
+  font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
 }
+
 
 .signup-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
 }
+/* ===========================
+   زر البحث + شريط البحث في الهيدر
+   يظهر في الشاشات الكبيرة فقط
+   =========================== */
+/* ===== Search Button + Bar ( ===== */
 
-/* زر البحث داخل الهيدر */
-.nav-search-btn {
-    background: transparent;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: inherit;
-    padding: 0.3rem 0.6rem;
-    transition: 0.3s;
+/* حاوية زر البحث + الشريط  */
+.search-wrap{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
-.nav-search-btn:hover {
-    transform: scale(1.2);
-    color: var(--color-accent);
+/* زر البحث) */
+.nav-search-btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  transition: 0.3s;
+  color: var(--color-accent);
 }
 
-/* شريط البحث العلوي */
-.top-search-bar {
-    top: 80px;
-    right: 0;
-    background: var(--shadow-md);
+.nav-search-btn:hover{
+  transform: scale(1.15);
+}
+
+/* الشريط  */
+.top-search-bar{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  z-index: 3000;
+color: var(--color-accent);
+ max-width: 420px;         
+  width: min(420px, 72vw);  
+  background: rgba(255,255,255,0.98);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    overflow: visible;
+
+}
+
+/* EN (LTR): الشريط يمين زر البحث */
+html[dir="ltr"] .top-search-bar,
+html:not([dir]) .top-search-bar{
+  left: calc(100% + 12px);
+  right: auto;
+}
+
+/* AR (RTL): الشريط يسار زر البحث */
+html[dir="rtl"] .top-search-bar{
+  right: calc(100% + 12px);
+  left: auto;
+}
+
+.top-search-bar input{
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Autocomplete */
+.top-search-bar .autocomplete{
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid rgba(14,107,78,0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+  text-align: start;
+    position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(14,107,78,0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+  z-index: 4000;
+}
+
+.top-search-bar .autocomplete.show{ display:block; }
+
+.top-search-bar .autocomplete .item{
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.top-search-bar .autocomplete .item:last-child{ border-bottom: none; }
+
+.top-search-bar .autocomplete .item:hover,
+.top-search-bar .autocomplete .item.active{
+  background: rgba(14,107,78,0.08);
+}
+
+.top-search-bar .autocomplete .title{ font-weight: 700; }
+.top-search-bar .autocomplete .snippet{
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* ترتيب زر البحث بالنسبة لزر اللغة */
+
+/* الافتراضي (EN - LTR): البحث بعد زر اللغة */
+html[dir="ltr"] .search-wrap,
+html:not([dir]) .search-wrap {
+  order: 4;
+}
+
+/* زر اللغة */
+.lang-btn {
+  order: 3;
+}
+
+/* العربي (RTL): البحث قبل زر اللغة */
+html[dir="rtl"] .search-wrap {
+  order: 4;
+}
+
+/* ===========================
+   Responsive Top Search Bar
+   - Desktop: beside search icon
+   - Mobile/tablet: centered, fits screen
+   =========================== */
+
+
+/* ✅ للشاشات الصغيرة: خلي الشريط يتوسط ويظهر داخل عرض الشاشة */
+@media (max-width: 900px){
+  .top-search-bar{
+    position: fixed;         /* بدل absolute عشان ما يطلع برا */
+    top: 84px;               /* تحت الهيدر (عدّل الرقم إذا احتجت) */
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%);  /* توسيط أفقي */
+    width: min(520px, calc(100vw - 24px));
+    max-width: none;
     padding: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    display: none;
-    z-index: 999;
+    border-radius: 14px;
+    z-index: 9999;
+  }
+
+  /* قائمة الاقتراحات تظل داخل نفس الشريط */
+  .top-search-bar .autocomplete{
+    position: static;        /* بدل absolute */
+    margin-top: 10px;
+    max-height: 45vh;        /* لا تطول كثير */
+    overflow: auto;
+  }
 }
 
-.top-search-bar input {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    border: 2px solid var(--color-accent);
-    border-radius: 8px;
+/* ✅ للشاشات الأصغر جداً */
+@media (max-width: 480px){
+  .top-search-bar{
+    top: 76px; /* أقرب للهيدر */
+    width: calc(100vw - 16px);
+    padding: 10px;
+  }
+
+  .top-search-bar input{
+    padding: 10px;
+    font-size: 0.95rem;
+  }
 }
+
 
 
 /* ===========================
@@ -239,8 +350,8 @@ h2 {
 
 /* Logo image sizing | حجم صورة الشعار */
 #mainHeader .logo img {
-    height: 120px;
-    max-height: 120px;
+    height: 100px;
+    max-height: 100px;
     object-fit: contain;
     transition: height var(--transition-fast);
 }
@@ -378,11 +489,13 @@ h2 {
     font-size: 1.1rem;
     font-weight: 600;
     color: white;
-    background: var(--color-accent);
-    border: 2px solid var(--saudi-gold);
+    background: var(--saudi-gold);
+    border: 2px solid var(--color-accent);
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: all var(--transition-fast);
+  display: block;
+  margin: 1.5rem auto 0; /* auto = توسيط */
 }
 
 /* Button hover effects | تأثير عند تمرير الماوس فوق الأزرار */
@@ -391,36 +504,7 @@ h2 {
     transform: translateY(-1px);
 }
 
-/* Action buttons layout | توزيع أزرار Explore / Start Quiz */
-.main-visual-content .action-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
 
-/* Action buttons sizing | حجم أزرار الهيرو */
-.main-visual-content .action-buttons input[type="button"] {
-    padding: 12px 28px;
-    font-size: 18px;
-    min-width: 180px;
-}
-
-/* Quiz button styling | شكل زر Start Quiz المميز */
-.main-visual-content .action-buttons input[type="button"][value="Start Quiz"],
-.main-visual-content .action-buttons input[type="button"][value="ابدأ الاختبار"] {
-    background: var(--saudi-gold);
-    border-color: var(--color-accent);
-    box-shadow: 0 2px 8px rgba(201, 164, 79, 0.3);
-}
-
-/* Quiz button hover | تأثير التمرير على زر Start Quiz */
-.main-visual-content .action-buttons input[type="button"][value="Start Quiz"]:hover,
-.main-visual-content .action-buttons input[type="button"][value="ابدأ الاختبار"]:hover {
-    background: #d4b265;
-    box-shadow: 0 4px 12px rgba(201, 164, 79, 0.4);
-}
 
 
 /* About section | قسم نبذة عن موروث */
@@ -541,6 +625,8 @@ html[dir="rtl"] .poetry-card {
 }
 
 
+
+
 /* ===========================
    شبكة البطاقات (Featured Sections)
    لعرض: الأكل – التقاليد – الفنون – الحضارات
@@ -637,14 +723,7 @@ html[dir="rtl"] .poetry-card {
     line-height: 1.8;
 }
 
-.regions-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.6rem;
-}
+
 
 .region-card {
     background: #ffffff;
@@ -664,8 +743,9 @@ html[dir="rtl"] .poetry-card {
 
 .region-card img {
     width: 100%;
-    height: 150px;
+      height: 150px;
     object-fit: cover;
+
 }
 
 .region-card h3 {
@@ -681,7 +761,38 @@ html[dir="rtl"] .poetry-card {
     color: #444;
 }
 
+/* ==== Poets Swiper (Fade effect) ==== */
+.poets-swiper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px var(--container-padding) 45px;
+  overflow: hidden;
+}
 
+.poets-swiper .swiper-slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.poets-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+.regions-swiper{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px var(--container-padding) 45px;
+  overflow: hidden;
+}
+
+.regions-swiper .swiper-slide{
+  height: auto;
+  }
+.regions-swiper .swiper-slide .region-card{
+  width: 100%;
+    max-width: 240px;         
+
+}
 
 
 /* events section | قسم الفعاليات */
@@ -1360,72 +1471,7 @@ html[dir="rtl"] .poetry-card {
   padding: 15px;
 }
 
-/* =========================================*/
-.login-btn {
-    padding: 1rem 1rem;
-    background: var(--color-accent);
-    border-radius: var(--border-radius);
-    color: white;
-    border: none;
-}
 
-.login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
-}
-
-.signup-btn {
-    padding: 1rem 1rem;
-    background: var(--color-accent);
-    border-radius: var(--border-radius);
-    color: white;
-    border: none;
-}
-
-.signup-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
-}
-
-/* ===========================
-   زر تسجيل الدخول في الشريط العلوي
-   =========================== */
-/* Login button */
-.login-btn,
-.signup-btn {
-
-    padding: 0.75rem 1rem;
-    background: var(--color-accent);
-    border-radius: var(--border-radius);
-    color: white;
-    border: none;
-
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all var(--transition-fast);
-}
-
-.login-btn:hover,
-.signup-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(14, 107, 78, 0.2);
-    opacity: 0.9;
-}
-
-#mainHeader.scrolled .login-btn,
-#mainHeader.scrolled .signup-btn {
-    background: var(--color-accent);
-    color: white;
-}
-
-
-#mainHeader.scrolled .login-btn:hover,
-#mainHeader.scrolled .signup-btn:hover {
-    background: var(--color-accent);
-    filter: brightness(1.15);
-    transform: translateY(-2px);
-}
 
 /* ===========================
    Traditions page layout
@@ -1724,56 +1770,7 @@ html[dir="rtl"] .traditions-expression-card ul {
     background: rgba(0, 0, 0, 0.06);
     color: #444;
 }
-/* Quiz call-to-action button */
-.quiz-cta-btn {
-    padding: 0.9rem 2.6rem;
-    border-radius: 999px;
-    border: 2px solid var(--color-accent);
-    background: var(--saudi-gold);
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.15s ease,
-        border-color 0.15s ease;
-}
 
-.quiz-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-    background: #d4b265; /* درجة أفتح شوي من الذهبي */
-    border-color: var(--color-accent);
-}
-
-.quiz-cta-btn:active {
-    transform: translateY(0);
-    box-shadow: var(--shadow-sm);
-}
-/* Quiz section layout (title + line + button) */
-.quiz-cta-section {
-    text-align: center;
-    margin: 2rem auto 3.5rem;
-    max-width: 900px;
-}
-
-.quiz-cta-section h2 {
-    font-size: 1.4rem;
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
-}
-
-.quiz-cta-divider {
-    height: 3px;
-    width: 100%;
-    max-width: 92%;
-    margin: 0 auto 1.9rem;
-    background: var(--saudi-gold);
-    border-radius: 999px;
-}
 
 
 /* =========================================

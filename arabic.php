@@ -5,7 +5,6 @@ session_start();
 ?>
 <!-- الصفحة باللغة العربية وباتجاه من اليمين لليسار -->
 <html lang="ar" dir="rtl">
-
 <head>
     <!-- ترميز يدعم اللغة العربية -->
     <meta charset="UTF-8" />
@@ -13,16 +12,23 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- عنوان الصفحة في شريط المتصفح -->
     <title>SaudiCulture - الصفحة الرئيسية (عربي)</title>
-
     <!-- استيراد خطوط جوجل: Inter (إنجليزي) Outfit (عناوين) Almarai (عربي) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap"
         rel="stylesheet">
+        <!-- مكتبة Swiper.js:
+     تمكّن من إنشاء سلايدرات تفاعلية تدعم التمرير التلقائي،
+     التوافق مع جميع أحجام الشاشات، وأزرار التحكم
+-->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <!-- ربط ملف التنسيقات الخارجية للموقع -->
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="JS/script.js" defer></script>
+    <link rel="icon" href="images/Logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
@@ -43,19 +49,22 @@ session_start();
         <a href="browse_ar.php">المعجم</a>
         <a href="Contact_ar.php">اتصل بنا</a>
                 
-        <button class="nav-search-btn" onclick="toggleTopSearch()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-                <line x1="16.5" y1="16.5" x2="22" y2="22"
-                      stroke="#0e6b4e" stroke-width="2"
-                      stroke-linecap="round"/>
-            </svg>
-        </button>
 
-        <div class="top-search-bar" id="topSearchBar">
-            <input type="text" placeholder="ابحث في الموقع..." />
-        </div>
+      <div class="search-wrap">
+  <button class="nav-search-btn" type="button" onclick="toggleTopSearch()" aria-label="بحث">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+      <line x1="16.5" y1="16.5" x2="22" y2="22"
+        stroke="#0e6b4e" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <div class="top-search-bar" id="topSearchBar">
+    <input id="siteSearchInput" type="text" placeholder="ابحث في الموقع..." autocomplete="off" />
+    <div id="topSearchSuggestions" class="autocomplete" role="listbox"></div>
+  </div>
+</div>
 
         <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
             
@@ -92,32 +101,20 @@ session_start();
 
             <!-- أزرار الإجراءات الرئيسية في الهيرو -->
             <div class="action-buttons">
-                <input type="button" value="استكشاف الثقافة">
                 <input type="button" value="ابدأ الاختبار" onclick="window.location.href='quiz_ar.php'">
             </div>
         </div>
     </section>
         <!-- قسم نبذة عن موروث -->
-    <h2 class="section-title">نبذة عن موروث</h2>
-
-    <section class="about-section">
-        <p>
-            "موروث" هو منصة رقمية تفاعلية تهدف إلى إبراز جمال التراث السعودي
-            من تاريخ وعادات وطعام وفنون وفعاليات ثقافية. نسعى إلى تقديم محتوى
-            موثوق ومبسّط يساعد الزائر على التعرف على ملامح الهوية السعودية
-            بطريقة حديثة تجمع بين المتعة والمعرفة.
-        </p>
-    </section>
-
-    
-
-   <h2 class="section-title">أبيات من موروث الوطن</h2>
+  <h2 class="section-title">أبيات من موروث الوطن</h2>
 
 <section class="poetry-section">
-    <div class="poetry-list">
+  <div class="swiper poets-swiper">
+    <div class="swiper-wrapper">
+
 
         <!-- خالد الفيصل -->
-        <article class="poetry-card">
+        <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
                 <img src="images/خالد الفيصل.jpeg" alt="الأمير خالد الفيصل">
             </div>
@@ -134,7 +131,7 @@ session_start();
         </article>
 
         <!-- غازي القصيبي -->
-        <article class="poetry-card">
+        <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
                 <img src="images/غازي القصيبي.jpeg" alt="غازي القصيبي">
             </div>
@@ -151,7 +148,7 @@ session_start();
         </article>
 
         <!-- طلال الرشيد -->
-        <article class="poetry-card">
+        <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
                 <img src="images/طلال الرشيد.jpeg" alt="طلال الرشيد">
             </div>
@@ -166,7 +163,8 @@ session_start();
                 </blockquote>
             </div>
         </article>
-
+ </div>
+    <div class="swiper-pagination"></div>
     </div>
 </section>
 
@@ -212,10 +210,10 @@ session_start();
         تجوّل بين مناطق المملكة الخمس واكتشف أبرز ملامحها الثقافية والمعالم التي تميّز كل منطقة.
     </p>
 
-    <div class="regions-grid">
-
+    <div class="swiper regions-swiper">
+    <div class="swiper-wrapper">
         <!-- الغربية -->
-        <article class="region-card">
+        <article class="region-card swiper-slide">
             <img src="images/west.jpg" alt="المنطقة الغربية">
             <h3>المنطقة الغربية</h3>
             <p>
@@ -225,7 +223,7 @@ session_start();
         </article>
 
         <!-- الوسطى -->
-        <article class="region-card">
+        <article class="region-card swiper-slide">
             <img src="images/middle.webp" alt="المنطقة الوسطى">
             <h3>المنطقة الوسطى</h3>
             <p>
@@ -235,7 +233,7 @@ session_start();
         </article>
 
         <!-- الشرقية -->
-        <article class="region-card">
+        <article class="region-card swiper-slide">
             <img src="images/east.webp" alt="المنطقة الشرقية">
             <h3>المنطقة الشرقية</h3>
             <p>
@@ -245,7 +243,7 @@ session_start();
         </article>
 
         <!-- الجنوبية -->
-        <article class="region-card">
+        <article class="region-card swiper-slide">
             <img src="images/south.jpg" alt="المنطقة الجنوبية">
             <h3>المنطقة الجنوبية</h3>
             <p>
@@ -255,7 +253,7 @@ session_start();
         </article>
 
         <!-- الشمالية -->
-        <article class="region-card">
+        <article class="region-card swiper-slide">
             <img src="images/north.jpg" alt="المنطقة الشمالية">
             <h3>المنطقة الشمالية</h3>
             <p>
@@ -263,6 +261,10 @@ session_start();
                 وتتميز بصحاري واسعة وحياة تقليدية عريقة.
             </p>
         </article>
+    </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
     </div>
 </section>
@@ -276,7 +278,7 @@ session_start();
         <!-- نص تعريفي وزر عرض الفعاليات -->
         <div>
             <p>اكتشف أبرز الفعاليات الثقافية في أرجاء المملكة العربية السعودية.</p>
-            <button>عرض الفعاليات</button>
+            <button onclick="window.location.href='culture_events_ar.php'">استعرض المزيد</button>
         </div>
 
         <!-- صورة تمثل خريطة أو فعاليات في المملكة -->
@@ -302,6 +304,8 @@ session_start();
                 <a href="history_ar.php">التاريخ</a>
                 <a href="traditions_ar.php">التقاليد</a>
                 <a href="food_ar.php">الطعام</a>
+                        <a href="arts_ar.php">الفنون</a>
+
                 <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 
@@ -322,9 +326,18 @@ session_start();
 
 
     <!-- سكربت تغيير شكل الهيدر عند التمرير (إضافة/إزالة فئة scrolled) -->
-    <script>
+  <script>
+        const header = document.getElementById("mainHeader");
+
+        // 1. عند تحميل الصفحة، تأكد من إزالة كلاس scrolled لتبدأ شفافاً
+        window.addEventListener("load", () => {
+            if (window.scrollY < 50) {
+                header.classList.remove("scrolled");
+            }
+        });
+
+        // 2. عند التمرير، قم بإضافة/إزالة الكلاس
         window.addEventListener("scroll", () => {
-            const header = document.getElementById("mainHeader");
             if (window.scrollY > 50) {
                 header.classList.add("scrolled");
             } else {

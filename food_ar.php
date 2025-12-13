@@ -23,6 +23,7 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="JS/script.js" defer></script>
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
@@ -43,20 +44,21 @@ session_start();
         <a href="browse_ar.php">المعجم</a>
         <a href="Contact_ar.php">اتصل بنا</a>
                 
-        <button class="nav-search-btn" onclick="toggleTopSearch()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-                <line x1="16.5" y1="16.5" x2="22" y2="22"
-                      stroke="#0e6b4e" stroke-width="2"
-                      stroke-linecap="round"/>
-            </svg>
-        </button>
+             <div class="search-wrap">
+  <button class="nav-search-btn" type="button" onclick="toggleTopSearch()" aria-label="بحث">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
+      <line x1="16.5" y1="16.5" x2="22" y2="22"
+        stroke="#0e6b4e" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
 
-        <div class="top-search-bar" id="topSearchBar">
-            <input type="text" placeholder="ابحث في الموقع..." />
-        </div>
-
+  <div class="top-search-bar" id="topSearchBar">
+    <input id="siteSearchInput" type="text" placeholder="ابحث في الموقع..." autocomplete="off" />
+    <div id="topSearchSuggestions" class="autocomplete" role="listbox"></div>
+  </div>
+</div>
         <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
             
             <?php if(isset($_SESSION['user_id'])): ?>
@@ -343,6 +345,8 @@ session_start();
                 <a href="history_ar.php">التاريخ</a>
                 <a href="traditions_ar.php">التقاليد</a>
                 <a href="food_ar.php">الطعام</a>
+                        <a href="arts_ar.php">الفنون</a>
+
                 <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 

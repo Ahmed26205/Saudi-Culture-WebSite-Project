@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // تسجيل الدخول مباشرة بعد الإنشاء
             $_SESSION['user_id'] = $conn->insert_id;
             $_SESSION['user_name'] = $name;
-            header("Location: arabic.html"); // التوجيه للصفحة الرئيسية
+            header("Location: arabic.php"); // التوجيه للصفحة الرئيسية
             exit();
         } else {
             $msg = "حدث خطأ: " . $conn->error;
@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/auth.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body class="auth-page">
     <header id="mainHeader">

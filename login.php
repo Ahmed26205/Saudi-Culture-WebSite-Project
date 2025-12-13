@@ -1,30 +1,40 @@
 <?php
-session_start(); // بدء الجلسة لحفظ بيانات المستخدم المتصل
-include "db_conn.php"; // الاتصال بالقاعدة
+session_start(); // Start the session
+include "db_conn.php"; // Database connection
+
+$error = ""; // Initialize error message
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // البحث عن المستخدم بنفس الإيميل والباسورد
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    // 1. Search for the user ONLY by email (to retrieve the hashed password)
+    // We must select the 'password' column to use password_verify
+    $sql = "SELECT id, username, email, password FROM users WHERE email='$email'"; 
     $result = mysqli_query($conn, $sql);
 
+    // 2. Check if a user was found
     if (mysqli_num_rows($result) === 1) {
-        // تم العثور على المستخدم
         $row = mysqli_fetch_assoc($result);
+        $hashed_password = $row['password'];
         
-        // تخزين بياناته في الجلسة لاستخدامها في الصفحات الأخرى
-        $_SESSION['user_id'] = $row['id'];
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['email'] = $row['email'];
+        // 3. SECURE VERIFICATION: Use password_verify to check the plaintext password against the hash
+        if (password_verify($password, $hashed_password)) {
+            
+            // User authenticated successfully: Store data in session
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
 
-        // توجيه المستخدم للصفحة الرئيسية (سنحولها لـ php لاحقاً)
-header("Location: index.php");
-        exit();
+            header("Location: index.php"); 
+            exit();
+        } else {
+            // Password verification failed
+            $error = "Email or password is incorrect!"; 
+        }
     } else {
-        // بيانات خاطئة
-        $error = "البريد الإلكتروني أو كلمة المرور غير صحيحة!";
+        // User not found
+        $error = "Email or password is incorrect!"; 
     }
 }
 ?>
@@ -39,6 +49,7 @@ header("Location: index.php");
 
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/auth.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body class="auth-page">

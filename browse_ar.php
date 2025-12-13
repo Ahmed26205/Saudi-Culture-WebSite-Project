@@ -258,6 +258,9 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
              background: #0d523a;
         }
     </style>
+    <link rel="icon" type="image/png" href="images/logo.png">
+        <link rel="stylesheet" href="CSS/auth.css">
+
 </head>
 <body>
 
@@ -277,15 +280,6 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
         <a href="browse_ar.php" style="color: #116A4B; font-weight: 700;">المعجم</a> 
         <a href="Contact_ar.php">اتصل بنا</a>
 
-        <button class="nav-search-btn" onclick="toggleTopSearch()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-                <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="#0e6b4e" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </button>
-        <div class="top-search-bar" id="topSearchBar">
-            <input type="text" placeholder="ابحث في الموقع..." />
-        </div>
 
         <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
             
@@ -405,6 +399,8 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
                 <a href="history_ar.php">التاريخ</a>
                 <a href="traditions_ar.php">التقاليد</a>
                 <a href="food_ar.php">الطعام</a>
+                        <a href="arts_ar.php">الفنون</a>
+
                 <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 

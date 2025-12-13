@@ -178,6 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     <title>Saudi Culture Quiz</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/auth.css">
     
     <style>
         :root { 
@@ -270,19 +271,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
 
             <a href="Contact.php">Contact us</a>
 
-            <button class="nav-search-btn" onclick="toggleTopSearch()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-                    <line x1="16.5" y1="16.5" x2="22" y2="22"
-                          stroke="#0e6b4e" stroke-width="2"
-                          stroke-linecap="round"/>
-                </svg>
-            </button>
-
-            <div class="top-search-bar" id="topSearchBar">
-                <input type="text" placeholder="Search in the web. . ." />
-            </div>
 
             <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
                 
@@ -320,6 +308,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
                     <option value="20" <?php if(isset($_POST['limit']) && $_POST['limit'] == 20) echo 'selected'; ?>>20 Questions</option>
                     <option value="25" <?php if(isset($_POST['limit']) && $_POST['limit'] == 25) echo 'selected'; ?>>25 Questions</option>
                     <option value="30" <?php if(isset($_POST['limit']) && $_POST['limit'] == 30) echo 'selected'; ?>>30 Questions</option>
+                                        <option value="35" <?php if(isset($_POST['limit']) && $_POST['limit'] == 35) echo 'selected'; ?>>35 Questions</option>
+
                 </select>
             </div>
 
@@ -458,38 +448,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     </script>
     <?php endif; ?>
 
-    <script>
-        function toggleTopSearch() {
-            const searchBar = document.getElementById("topSearchBar");
-            searchBar.style.display = (searchBar.style.display === "block") ? "none" : "block";
-        }
-        function checkAndSubmit() {
-            let unanswered = [];
-            const items = document.querySelectorAll('.quiz-item');
-            items.forEach((item) => {
-                const qNum = item.getAttribute('data-num');
-                const radios = item.querySelectorAll('input[type="radio"]');
-                let isAnswered = false;
-                if (radios.length > 0) {
-                    radios.forEach(r => { if(r.checked) isAnswered = true; });
-                }
-                if (!isAnswered) unanswered.push(qNum);
-            });
-            const msgBox = document.getElementById('unansweredBox');
-            const numsBox = document.getElementById('unansweredNumbers');
-            if (unanswered.length > 0) {
-                msgBox.style.display = 'block';
-                numsBox.textContent = unanswered.join(', ');
-            } else {
-                msgBox.style.display = 'none';
-            }
-            document.getElementById('confirmModal').style.display = 'flex';
-        }
-        function closeModal() { document.getElementById('confirmModal').style.display = 'none'; }
-        function submitForm() { document.getElementById('quizForm').submit(); }
-    </script>
-
-    <footer class="footer">
+       <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
                 <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
@@ -521,6 +480,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        function toggleTopSearch() {
+            const searchBar = document.getElementById("topSearchBar");
+            searchBar.style.display = (searchBar.style.display === "block") ? "none" : "block";
+        }
+        function checkAndSubmit() {
+            let unanswered = [];
+            const items = document.querySelectorAll('.quiz-item');
+            items.forEach((item) => {
+                const qNum = item.getAttribute('data-num');
+                const radios = item.querySelectorAll('input[type="radio"]');
+                let isAnswered = false;
+                if (radios.length > 0) {
+                    radios.forEach(r => { if(r.checked) isAnswered = true; });
+                }
+                if (!isAnswered) unanswered.push(qNum);
+            });
+            const msgBox = document.getElementById('unansweredBox');
+            const numsBox = document.getElementById('unansweredNumbers');
+            if (unanswered.length > 0) {
+                msgBox.style.display = 'block';
+                numsBox.textContent = unanswered.join(', ');
+            } else {
+                msgBox.style.display = 'none';
+            }
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+        function closeModal() { document.getElementById('confirmModal').style.display = 'none'; }
+        function submitForm() { document.getElementById('quizForm').submit(); }
+    </script>
     
 </div>
 </body>

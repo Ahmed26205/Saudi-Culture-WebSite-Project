@@ -1,5 +1,6 @@
 <?php
-// إعدادات الاتصال بقاعدة البيانات
+session_start();
+// إعدادات الاتصال بقاعدة البيانات (يفترض أنها في db_conn.php، لكن سنبقيها هنا كما في ملفك)
 $sname = "localhost";
 $uname = "root";
 $password = "";
@@ -11,21 +12,34 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// عند ضغط زر التسجيل
 if (isset($_POST['submit'])) {
-    $username = $_POST['username']; // يأخذ البيانات من الحقل الذي اسمه username
-    $email = $_POST['email'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    // إضافة المستخدم للجدول
-    $sql = "INSERT INTO users (username, email, password, score_west) 
-            VALUES ('$username', '$email', '$password', 0)";
+    // 1. التحقق من وجود البريد سابقاً
+    $check = "SELECT * FROM users WHERE email='$email'";
+    $result = $conn->query($check);
 
-    if (mysqli_query($conn, $sql)) {
-        // رسالة نجاح وتحويل لصفحة تسجيل الدخول
-        echo "<script>alert('Account created successfully!'); window.location.href='login.html';</script>";
+    if ($result->num_rows > 0) {
+        $msg = "This email address is already registered!";
     } else {
-        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+        // 2. ** التشفير الآمن لكلمة المرور **
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+        // 3. إدراج اسم المستخدم، الإيميل، وكلمة المرور المشفرة
+        $sql = "INSERT INTO users (username, email, password) 
+                VALUES ('$username', '$email', '$hashed_password')";
+
+        if (mysqli_query($conn, $sql)) {
+            // تسجيل الدخول مباشرة بعد الإنشاء (اختياري، لكن آمن)
+            $_SESSION['user_id'] = mysqli_insert_id($conn);
+            $_SESSION['username'] = $username;
+            header("Location: index.php"); 
+            exit();
+        } else {
+            $msg = "Error: " . mysqli_error($conn);
+        }
     }
 }
 ?>
@@ -43,6 +57,7 @@ if (isset($_POST['submit'])) {
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
+        <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body class="auth-page">
@@ -70,7 +85,7 @@ if (isset($_POST['submit'])) {
             
             <button type="submit" name="submit" class="auth-btn">Sign Up</button>
             
-            <p>Already have an account? <a href="login.html">Login</a></p>
+            <p>Already have an account? <a href="login.php">Login</a></p>
         </form>
         
         <p id="message" class="msg"></p>

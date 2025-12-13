@@ -97,6 +97,7 @@ $history_res = $conn->query($history_sql);
         .score-low { background-color: #f8d7da; color: #721c24; }
         .no-records { text-align: center; color: #777; padding: 20px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 8px; margin-top: 15px; }
     </style>
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
@@ -117,15 +118,7 @@ $history_res = $conn->query($history_sql);
 
             <a href="Contact_ar.php">اتصل بنا</a>
 
-            <button class="nav-search-btn" onclick="toggleTopSearch()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-                    <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="#0e6b4e" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-            <div class="top-search-bar" id="topSearchBar">
-                <input type="text" placeholder="ابحث في الموقع..." />
-            </div>
+          
 
             <a href="profile_ar.php" class="profile-square" title="الملف الشخصي" style="display:inline-flex;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -216,16 +209,14 @@ $history_res = $conn->query($history_sql);
         </form>
     </section>
 
-   <footer class="footer">
-        <div class="footer-container">
 
-            <!-- Left: logo + brief -->
+    <footer class="footer">
+        <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="images/Logo.png" alt="شعار SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 
-            <!-- Middle: quick links -->
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
                 <a href="arabic.php">الرئيسية</a>
@@ -235,20 +226,18 @@ $history_res = $conn->query($history_sql);
                 <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 
-            <!-- Right: contact info -->
             <div class="footer-contact">
                 <h4>تواصل معنا</h4>
                 <p>📞 +966554731708</p>
                 <p>📧 mawrooth@gmail.com</p>
                 <p>📍 مكة، المملكة العربية السعودية</p>
             </div>
-
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Mawrooth – SaudiCulture Website. All rights reserved.</p>
+            <p>© 2025 Mawrooth – SaudiCulture Website. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
-
+    
 </body>
 </html>

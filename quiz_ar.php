@@ -2,7 +2,7 @@
 session_start();
 include 'db_conn.php'; 
 
-// Check if logged in
+// Check if logged in 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login_ar.php"); 
     exit();
@@ -85,7 +85,7 @@ function parseQuizData($text) {
 // =========================================================
 
 $user_id = $_SESSION['user_id'];
-$state = 'menu'; 
+$state = 'menu'; // القيمة الافتراضية دائماً هي القائمة
 $score = 0;
 $total = 0;
 $should_scroll = false; 
@@ -97,9 +97,9 @@ $source_tables = [
     'proverbs' => 'proverbs___proverbs_location_recognition',
 ];
 
-// -- حالة: عرض النتيجة --
+// 1. معالجة طلب تسليم الإجابات (POST)
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
-    $state = 'result';
+    $state = 'result'; // فرض حالة النتيجة
     $should_scroll = true;
 
     $correct_map = isset($_SESSION['quiz_answers_ar']) ? $_SESSION['quiz_answers_ar'] : [];
@@ -117,10 +117,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         $user_ans_full = isset($user_answers[$q_id]) ? trim($user_answers[$q_id]) : '';
         
         // ** تنظيف إجابة المستخدم من الترقيم قبل المقارنة **
-        $user_clean_text = preg_replace('/^\s*[أ-يA-Da-d]\)\s*/u', '', $user_ans_full); 
+        $user_clean_text = preg_replace('/^\s*[\(]?[أ-يA-Da-d][\)\.]?\s*/u', '', $user_ans_full); 
         
         // مقارنة النص النظيف بالإجابة الصحيحة المحفوظة
-        $is_correct = (trim($user_clean_text) == $correct_text);
+        $is_correct = (trim($user_clean_text) == $correct_text && !empty($user_ans_full)); 
 
         if ($is_correct) $score++;
 
@@ -146,13 +146,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         }
     }
     unset($_SESSION['quiz_type_label']); 
-    unset($_SESSION['quiz_answers_ar']); 
+    // لا نحذف quiz_answers_ar بعد الإرسال لنتمكن من عرض النتائج في نفس الصفحة
 
-// -- حالة: بدء الاختبار --
+// 2. معالجة طلب بدء الاختبار (POST)
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['start_quiz'])) {
-    $state = 'quiz';
+    $state = 'quiz'; // فرض حالة الاختبار
     $should_scroll = true;
 
+    // *** مسح بيانات النتائج السابقة لضمان عدم الخلط بين الجلسات ***
+    unset($_SESSION['quiz_answers_ar']); 
+    
     $limit = (int)$_POST['limit'];
     $type = isset($_POST['type']) ? $_POST['type'] : 'mixed';
     
@@ -248,6 +251,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     $total = count($quiz_questions); 
     if ($total == 0) $state = 'menu'; 
 }
+// 3. معالجة التحميل العادي (GET) - لا يحدث شيء، تبقى الحالة 'menu'
 ?>
 
 <!DOCTYPE html>
@@ -259,6 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/auth.css">
     
     <style>
         :root { 
@@ -333,10 +338,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             .checkbox-grid { grid-template-columns: 1fr; }
         }
     </style>
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
 
-        <header id="mainHeader" class="scrolled">
+    <header id="mainHeader" class="scrolled">
         <div class="logo">
             <img src="images/Logo.png" alt="شعار SaudiCulture">
         </div>
@@ -348,33 +354,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             <a href="food_ar.php">الطعام</a>
             <a href="arts_ar.php">الفنون</a>
             <a href="culture_events_ar.php">الفعاليات الثقافية</a>
-            <a href="quiz_ar.php">الاختبار</a>
-                    <a href="browse_ar.php">المعجم</a>
+            <a href="quiz_ar.php" style="color: #116A4B; font-weight: 700;">الاختبار</a>
+            <a href="browse_ar.php">المعجم</a>
 
             <a href="Contact_ar.php">اتصل بنا</a>
 
-            <button class="nav-search-btn" onclick="toggleTopSearch()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="7" stroke="#0e6b4e" stroke-width="2"/>
-                    <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="#0e6b4e" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-            <div class="top-search-bar" id="topSearchBar">
-                <input type="text" placeholder="ابحث في الموقع..." />
-            </div>
+        
+            
+            <div class="right-buttons" style="display: flex; align-items: center; gap: 10px;">
+                <a href="profile_ar.php" class="profile-square" title="الملف الشخصي" style="display: inline-flex;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg>
+                </a>
 
-            <a href="profile_ar.php" class="profile-square" title="الملف الشخصي" style="display:inline-flex;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="4"></circle>
-                    <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
-                </svg>
-            </a>
-            <button class="lang-btn" onclick="window.location.href='quiz.php'">EN</button>
+                <button class="lang-btn" onclick="window.location.href='quiz.php'">EN</button>
+            </div>
         </nav>
     </header>
-
-
-<div class="container">
+    <div class="container">
 
     <div class="menu-box">
         <h1 style="color:var(--brand-green); margin-bottom:10px;">تحدي اللهجات السعودية 🇸🇦</h1>
@@ -467,7 +467,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
                 <div class="score-big"><?php echo $score; ?> / <?php echo $total; ?></div>
                 <p style="font-size:1.1em; color:#555; margin-top:10px;">
                     <?php 
-                    if($score == $total) echo "ما شاء الله! قفلت ملف اللهجات! 🌟";
+                    if($score == $total) echo "ابدعت الله يبيض وجهك🫡";
                     elseif($score >= $total*0.6) echo "كفو! مستواك ممتاز 💪";
                     else echo "حاول مرة ثانية، لسى فيه كثير تتعلمه 😉";
                     ?>
@@ -475,15 +475,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
                 <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="start-btn" style="display:inline-block; width:auto; padding:10px 40px; margin-top:15px;">جرب إعدادات أخرى ⬆️</button>
             </div>
 
-            <h3 style="text-align:center; color:#116A4B;">تفاصيل الإجابات</h3>
+           <h3 style="text-align:center; color:#116A4B;">تفاصيل الإجابات</h3>
             <?php foreach($results_detail as $qid => $det): ?>
                 <div class="quiz-item" style="padding:20px; border-right: 6px solid <?php echo $det['is_correct'] ? '#27ae60' : '#c0392b'; ?>;">
                     <div style="font-size:1em; font-weight:bold; margin-bottom:5px; color:#333;">
-                        المصطلح: <span style="color:var(--brand-green);"><?php echo htmlspecialchars($det['term']); ?></span>
+                        السؤال: <span style="color:var(--brand-green);"><?php echo htmlspecialchars($det['question']); ?></span>
                     </div>
                     
                     <?php if($det['is_correct']): ?>
                         <span style="color:#27ae60; font-weight:bold;">✅ إجابة صحيحة</span>
+                        <div style="background:#f4fcf7; padding:10px; border-radius:8px; margin-top:10px; font-size:0.95em; color:#116A4B;">
+                            **اختيارك:** <b style="color:#27ae60;"><?php echo htmlspecialchars($det['user_full']); ?></b>
+                        </div>
                     <?php else: ?>
                         <span style="color:#c0392b; font-weight:bold;">❌ إجابة خاطئة</span>
                         <div style="background:#fff5f5; padding:10px; border-radius:8px; margin-top:10px; font-size:0.95em; color:#c0392b;">
@@ -533,11 +536,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
 
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
-                <a href="arabic.html">الرئيسية</a>
-                <a href="history_ar.html">التاريخ</a>
-                <a href="traditions_ar.html">التقاليد</a>
-                <a href="food_ar.html">الطعام</a>
-                <a href="Contact_ar.html">اتصل بنا</a>
+                <a href="arabic.php">الرئيسية</a>
+                <a href="history_ar.php">التاريخ</a>
+                <a href="traditions_ar.php">التقاليد</a>
+                <a href="food_ar.php">الطعام</a>
+                        <a href="arts_ar.php">الفنون</a>
+
+                <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 
             <div class="footer-contact">

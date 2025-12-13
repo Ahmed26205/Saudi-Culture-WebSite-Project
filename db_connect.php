@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "quiz_db"; // تأكد أن هذا اسم قاعدتك اللي فيها الجدول القديم
+$dbname = "quiz_db"; 
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 $conn->set_charset("utf8mb4");
