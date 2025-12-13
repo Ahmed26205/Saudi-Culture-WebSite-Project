@@ -1,7 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
+$host = "ftpupload.net";
+$user = "if0_40658591";
+$pass = "0Vrj7r9Y77d";
 $dbname = "quiz_db";
 
 // إنشاء الاتصال باستخدام أسلوب mysqli (الكائن) لزيادة الثبات
