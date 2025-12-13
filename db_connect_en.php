@@ -1,8 +1,8 @@
 <?php
-$host = "ftpupload.net";
+$host = "sql100.infinityfree.com";
 $user = "if0_40658591";
 $pass = "0Vrj7r9Y77d";
-$dbname = "quiz_db_en"; // الفرق الوحيد هنا (اسم القاعدة الإنجليزية)
+$dbname = "if0_40658591_quiz_db_en"; // الفرق الوحيد هنا (اسم القاعدة الإنجليزية)
 
 // إنشاء الاتصال
 $conn = new mysqli($host, $user, $pass, $dbname);

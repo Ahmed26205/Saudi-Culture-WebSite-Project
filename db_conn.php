@@ -1,8 +1,8 @@
 <?php
-$host = "ftpupload.net";
+$host = "sql100.infinityfree.com";
 $user = "if0_40658591";
 $pass = "0Vrj7r9Y77d";
-$dbname = "quiz_db";
+$dbname = "if0_40658591_quiz_db";
 
 // إنشاء الاتصال باستخدام أسلوب mysqli (الكائن) لزيادة الثبات
 $conn = new mysqli($host, $user, $pass, $dbname);
