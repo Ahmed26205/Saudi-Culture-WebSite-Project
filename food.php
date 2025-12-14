@@ -120,11 +120,11 @@ session_start();
                     <img src="images/Jareesh_Food.jpeg" alt="Jareesh food looks like cracked or crushed wheat">
                     <h3>Jareesh</h3>
                     <p style="text-align:left">
-                        Jareesh, also known as cracked or crushed wheat,
-                        is a staple grain used in Saudi Arabia. The dish, also named after the grain itself, is cooked
-                        until tender with broth and meat,
-                        creating a dish that can be likened to a creamy, grain-based stew with za'atar.
-
+                        Jareesh, also known as cracked or crushed wheat, 
+                        is a staple grain used in Saudi Arabia. The dish, also named after the grain itself, 
+                        is cooked until tender with broth and meat, creating a dish that can be likened to a creamy, 
+                        grain-based stew with za'atar.
+                       
                     </p>
                 </div>
 
@@ -132,11 +132,7 @@ session_start();
                     <img src="images/Al-Qursan_food.jpeg" alt="Al-Qursan food">
                     <h3>Al-Qursan</h3>
                     <p style="text-align:left">
-                        Al-Qursan is considered one of the popular Saudi dishes that are highlighted in events organized
-                        by the Kingdom abroad,
-                        particularly during Saudi Cultural Day events.
-                        is made by kneading brown whole wheat flour dough mixed with spices including onion, cumin,
-                        coriander, black seed, and cinnamon.
+                     A popular Najdi dish made of thin layers of brown whole wheat bread, soaked in a rich vegetable and meat stew spiced with dried lime, cinnamon, and coriander.
 
                     </p>
                 </div>
@@ -145,11 +141,7 @@ session_start();
                     <img src="images/Klija_food.jpeg" alt="Klija looks like a cookie">
                     <h3>Klija</h3>
                     <p style="text-align:left">
-                        Klija is a dry dessert that can be stored for relatively long periods,
-                        which allows it to be exported locally and internationally.
-                        The cookie can be prepared with diverse fillings according to taste and preference. Some of its
-                        fillings are made of nuts, dried coconuts, or cardamom, and the browning intensity at the top of
-                        the cookie varies from one type to another.
+                     A famous dry biscuit from Qassim, known for its golden crust and rich filling of date molasses, cardamom, and cinnamon. It is a perfect companion to Saudi coffee.
                     </p>
                 </div>
 
@@ -157,10 +149,7 @@ session_start();
                     <img src="images/Hanini_food.jpeg" alt="Hanaini is made from Al-bur ">
                     <h3>Hanaini</h3>
                     <p style="text-align:left">
-                        Hanaini is a traditional dish in the Kingdom of Saudi Arabia,
-                        It is commonly prepared during the winter season, as it contains a high amount of calories,
-                        providing the body with energy and warmth. is made from Al-bur (whole wheat grains), known as
-                        "Al-Laqeemi," "Al-Jareeba," "Al-Umaydiya," "Al-Halba," and "Al-Ma'iya."
+                     A traditional winter dessert made from minced dates and brown whole wheat bread, cooked with butter and cardamom to provide warmth and energy during cold days.
                     </p>
                 </div>
 
@@ -193,8 +182,7 @@ session_start();
                     <img src="images/8-chicken-kabsa-web.jpg" alt="Kabsa looks like a rice mixed with meat or chicken">
                     <h3>Kabsa</h3>
                     <p style="text-align:left">
-                        Saudi Kabsa, known in the remaining Gulf Cooperation Council (GCC) countries as Makbous,
-                        is one of the most prominent foods in the Kingdom of Saudi Arabia.
+                        Is one of the most prominent foods in the Kingdom of Saudi Arabia.
                         This dish universally expresses the cultural and nutritional identity of the Kingdom.
                         It is a somewhat greasy main dish and, therefore can be served for both lunch and dinner. Its
                         main ingredients are based on rice mixed with meat or chicken.
@@ -206,14 +194,7 @@ session_start();
                     <img src="images/Marqooq.jpg" alt="Marqooq consists of flour kneaded upon adding salt and water">
                     <h3>Marqooq</h3>
                     <p style="text-align:left">
-                        This dish consists of flour kneaded upon adding salt and water,
-                        ultimately forming a consistent and soft dough.
-                        It is left to rest for no less than twenty minutes.
-                        It is cooked with meat broth upon cooking the meat until half-cooked.
-                        Some add vegetables to the mixture. The dough is rolled until it becomes,
-                        placed in a pot along with meat, upon noting that the dough sheets should not be placed at once
-                        so they do not stick to one another nor form a large sheet.
-                        The mixture is then simmered on low heat until cooked.
+                      A hearty stew featuring thin sheets of whole wheat dough cooked directly in a meat and vegetable broth, allowing the flavors to infuse perfectly into the soft dough.
 
                     </p>
                 </div>
@@ -222,24 +203,16 @@ session_start();
                     <img src="images/Mansaf.jpeg" alt="Mansaf consists of meat, rice, and Shirak bread">
                     <h3>Mansaf</h3>
                     <p style="text-align:left">
-                        This dish consists of meat, rice, and Shirak bread.
-                        However, the meat is cooked with Jameed, and then,
-                        the Shirak bread is dipped in the liquid resulting from melting Jameed,
-                        which is a type of hardened milk or other dairy. The Shirak bread is placed on top of a plate,
-                        covered with rice,
-                        and topped with meat and Jameed broth.
+                      A traditional dish celebrating hospitality, consisting of lamb cooked in fermented dried yogurt (Jameed), served over rice and thin Shirak bread with a rich sauce.
 
                     </p>
 
                 </div>
 
                 <div class="card">
-                    <img src="images/Mufattah.jpg"
-                        alt="Mufattah made primarily with rice, meat and a variety of spices">
+                    <img src="images/Mufattah.jpg" alt="Mufattah made primarily with rice, meat and a variety of spices">
                     <h3>Mufattah</h3>
                     <p style="text-align:left">
-                        Mufattah is a traditional dish in Saudi Arabian cuisine, particularly popular in the northern
-                        regions of the country.
                         It is a hearty and flavorful dish made primarily with rice, meat and a variety of spices.
                         The rice used in mufattah is typically basmati rice, known for its long grains and aromatic
                         flavor, often cooked with spices such as cardamom, cinnamon, and cloves to enhance its flavor.
@@ -378,12 +351,7 @@ session_start();
                         alt="Areeka looks like combination of mashed dates and crumbled bread">
                     <h3>Areeka</h3>
                     <p style="text-align:left">
-                        Areeka is a traditional dessert that is prepared with a combination of mashed dates and crumbled
-                        bread such as khubz,
-                        while the additions usually include cream,
-                        condensed milk, honey, and spices.
-                        This filling dessert can be enjoyed for breakfast or as a light snack,
-                        and it is typically drizzled with honey and garnished with slivered almonds.
+                      A rich southern dessert made from mashed dates and whole wheat bread. It is typically served in a bowl, topped with a generous amount of honey, ghee, and dates.
 
 
                     </p>
@@ -394,12 +362,7 @@ session_start();
                         alt="Al-Mashghoutha looks like consists of flour mixed with water">
                     <h3>Al-Mashghoutha</h3>
                     <p style="text-align:left">
-                        Al-Mashghoutha is one of the dishes served during special occasions,
-                        family gatherings, and big celebrations like weddings and festivals.
-                        It is mainly a winter dish, providing the body with energy and warmth due to its nutritious
-                        elements and high-calorie content.
-                        Al-Mashghoutha consists of flour mixed with water, laban, milk, and a pinch of salt and is
-                        served hot with honey, ghee, and dates.
+                       A warming winter dish from the south with a soup-like consistency. It is made by stirring flour into boiling milk or laban and served hot with honey and ghee.
 
                     </p>
                 </div>
@@ -432,6 +395,7 @@ session_start();
             </div>
         </div>
     </section>
+
 
           
      <!--copy form history.html and index.html test (quiz) button-->

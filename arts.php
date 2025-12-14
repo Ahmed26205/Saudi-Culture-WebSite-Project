@@ -103,7 +103,7 @@ session_start();
 
         </div>
     </section>
-
+   
   <!--here is the Art gallery section-->
    <section>
     <h2 style="text-align: center; margin-top: 40px;">Traditional Arts Gallery</h2>
@@ -151,11 +151,11 @@ session_start();
      <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Four_Lanterns_art.jpeg" alt="big Four Lanterns">
+                <img src="images/الصحاف.jpg" alt="vessel carved from the wood ">
             </div>
             <div class="flip-card-back">
-                <h3>The Four Lanterns</h3>
-                <p>The Four Lanterns (Mamluk Mosque Lamps) sculpture is located on Al Andalus treet and all are internally it. The design of this sculpture was based on the lamps commissioned for mosques in Cairo by the Mamluk sultans and their amirs around the middle of the fourteenth century.</p>
+                <h3>Sihaf</h3>
+                <p>The Sihaf industry in Saudi Arabia is a profession distinguished by the regions and villages of the southern Kingdom. Sahaaf is the plural of Sahfah, which is a circular vessel carved from the wood of the Gharb tree, in which food is placed for eating. It is used in occasions like marriage; whereas a man used to not marry unless there were Sahaaf in his house, as they are among the necessary household requirements.</p>
             </div>
         </div>
     </div>
@@ -235,7 +235,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Mishlah.jpg" alt="traditional wooden ships">
+                <img src="images/Mishlah.jpg" alt="traditional Arabic cloak">
             </div>
             <div class="flip-card-back">
                 <h3>Bisht</h3>
@@ -243,6 +243,54 @@ session_start();
             </div>
         </div>
     </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="images/the Rababah.jpg" alt="The Rababah is a primitive musical instrument">
+            </div>
+            <div class="flip-card-back">
+                <h3>The Rababah</h3>
+                <p>The Rababah is a primitive musical instrument, historically known in the northern regions of the Kingdom of Saudi Arabia. It used to be a companion for the nomads during their gatherings and celebrations. Even today, it remains an integral part of the folk music culture in festivals and national celebrations within and beyond the Kingdom.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/الدباغة .jpeg" alt="Leather Tanning">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Leather Tanning</h3>
+                    <p>Leather Tanning is the process of converting animal hides to a product; i.e.., leather—which is used in manufacturing multiple items. The main source of leather is cattle. The process of tanning preserves hides from getting rotten and makes them flexible and durable. </p>
+                </div>
+            </div>
+     </div>
+
+     <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/السبح.jpg" alt=" Rosaries">
+                </div>
+                <div class="flip-card-back"> 
+                    <h3>Subah</h3>
+                    <p>The craft of making Subah (prayer beads) in Saudi Arabia is a historic profession renowned in several regions, particularly in Makkah and Madinah. It involves collecting beads crafted from raw materials derived from trees or gemstones, and then stringing them onto specialized threads. This craft requires great skill and precision from its practitioners, who are locally known as 'Al-Subahiyyah'.</p>
+                </div>
+            </div>
+     </div>
+
+     <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/Saudi_Arabia-_Sword.jpg" alt="The Saudi Dagger">
+                </div>
+                <div class="flip-card-back">
+                    <h3>The Saudi Dagger</h3>
+                    <p>The Saudi Dagger (Khanjar) or Saudi Janbiya is a type of Arab dagger crafted within the Kingdom of Saudi Arabia. Traditionally, these daggers are manufactured in the southern regions of the Kingdom and Al-Ahsa, featuring both curved and straight designs. The Saudi Khanjar (or Janbiya) is considered one of the most significant Saudi cultural symbols and is worn during weddings and national occasions, particularly in the Najran region.</p>
+                </div>
+            </div>
+     </div>
 
  </div>
       
