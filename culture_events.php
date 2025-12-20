@@ -35,6 +35,7 @@ session_start();
             <a href="arts.php">Arts</a>
             <a href="culture_events.php">Cultural events</a>
             <a href="quiz.php">Quiz</a>
+            <a href="browse_ar.php">dictionary</a>
             <a href="Contact.php">Contact us</a>
             
 <!-- Search (EN) -->

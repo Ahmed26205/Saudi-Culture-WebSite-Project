@@ -1,19 +1,15 @@
 <?php
 session_start();
 // إعدادات الاتصال بقاعدة البيانات (يفترض أنها في db_conn.php، لكن سنبقيها هنا كما في ملفك)
-$sname = "localhost";
-$uname = "root";
-$password = "";
-$db_name = "quiz_db";
+include "db_conn.php";
 
-$conn = mysqli_connect($sname, $uname, $password, $db_name);
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
 
-if (isset($_POST['submit'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+
+$msg = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 

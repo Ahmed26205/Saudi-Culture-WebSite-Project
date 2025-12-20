@@ -383,16 +383,18 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
         
     </div>
     <?php endif; ?>
+    </div>
   
-  
-    <footer class="footer">
+ <footer class="footer">
         <div class="footer-container">
 
+            <!-- Left: logo + brief -->
             <div class="footer-about">
                 <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 
+            <!-- Middle: quick links -->
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
                 <a href="arabic.php">الرئيسية</a>
@@ -404,6 +406,7 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
                 <a href="Contact_ar.php">اتصل بنا</a>
             </div>
 
+            <!-- Right: contact info -->
             <div class="footer-contact">
                 <h4>تواصل معنا</h4>
                 <p>📞 +966554731708</p>

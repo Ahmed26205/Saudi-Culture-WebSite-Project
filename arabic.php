@@ -90,7 +90,7 @@ session_start();
     <section class="main-visual-section">
         <!-- فيديو الخلفية في أعلى الصفحة -->
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Journey through time.mov" type="video/mp4">
+            <source src="videos/Journey through time.mp4" type="video/mp4">
         </video>
 
         <!-- محتوى النصوص والأزرار فوق الفيديو -->

@@ -197,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             }
 
             // الاستعلام الحاسم (الذي يعمل على الخادم المحلي)
-            $res = $conn->query("SELECT * FROM `quiz_db`.`{$curr_table_name}` WHERE `COL 1` != 'Term' ORDER BY RAND() LIMIT 1"); 
+            $res = $conn->query("SELECT * FROM `{$curr_table_name}` WHERE `COL 1` != 'Term' ORDER BY RAND() LIMIT 1"); 
             if ($res && $row = $res->fetch_assoc()) {
                 
                 $valid_cols = [];
@@ -278,7 +278,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             padding-top: 120px; 
             color: #333; 
         }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; min-height: 60vh; } 
+.container{
+  width: min(4000px, 94vw);   /* يملأ الشاشة بشكل ذكي */
+  margin: 20px auto;
+  padding: 16px;
+  min-height: 60vh;
+}
 
         .start-btn { width: 100%; padding: 15px; background: var(--brand-green); color: white; border: none; border-radius: 12px; font-size: 1.2em; font-weight: bold; cursor: pointer; margin-top: 20px; transition:0.3s; font-family: inherit; }
         .start-btn:hover { background: #0d523a; }
@@ -331,6 +336,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         .modal-box { background: white; width: 90%; max-width: 450px; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .btn-confirm { background: var(--brand-green); color: white; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; font-family: inherit; }
         .btn-cancel { background: #eee; color: #333; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; font-family: inherit; }
+            .quiz-page { display:none; }
+.quiz-page.active { display:block; }
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
@@ -429,35 +436,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         <?php if ($state == 'quiz'): ?>
             <h2 style="text-align:center; margin-bottom:20px; color:#555;">بالتوفيق! 🍀</h2>
             <form method="POST" id="quizForm">
-                <?php 
-                $counter = 1;
-                foreach($quiz_questions as $q): 
-                ?>
-                    <div class="quiz-item" data-id="<?php echo $q['id']; ?>" data-num="<?php echo $counter; ?>">
-                        <div class="header-row">
-                            <span style="font-weight:bold; color:#777;">سؤال <?php echo $counter++; ?></span>
-                            <span class="type-badge" style="background-color: <?php echo $q['badge_color']; ?>;">
-                                <?php echo $q['type_label']; ?>
-                            </span>
-                        </div>
+              <?php
+$counter = 1;
+$totalQuestions = count($quiz_questions);
+$page = 1;
+?>
 
-                        <div class="q-text"><?php echo $q['question']; ?></div>
-                        
-                        <div class="options-list">
-                            <?php 
-                            // يتم عرض 4 خيارات مرقمة (أ) (ب) (ج) (د)
-                            foreach($q['options'] as $opt): 
-                            ?>
-                                <label class="opt-label">
-                                    <input type="radio" name="ans[<?php echo $q['id']; ?>]" value="<?php echo htmlspecialchars($opt); ?>">
-                                    <span><?php echo htmlspecialchars($opt); ?></span>
-                                </label>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+<?php foreach($quiz_questions as $idx => $q): ?>
 
-                <button type="button" onclick="checkAndSubmit()" class="start-btn">إرسال الإجابات ✅</button>
+    <?php if ($totalQuestions >= 10 && $idx % 5 == 0): ?>
+        <div class="quiz-page <?php echo ($page == 1) ? 'active' : ''; ?>" data-page="<?php echo $page; ?>">
+    <?php endif; ?>
+
+    <div class="quiz-item" data-id="<?php echo $q['id']; ?>" data-num="<?php echo $counter; ?>">
+        <div class="header-row">
+            <span style="font-weight:bold; color:#777;">سؤال <?php echo $counter++; ?></span>
+            <span class="type-badge" style="background-color: <?php echo $q['badge_color']; ?>;">
+                <?php echo $q['type_label']; ?>
+            </span>
+        </div>
+
+        <div class="q-text"><?php echo $q['question']; ?></div>
+
+        <div class="options-list">
+            <?php foreach($q['options'] as $opt): ?>
+                <label class="opt-label">
+                    <input type="radio" name="ans[<?php echo $q['id']; ?>]" value="<?php echo htmlspecialchars($opt); ?>">
+                    <span><?php echo htmlspecialchars($opt); ?></span>
+                </label>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <?php if ($totalQuestions >= 10 && ( (($idx + 1) % 5 == 0) || (($idx + 1) == $totalQuestions) )): ?>
+        </div>
+        <?php $page++; ?>
+    <?php endif; ?>
+
+<?php endforeach; ?>
+
+
+<div id="quizPager" style="display:flex; gap:10px; justify-content:space-between; margin-top:20px;">
+    <button type="button" class="start-btn" id="prevBtn" onclick="prevPage()">
+        السابق ➡  
+    </button>
+
+    <button type="button" class="start-btn" id="nextBtn" onclick="nextPage()">
+       ⬅ التالي
+    </button>
+
+    <!-- زر التسليم دائمًا موجود -->
+    <button type="button" class="start-btn" id="submitBtn" onclick="checkAndSubmit()" >
+        إرسال الإجابات ✅
+    </button>
+</div>
                 <input type="hidden" name="submit_answers" value="1">
             </form>
 
@@ -590,5 +622,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     function closeModal() { document.getElementById('confirmModal').style.display = 'none'; }
     function submitForm() { document.getElementById('quizForm').submit(); }
 </script>
+    <script>
+(function(){
+    const pages = document.querySelectorAll('.quiz-page');
+    const totalQuestions = document.querySelectorAll('.quiz-item').length;
+
+    // إذا أقل من 10: لا نعرض أزرار التالي/السابق
+    if (totalQuestions < 10 || pages.length === 0) return;
+
+    let currentPage = 1;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateButtons(){
+        if (prevBtn) prevBtn.style.display = (currentPage > 1) ? 'inline-block' : 'none';
+        if (nextBtn) nextBtn.style.display = (currentPage < pages.length) ? 'inline-block' : 'none';
+    }
+
+    function showPage(n){
+        pages.forEach(p => p.classList.remove('active'));
+        pages[n-1].classList.add('active');
+        currentPage = n;
+        window.scrollTo({top:0, behavior:'smooth'});
+        updateButtons();
+    }
+
+    window.nextPage = function(){
+        if (currentPage < pages.length) showPage(currentPage + 1);
+    }
+    window.prevPage = function(){
+        if (currentPage > 1) showPage(currentPage - 1);
+    }
+
+    updateButtons();
+})();
+</script>
+
 </body>
 </html>

@@ -15,7 +15,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/auth.css"/>
+    <link rel="stylesheet" href="CSS/auth.css">
 
 
     <!-- Contact Page Specific CSS -->
@@ -32,6 +32,8 @@ session_start();
             color: white;
             text-align: center;
             padding: 0 20px;
+            padding-top: 120px;
+
         }
 
             .contact-hero h1 {
@@ -320,7 +322,7 @@ session_start();
     </style>
 
     <!-- Load external JavaScript file with defer to load after HTML -->
-    <script src="JS/script.js" defer></script>
+    <script src="JS/script.js" ></script>
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
@@ -370,7 +372,7 @@ session_start();
                 <button class="signup-btn" onclick="window.location.href='signup.php'">Sign Up</button>
             <?php endif; ?>
 
-            <button class="lang-btn" onclick="window.location.href='contact_ar.php'">AR</button>
+            <button class="lang-btn" onclick="window.location.href='Contact_ar.php'">AR</button>
     </header>
 
     <!-- Contact Hero Section -->
@@ -382,36 +384,96 @@ session_start();
     </section>
 
     <!-- Contact Information Section -->
+   <!-- Contact Information Section -->
     <div class="contact-container">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Contributing Team Members</h2>
 
         <div class="contact-grid">
             <!-- Location Card -->
             <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <h3>Our Location</h3>
+                <div class="contact-icon">   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>Abdulaziz Abdulhamid Elyousfi</h3>
+                <p>Team Leader: Designer of Homepage, History, Program Styles, and Scripts</p>
                 <p>Makkah, Saudi Arabia</p>
-                <p>P.O. Box 12345</p>
-                <p>Makkah 24241</p>
+                <p> Contact Information</p>
+                <p>+966554731708📞</p>
+                <p>aaelyousfi9@gmail.com✉️</p>
+ </div>
+
+            <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>Faisal Khalid Al-Mutrafi</h3>
+                <p>Login, Account Creation, and Profile Page Designer</p>
+               <p>Makkah, Saudi Arabia</p>
+                <p>Contact Information</p>
+                <p>+966537077092📞</p>
             </div>
 
-            <!-- Phone Card -->
             <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>Phone Number</h3>
-                <p>+966 12 345 6789</p>
-                <p>+966 50 123 4567</p>
-                <p>Sunday - Thursday</p>
-                <p>9:00 AM - 5:00 PM</p>
-            </div>
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>Hamed Raed Al-Ansari</h3>
+                <p>Arts & Food Page Designer</p>
+              <p>Makkah, Saudi Arabia</p>
+                <p>Contact Information</p>
+                <p>+966540015851📞</p>
 
-            <!-- Email Card -->
-            <div class="contact-card">
-                <div class="contact-icon">✉️</div>
-                <h3>Email Address</h3>
-                <p>saudi.culture@project.com</p>
-                <p>info@mawrooth.com</p>
-                <p>support@saudiculture.com</p>
+            </div>
+       
+
+         <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3> Ahmed Abdullah Al-Afeef </h3>
+                <p>Test and Dictionary Page Designer</p>
+              <p>Makkah, Saudi Arabia</p>
+                <p>Contact Information</p>
+                <p>+966550239251📞</p>
+
+            </div>
+       
+
+     <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>Mohammed Ibrahim Qaid</h3>
+                <p>Traditions Page Designer</p>
+              <p>Makkah, Saudi Arabia</p>
+                <p>Contact Information</p>
+                <p>+966537768476📞</p>
+
+            </div>
+       
+
+     <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>Mohammed Hindi Al-Saadi</h3>
+                <p>Designer of the Cultural Events and Communication Page</p>
+              <p>Makkah, Saudi Arabia</p>
+                <p>Contact Information</p>
+                <p>+966546155082📞</p>
+
             </div>
         </div>
     </div>
@@ -426,16 +488,13 @@ session_start();
             </tr>
             <tr>
                 <td class="day">Friday</td>
-                <td class="time">10:00 AM - 2:00 PM</td>
+                <td class="time">Closed</td>
             </tr>
             <tr>
                 <td class="day">Saturday</td>
                 <td class="time">Closed</td>
             </tr>
-            <tr>
-                <td class="day">Public Holidays</td>
-                <td class="time">Please call ahead</td>
-            </tr>
+         
         </table>
     </div>
 
@@ -521,88 +580,76 @@ session_start();
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Set active class for current page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set active navigation link
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === 'Contact.php') {
-                    link.classList.add('active');
-                }
-            });
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === 'Contact.php') link.classList.add('active');
+    });
 
-            // Initialize search functionality
-            const searchInput = document.getElementById('siteSearchInput');
-            const suggestionsBox = document.getElementById('topSearchSuggestions');
+    const searchInput = document.getElementById('siteSearchInput');
+    const suggestionsBox = document.getElementById('topSearchSuggestions');
 
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    const query = this.value.toLowerCase();
-                    if (query.length > 2) {
-                        // Simulate search suggestions
-                        const suggestions = [
-                            {title: "Traditional Food", snippet: "Learn about Kabsa, Saleeg, and other Saudi dishes"},
-                            {title: "Cultural Traditions", snippet: "Discover Saudi customs and celebrations"},
-                            {title: "Ancient Civilizations", snippet: "Explore historical landmarks"},
-                            {title: "Traditional Arts", snippet: "Saudi music, dance, and handicrafts"}
-                            {title: "Saudi events", snippet: "Learn about ancient and modern saudi events"}
-                        ];
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        const query = this.value.toLowerCase();
 
-                        const filtered = suggestions.filter(item =>
-                            item.title.toLowerCase().includes(query) ||
-                            item.snippet.toLowerCase().includes(query)
-                        );
+        if (query.length > 2) {
+          const suggestions = [
+            { title: "Traditional Food", snippet: "Learn about Kabsa, Saleeg, and other Saudi dishes" },
+            { title: "Cultural Traditions", snippet: "Discover Saudi customs and celebrations" },
+            { title: "Ancient Civilizations", snippet: "Explore historical landmarks" },
+            { title: "Traditional Arts", snippet: "Saudi music, dance, and handicrafts" },
+            { title: "Saudi events", snippet: "Learn about ancient and modern saudi events" }
+          ];
 
-                        if (filtered.length > 0) {
-                            suggestionsBox.innerHTML = filtered.map(item => `
-                                <div class="item">
-                                    <div class="title">${item.title}</div>
-                                    <div class="snippet">${item.snippet}</div>
-                                </div>
-                            `).join('');
-                            suggestionsBox.classList.add('show');
-                        } else {
-                            suggestionsBox.classList.remove('show');
-                        }
-                    } else {
-                        suggestionsBox.classList.remove('show');
-                    }
-                });
+          const filtered = suggestions.filter(item =>
+            item.title.toLowerCase().includes(query) ||
+            item.snippet.toLowerCase().includes(query)
+          );
 
-                // Close suggestions when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-                        suggestionsBox.classList.remove('show');
-                    }
-                });
-            }
-        });
-
-        // Toggle search bar function (matching your site)
-        function toggleTopSearch() {
-            const searchBar = document.getElementById('topSearchBar');
-            if (searchBar.style.display === 'flex' || searchBar.style.display === 'block') {
-                searchBar.style.display = 'none';
-            } else {
-                searchBar.style.display = 'block';
-                document.getElementById('siteSearchInput').focus();
-            }
+          if (filtered.length > 0) {
+            suggestionsBox.innerHTML = filtered.map(item => `
+              <div class="item">
+                <div class="title">${item.title}</div>
+                <div class="snippet">${item.snippet}</div>
+              </div>
+            `).join('');
+            suggestionsBox.classList.add('show');
+          } else {
+            suggestionsBox.classList.remove('show');
+          }
+        } else {
+          suggestionsBox.classList.remove('show');
         }
+      });
 
-        // Scroll effect for header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
+      document.addEventListener('click', function (e) {
+        if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+          suggestionsBox.classList.remove('show');
+        }
+      });
+    }
+  });
 
-    </script>
+  function toggleTopSearch() {
+    const searchBar = document.getElementById('topSearchBar');
+    if (searchBar.style.display === 'flex' || searchBar.style.display === 'block') {
+      searchBar.style.display = 'none';
+    } else {
+      searchBar.style.display = 'block';
+      document.getElementById('siteSearchInput').focus();
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    if (!header) return;
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+</script>
+
 </body>
 
 </html>

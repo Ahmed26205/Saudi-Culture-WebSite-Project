@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db_connect_en.php'; 
+include 'db_conn.php'; 
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
@@ -186,8 +186,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             --brand-gold: #CCA450; 
             --bg-color: #f8f9fa; 
         }
-        body { font-family: 'Outfit', sans-serif; background: var(--bg-color); margin: 0; padding-top: 120px; color: #333; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg-color); margin: 0;    padding-top: clamp(80px, 10vh, 110px);
+ color: #333; }
+        .container { width: min(4000px, 94vw);
+  margin: 40px auto;
+    padding: 16px; }
 
         .start-btn { width: 100%; padding: 15px; background: var(--brand-green); color: white; border: none; border-radius: 12px; font-size: 1.2em; font-weight: bold; cursor: pointer; margin-top: 20px; transition:0.3s; }
         .start-btn:hover { background: #0d523a; }
@@ -199,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
             text-align: center; 
             border-top: 5px solid var(--brand-green); 
-            margin-bottom: 40px; 
+    margin-bottom: 20px;
         }
         
         .select-group { margin-bottom: 25px; text-align: left; }
@@ -231,7 +234,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
 
         .quiz-container-area { animation: fadeIn 0.5s ease-in-out; }
         
-        .quiz-item { background: white; border-radius: 15px; padding: 25px; margin-bottom: 30px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); text-align: left; }
+        .quiz-item { background: white; border-radius: 15px;   padding: clamp(16px, 3vw, 24px);
+    margin-bottom: clamp(16px, 3vw, 24px); border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); text-align: left; }
         .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .type-badge { padding: 5px 12px; border-radius: 20px; color: white; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
         
@@ -248,6 +252,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         .modal-box { background: white; width: 90%; max-width: 450px; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .btn-confirm { background: var(--brand-green); color: white; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; }
         .btn-cancel { background: #eee; color: #333; border: none; padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; }
+        .quiz-page { display:none; }
+.quiz-page.active { display:block; }
+
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -357,34 +364,61 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
     <div class="quiz-container-area">
 
         <?php if ($state == 'quiz'): ?>
-            <h2 style="text-align:center; margin-bottom:20px; color:#555;">Good Luck! 🍀</h2>
+<h2 style="text-align:center; margin:10px 0 15px; color:#555;">Good Luck! 🍀</h2>
             <form method="POST" id="quizForm">
-                <?php 
-                $counter = 1;
-                foreach($quiz_questions as $q): 
-                ?>
-                    <div class="quiz-item" data-id="<?php echo $q['id']; ?>" data-num="<?php echo $counter; ?>">
-                        <div class="header-row">
-                            <span style="font-weight:bold; color:#777;">Question <?php echo $counter++; ?></span>
-                            <span class="type-badge" style="background-color: <?php echo $q['badge_color']; ?>;">
-                                <?php echo $q['badge_label']; ?>
-                            </span>
-                        </div>
+                 <?php
+$counter = 1;
+$totalQuestions = count($quiz_questions);
+$page = 1;
+?>
 
-                        <div class="q-text"><?php echo $q['question']; ?></div>
-                        
-                        <div class="options-list">
-                            <?php foreach($q['options'] as $opt): ?>
-                                <label class="opt-label">
-                                    <input type="radio" name="ans[<?php echo $q['id']; ?>]" value="<?php echo htmlspecialchars($opt); ?>">
-                                    <span><?php echo htmlspecialchars($opt); ?></span>
-                                </label>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+           <?php foreach($quiz_questions as $idx => $q): ?>
 
-                <button type="button" onclick="checkAndSubmit()" class="start-btn">Submit Answers ✅</button>
+    <?php if ($totalQuestions >= 10 && $idx % 5 == 0): ?>
+        <div class="quiz-page <?php echo ($page == 1) ? 'active' : ''; ?>" data-page="<?php echo $page; ?>">
+    <?php endif; ?>
+
+    <div class="quiz-item" data-id="<?php echo $q['id']; ?>" data-num="<?php echo $counter; ?>">
+        <div class="header-row">
+            <span style="font-weight:bold; color:#777;">Question <?php echo $counter++; ?></span>
+            <span class="type-badge" style="background-color: <?php echo $q['badge_color']; ?>;">
+                <?php echo $q['badge_label']; ?>
+            </span>
+        </div>
+
+        <div class="q-text"><?php echo $q['question']; ?></div>
+
+        <div class="options-list">
+            <?php foreach($q['options'] as $opt): ?>
+                <label class="opt-label">
+                    <input type="radio" name="ans[<?php echo $q['id']; ?>]" value="<?php echo htmlspecialchars($opt); ?>">
+                    <span><?php echo htmlspecialchars($opt); ?></span>
+                </label>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <?php if ($totalQuestions >= 10 && ( ($idx + 1) % 5 == 0 || ($idx + 1) == $totalQuestions )): ?>
+        </div>
+        <?php $page++; ?>
+    <?php endif; ?>
+
+<?php endforeach; ?>
+
+<div id="quizPager" style="display:flex; justify-content:space-between; margin-top:30px;">
+    <button type="button" class="start-btn" id="prevBtn" onclick="prevPage()" style="display:none;">
+        ⬅ Previous
+    </button>
+
+    <button type="button" class="start-btn" id="nextBtn" onclick="nextPage()">
+        Next ➡
+    </button>
+
+    <button type="button" class="start-btn" id="submitBtn" onclick="checkAndSubmit()" >
+        Submit Answers ✅
+    </button>
+</div>
+
                 <input type="hidden" name="submit_answers" value="1">
             </form>
 
@@ -447,6 +481,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         });
     </script>
     <?php endif; ?>
+    </div>
 
        <footer class="footer">
         <div class="footer-container">
@@ -510,7 +545,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
         function closeModal() { document.getElementById('confirmModal').style.display = 'none'; }
         function submitForm() { document.getElementById('quizForm').submit(); }
     </script>
-    
+    <script>
+(function(){
+    const pages = document.querySelectorAll('.quiz-page');
+    const totalQuestions = document.querySelectorAll('.quiz-item').length;
+
+    if (totalQuestions < 10 || pages.length === 0) {
+        const pager = document.getElementById('quizPager');
+        if (pager) pager.style.display = 'none';
+        return;
+    }
+
+    let currentPage = 1;
+
+    function updateButtons(){
+        document.getElementById('prevBtn').style.display =
+            currentPage > 1 ? 'inline-block' : 'none';
+
+        document.getElementById('nextBtn').style.display =
+            currentPage < pages.length ? 'inline-block' : 'none';
+
+       
+    }
+
+    window.nextPage = function(){
+        pages[currentPage - 1].classList.remove('active');
+        currentPage++;
+        pages[currentPage - 1].classList.add('active');
+        window.scrollTo({top:0, behavior:'smooth'});
+        updateButtons();
+    }
+
+    window.prevPage = function(){
+        pages[currentPage - 1].classList.remove('active');
+        currentPage--;
+        pages[currentPage - 1].classList.add('active');
+        window.scrollTo({top:0, behavior:'smooth'});
+        updateButtons();
+    }
+
+    updateButtons();
+})();
+</script>
+
 </div>
 </body>
 </html>

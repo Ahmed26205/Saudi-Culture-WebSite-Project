@@ -46,6 +46,7 @@ session_start();
             <a href="arts.php">Arts</a>
             <a href="culture_events.php">Cultural events</a>
             <a href="quiz.php">Quiz</a>
+            <a href="browse_ar.php">dictionary</a>
             <a href="Contact.php">Contact us</a>
             
 <!-- Search (EN) -->
@@ -87,7 +88,7 @@ session_start();
     <section class="main-visual-section">
         <!-- Background looping video -->
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Journey through time.mov" type="video/mp4">
+            <source src="videos/Journey through time.mp4" type="video/mp4">
         </video>
 
         <!-- Content overlay on top of the video -->
@@ -358,32 +359,7 @@ session_start();
         });
     </script>
 
-    <script type="module">
-        import { auth } from "./JS/firebase-config.js";
-        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-        onAuthStateChanged(auth, (user) => {
-            const loginBtn = document.querySelector(".login-btn");
-            const signupBtn = document.querySelector(".signup-btn");
-            const profileIcon = document.querySelector(".profile-square");
-
-            if (user) {
-                // Hide login & signup
-                loginBtn.style.display = "none";
-                signupBtn.style.display = "none";
-
-                // Show profile icon
-                profileIcon.style.display = "inline-flex";
-            } else {
-                // Show login & signup
-                loginBtn.style.display = "inline-block";
-                signupBtn.style.display = "inline-block";
-
-                // Hide profile icon
-                profileIcon.style.display = "none";
-            }
-        });
-    </script>
 
 </body>
 

@@ -283,16 +283,21 @@ session_start();
                 </article>
             </div>
         </section>
-        <!-- زر لاختبار المعلومات (ستايل خاص بالاختبار) -->
-        <section class="traditions-container">
-            <div class="quiz-cta-section">
-                <h2>اختبر معلوماتك هنا</h2>
-                <div class="quiz-cta-divider"></div>
-                <button class="quiz-cta-btn" onclick="window.location.href='quiz_ar.php'">
-                    ابدأ الاختبار
-                </button>
+    
+                  <!--copy form history.html and index.html test (quiz) button-->
+     <section style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem 4rem;">
+            <h2 class="section-title">Test your knowledge here</h2>
+
+             <div class="main-visual-content">
+
+             <div class="action-buttons">
+                <input type="button" value="ابدأ الاختبار" onclick="window.location.href='quiz.php'">
+             </div>
+        
+    
+    
             </div>
-        </section>
+    
     </main>
 
     <!-- الفوتر -->

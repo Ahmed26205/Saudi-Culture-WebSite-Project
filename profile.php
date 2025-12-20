@@ -64,7 +64,7 @@ $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 
 // جلب سجل الاختبارات (من الجدول الإنجليزي في قاعدة البيانات الإنجليزية)
-$history_sql = "SELECT * FROM quiz_db_en.quiz_results_en WHERE user_id='$user_id' ORDER BY created_at DESC LIMIT 10";
+$history_sql = "SELECT * FROM quiz_results_en WHERE user_id='$user_id' ORDER BY created_at DESC LIMIT 10";
 $history_res = $conn->query($history_sql);
 ?>
 
@@ -123,7 +123,7 @@ $history_res = $conn->query($history_sql);
                     <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
                 </svg>
             </a>
-            <button class="lang-btn" onclick="window.location.href='profile_ar.php'">عربي</button>
+            <button class="lang-btn" onclick="window.location.href='profile_ar.php'">AR</button>
         </nav>
     </header>
 
@@ -158,7 +158,8 @@ $history_res = $conn->query($history_sql);
                     </thead>
                     <tbody>
                         <?php while($h_row = $history_res->fetch_assoc()): 
-                            $percent = ($h_row['score'] / $h_row['total_questions']) * 100;
+$totalQ = (int)$h_row['total_questions'];
+$percent = ($totalQ > 0) ? ((int)$h_row['score'] / $totalQ) * 100 : 0;
                             $badge_class = ($percent >= 60) ? 'score-high' : 'score-low';
                             
                             $quiz_type_key = $h_row['quiz_type'];

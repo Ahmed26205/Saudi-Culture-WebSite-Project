@@ -83,7 +83,7 @@ session_start();
 
     <section class="main-visual-section">
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Arts_vid.mov" type="video/mp4">
+            <source src="videos/Arts_vid.mp4" type="video/mp4">
         </video>
 
         <div class="main-visual-content">
@@ -144,13 +144,11 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Four_Lanterns_art.jpeg" alt="مجسم الفوانيس الأربعة الكبيرة">
+                    <img src="images/الصحاف.jpg" alt="vessel carved from the wood ">
                 </div>
                 <div class="flip-card-back">
-                    <h3>الفوانيس الأربعة</h3>
-                    <p>مجسم الفوانيس الأربعة (مشكاوات المساجد المملوكية) يقع في شارع الأندلس وتضاء جميعها من الداخل.
-                        استند تصميم هذا المجسم إلى المصابيح التي كلف سلاطين المماليك وأمراؤهم بصنعها لمساجد القاهرة في
-                        منتصف القرن الرابع عشر.</p>
+                    <h3>الصِّحاف</h3>
+                    <p>صناعة الصِّحاف في السعودية، هي مهنة تتميز بها مناطق وقرى جنوب المملكة العربية السعودية، والصحاف جمع صحفة، وهي إناء منحوت من خشب شجرة الغرب، دائري الشكل، يوضع الطعام فيه للأكل، وتستخدم في المناسبات كالزواج، حيث كان الرجل لا يتزوج إلا إذا كانت الصحاف في بيته، وهي من مستلزمات البيت الضرورية.</p>
                 </div>
             </div>
         </div>
@@ -254,7 +252,59 @@ session_start();
             </div>
         </div>
 
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="images/the Rababah.jpg" alt="الربابة آلة موسيقية بدائية">
+              </div>
+              <div class="flip-card-back">
+                <h3>الربابة</h3>
+                <p>تُعد الربابة آلة موسيقية بدائية، عُرفت تاريخياً في المناطق الشمالية من المملكة العربية السعودية. وقد كانت رفيقاً للبدو أثناء تجمعاتهم واحتفالاتهم. وحتى يومنا هذا، تظل الربابة جزءاً لا يتجزأ من ثقافة الموسيقى الشعبية في المهرجانات والاحتفالات الوطنية داخل المملكة وخارجها.</p>
+              </div>
+            </div>
+        </div>
+
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/الدباغة .jpeg" alt="جلدة">
+                </div>
+                <div class="flip-card-back">
+                    <h3>الدباغة</h3>
+                    <p>حرفة الدباغة هي عملية تحويل جلد الحيوان بعد سلخه إلى منتج (الجلود) الذي يستخدم في صناعة أدوات متعددة، وتعدّ الماشية هي المصدر الرئيسي للجلود، وعملية الدباغة تحفظ الجلد من التعفن وتعطيه مرونة ومتانة.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/السبح.jpg" alt=" السُّبَح">
+                </div>
+                <div class="flip-card-back">
+                    <h3>صناعة السُّبَح</h3>
+                    <p>صناعة السُّبَح في السعودية، هي إحدى المهن التاريخية في المملكة العربية السعودية، اشتُهرت في عدد من مناطقها، خاصة منطقتي مكة المكرمة والمدينة المنورة، كانت تختص بجمع حبات الخرَز، بعد استخراج موادها الأولية من الأشجار أو من بعض الأحجار الكريمة، ثم نظمها في خيوطٍ مخصصة لذلك، وتعد هذه الصناعة من المهن التي تستلزم المهارة والدقة لدى من يمارسونها، الذين عُرفوا بـ"السُّبَحِيّة".</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="images/Saudi_Arabia-_Sword.jpg" alt="خنجر سعودي">
+                </div>
+                <div class="flip-card-back">
+                    <h3>الخنجر السعودي</h3>
+                    <p>خنجر سعودي أو جنبية سعودية هو نوع من الخناجر العربية، التي تُصنع في مناطق المملكة العربية السعودية تُصنع الخناجر بشكل تقليدي في مناطق الجنوبية للسعودية. والأحساء. وتكون بعضها مقوسة ومستقيمة. يعد الخنجر السعودي أو الجنبية من أهم الرموز الثقافية السعودية، حيث يستخدم في الأعراس والمناسبات الوطنية في نجران.</p>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
+
 
     <section style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem 4rem;">
         <h2 class="section-title">اختبر معلوماتك هنا</h2>

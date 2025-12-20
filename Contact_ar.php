@@ -22,6 +22,7 @@ session_start();
         body {
             font-family: 'Almarai', sans-serif;
             text-align: right;
+            
         }
 
         .contact-hero {
@@ -35,6 +36,8 @@ session_start();
             color: white;
             text-align: center;
             padding: 0 20px;
+                padding-top: 120px;
+
         }
 
             .contact-hero h1 {
@@ -412,6 +415,7 @@ session_start();
 
     <!-- Contact Hero Section -->
     <section class="contact-hero">
+        
         <div>
             <h1>اتصل بنا</h1>
             <p>نحن هنا لمساعدتك في استكشاف التراث الثقافي الغني للمملكة العربية السعودية. تواصل معنا لأي استفسارات أو لمزيد من المعلومات حول تقاليد وتاريخ وثقافة السعودية.</p>
@@ -420,35 +424,94 @@ session_start();
 
     <!-- Contact Information Section -->
     <div class="contact-container">
-        <h2 class="section-title">تواصل معنا</h2>
+        <h2 class="section-title">أعضاء الفريق المساهمين</h2>
 
         <div class="contact-grid">
             <!-- Location Card -->
             <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <h3>موقعنا</h3>
+                <div class="contact-icon">   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>عبدالعزيز عبدالحميد اليوسفي</h3>
+                <p>قائد الفريق مصمم الصفحة الرئيسية والتاريخ وستايلات البرنامج وسكريبتات</p>
                 <p>مكة المكرمة، المملكة العربية السعودية</p>
-                <p>صندوق بريد ١٢٣٤٥</p>
-                <p>مكة المكرمة ٢٤٢٤١</p>
+                <p> معلومات التواصل</p>
+                <p>+966554731708📞</p>
+                <p>aaelyousfi9@gmail.com✉️</p>
+ </div>
+
+            <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>فيصل خالد المطرفي</h3>
+                <p>مصمم صفحة تسجيل الدخول وانشاء الحساب والملف الشخصي</p>
+                <p>مكة المكرمة، المملكة العربية السعودية</p>
+                <p> معلومات التواصل</p>
+                <p>+966537077092📞</p>
             </div>
 
-            <!-- Phone Card -->
             <div class="contact-card">
-                <div class="contact-icon">📞</div>
-                <h3>رقم الهاتف</h3>
-                <p>٩٦٦+ ١٢ ٣٤٥ ٦٧٨٩</p>
-                <p>٩٦٦+ ٥٠ ١٢٣ ٤٥٦٧</p>
-                <p>الأحد - الخميس</p>
-                <p>٩:٠٠ ص - ٥:٠٠ م</p>
-            </div>
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>حامد رائد الأنصاري</h3>
+                <p>مصمم صفحة الفنون والطعام</p>
+                <p>مكة المكرمة، المملكة العربية السعودية</p>
+                <p> معلومات التواصل</p>
+                <p>+966540015851📞</p>
 
-            <!-- Email Card -->
-            <div class="contact-card">
-                <div class="contact-icon">✉️</div>
-                <h3>البريد الإلكتروني</h3>
-                <p>saudi.culture@project.com</p>
-                <p>info@mawrooth.com</p>
-                <p>support@saudiculture.com</p>
+            </div>
+       
+
+         <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3> أحمد عبدالله العفيف </h3>
+                <p>مصمم صفحة الاختبار والمعجم</p>
+                <p>مكة المكرمة، المملكة العربية السعودية</p>
+                <p> معلومات التواصل</p>
+                <p>+966550239251📞</p>
+
+            </div>
+       
+
+     <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>محمد ابراهيم قايد</h3>
+                <p>مصمم صفحة التقاليد</p>
+                <p>مكة المكرمة، المملكة العربية السعودية</p>
+                <p> معلومات التواصل</p>
+                <p>+966537768476📞</p>
+
+            </div>
+       
+
+     <div class="contact-card">
+                <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
+                    </svg></div>
+                <h3>محمد هندي الصاعدي</h3>
+                <p>مصمم صفحة الفعاليات الثقافية والتواصل</p>
+                <p>مكة المكرمة، المملكة العربية السعودية</p>
+                <p> معلومات التواصل</p>
+                <p>+966546155082📞</p>
+
             </div>
         </div>
     </div>
@@ -463,16 +526,13 @@ session_start();
             </tr>
             <tr>
                 <td class="day">الجمعة</td>
-                <td class="time">١٠:٠٠ ص - ٢:٠٠ م</td>
+                <td class="time">مغلق</td>
             </tr>
             <tr>
                 <td class="day">السبت</td>
                 <td class="time">مغلق</td>
             </tr>
-            <tr>
-                <td class="day">العطل الرسمية</td>
-                <td class="time">يرجى الاتصال مسبقاً</td>
-            </tr>
+      
         </table>
     </div>
 

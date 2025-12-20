@@ -175,13 +175,13 @@ h2 {
 /* الشريط  */
 .top-search-bar{
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+top: calc(100% + 10px);
+transform: none;
   display: none;
   z-index: 3000;
 color: var(--color-accent);
  max-width: 420px;         
-  width: min(420px, 72vw);  
+  width: min(200px, 72vw);  
   background: rgba(255,255,255,0.98);
   padding: 12px;
   border-radius: 12px;
@@ -190,18 +190,19 @@ color: var(--color-accent);
 
 }
 
-/* EN (LTR): الشريط يمين زر البحث */
+/* LTR: محاذاة يسار داخل الحاوية */
 html[dir="ltr"] .top-search-bar,
 html:not([dir]) .top-search-bar{
-  left: calc(100% + 12px);
+  left: 0;
   right: auto;
 }
 
-/* AR (RTL): الشريط يسار زر البحث */
+/* RTL: محاذاة يمين داخل الحاوية */
 html[dir="rtl"] .top-search-bar{
-  right: calc(100% + 12px);
+  right: 0;
   left: auto;
 }
+
 
 .top-search-bar input{
   width: 100%;
@@ -212,28 +213,7 @@ html[dir="rtl"] .top-search-bar{
   outline: none;
 }
 
-/* Autocomplete */
-.top-search-bar .autocomplete{
-  margin-top: 10px;
-  background: #fff;
-  border: 1px solid rgba(14,107,78,0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  display: none;
-  text-align: start;
-    position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
 
-  margin: 0;
-  background: #fff;
-  border: 1px solid rgba(14,107,78,0.25);
-  border-radius: 12px;
-  overflow: hidden;
-  display: none;
-  z-index: 4000;
-}
 
 .top-search-bar .autocomplete.show{ display:block; }
 
@@ -275,50 +255,6 @@ html[dir="rtl"] .search-wrap {
   order: 4;
 }
 
-/* ===========================
-   Responsive Top Search Bar
-   - Desktop: beside search icon
-   - Mobile/tablet: centered, fits screen
-   =========================== */
-
-
-/* ✅ للشاشات الصغيرة: خلي الشريط يتوسط ويظهر داخل عرض الشاشة */
-@media (max-width: 900px){
-  .top-search-bar{
-    position: fixed;         /* بدل absolute عشان ما يطلع برا */
-    top: 84px;               /* تحت الهيدر (عدّل الرقم إذا احتجت) */
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%);  /* توسيط أفقي */
-    width: min(520px, calc(100vw - 24px));
-    max-width: none;
-    padding: 12px;
-    border-radius: 14px;
-    z-index: 9999;
-  }
-
-  /* قائمة الاقتراحات تظل داخل نفس الشريط */
-  .top-search-bar .autocomplete{
-    position: static;        /* بدل absolute */
-    margin-top: 10px;
-    max-height: 45vh;        /* لا تطول كثير */
-    overflow: auto;
-  }
-}
-
-/* ✅ للشاشات الأصغر جداً */
-@media (max-width: 480px){
-  .top-search-bar{
-    top: 76px; /* أقرب للهيدر */
-    width: calc(100vw - 16px);
-    padding: 10px;
-  }
-
-  .top-search-bar input{
-    padding: 10px;
-    font-size: 0.95rem;
-  }
-}
 
 
 
