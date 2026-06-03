@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // تفعيل جلسة المستخدم للتحقق من حالة تسجيل الدخول لاحقًا إذا لزم الأمر
 session_start();
 include 'db_connect.php'; 
@@ -258,7 +258,7 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
              background: #0d523a;
         }
     </style>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
         <link rel="stylesheet" href="CSS/auth.css">
 
 </head>
@@ -266,7 +266,7 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
 
 <header id="mainHeader" class="scrolled">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -390,7 +390,7 @@ $link_prefix = "?cat=" . $category . "&search=" . urlencode($search_keyword) . "
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 

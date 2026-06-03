@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include 'db_conn.php';
 
@@ -94,13 +94,13 @@ $history_res = $conn->query($history_sql);
         .score-low { background-color: #f8d7da; color: #721c24; }
         .no-records { text-align: center; color: #777; padding: 20px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 8px; margin-top: 15px; }
     </style>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <header id="mainHeader" class="scrolled">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
         <nav>
@@ -212,7 +212,7 @@ $percent = ($totalQ > 0) ? ((int)$h_row['score'] / $totalQ) * 100 : 0;
      <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

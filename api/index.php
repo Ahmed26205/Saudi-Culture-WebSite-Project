@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <?php
 session_start();
@@ -26,8 +26,8 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- Main JavaScript file for interactions (loaded after HTML) -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" href="images/Logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" href="assets/images/Logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 
@@ -35,7 +35,7 @@ session_start();
     <!-- Top header bar: logo + navigation menu -->
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture" onclick="window.location.href='index.php'" />
+            <img src="assets/images/Logo.png" alt="SaudiCulture" onclick="window.location.href='index.php'" />
         </div>
 
         <nav>
@@ -88,7 +88,7 @@ session_start();
     <section class="main-visual-section">
         <!-- Background looping video -->
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Journey through time.mp4" type="video/mp4">
+            <source src="assets/videos/Journey through time.mp4" type="video/mp4">
         </video>
 
         <!-- Content overlay on top of the video -->
@@ -129,7 +129,7 @@ session_start();
         <!-- Khaled Al-Faisal -->
         <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
-                <img src="images/خالد الفيصل.jpeg" alt="Prince Khaled Al-Faisal">
+                <img src="assets/images/خالد الفيصل.jpeg" alt="Prince Khaled Al-Faisal">
             </div>
             <div class="poetry-content">
                 <h3 class="poet-name">Prince Khaled Al-Faisal</h3>
@@ -146,7 +146,7 @@ session_start();
         <!-- Ghazi Al-Gosaibi -->
         <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
-                <img src="images/غازي القصيبي.jpeg" alt="Ghazi Al-Gosaibi">
+                <img src="assets/images/غازي القصيبي.jpeg" alt="Ghazi Al-Gosaibi">
             </div>
             <div class="poetry-content">
                 <h3 class="poet-name">Ghazi Al-Gosaibi</h3>
@@ -163,7 +163,7 @@ session_start();
         <!-- Talal Al-Rasheed -->
         <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
-                <img src="images/طلال الرشيد.jpeg" alt="Talal Al-Rasheed">
+                <img src="assets/images/طلال الرشيد.jpeg" alt="Talal Al-Rasheed">
             </div>
             <div class="poetry-content">
                 <h3 class="poet-name">Talal Al-Rasheed</h3>
@@ -190,28 +190,28 @@ session_start();
     <div class="cards">
         <!-- Card: Traditional Food -->
         <div class="card">
-            <img src="images/8-chicken-kabsa-web.jpg" alt="Traditional food">
+            <img src="assets/images/8-chicken-kabsa-web.jpg" alt="Traditional food">
             <h3>Traditional Food</h3>
             <a href="food.php" class="button">View More</a>
         </div>
 
         <!-- Card: Cultural Traditions -->
         <div class="card">
-            <img src="images/tradtion.jpg" alt="Cultural Traditions">
+            <img src="assets/images/tradtion.jpg" alt="Cultural Traditions">
             <h3>Cultural Traditions</h3>
             <a href="traditions.php" class="button">View More</a>
         </div>
 
         <!-- Card: Traditional Arts -->
         <div class="card">
-            <img src="images/arda.jpg" alt="Traditional arts">
+            <img src="assets/images/arda.jpg" alt="Traditional arts">
             <h3>Traditional Arts</h3>
             <a href="arts.php" class="button">View More</a>
         </div>
 
         <!-- Card: Ancient Civilizations -->
         <div class="card">
-            <img src="images/madain salah.jpg" alt="History and civilizations">
+            <img src="assets/images/madain salah.jpg" alt="History and civilizations">
             <h3>Ancient Civilizations</h3>
             <a href="history.php" class="button">View More</a>
         </div>
@@ -229,7 +229,7 @@ session_start();
     <div class="swiper-wrapper">
         <!-- Western Region -->
         <article class="region-card swiper-slide">
-            <img src="images/west.jpg" alt="Western Region">
+            <img src="assets/images/west.jpg" alt="Western Region">
             <h3>Western Region</h3>
             <p>
                 Home to the Two Holy Mosques, known for its historic souks, Hijazi folklore,
@@ -239,7 +239,7 @@ session_start();
 
         <!-- Central Region -->
         <article class="region-card swiper-slide">
-            <img src="images/middle.webp" alt="Central Region">
+            <img src="assets/images/middle.webp" alt="Central Region">
             <h3>Central Region</h3>
             <p>
                 The heart of the Kingdom, featuring Diriyah and Al-Masmak Fort, traditional Najdi attire,
@@ -249,7 +249,7 @@ session_start();
 
         <!-- Eastern Region -->
         <article class="region-card swiper-slide">
-            <img src="images/east.webp" alt="Eastern Region">
+            <img src="assets/images/east.webp" alt="Eastern Region">
             <h3>Eastern Region</h3>
             <p>
                 A coastal region rich in traditional markets, seafood cuisine,
@@ -259,7 +259,7 @@ session_start();
 
         <!-- Southern Region -->
         <article class="region-card swiper-slide">
-            <img src="images/south.jpg" alt="Southern Region">
+            <img src="assets/images/south.jpg" alt="Southern Region">
             <h3>Southern Region</h3>
             <p>
                 Known for its mountains, traditional villages like Rijal Almaa,
@@ -269,7 +269,7 @@ session_start();
 
         <!-- Northern Region -->
         <article class="region-card swiper-slide">
-            <img src="images/north.jpg" alt="Northern Region">
+            <img src="assets/images/north.jpg" alt="Northern Region">
             <h3>Northern Region</h3>
             <p>
                 Famous for the traditional “Dahha” dance, Bedouin heritage,
@@ -302,7 +302,7 @@ session_start();
 
         <!-- Image showing events or map of Saudi Arabia -->
         <div class="mini-events">
-            <img src="images/فعاليات.jpg" alt="Cultural events in Saudi Arabia">
+            <img src="assets/images/فعاليات.jpg" alt="Cultural events in Saudi Arabia">
         </div>
     </div>
 
@@ -313,7 +313,7 @@ session_start();
 
             <!-- Left: logo + short description -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <?php
 session_start();
@@ -22,7 +22,7 @@ session_start();
     <style>
         /* Contact Page Specific Styles */
         .contact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/contact-bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/contact-bg.jpg');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -323,14 +323,14 @@ session_start();
 
     <!-- Load external JavaScript file with defer to load after HTML -->
     <script src="JS/script.js" ></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- Header with solid background for internal pages -->
         <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture" onclick="window.location.href='index.php'" />
+            <img src="assets/images/Logo.png" alt="SaudiCulture" onclick="window.location.href='index.php'" />
         </div>
 
         <nav>
@@ -547,7 +547,7 @@ session_start();
         <div class="footer-container">
             <!-- Left: logo + description -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.
@@ -653,3 +653,4 @@ session_start();
 </body>
 
 </html>
+

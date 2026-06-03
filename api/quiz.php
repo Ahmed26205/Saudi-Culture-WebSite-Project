@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include 'db_conn.php'; 
 
@@ -263,7 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
 
     <header id="mainHeader" class="scrolled">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
        <nav>
@@ -486,7 +486,7 @@ $page = 1;
        <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

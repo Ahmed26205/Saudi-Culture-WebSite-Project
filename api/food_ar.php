@@ -1,4 +1,4 @@
-<!-- ملف الطعام HTML  للواجهة العربية لموقع SaudiCulture -->
+﻿<!-- ملف الطعام HTML  للواجهة العربية لموقع SaudiCulture -->
 <!DOCTYPE html>
 <?php
 session_start();
@@ -23,14 +23,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- شريط علوي (Header) يحتوي الشعار والقائمة الرئيسية -->
    <header id="mainHeader">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -81,7 +81,7 @@ session_start();
 
     <section class="main-visual-section">
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Saudi Food.mov" type="video/mp4">
+            <source src="assets/videos/Saudi Food.mov" type="video/mp4">
         </video>
 
         <div class="main-visual-content">
@@ -99,7 +99,7 @@ session_start();
 
             <div class="food-grid">
                 <div class="card">
-                    <img src="images/Jareesh_Food.jpeg" alt="صورة الجريش">
+                    <img src="assets/images/Jareesh_Food.jpeg" alt="صورة الجريش">
                     <h3>الجريش</h3>
                     <p style="text-align:right">
                         الجريش هو سيد السفرة السعودية، يتكون من القمح المجروش (اللقيمي) المطبوخ مع اللبن والمرق حتى يصبح
@@ -109,7 +109,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Al-Qursan_food.jpeg" alt="صورة القرصان">
+                    <img src="assets/images/Al-Qursan_food.jpeg" alt="صورة القرصان">
                     <h3>القرصان</h3>
                     <p style="text-align:right">
                         من أشهر الأطباق النجدية، يتكون من رقائق خبز البر الرقيقة جداً، تُشرب بمرق اللحم والخضروات الغني
@@ -119,7 +119,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Klija_food.jpeg" alt="صورة الكليجا">
+                    <img src="assets/images/Klija_food.jpeg" alt="صورة الكليجا">
                     <h3>الكليجا</h3>
                     <p style="text-align:right">
                         قرص حلوى تشتهر به منطقة القصيم، يتميز بقشرته المقرمشة وحشوته الغنية بدبس التمر والهيل والقرفة
@@ -129,7 +129,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Hanini_food.jpeg" alt="صورة الحنيني">
+                    <img src="assets/images/Hanini_food.jpeg" alt="صورة الحنيني">
                     <h3>الحنيني</h3>
                     <p style="text-align:right">
                         الحنيني هو الحلوى الشتوية الرسمية في نجد. يُصنع من مزيج التمر منزوع النوى وخبز البر الأسمر، حيث
@@ -138,7 +138,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Shakshuka_food.jpg" alt="صورة الشكشوكة">
+                    <img src="assets/images/Shakshuka_food.jpg" alt="صورة الشكشوكة">
                     <h3>الشكشوكة</h3>
                     <p style="text-align:right">
                         طبق إفطار شعبي محبب، يتكون ببساطة من البيض المطبوخ في صلصة من الطماطم الطازجة، البصل، الفلفل،
@@ -155,7 +155,7 @@ session_start();
 
             <div class="food-grid">
                 <div class="card">
-                    <img src="images/8-chicken-kabsa-web.jpg" alt="صورة الكبسة">
+                    <img src="assets/images/8-chicken-kabsa-web.jpg" alt="صورة الكبسة">
                     <h3>الكبسة</h3>
                     <p style="text-align:right">
                         الرمز الأول للمطبخ السعودي عالمياً. تتكون أساساً من الأرز طويل الحبة المطهو مع اللحم أو الدجاج،
@@ -165,7 +165,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Marqooq.jpg" alt="صورة المرقوق">
+                    <img src="assets/images/Marqooq.jpg" alt="صورة المرقوق">
                     <h3>المرقوق</h3>
                     <p style="text-align:right">
                         يعتمد هذا الطبق على عجين البر الذي يُرق حتى يصبح رقيقاً جداً، ثم يُطبخ داخل مرق اللحم والخضروات
@@ -175,7 +175,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Mansaf.jpeg" alt="صورة المنسف">
+                    <img src="assets/images/Mansaf.jpeg" alt="صورة المنسف">
                     <h3>المنسف</h3>
                     <p style="text-align:right">
                         طبق ذو مكانة خاصة في الشمال (تبوك والجوف). يتكون من اللحم المطبوخ بالجميد (اللبن المجفف)، ويقدم
@@ -184,7 +184,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Mufattah.jpg" alt="صورة المفطح">
+                    <img src="assets/images/Mufattah.jpg" alt="صورة المفطح">
                     <h3>المفطح</h3>
                     <p style="text-align:right">
                         وليمة المناسبات الكبرى والأعياد. عبارة عن خروف كامل يُطبخ حتى يصبح اللحم طرياً جداً، ويقدم فوق
@@ -202,7 +202,7 @@ session_start();
 
             <div class="food-grid">
                 <div class="card">
-                    <img src="images/Saleeg_food.jpg" alt="صورة السليق">
+                    <img src="assets/images/Saleeg_food.jpg" alt="صورة السليق">
                     <h3>السليق</h3>
                     <p style="text-align:right">
                         يُلقب بـ "الريزوتو العربي". طبق حجازي (طائفي) شهير مكون من الأرز المصري المطبوخ بالحليب ومرق
@@ -212,7 +212,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Sayadiyah_food.jpeg" alt="صورة الصيادية">
+                    <img src="assets/images/Sayadiyah_food.jpeg" alt="صورة الصيادية">
                     <h3>الصيادية</h3>
                     <p style="text-align:right">
                         طبق المناطق الساحلية (جدة وينبع). يتميز بلون الأرز البني الغامق الذي يكتسبه من حمس البصل حتى
@@ -222,7 +222,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Dibyaza_food.webp" alt="صورة الدبيازة">
+                    <img src="assets/images/Dibyaza_food.webp" alt="صورة الدبيازة">
                     <h3>الدبيازة</h3>
                     <p style="text-align:right">
                         الطبق الاحتفالي صباح العيد في مكة والمدينة. هي نوع من المربى الساخن الغني جداً، تُصنع من قمر
@@ -240,7 +240,7 @@ session_start();
 
             <div class="food-grid">
                 <div class="card">
-                    <img src="images/Balaleet.jpg" alt="صورة البلاليط">
+                    <img src="assets/images/Balaleet.jpg" alt="صورة البلاليط">
                     <h3>البلاليط</h3>
                     <p style="text-align:right">
                         فطور صباحي يجمع بين المالح والحلو بذكاء. يتكون من الشعيرية المحلاة بالسكر والزعفران والهيل،
@@ -249,7 +249,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Tharid.png" alt="صورة الثريد">
+                    <img src="assets/images/Tharid.png" alt="صورة الثريد">
                     <h3>الثريد</h3>
                     <p style="text-align:right">
                         يُعرف أيضاً بـ "التشريبة". هو عبارة عن خبز الرقاق الذي يُقطع ويُسقى بمرق اللحم والخضروات (الكوسا
@@ -258,7 +258,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Sago.jpg" alt="صورة الساقو">
+                    <img src="assets/images/Sago.jpg" alt="صورة الساقو">
                     <h3>الساقو</h3>
                     <p style="text-align:right">
                         حلوى خليجية تراثية ذات قوام هلامي مميز، تُصنع من حبوب الساقو (النشا) التي تُنقع وتطبخ مع السكر
@@ -276,7 +276,7 @@ session_start();
 
             <div class="food-grid">
                 <div class="card">
-                    <img src="images/Areeka_ food.jpg" alt="صورة العريكة">
+                    <img src="assets/images/Areeka_ food.jpg" alt="صورة العريكة">
                     <h3>العريكة</h3>
                     <p style="text-align:right">
                         وجبة طاقة متكاملة، تتكون من عجينة البر المشوية والسائلة، تُعرك (تخلط) جيداً مع التمر المهروس، ثم
@@ -285,7 +285,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Mashghoutha_food.jpg" alt="صورة المشغوثة">
+                    <img src="assets/images/Mashghoutha_food.jpg" alt="صورة المشغوثة">
                     <h3>المشغوثة</h3>
                     <p style="text-align:right">
                         أكلة شتوية بامتياز توفر الدفء. قوامها يشبه الشوربة الثقيلة، وتصنع بإضافة الدقيق تدريجياً إلى
@@ -294,7 +294,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Aseedah.jpg" alt="صورة العصيدة">
+                    <img src="assets/images/Aseedah.jpg" alt="صورة العصيدة">
                     <h3>العصيدة</h3>
                     <p style="text-align:right">
                         كتلة متماسكة من دقيق البر المطبوخ بالماء المغلي، تحتاج لقوة بدنية في تحضيرها لضمان عدم تكتل
@@ -303,7 +303,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Haneeth.jpg" alt="صورة الحنيذ">
+                    <img src="assets/images/Haneeth.jpg" alt="صورة الحنيذ">
                     <h3>الحنيذ</h3>
                     <p style="text-align:right">
                         من أقدم وألذ طرق طهي اللحم في تهامة وعسير. يتم طهي اللحم في حفرة (التنور) مبطنة بأغصان شجر المرخ
@@ -334,7 +334,7 @@ session_start();
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 

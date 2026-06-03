@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include 'db_conn.php'; 
 
@@ -345,13 +345,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_answers'])) {
             .checkbox-grid { grid-template-columns: 1fr; }
         }
     </style>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 <body>
 
     <header id="mainHeader" class="scrolled">
         <div class="logo">
-            <img src="images/Logo.png" alt="شعار SaudiCulture">
+            <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
         </div>
 
         <nav>
@@ -562,7 +562,7 @@ $page = 1;
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="شعار SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="شعار SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 

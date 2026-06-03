@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -17,14 +17,14 @@ session_start();
 <link rel="stylesheet" href="CSS/auth.css"/>
     <!-- Global site script -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- Top header bar shared across pages -->
      <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture" onclick="window.location.href='index.php'" />
+            <img src="assets/images/Logo.png" alt="SaudiCulture" onclick="window.location.href='index.php'" />
         </div>
 
         <nav>
@@ -84,7 +84,7 @@ session_start();
             </div>
             <!-- Background looping video -->
             <video autoplay muted loop playsinline class="bg-video">
-                <source src="videos/Culturual_events_video.mp4" type="video/mp4">
+                <source src="assets/videos/Culturual_events_video.mp4" type="video/mp4">
             </video>
         </section>
 
@@ -96,7 +96,7 @@ session_start();
             <div class="timeline-item" >
                 <!-- image left -->
                 <div class="timeline-image">
-                    <img src="images/Janadriyah_festival.png" alt="A moment from Janadriyah Festival">
+                    <img src="assets/images/Janadriyah_festival.png" alt="A moment from Janadriyah Festival">
                 </div>
                 <!-- text right -->
                 <div class="timeline-content">
@@ -126,14 +126,14 @@ session_start();
                 </div>
                 <!-- image right -->
                 <div class="timeline-image">
-                    <img src="images/Alturaiyf.png" alt="Al-Turaif District in Diriyah">
+                    <img src="assets/images/Alturaiyf.png" alt="Al-Turaif District in Diriyah">
                 </div>
             </div>
 
             <!-- Step 3 -->
             <div class="timeline-item" >
                 <div class="timeline-image">
-                    <img src="images/Riyadh_Book_Fair.png" alt="Riyadh, capital of the Kingdom">
+                    <img src="assets/images/Riyadh_Book_Fair.png" alt="Riyadh, capital of the Kingdom">
                 </div>
                 <div class="timeline-content">
                     <span class="era-label">Cultural Capital</span>
@@ -160,7 +160,7 @@ session_start();
                     </p>
                 </div>
                 <div class="timeline-image">
-                    <img src="images/day-2-race-hero.jpg" alt="Camel Race">
+                    <img src="assets/images/day-2-race-hero.jpg" alt="Camel Race">
                 </div>
             </div>
         </section>
@@ -172,7 +172,7 @@ session_start();
             <div class="cards">
                 <!-- Central Region -->
                 <div class="card">
-                    <img src="images/historical-dir-iyahh.jpg" alt="Diriyah" />
+                    <img src="assets/images/historical-dir-iyahh.jpg" alt="Diriyah" />
                     <h3>Central Region</h3>
                     <p>
                         The Central Region is known for diverse cultural events in Riyadh and Diriyah, including heritage festivals, art exhibitions, and cultural evenings that reflect the region's rich history.
@@ -181,7 +181,7 @@ session_start();
 
                 <!-- Western Region -->
                 <div class="card">
-                    <img src="images/madinaold.jpg" alt="Makkah and Madinah" />
+                    <img src="assets/images/madinaold.jpg" alt="Makkah and Madinah" />
                     <h3>Western Region</h3>
                     <p>
                         Makkah and Madinah host cultural events aims muslims throughout the year, especially during Hajj and Umrah seasons, in addition to heritage festivals and traditional markets.
@@ -190,7 +190,7 @@ session_start();
 
                 <!-- Northern & Northwestern Region -->
                 <div class="card">
-                    <img src="images/old history.jpg" alt="AlUla" />
+                    <img src="assets/images/old history.jpg" alt="AlUla" />
                     <h3>North & Northwest</h3>
                     <p>
                         AlUla is famous for cultural events showcasing ancient Nabatean history, including light festivals, theatrical performances at archaeological sites, and historical exhibitions.
@@ -199,7 +199,7 @@ session_start();
 
                 <!-- Eastern & Southern Region -->
                 <div class="card">
-                    <img src="images/rijal alma.jpg" alt="Eastern and Southern heritage" />
+                    <img src="assets/images/rijal alma.jpg" alt="Eastern and Southern heritage" />
                     <h3>East & South</h3>
                     <p>
                         The Eastern and Southern regions are rich in cultural events reflecting geographical and heritage diversity, including maritime heritage festivals, traditional markets, and traditional art performances.
@@ -224,7 +224,7 @@ session_start();
         <div class="footer-container">
             <!-- Left: logo + short description -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history, heritage, and cultural diversity of Saudi Arabia.
                 </p>
@@ -348,3 +348,4 @@ session_start();
 </body>
 
 </html>
+

@@ -1,4 +1,4 @@
-<!-- HTML5 document type declaration -->
+﻿<!-- HTML5 document type declaration -->
 <!DOCTYPE html>
 <?php
 session_start();
@@ -23,14 +23,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- Global site script -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- Top header bar shared across pages -->
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
        <nav>
@@ -94,7 +94,7 @@ session_start();
             </div>
             <!-- Background looping video -->
             <video autoplay muted loop playsinline class="bg-video">
-                <source src="videos/history travel.mp4" type="video/mp4">
+                <source src="assets/videos/history travel.mp4" type="video/mp4">
             </video>
         </section>
 
@@ -106,7 +106,7 @@ session_start();
             <div class="timeline-item" data-step="1">
                 <!-- image left -->
                 <div class="timeline-image">
-                    <img src="images/madain salah.jpg" alt="Pre-Islamic Arabia">
+                    <img src="assets/images/madain salah.jpg" alt="Pre-Islamic Arabia">
                 </div>
                 <!-- text right -->
                 <div class="timeline-content">
@@ -134,14 +134,14 @@ session_start();
                 </div>
                 <!-- image right -->
                 <div class="timeline-image">
-                    <img src="images/after islam.jpg" alt="Early Islamic era">
+                    <img src="assets/images/after islam.jpg" alt="Early Islamic era">
                 </div>
             </div>
 
             <!-- Step 3 -->
             <div class="timeline-item" data-step="3">
                 <div class="timeline-image">
-                    <img src="images/new saudi.jpeg" alt="Diriyah and the Saudi states">
+                    <img src="assets/images/new saudi.jpeg" alt="Diriyah and the Saudi states">
                 </div>
                 <div class="timeline-content">
                     <span class="era-label">18th–19th Century</span>
@@ -165,7 +165,7 @@ session_start();
                     </p>
                 </div>
                 <div class="timeline-image">
-                    <img src="images/saudia.jpg" alt="Modern Saudi Arabia">
+                    <img src="assets/images/saudia.jpg" alt="Modern Saudi Arabia">
                 </div>
             </div>
         </section>
@@ -180,7 +180,7 @@ session_start();
         <!-- Al-Hijr (Mada'in Salih) -->
         <article class="heritage-card">
             <div class="heritage-card-image">
-                <img src="images/hegra-place.jpg" alt="Mada'in Salih">
+                <img src="assets/images/hegra-place.jpg" alt="Mada'in Salih">
             </div>
             <div class="heritage-card-text">
                 <h3>Al-Hijr (Mada'in Salih) – First Saudi UNESCO Site</h3>
@@ -205,7 +205,7 @@ session_start();
         <!--  Al-Suwailm Palace -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/souq.jpg" alt="Al-Suwailm Palace">
+        <img src="assets/images/souq.jpg" alt="Al-Suwailm Palace">
     </div>
     <div class="heritage-card-text">
         <h3>Al-Suwailm Palace</h3>
@@ -229,7 +229,7 @@ session_start();
 <!--  Shubra Palace -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/ksr-shbra-2.jpg" alt="Shubra Palace">
+        <img src="assets/images/ksr-shbra-2.jpg" alt="Shubra Palace">
     </div>
     <div class="heritage-card-text">
         <h3>Shubra Palace</h3>
@@ -252,7 +252,7 @@ session_start();
         <!-- Jeddah Historical Area -->
         <article class="heritage-card">
             <div class="heritage-card-image">
-                <img src="images/Jeddah.jpg" alt="Historic Jeddah">
+                <img src="assets/images/Jeddah.jpg" alt="Historic Jeddah">
             </div>
             <div class="heritage-card-text">
                 <h3>Historic Jeddah</h3>
@@ -279,7 +279,7 @@ session_start();
         <!-- Al-Atawlah Heritage Village -->
         <article class="heritage-card">
             <div class="heritage-card-image">
-                <img src="images/atawala.jpg" alt="Al-Atawlah Village">
+                <img src="assets/images/atawala.jpg" alt="Al-Atawlah Village">
             </div>
             <div class="heritage-card-text">
                 <h3>Al-Atawlah Heritage Village</h3>
@@ -303,7 +303,7 @@ session_start();
         <!-- Masmak Palace -->
         <article class="heritage-card">
             <div class="heritage-card-image">
-                <img src="images/mosamq.jpg" alt="Al-Masmak Palace">
+                <img src="assets/images/mosamq.jpg" alt="Al-Masmak Palace">
             </div>
             <div class="heritage-card-text">
                 <h3>Al-Masmak Palace</h3>
@@ -327,7 +327,7 @@ session_start();
         <!-- A'arif Fort -->
         <article class="heritage-card">
             <div class="heritage-card-image">
-                <img src="images/aref qasle.jpg" alt="A'arif Fort">
+                <img src="assets/images/aref qasle.jpg" alt="A'arif Fort">
             </div>
             <div class="heritage-card-text">
                 <h3>A'arif Fort</h3>
@@ -391,7 +391,7 @@ session_start();
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

@@ -1,4 +1,4 @@
-<!-- ملف HTML رئيسي للواجهة العربية لموقع SaudiCulture -->
+﻿<!-- ملف HTML رئيسي للواجهة العربية لموقع SaudiCulture -->
 <!DOCTYPE html>
 <?php
 session_start();
@@ -27,15 +27,15 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" href="images/Logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" href="assets/images/Logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- شريط علوي (Header) يحتوي الشعار والقائمة الرئيسية -->
   <header id="mainHeader">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -90,7 +90,7 @@ session_start();
     <section class="main-visual-section">
         <!-- فيديو الخلفية في أعلى الصفحة -->
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Journey through time.mp4" type="video/mp4">
+            <source src="assets/videos/Journey through time.mp4" type="video/mp4">
         </video>
 
         <!-- محتوى النصوص والأزرار فوق الفيديو -->
@@ -116,7 +116,7 @@ session_start();
         <!-- خالد الفيصل -->
         <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
-                <img src="images/خالد الفيصل.jpeg" alt="الأمير خالد الفيصل">
+                <img src="assets/images/خالد الفيصل.jpeg" alt="الأمير خالد الفيصل">
             </div>
             <div class="poetry-content">
                 <h3 class="poet-name">الأمير الشاعر خالد الفيصل</h3>
@@ -133,7 +133,7 @@ session_start();
         <!-- غازي القصيبي -->
         <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
-                <img src="images/غازي القصيبي.jpeg" alt="غازي القصيبي">
+                <img src="assets/images/غازي القصيبي.jpeg" alt="غازي القصيبي">
             </div>
             <div class="poetry-content">
                 <h3 class="poet-name">غازي القصيبي</h3>
@@ -150,7 +150,7 @@ session_start();
         <!-- طلال الرشيد -->
         <article class="poetry-card swiper-slide">
             <div class="poetry-photo">
-                <img src="images/طلال الرشيد.jpeg" alt="طلال الرشيد">
+                <img src="assets/images/طلال الرشيد.jpeg" alt="طلال الرشيد">
             </div>
             <div class="poetry-content">
                 <h3 class="poet-name">طلال الرشيد</h3>
@@ -176,28 +176,28 @@ session_start();
     <div class="cards">
         <!-- بطاقة: الطعام التقليدي -->
         <div class="card">
-            <img src="images/8-chicken-kabsa-web.jpg" alt="الطعام التقليدي">
+            <img src="assets/images/8-chicken-kabsa-web.jpg" alt="الطعام التقليدي">
             <h3>الطعام التقليدي</h3>
             <a href="food_ar.php" class="button">عرض المزيد</a>
         </div>
 
         <!-- بطاقة: العادات والتقاليد -->
         <div class="card">
-            <img src="images/tradtion.jpg" alt="التقاليد الثقافية">
+            <img src="assets/images/tradtion.jpg" alt="التقاليد الثقافية">
             <h3>العادات والتقاليد</h3>
             <a href="traditions_ar.php" class="button">عرض المزيد</a>
         </div>
 
         <!-- بطاقة: الفنون التراثية -->
         <div class="card">
-            <img src="images/arda.jpg" alt="الفنون التراثية">
+            <img src="assets/images/arda.jpg" alt="الفنون التراثية">
             <h3>الفنون التراثية</h3>
             <a href="arts_ar.php" class="button">عرض المزيد</a>
         </div>
 
         <!-- بطاقة: الحضارات القديمة -->
         <div class="card">
-            <img src="images/madain salah.jpg" alt="التاريخ والحضارات">
+            <img src="assets/images/madain salah.jpg" alt="التاريخ والحضارات">
             <h3>حضارات قديمة</h3>
             <a href="history_ar.php" class="button">عرض المزيد</a>
         </div>
@@ -214,7 +214,7 @@ session_start();
     <div class="swiper-wrapper">
         <!-- الغربية -->
         <article class="region-card swiper-slide">
-            <img src="images/west.jpg" alt="المنطقة الغربية">
+            <img src="assets/images/west.jpg" alt="المنطقة الغربية">
             <h3>المنطقة الغربية</h3>
             <p>
                 موطن الحرمين الشريفين، وتشتهر بالأسواق التاريخية، والمزمار الحجازي،
@@ -224,7 +224,7 @@ session_start();
 
         <!-- الوسطى -->
         <article class="region-card swiper-slide">
-            <img src="images/middle.webp" alt="المنطقة الوسطى">
+            <img src="assets/images/middle.webp" alt="المنطقة الوسطى">
             <h3>المنطقة الوسطى</h3>
             <p>
                 قلب المملكة ومركز تاريخها، حيث الدرعية والمصمك، وفنون العرضة السعودية،
@@ -234,7 +234,7 @@ session_start();
 
         <!-- الشرقية -->
         <article class="region-card swiper-slide">
-            <img src="images/east.webp" alt="المنطقة الشرقية">
+            <img src="assets/images/east.webp" alt="المنطقة الشرقية">
             <h3>المنطقة الشرقية</h3>
             <p>
                 منطقة ساحلية غنية بالأسواق التقليدية والمأكولات البحرية،
@@ -244,7 +244,7 @@ session_start();
 
         <!-- الجنوبية -->
         <article class="region-card swiper-slide">
-            <img src="images/south.jpg" alt="المنطقة الجنوبية">
+            <img src="assets/images/south.jpg" alt="المنطقة الجنوبية">
             <h3>المنطقة الجنوبية</h3>
             <p>
                 طبيعة خلابة وقرى تراثية مثل رجال ألمع، وفنون الخطوة،
@@ -254,7 +254,7 @@ session_start();
 
         <!-- الشمالية -->
         <article class="region-card swiper-slide">
-            <img src="images/north.jpg" alt="المنطقة الشمالية">
+            <img src="assets/images/north.jpg" alt="المنطقة الشمالية">
             <h3>المنطقة الشمالية</h3>
             <p>
                 موطن الدحة الشمالية والتراث البدوي الأصيل،
@@ -283,7 +283,7 @@ session_start();
 
         <!-- صورة تمثل خريطة أو فعاليات في المملكة -->
         <div class="mini-events">
-            <img src="images/فعاليات.jpg" alt="فعاليات المملكة العربية السعودية">
+            <img src="assets/images/فعاليات.jpg" alt="فعاليات المملكة العربية السعودية">
         </div>
     </div>
 
@@ -293,7 +293,7 @@ session_start();
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 
@@ -352,3 +352,4 @@ session_start();
 </body>
 
 </html>
+

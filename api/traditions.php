@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <?php
@@ -21,14 +21,14 @@ session_start();
 
     <!-- Main JS -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- Header -->
        <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
        <nav>
@@ -83,7 +83,7 @@ session_start();
         <!-- Hero section with background video -->
         <section class="main-visual-section">
             <video autoplay muted loop playsinline class="bg-video">
-                <source src="videos/Saudi culture.mp4" type="video/mp4" />
+                <source src="assets/videos/Saudi culture.mp4" type="video/mp4" />
             </video>
 
             <div class="main-visual-content">
@@ -109,7 +109,7 @@ session_start();
                 <!-- 1 - Hospitality -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/saudi_hospitality.jpg" alt="Saudi hospitality with Arabic coffee and dates" />
+                        <img src="assets/images/saudi_hospitality.jpg" alt="Saudi hospitality with Arabic coffee and dates" />
                     </div>
                     <div class="traditions-text">
                         <h2>Hospitality & Arabic Coffee</h2>
@@ -128,7 +128,7 @@ session_start();
                 <!-- 2 - Greetings -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/saudi_greeting.jpg" alt="Saudi greeting traditions" />
+                        <img src="assets/images/saudi_greeting.jpg" alt="Saudi greeting traditions" />
                     </div>
                     <div class="traditions-text">
                         <h2>Greetings & Social Etiquette</h2>
@@ -147,7 +147,7 @@ session_start();
                 <!-- 3 - Clothing -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/traditional_clothing.jpg" alt="Traditional Saudi clothing" />
+                        <img src="assets/images/traditional_clothing.jpg" alt="Traditional Saudi clothing" />
                     </div>
                     <div class="traditions-text">
                         <h2>Traditional Dress</h2>
@@ -166,7 +166,7 @@ session_start();
                 <!-- 4 - Celebrations -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/saudi_celebration.jpg" alt="Saudi family celebration" />
+                        <img src="assets/images/saudi_celebration.jpg" alt="Saudi family celebration" />
                     </div>
                     <div class="traditions-text">
                         <h2>Celebrations & Family Life</h2>
@@ -197,7 +197,7 @@ session_start();
                 <!-- Respect for elders -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/respect_elders.jpg" alt="Respect for elders in Saudi culture" />
+                        <img src="assets/images/respect_elders.jpg" alt="Respect for elders in Saudi culture" />
                     </div>
                     <div class="traditions-text">
                         <h2>Respect for Elders</h2>
@@ -216,7 +216,7 @@ session_start();
                 <!-- Family gatherings -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/family_gathering.jpg" alt="Saudi family gathering" />
+                        <img src="assets/images/family_gathering.jpg" alt="Saudi family gathering" />
                     </div>
                     <div class="traditions-text">
                         <h2>Family Gatherings</h2>
@@ -307,7 +307,7 @@ session_start();
    <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

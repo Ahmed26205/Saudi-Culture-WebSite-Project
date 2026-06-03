@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <?php
 session_start();
 ?>
@@ -18,14 +18,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css" />
 
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- الهيدر -->
      <header id="mainHeader">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -79,7 +79,7 @@ session_start();
         <!-- الهيرو مع الفيديو -->
         <section class="main-visual-section">
             <video autoplay muted loop playsinline class="bg-video">
-                <source src="videos/Saudi culture.mp4" type="video/mp4" />
+                <source src="assets/videos/Saudi culture.mp4" type="video/mp4" />
                 المتصفح لا يدعم عرض الفيديو.
             </video>
 
@@ -106,7 +106,7 @@ session_start();
                 <!-- 1 - الضيافة -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/saudi_hospitality.jpg" alt="الضيافة السعودية والقهوة العربية" />
+                        <img src="assets/images/saudi_hospitality.jpg" alt="الضيافة السعودية والقهوة العربية" />
                     </div>
                     <div class="traditions-text">
                         <h2>الضيافة والقهوة العربية</h2>
@@ -125,7 +125,7 @@ session_start();
                 <!-- 2 - التحية والآداب -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/saudi_greeting.jpg" alt="التحية السعودية" />
+                        <img src="assets/images/saudi_greeting.jpg" alt="التحية السعودية" />
                     </div>
                     <div class="traditions-text">
                         <h2>التحية والآداب الاجتماعية</h2>
@@ -144,7 +144,7 @@ session_start();
                 <!-- 3 - اللباس -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/traditional_clothing.jpg" alt="اللباس التقليدي السعودي" />
+                        <img src="assets/images/traditional_clothing.jpg" alt="اللباس التقليدي السعودي" />
                     </div>
                     <div class="traditions-text">
                         <h2>اللباس التقليدي</h2>
@@ -163,7 +163,7 @@ session_start();
                 <!-- 4 - الاحتفالات -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/saudi_celebration.jpg" alt="احتفال سعودي" />
+                        <img src="assets/images/saudi_celebration.jpg" alt="احتفال سعودي" />
                     </div>
                     <div class="traditions-text">
                         <h2>المناسبات والاحتفالات</h2>
@@ -194,7 +194,7 @@ session_start();
                 <!-- احترام الكبار -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/respect_elders.jpg" alt="احترام الكبار" />
+                        <img src="assets/images/respect_elders.jpg" alt="احترام الكبار" />
                     </div>
                     <div class="traditions-text">
                         <h2>احترام الكبار</h2>
@@ -213,7 +213,7 @@ session_start();
                 <!-- الاجتماعات العائلية -->
                 <article class="traditions-item">
                     <div class="traditions-image">
-                        <img src="images/family_gathering.jpg" alt="اجتماع عائلي" />
+                        <img src="assets/images/family_gathering.jpg" alt="اجتماع عائلي" />
                     </div>
                     <div class="traditions-text">
                         <h2>الاجتماعات العائلية</h2>
@@ -306,7 +306,7 @@ session_start();
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 

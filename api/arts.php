@@ -1,4 +1,4 @@
-<!-- HTML5 document type declaration -->
+﻿<!-- HTML5 document type declaration -->
 <!DOCTYPE html>
 <?php
 session_start();
@@ -23,14 +23,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- Main JavaScript file for interactions (loaded after HTML) -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- Top header bar: logo + navigation menu -->
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
        <nav>
@@ -85,7 +85,7 @@ session_start();
     <section class="main-visual-section">
         <!-- Background looping video -->
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Arts_vid.mp4" type="video/mp4">
+            <source src="assets/videos/Arts_vid.mp4" type="video/mp4">
         </video>
 
         <!-- Content overlay on top of the video -->
@@ -115,7 +115,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Al-Fajari_art.jpg" alt="Al-Fajri is a traditional maritime singing">
+                <img src="assets/images/Al-Fajari_art.jpg" alt="Al-Fajri is a traditional maritime singing">
             </div>
             <div class="flip-card-back">
                 <h3>Al-Fajri</h3>
@@ -127,7 +127,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Al_Qatt al_Asiri_art.jpg" alt="Al-Qatt al-Asiri a traditional art form of engraving and ornamentation in the Aseer Province">
+                <img src="assets/images/Al_Qatt al_Asiri_art.jpg" alt="Al-Qatt al-Asiri a traditional art form of engraving and ornamentation in the Aseer Province">
             </div>
             <div class="flip-card-back">
                 <h3>Al-Qatt al-Asiri</h3>
@@ -139,7 +139,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Majas Art.jpg" alt="Majas Art is a form of traditional Hejazi folk singing">
+                <img src="assets/images/Majas Art.jpg" alt="Majas Art is a form of traditional Hejazi folk singing">
             </div>
             <div class="flip-card-back">
                 <h3>Majas Art</h3>
@@ -151,7 +151,7 @@ session_start();
      <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/الصحاف.jpg" alt="vessel carved from the wood ">
+                <img src="assets/images/الصحاف.jpg" alt="vessel carved from the wood ">
             </div>
             <div class="flip-card-back">
                 <h3>Sihaf</h3>
@@ -163,7 +163,7 @@ session_start();
      <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/السدو.jpg" alt="traditional craft">
+                <img src="assets/images/السدو.jpg" alt="traditional craft">
             </div>
             <div class="flip-card-back">
                 <h3>Al-Sadu</h3>
@@ -175,7 +175,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Pottery.jpeg" alt="traditional craft">
+                <img src="assets/images/Pottery.jpeg" alt="traditional craft">
             </div>
             <div class="flip-card-back">
                 <h3>Dougha Pottery</h3>
@@ -187,7 +187,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Al_Khoos.jpeg" alt="Palm weaving, known as Khoos">
+                <img src="assets/images/Al_Khoos.jpeg" alt="Palm weaving, known as Khoos">
             </div>
             <div class="flip-card-back">
                 <h3>Al-Khoos</h3>
@@ -199,7 +199,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Mud_Houses.jpg" alt="Mud houses">
+                <img src="assets/images/Mud_Houses.jpg" alt="Mud houses">
             </div>
             <div class="flip-card-back">
                 <h3>Mud Houses</h3>
@@ -211,7 +211,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Rose_Cultivation.jpg" alt="Roses">
+                <img src="assets/images/Rose_Cultivation.jpg" alt="Roses">
             </div>
             <div class="flip-card-back">
                 <h3>Rose Cultivation</h3>
@@ -223,7 +223,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Al-Qallaleef.jpeg" alt="traditional wooden ships">
+                <img src="assets/images/Al-Qallaleef.jpeg" alt="traditional wooden ships">
             </div>
             <div class="flip-card-back">
                 <h3>Al-Qallafah</h3>
@@ -235,7 +235,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/Mishlah.jpg" alt="traditional Arabic cloak">
+                <img src="assets/images/Mishlah.jpg" alt="traditional Arabic cloak">
             </div>
             <div class="flip-card-back">
                 <h3>Bisht</h3>
@@ -247,7 +247,7 @@ session_start();
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img src="images/the Rababah.jpg" alt="The Rababah is a primitive musical instrument">
+                <img src="assets/images/the Rababah.jpg" alt="The Rababah is a primitive musical instrument">
             </div>
             <div class="flip-card-back">
                 <h3>The Rababah</h3>
@@ -259,7 +259,7 @@ session_start();
     <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/الدباغة .jpeg" alt="Leather Tanning">
+                    <img src="assets/images/الدباغة .jpeg" alt="Leather Tanning">
                 </div>
                 <div class="flip-card-back">
                     <h3>Leather Tanning</h3>
@@ -271,7 +271,7 @@ session_start();
      <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/السبح.jpg" alt=" Rosaries">
+                    <img src="assets/images/السبح.jpg" alt=" Rosaries">
                 </div>
                 <div class="flip-card-back"> 
                     <h3>Subah</h3>
@@ -283,7 +283,7 @@ session_start();
      <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Saudi_Arabia-_Sword.jpg" alt="The Saudi Dagger">
+                    <img src="assets/images/Saudi_Arabia-_Sword.jpg" alt="The Saudi Dagger">
                 </div>
                 <div class="flip-card-back">
                     <h3>The Saudi Dagger</h3>
@@ -319,7 +319,7 @@ session_start();
   <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

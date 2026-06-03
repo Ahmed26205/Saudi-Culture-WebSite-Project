@@ -1,4 +1,4 @@
-<!-- ملف صفحة التاريخ للنسخة العربية من الموقع -->
+﻿<!-- ملف صفحة التاريخ للنسخة العربية من الموقع -->
 <!DOCTYPE html>
 <?php
 session_start();
@@ -23,14 +23,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ملف الجافاسكربت العام -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- شريط علوي مشترك بين الصفحات -->
     <header id="mainHeader">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -95,7 +95,7 @@ session_start();
             </div>
             <!-- Background looping video -->
             <video autoplay muted loop playsinline class="bg-video">
-                <source src="videos/history travel.mp4" type="video/mp4">
+                <source src="assets/videos/history travel.mp4" type="video/mp4">
             </video>
         </section>
 
@@ -107,7 +107,7 @@ session_start();
             <div class="timeline-item" data-step="1">
                 <!-- صورة يسار / نص يمين (في RTL يظهر العكس بصرياً لكن يبقى متناسق) -->
                 <div class="timeline-image">
-                    <img src="images/madain salah.jpg" alt="الجزيرة العربية قبل الإسلام">
+                    <img src="assets/images/madain salah.jpg" alt="الجزيرة العربية قبل الإسلام">
                 </div>
                 <div class="timeline-content">
                     <span class="era-label">ما قبل الإسلام</span>
@@ -131,14 +131,14 @@ session_start();
                     </p>
                 </div>
                 <div class="timeline-image">
-                    <img src="images/after islam.jpg" alt="الحقبة الإسلامية المبكرة">
+                    <img src="assets/images/after islam.jpg" alt="الحقبة الإسلامية المبكرة">
                 </div>
             </div>
 
             <!-- الخطوة 3 -->
             <div class="timeline-item" data-step="3">
                 <div class="timeline-image">
-                    <img src="images/new saudi.jpeg" alt="الدول السعودية والدرعية">
+                    <img src="assets/images/new saudi.jpeg" alt="الدول السعودية والدرعية">
                 </div>
                 <div class="timeline-content">
                     <span class="era-label">القرنان 18–19</span>
@@ -161,7 +161,7 @@ session_start();
                     </p>
                 </div>
                 <div class="timeline-image">
-                    <img src="images/saudia.jpg" alt="المملكة العربية السعودية الحديثة">
+                    <img src="assets/images/saudia.jpg" alt="المملكة العربية السعودية الحديثة">
                 </div>
             </div>
         </section>
@@ -177,7 +177,7 @@ session_start();
             <!-- اللوحة 7: موقع الحِجر (مدائن صالح) -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/hegra-place.jpg" alt="موقع الحِجر">
+        <img src="assets/images/hegra-place.jpg" alt="موقع الحِجر">
     </div>
 
     <div class="heritage-card-text">
@@ -207,7 +207,7 @@ session_start();
             <!-- اللوحة 1: مقصورة السويلم -->
             <article class="heritage-card">
                 <div class="heritage-card-image">
-                    <img src="images/souq.jpg" alt="مقصورة السويلم">
+                    <img src="assets/images/souq.jpg" alt="مقصورة السويلم">
                 </div>
                 <div class="heritage-card-text">
                     <h3>مقصورة السويلم</h3>
@@ -227,7 +227,7 @@ session_start();
             <!-- اللوحة 2: قصر شبرا -->
             <article class="heritage-card">
                 <div class="heritage-card-image">
-                    <img src="images/ksr-shbra-2.jpg" alt="قصر شبرا">
+                    <img src="assets/images/ksr-shbra-2.jpg" alt="قصر شبرا">
                 </div>
                 <div class="heritage-card-text">
                     <h3>قصر شبرا</h3>
@@ -246,7 +246,7 @@ session_start();
             <!-- اللوحة 3: جدة التاريخية -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/Jeddah.jpg" alt="جدة التاريخية">
+        <img src="assets/images/Jeddah.jpg" alt="جدة التاريخية">
     </div>
 
     <div class="heritage-card-text">
@@ -274,7 +274,7 @@ session_start();
 <!-- اللوحة 4: قرية الأطاولة -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/atawala.jpg" alt="قرية الأطاولة">
+        <img src="assets/images/atawala.jpg" alt="قرية الأطاولة">
     </div>
 
     <div class="heritage-card-text">
@@ -305,7 +305,7 @@ session_start();
 <!-- اللوحة 5: قصر المصمك -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/mosamq.jpg" alt="قصر المصمك">
+        <img src="assets/images/mosamq.jpg" alt="قصر المصمك">
     </div>
 
     <div class="heritage-card-text">
@@ -341,7 +341,7 @@ session_start();
 <!-- اللوحة 6: قلعة أعيرف -->
 <article class="heritage-card">
     <div class="heritage-card-image">
-        <img src="images/aref qasle.jpg" alt="قلعة أعيرف">
+        <img src="assets/images/aref qasle.jpg" alt="قلعة أعيرف">
     </div>
 
     <div class="heritage-card-text">
@@ -422,7 +422,7 @@ session_start();
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 

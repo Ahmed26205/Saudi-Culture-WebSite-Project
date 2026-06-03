@@ -1,4 +1,4 @@
-<!-- ملف الفنون HTML  للواجهة العربية لموقع SaudiCulture -->
+﻿<!-- ملف الفنون HTML  للواجهة العربية لموقع SaudiCulture -->
 <!DOCTYPE html>
 <?php
 session_start();
@@ -23,14 +23,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- شريط علوي (Header) يحتوي الشعار والقائمة الرئيسية -->
   <header id="mainHeader">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -83,7 +83,7 @@ session_start();
 
     <section class="main-visual-section">
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Arts_vid.mp4" type="video/mp4">
+            <source src="assets/videos/Arts_vid.mp4" type="video/mp4">
         </video>
 
         <div class="main-visual-content">
@@ -103,7 +103,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Al-Fajari_art.jpg" alt="الفجري هو فن غناء بحري تقليدي">
+                    <img src="assets/images/Al-Fajari_art.jpg" alt="الفجري هو فن غناء بحري تقليدي">
                 </div>
                 <div class="flip-card-back">
                     <h3>فن الفجري</h3>
@@ -116,7 +116,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Al_Qatt al_Asiri_art.jpg"
+                    <img src="assets/images/Al_Qatt al_Asiri_art.jpg"
                         alt="القط العسيري فن تقليدي للنقش والزخرفة في منطقة عسير">
                 </div>
                 <div class="flip-card-back">
@@ -131,7 +131,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Majas Art.jpg" alt="فن المجس هو شكل من أشكال الغناء الشعبي الحجازي التقليدي">
+                    <img src="assets/images/Majas Art.jpg" alt="فن المجس هو شكل من أشكال الغناء الشعبي الحجازي التقليدي">
                 </div>
                 <div class="flip-card-back">
                     <h3>فن المجس</h3>
@@ -144,7 +144,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/الصحاف.jpg" alt="vessel carved from the wood ">
+                    <img src="assets/images/الصحاف.jpg" alt="vessel carved from the wood ">
                 </div>
                 <div class="flip-card-back">
                     <h3>الصِّحاف</h3>
@@ -156,7 +156,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/السدو.jpg" alt="حرفة تقليدية">
+                    <img src="assets/images/السدو.jpg" alt="حرفة تقليدية">
                 </div>
                 <div class="flip-card-back">
                     <h3>السدو</h3>
@@ -170,7 +170,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Pottery.jpeg" alt="حرفة تقليدية">
+                    <img src="assets/images/Pottery.jpeg" alt="حرفة تقليدية">
                 </div>
                 <div class="flip-card-back">
                     <h3>فخار دوغة</h3>
@@ -184,7 +184,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Al_Khoos.jpeg" alt="نسيج النخيل المعروف بالخوص">
+                    <img src="assets/images/Al_Khoos.jpeg" alt="نسيج النخيل المعروف بالخوص">
                 </div>
                 <div class="flip-card-back">
                     <h3>الخوص</h3>
@@ -197,7 +197,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Mud_Houses.jpg" alt="البيوت الطينية">
+                    <img src="assets/images/Mud_Houses.jpg" alt="البيوت الطينية">
                 </div>
                 <div class="flip-card-back">
                     <h3>البيوت الطينية</h3>
@@ -212,7 +212,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Rose_Cultivation.jpg" alt="الورود">
+                    <img src="assets/images/Rose_Cultivation.jpg" alt="الورود">
                 </div>
                 <div class="flip-card-back">
                     <h3>زراعة الورد</h3>
@@ -226,7 +226,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Al-Qallaleef.jpeg" alt="سفن خشبية تقليدية">
+                    <img src="assets/images/Al-Qallaleef.jpeg" alt="سفن خشبية تقليدية">
                 </div>
                 <div class="flip-card-back">
                     <h3>القلاليف</h3>
@@ -241,7 +241,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Mishlah.jpg" alt="بشت تقليدي">
+                    <img src="assets/images/Mishlah.jpg" alt="بشت تقليدي">
                 </div>
                 <div class="flip-card-back">
                     <h3>البشت</h3>
@@ -255,7 +255,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/the Rababah.jpg" alt="الربابة آلة موسيقية بدائية">
+                <img src="assets/images/the Rababah.jpg" alt="الربابة آلة موسيقية بدائية">
               </div>
               <div class="flip-card-back">
                 <h3>الربابة</h3>
@@ -268,7 +268,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/الدباغة .jpeg" alt="جلدة">
+                    <img src="assets/images/الدباغة .jpeg" alt="جلدة">
                 </div>
                 <div class="flip-card-back">
                     <h3>الدباغة</h3>
@@ -280,7 +280,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/السبح.jpg" alt=" السُّبَح">
+                    <img src="assets/images/السبح.jpg" alt=" السُّبَح">
                 </div>
                 <div class="flip-card-back">
                     <h3>صناعة السُّبَح</h3>
@@ -292,7 +292,7 @@ session_start();
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/Saudi_Arabia-_Sword.jpg" alt="خنجر سعودي">
+                    <img src="assets/images/Saudi_Arabia-_Sword.jpg" alt="خنجر سعودي">
                 </div>
                 <div class="flip-card-back">
                     <h3>الخنجر السعودي</h3>
@@ -326,7 +326,7 @@ session_start();
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 

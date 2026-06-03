@@ -1,4 +1,4 @@
-<!-- HTML5 document type declaration -->
+﻿<!-- HTML5 document type declaration -->
 <!DOCTYPE html>
 <!-- Food HTML element for the English version -->
 <?php
@@ -24,14 +24,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- Main JavaScript file for interactions (loaded after HTML) -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
     <!-- Top header bar: logo + navigation menu -->
       <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
 
        <nav>
@@ -85,7 +85,7 @@ session_start();
     <section class="main-visual-section">
         <!-- Background looping video -->
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="videos/Saudi Food.mov" type="video/mp4">
+            <source src="assets/videos/Saudi Food.mov" type="video/mp4">
         </video>
 
         <!-- Content overlay on top of the video -->
@@ -117,7 +117,7 @@ session_start();
             <div class="food-grid">
                 <!--food cards for the region-->
                 <div class="card">
-                    <img src="images/Jareesh_Food.jpeg" alt="Jareesh food looks like cracked or crushed wheat">
+                    <img src="assets/images/Jareesh_Food.jpeg" alt="Jareesh food looks like cracked or crushed wheat">
                     <h3>Jareesh</h3>
                     <p style="text-align:left">
                         Jareesh, also known as cracked or crushed wheat, 
@@ -129,7 +129,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Al-Qursan_food.jpeg" alt="Al-Qursan food">
+                    <img src="assets/images/Al-Qursan_food.jpeg" alt="Al-Qursan food">
                     <h3>Al-Qursan</h3>
                     <p style="text-align:left">
                      A popular Najdi dish made of thin layers of brown whole wheat bread, soaked in a rich vegetable and meat stew spiced with dried lime, cinnamon, and coriander.
@@ -138,7 +138,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Klija_food.jpeg" alt="Klija looks like a cookie">
+                    <img src="assets/images/Klija_food.jpeg" alt="Klija looks like a cookie">
                     <h3>Klija</h3>
                     <p style="text-align:left">
                      A famous dry biscuit from Qassim, known for its golden crust and rich filling of date molasses, cardamom, and cinnamon. It is a perfect companion to Saudi coffee.
@@ -146,7 +146,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Hanini_food.jpeg" alt="Hanaini is made from Al-bur ">
+                    <img src="assets/images/Hanini_food.jpeg" alt="Hanaini is made from Al-bur ">
                     <h3>Hanaini</h3>
                     <p style="text-align:left">
                      A traditional winter dessert made from minced dates and brown whole wheat bread, cooked with butter and cardamom to provide warmth and energy during cold days.
@@ -154,7 +154,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Shakshuka_food.jpg"
+                    <img src="assets/images/Shakshuka_food.jpg"
                         alt="Shakshouka looks like dish of eggs poached in a sauce of tomatoes">
                     <h3>Shakshouka</h3>
                     <p style="text-align:left">
@@ -179,7 +179,7 @@ session_start();
             <div class="food-grid">
                 <!--food cards for the region-->
                 <div class="card">
-                    <img src="images/8-chicken-kabsa-web.jpg" alt="Kabsa looks like a rice mixed with meat or chicken">
+                    <img src="assets/images/8-chicken-kabsa-web.jpg" alt="Kabsa looks like a rice mixed with meat or chicken">
                     <h3>Kabsa</h3>
                     <p style="text-align:left">
                         Is one of the most prominent foods in the Kingdom of Saudi Arabia.
@@ -191,7 +191,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Marqooq.jpg" alt="Marqooq consists of flour kneaded upon adding salt and water">
+                    <img src="assets/images/Marqooq.jpg" alt="Marqooq consists of flour kneaded upon adding salt and water">
                     <h3>Marqooq</h3>
                     <p style="text-align:left">
                       A hearty stew featuring thin sheets of whole wheat dough cooked directly in a meat and vegetable broth, allowing the flavors to infuse perfectly into the soft dough.
@@ -200,7 +200,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Mansaf.jpeg" alt="Mansaf consists of meat, rice, and Shirak bread">
+                    <img src="assets/images/Mansaf.jpeg" alt="Mansaf consists of meat, rice, and Shirak bread">
                     <h3>Mansaf</h3>
                     <p style="text-align:left">
                       A traditional dish celebrating hospitality, consisting of lamb cooked in fermented dried yogurt (Jameed), served over rice and thin Shirak bread with a rich sauce.
@@ -210,7 +210,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Mufattah.jpg" alt="Mufattah made primarily with rice, meat and a variety of spices">
+                    <img src="assets/images/Mufattah.jpg" alt="Mufattah made primarily with rice, meat and a variety of spices">
                     <h3>Mufattah</h3>
                     <p style="text-align:left">
                         It is a hearty and flavorful dish made primarily with rice, meat and a variety of spices.
@@ -238,7 +238,7 @@ session_start();
             <div class="food-grid">
                 <!--food cards for the region-->
                 <div class="card">
-                    <img src="images/Saleeg_food.jpg"
+                    <img src="assets/images/Saleeg_food.jpg"
                         alt="Saleeg looks like white-rice dish, cooked with broth (chicken or other meat) and milk">
                     <h3>Saleeg</h3>
                     <p style="text-align:left">
@@ -250,7 +250,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Sayadiyah_food.jpeg" alt="Sayadieh looks like a seasoned fish and rice dish">
+                    <img src="assets/images/Sayadiyah_food.jpeg" alt="Sayadieh looks like a seasoned fish and rice dish">
                     <h3>Sayadieh</h3>
                     <p style="text-align:left">
                         Is a seasoned fish and rice dish from the Middle East,
@@ -264,7 +264,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Dibyaza_food.webp" alt="Dibyaza looks like baked dessert">
+                    <img src="assets/images/Dibyaza_food.webp" alt="Dibyaza looks like baked dessert">
                     <h3>Dibyaza</h3>
                     <p style="text-align:left">
                         Dibyaza is a baked dessert, associated with festivity and joy.
@@ -293,7 +293,7 @@ session_start();
             <div class="food-grid">
                 <!--food cards for the region-->
                 <div class="card">
-                    <img src="images/Balaleet.jpg"
+                    <img src="assets/images/Balaleet.jpg"
                         alt="Balaleet looks like a consists of vermicelli sweetened with sugar, cardamom, rose water and saffron">
                     <h3>Balaleet</h3>
                     <p style="text-align:left">
@@ -307,7 +307,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Tharid.png" alt="Tharid looks like a bread soup">
+                    <img src="assets/images/Tharid.png" alt="Tharid looks like a bread soup">
                     <h3>Tharid</h3>
                     <p style="text-align:left">
                         Tharid also known as trid, taghrib, tashrib, tashreeb or thareed is a bread soup
@@ -318,7 +318,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Sago.jpg" alt="Sago looks like a granules in water">
+                    <img src="assets/images/Sago.jpg" alt="Sago looks like a granules in water">
                     <h3>Sago</h3>
                     <p style="text-align:left">
                         The dish consists of starchy granules known as Sago.
@@ -347,7 +347,7 @@ session_start();
             <div class="food-grid">
                 <!--food cards for the region-->
                 <div class="card">
-                    <img src="images/Areeka_ food.jpg"
+                    <img src="assets/images/Areeka_ food.jpg"
                         alt="Areeka looks like combination of mashed dates and crumbled bread">
                     <h3>Areeka</h3>
                     <p style="text-align:left">
@@ -358,7 +358,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Mashghoutha_food.jpg"
+                    <img src="assets/images/Mashghoutha_food.jpg"
                         alt="Al-Mashghoutha looks like consists of flour mixed with water">
                     <h3>Al-Mashghoutha</h3>
                     <p style="text-align:left">
@@ -368,7 +368,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Aseedah.jpg"
+                    <img src="assets/images/Aseedah.jpg"
                         alt="Aseedah looks like a lump of dough made by stirring wheat flour into boiling water">
                     <h3>Aseedah</h3>
                     <p style="text-align:left">
@@ -380,7 +380,7 @@ session_start();
                 </div>
 
                 <div class="card">
-                    <img src="images/Haneeth.jpg" alt="Haneeth looks like a slow-roasted, spice-rubbed lamb with rice">
+                    <img src="assets/images/Haneeth.jpg" alt="Haneeth looks like a slow-roasted, spice-rubbed lamb with rice">
                     <h3>Haneeth</h3>
                     <p style="text-align:left">
                         It features slow-roasted, spice-rubbed lamb, typically cooked in a Tannour oven, served on a bed
@@ -424,7 +424,7 @@ session_start();
      <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>
                     <strong>SaudiCulture</strong> is a digital window into the rich history,
                     heritage, and cultural diversity of Saudi Arabia.

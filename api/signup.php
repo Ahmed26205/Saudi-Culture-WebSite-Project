@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 // إعدادات الاتصال بقاعدة البيانات (يفترض أنها في db_conn.php، لكن سنبقيها هنا كما في ملفك)
 include "db_conn.php";
@@ -53,14 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
-        <link rel="icon" type="image/png" href="images/logo.png">
+        <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body class="auth-page">
 
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
         <nav>
             <a href="index.php">Home</a>

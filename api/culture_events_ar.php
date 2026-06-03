@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -22,14 +22,14 @@ session_start();
     <link rel="stylesheet" href="CSS/auth.css">
     <!-- ربط ملف الجافاسكربت الخاص بالتفاعل في الواجهة -->
     <script src="JS/script.js" defer></script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body>
         <!-- شريط علوي (Header) يحتوي الشعار والقائمة الرئيسية -->
   <header id="mainHeader">
     <div class="logo">
-        <img src="images/Logo.png" alt="شعار SaudiCulture">
+        <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
     </div>
 
     <nav>
@@ -92,7 +92,7 @@ session_start();
             </div>
             <!-- Background looping video -->
             <video autoplay muted loop playsinline class="bg-video">
-                <source src="videos/Culturual_events_video.mp4" type="video/mp4">
+                <source src="assets/videos/Culturual_events_video.mp4" type="video/mp4">
             </video>
         </section>
 
@@ -104,7 +104,7 @@ session_start();
             <div class="timeline-item">
                 <!-- image right -->
                 <div class="timeline-image">
-                    <img src="images/Janadriyah_festival.png" alt="لقطة من مهرجان الجنادرية">
+                    <img src="assets/images/Janadriyah_festival.png" alt="لقطة من مهرجان الجنادرية">
                 </div>
                 <!-- text left -->
                 <div class="timeline-content">
@@ -134,14 +134,14 @@ session_start();
                 </div>
                 <!-- image left -->
                 <div class="timeline-image">
-                    <img src="images/Alturaiyf.png" alt="حي الطريف في الدرعية">
+                    <img src="assets/images/Alturaiyf.png" alt="حي الطريف في الدرعية">
                 </div>
             </div>
 
             <!-- Step 3 -->
             <div class="timeline-item">
                 <div class="timeline-image">
-                    <img src="images/Riyadh_Book_Fair.png" alt="الرياض عاصمة المملكة">
+                    <img src="assets/images/Riyadh_Book_Fair.png" alt="الرياض عاصمة المملكة">
                 </div>
                 <div class="timeline-content">
                     <span class="era-label">عاصمة الثقافة</span>
@@ -168,7 +168,7 @@ session_start();
                     </p>
                 </div>
                 <div class="timeline-image">
-                    <img src="images/day-2-race-hero.jpg" alt="سباق الهجن">
+                    <img src="assets/images/day-2-race-hero.jpg" alt="سباق الهجن">
                 </div>
             </div>
         </section>
@@ -180,7 +180,7 @@ session_start();
             <div class="cards">
                 <!-- المنطقة الوسطى -->
                 <div class="card">
-                    <img src="images/historical-dir-iyahh.jpg" alt="الدرعية" />
+                    <img src="assets/images/historical-dir-iyahh.jpg" alt="الدرعية" />
                     <h3>المنطقة الوسطى</h3>
                     <p>
                         تشتهر المنطقة الوسطى بفعاليات ثقافية متنوعة في الرياض والدرعية، بما في ذلك المهرجانات التراثية، والمعارض الفنية، والأمسيات الثقافية التي تعكس التاريخ العريق للمنطقة.
@@ -189,7 +189,7 @@ session_start();
 
                 <!-- المنطقة الغربية -->
                 <div class="card">
-                    <img src="images/madinaold.jpg" alt="مكة المكرمة والمدينة المنورة" />
+                    <img src="assets/images/madinaold.jpg" alt="مكة المكرمة والمدينة المنورة" />
                     <h3>المنطقة الغربية</h3>
                     <p>
                         تستضيف مكة المكرمة والمدينة المنورة فعاليات ثقافية تستهدف المسلمين على مدار العام، خاصة خلال مواسم الحج والعمرة، بالإضافة إلى المهرجانات التراثية والأسواق الشعبية.
@@ -198,7 +198,7 @@ session_start();
 
                 <!-- المنطقة الشمالية والشمالية الغربية -->
                 <div class="card">
-                    <img src="images/old history.jpg" alt="العلا " />
+                    <img src="assets/images/old history.jpg" alt="العلا " />
                     <h3>الشمال والشمال الغربي</h3>
                     <p>
                         تشتهر العلا بفعاليات ثقافية تستعرض التاريخ النبطي القديم، وتشمل مهرجانات الضوء، والعروض المسرحية في المواقع الأثرية، والمعارض التاريخية.
@@ -207,7 +207,7 @@ session_start();
 
                 <!-- المنطقة الشرقية والجنوبية -->
                 <div class="card">
-                    <img src="images/rijal alma.jpg" alt="التراث الشرقي والجنوبي" />
+                    <img src="assets/images/rijal alma.jpg" alt="التراث الشرقي والجنوبي" />
                     <h3>الشرق والجنوب</h3>
                     <p>
                         تزخر المنطقتان الشرقية والجنوبية بفعاليات ثقافية تعكس التنوع الجغرافي والتراثي، بما في ذلك مهرجانات التراث البحري، والأسواق الشعبية، والعروض الفنية التقليدية.
@@ -234,7 +234,7 @@ session_start();
 
             <!-- Left: logo + brief -->
             <div class="footer-about">
-                <img src="images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
+                <img src="assets/images/Logo.png" alt="SaudiCulture Logo" class="footer-logo">
                 <p>مشروع <strong>SaudiCulture</strong> – منصة تعرض جمال الموروث الثقافي والتاريخ السعودي.</p>
             </div>
 
@@ -436,3 +436,4 @@ session_start();
 </body>
 
 </html>
+

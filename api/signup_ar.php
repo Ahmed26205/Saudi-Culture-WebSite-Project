@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include 'db_conn.php';
 
@@ -42,12 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/auth.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 <body class="auth-page">
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="شعار SaudiCulture">
+            <img src="assets/images/Logo.png" alt="شعار SaudiCulture">
         </div>
         <nav>
             <a href="arabic.php">الرئيسية</a>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start(); // Start the session
 include "db_conn.php"; // Database connection
 
@@ -49,14 +49,14 @@ if (isset($_POST['submit'])) {
 
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/auth.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
 </head>
 
 <body class="auth-page">
 
     <header id="mainHeader">
         <div class="logo">
-            <img src="images/Logo.png" alt="SaudiCulture Logo">
+            <img src="assets/images/Logo.png" alt="SaudiCulture Logo">
         </div>
         <nav>
             <a href="index.php">Home</a>
