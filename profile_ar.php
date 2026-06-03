@@ -165,7 +165,10 @@ $history_res = $conn->query($history_sql);
                             // تطبيق الترجمة بناءً على الخريطة المحددة 
                             $quiz_type_key = $h_row['quiz_type'];
                             $quiz_type_ar = $type_translation[$quiz_type_key] ?? $quiz_type_key;
-
+                            
+                            $totalQ = (int)$h_row['total_questions'];
+                            $percent = ($totalQ > 0) ? ((int)$h_row['score'] / $totalQ) * 100 : 0;
+                            $badge_class = ($percent >= 60) ? 'score-high' : 'score-low';
                         ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($quiz_type_ar); ?></td>
